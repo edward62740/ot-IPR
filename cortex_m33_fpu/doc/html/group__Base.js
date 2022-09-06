@@ -1,0 +1,26 @@
+var group__Base =
+[
+    [ "ACC_BASE_CONFIGURATION_POWER_SAVE_MODE_ACTIVE", "group__Base.html#ga8bf956661bbf08438455badd6816aada", null ],
+    [ "ACC_BASE_CONFIGURATION_POWER_SAVE_MODE_HIBERNATE", "group__Base.html#ga28f00b9b107e254c24ef72a365ecfe46", null ],
+    [ "ACC_BASE_CONFIGURATION_POWER_SAVE_MODE_OFF", "group__Base.html#gadadf4e3284ae778683120acdf3209151", null ],
+    [ "ACC_BASE_CONFIGURATION_POWER_SAVE_MODE_READY", "group__Base.html#ga0b18088d7c4238dcdd2996375deee008", null ],
+    [ "ACC_BASE_CONFIGURATION_POWER_SAVE_MODE_SLEEP", "group__Base.html#ga9adeea30f8c38aaf8a51696b8c833262", null ],
+    [ "acc_base_configuration_power_save_mode_t", "group__Base.html#ga37cb173e29a01ea55aa59d96009eef4b", null ],
+    [ "acc_base_configuration_t", "group__Base.html#gacaedd5eecda28ac996abb8ff9e872c30", null ],
+    [ "acc_base_configuration_hw_accelerated_average_samples_get", "group__Base.html#gadce24dc23a18fc2f2933cfa3c56ad88f", null ],
+    [ "acc_base_configuration_hw_accelerated_average_samples_set", "group__Base.html#gadbc4b388213ebb6c2a06419696d7feec", null ],
+    [ "acc_base_configuration_power_save_mode_get", "group__Base.html#ga7f3f7708426c49f202be15f8a8753d86", null ],
+    [ "acc_base_configuration_power_save_mode_set", "group__Base.html#gaf96a32a7ba4a966f5d930fe883749236", null ],
+    [ "acc_base_configuration_receiver_gain_get", "group__Base.html#gaca282ed1950adc13032e25b0ca7a0403", null ],
+    [ "acc_base_configuration_receiver_gain_set", "group__Base.html#ga548c1f3add41fa7bde538c779dd967ee", null ],
+    [ "acc_base_configuration_repetition_mode_on_demand_set", "group__Base.html#gaf0300d0b678002ee5298c6ce0af04cf9", null ],
+    [ "acc_base_configuration_repetition_mode_streaming_set", "group__Base.html#ga724423ab3347405e165a2f844eb2924d", null ],
+    [ "acc_base_configuration_requested_length_get", "group__Base.html#ga72d6a565e33f3023af9e304dd8652063", null ],
+    [ "acc_base_configuration_requested_length_set", "group__Base.html#ga393b7f584caa10f60e6cb8ad55049a5a", null ],
+    [ "acc_base_configuration_requested_start_get", "group__Base.html#gaa6984a68eca138fb3f5ecdb0c06a67c9", null ],
+    [ "acc_base_configuration_requested_start_set", "group__Base.html#ga090e344c1df5735de164ce259dc6ee4f", null ],
+    [ "acc_base_configuration_sensor_get", "group__Base.html#ga99bf2089156bbb2c1ffd75114b54a15a", null ],
+    [ "acc_base_configuration_sensor_set", "group__Base.html#ga0c34a4a4653abe633cacc2b8f289801b", null ],
+    [ "acc_base_configuration_tx_disable_get", "group__Base.html#ga44593f6e87951baec62307c07e00dc60", null ],
+    [ "acc_base_configuration_tx_disable_set", "group__Base.html#gab92b7b047464f0966ee96c96d0fbd549", null ]
+];

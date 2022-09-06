@@ -1,0 +1,6 @@
+Added Component: Designator=U1(QFN48_0P4_6SQ_SI)
+Add component (AddParameter): Name = "Copyright"; Value = "Copyright (C) 2022 Ultra Librarian. All rights reserved."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "EFR32MG24B310F1536IM48"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mfr_Name"; Value = "Silicon Labs"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "EFR32MG24B310F15"; VariantName = "[No Variations]"
+Added Member To Class: ClassName=digital Member=Component U1 EFR32MG24B310F15
