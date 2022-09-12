@@ -1,0 +1,22 @@
+Removed Pin From Net: NetName=VCC Pin=J1-1
+Removed Pin From Net: NetName=GND Pin=J1-2
+Removed Pin From Net: NetName=nRST Pin=J1-3
+Removed Pin From Net: NetName=RX Pin=J1-4
+Removed Pin From Net: NetName=TX Pin=J1-5
+Removed Pin From Net: NetName=SWO Pin=J1-6
+Removed Pin From Net: NetName=SWDIO Pin=J1-7
+Removed Pin From Net: NetName=SWCLK Pin=J1-8
+Added Pin To Net: NetName=SWDIO Pin=J1-2
+Added Pin To Net: NetName=TX Pin=J1-3
+Added Pin To Net: NetName=nRST Pin=J1-4
+Added Pin To Net: NetName=SWO Pin=J1-8
+Added Pin To Net: NetName=RX Pin=J1-9
+Added Pin To Net: NetName=GND Pin=J1-10
+Added Pin To Net: NetName=PTI_DATA Pin=J1-1
+Added Net: Name=PTI_DATA
+Added Pin To Net: NetName=PTI_FRAME Pin=J1-6
+Added Net: Name=PTI_FRAME
+Added Pin To Net: NetName=SWDCLK Pin=J1-7
+Added Net: Name=SWDCLK
+Added Pin To Net: NetName=VDD Pin=J1-5
+Added Net: Name=VDD

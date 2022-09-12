@@ -1,0 +1,12 @@
+Added Pin To Net: NetName=VCC Pin=J1-1
+Added Pin To Net: NetName=GND Pin=J1-2
+Added Pin To Net: NetName=nRST Pin=J1-3
+Added Pin To Net: NetName=RX Pin=J1-4
+Added Pin To Net: NetName=TX Pin=J1-5
+Added Pin To Net: NetName=SWO Pin=J1-6
+Added Pin To Net: NetName=SWDIO Pin=J1-7
+Added Pin To Net: NetName=SWCLK Pin=J1-8
+Added Pin To Net: NetName=NetLabel27 Pin=J1-9
+Added Net: Name=NetLabel27
+Added Pin To Net: NetName=NetLabel28 Pin=J1-10
+Added Net: Name=NetLabel28

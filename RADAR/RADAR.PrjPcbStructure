@@ -1,1 +1,3 @@
-Record=TopLevelDocument|FileName=digital.SchDoc|SheetNumber=1
+Record=TopLevelDocument|FileName=mcu.SchDoc|SheetNumber=1
+Record=NoMainPathDocument|SourceDocument=mcu.SchDoc|FileName=power.SchDoc|SheetNumber=3
+Record=NoMainPathDocument|SourceDocument=mcu.SchDoc|FileName=radar.SchDoc|SheetNumber=2

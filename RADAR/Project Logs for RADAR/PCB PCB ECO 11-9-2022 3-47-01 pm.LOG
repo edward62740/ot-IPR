@@ -1,0 +1,3 @@
+Added Pin To Net: NetName=portb Pin=U1-30
+Added Net: Name=portb
+Add Net: Net with name "portb" already exists

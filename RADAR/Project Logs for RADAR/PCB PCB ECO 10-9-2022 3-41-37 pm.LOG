@@ -1,0 +1,10 @@
+Removed Member From Class: ClassName=radar Member=U?
+Added Component: Designator=U2(BGA50N50P10X10_520X550X89N)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "acconeer"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "A111"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "SMD-50 acconeer"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/A111/acconeer/view-part/2777907/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Member To Class: ClassName=radar Member=Component U2 A111

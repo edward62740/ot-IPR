@@ -83,6 +83,23 @@ GenerateClassCluster=0
 DocumentUniqueId=PMEKPSGD
 
 [Document3]
+DocumentPath=power.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=JDEGWOWM
+
+[Document4]
 DocumentPath=PCB.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -97,7 +114,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=BDGYYTHF
+DocumentUniqueId=XQCXWSAJ
 
 [GeneratedDocument1]
 DocumentPath=Project Outputs for RADAR\Design Rule Check - PCB.html

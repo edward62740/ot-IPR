@@ -1,0 +1,4 @@
+Change Net Name : Old Net Name=PTI_FRAME New Net Name=PTI_DATA
+Added Pin To Net: NetName=PTI_FRAME Pin=J1-1
+Added Pin To Net: NetName=PTI_FRAME Pin=U1-3
+Added Net: Name=PTI_FRAME
