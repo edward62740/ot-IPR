@@ -1,0 +1,186 @@
+Removed Member From Class: ClassName=power Member=
+Change Component Comment : Designator= Old Comment= New Comment=0.1 µF
+Change Component Comment : Designator= Old Comment= New Comment=0.1 µF
+Change Component Comment : Designator= Old Comment= New Comment=0.1 µF
+Change Component Comment : Designator= Old Comment= New Comment=0.1 µF
+Change Component Comment : Designator= Old Comment= New Comment=0.1 µF
+Change Component Comment : Designator= Old Comment= New Comment=0.1 µF
+Change Component Comment : Designator= Old Comment= New Comment=0.1 µF
+Change Component Comment : Designator= Old Comment= New Comment=1.5 kOhms
+Change Component Comment : Designator= Old Comment= New Comment=1.5 kOhms
+Change Component Comment : Designator= Old Comment= New Comment=1.5 kOhms
+Change Component Comment : Designator= Old Comment= New Comment=1.6 pF
+Change Component Comment : Designator= Old Comment= New Comment=1.7 nH
+Change Component Comment : Designator= Old Comment= New Comment=1 µF
+Change Component Comment : Designator= Old Comment= New Comment=1 µF
+Change Component Comment : Designator= Old Comment= New Comment=1 µF
+Change Component Comment : Designator= Old Comment= New Comment=1 µF
+Change Component Comment : Designator= Old Comment= New Comment=1 µF
+Change Component Comment : Designator= Old Comment= New Comment=1 µF
+Change Component Comment : Designator= Old Comment= New Comment=1 µF
+Change Component Comment : Designator= Old Comment= New Comment=2.2 µH
+Change Component Comment : Designator= Old Comment= New Comment=2.3 pF
+Change Component Comment : Designator= Old Comment= New Comment=2.5 nH
+Change Component Comment : Designator= Old Comment= New Comment=4.7uF
+Change Component Comment : Designator= Old Comment= New Comment=10 kOhms
+Change Component Comment : Designator= Old Comment= New Comment=10 µF
+Change Component Comment : Designator= Old Comment= New Comment=10 µF
+Change Component Comment : Designator= Old Comment= New Comment=18 pF
+Change Component Comment : Designator= Old Comment= New Comment=100pF
+Change Component Comment : Designator= Old Comment= New Comment=2468
+Change Component Comment : Designator= Old Comment= New Comment=A111
+Change Component Comment : Designator= Old Comment= New Comment=CX2016DB48000C0WPLA2
+Change Component Comment : Designator= Old Comment= New Comment=EFR32MG24B220F1536IM48
+Change Component Comment : Designator= Old Comment= New Comment=M40-3200545R
+Change Component Comment : Designator= Old Comment= New Comment=OPT3001DNPR
+Change Component Comment : Designator= Old Comment= New Comment=PRO-OB-440
+Change Component Comment : Designator= Old Comment= New Comment=TPS62840DLCR
+Change Component Comment : Designator= Old Comment= New Comment=Yellow
+Change Component Comment : Designator= Old Comment= New Comment=Yellow
+Change Component Comment : Designator= Old Comment= New Comment=Yellow
+Change Component Designator: OldDesignator= NewDesignator=ANT1
+Change Component Designator: OldDesignator= NewDesignator=B1
+Change Component Designator: OldDesignator= NewDesignator=C1
+Change Component Designator: OldDesignator= NewDesignator=C2
+Change Component Designator: OldDesignator= NewDesignator=C3
+Change Component Designator: OldDesignator= NewDesignator=C4
+Change Component Designator: OldDesignator= NewDesignator=C5
+Change Component Designator: OldDesignator= NewDesignator=C6
+Change Component Designator: OldDesignator= NewDesignator=C7
+Change Component Designator: OldDesignator= NewDesignator=C8
+Change Component Designator: OldDesignator= NewDesignator=C9
+Change Component Designator: OldDesignator= NewDesignator=C10
+Change Component Designator: OldDesignator= NewDesignator=C11
+Change Component Designator: OldDesignator= NewDesignator=C12
+Change Component Designator: OldDesignator= NewDesignator=C13
+Change Component Designator: OldDesignator= NewDesignator=C14
+Change Component Designator: OldDesignator= NewDesignator=C15
+Change Component Designator: OldDesignator= NewDesignator=C16
+Change Component Designator: OldDesignator= NewDesignator=C17
+Change Component Designator: OldDesignator= NewDesignator=C18
+Change Component Designator: OldDesignator= NewDesignator=C19
+Change Component Designator: OldDesignator= NewDesignator=C20
+Change Component Designator: OldDesignator= NewDesignator=C21
+Change Component Designator: OldDesignator= NewDesignator=D1
+Change Component Designator: OldDesignator= NewDesignator=D2
+Change Component Designator: OldDesignator= NewDesignator=D3
+Change Component Designator: OldDesignator= NewDesignator=J1
+Change Component Designator: OldDesignator= NewDesignator=L1
+Change Component Designator: OldDesignator= NewDesignator=L2
+Change Component Designator: OldDesignator= NewDesignator=L3
+Change Component Designator: OldDesignator= NewDesignator=R1
+Change Component Designator: OldDesignator= NewDesignator=R2
+Change Component Designator: OldDesignator= NewDesignator=R3
+Change Component Designator: OldDesignator= NewDesignator=R4
+Change Component Designator: OldDesignator= NewDesignator=U1
+Change Component Designator: OldDesignator= NewDesignator=U2
+Change Component Designator: OldDesignator= NewDesignator=U3
+Change Component Designator: OldDesignator= NewDesignator=U4
+Change Component Designator: OldDesignator= NewDesignator=Y1
+Added Component: Designator=R5(RES 0402_1005)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1773272&DocType=DS&DocLang=English"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "DigiKey Link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://www.digikey.com/en/products/detail/te-connectivity-passive-product/RP73PF1E10KBTD/8260957"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Composition"; Value = "Thin Film"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Device Package"; Value = "0402 (1005 Metric)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height - Seated (Max)"; Value = "0.014" (0.35mm)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LastUpdated"; Value = "1/9/2022 12:46:57 pm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lifecycle Status"; Value = "Active"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "TE Connectivity Passive Product"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Minimum Order"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Terminations"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Temperature"; Value = "-55°C ~ 155°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package / Case"; Value = "0402 (1005 Metric)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "TapeAndReel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "RP73PF1E10KBTD"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Status"; Value = "Active"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PartId"; Value = "2434"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power (Watts)"; Value = "0.1W, 1/10W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "0.09"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistance"; Value = "10 kOhms"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Series"; Value = "RP73, Holsworthy"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Size / Dimension"; Value = "0.039" L x 0.020" W (1.00mm x 0.50mm)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "DigiKey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Device Package"; Value = "0402"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "A127415CT-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Coefficient"; Value = "±25ppm/°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "±0.1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10 kOhms"; VariantName = "[No Variations]"
+Added Component: Designator=R6(RES 0402_1005)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1773272&DocType=DS&DocLang=English"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "DigiKey Link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://www.digikey.com/en/products/detail/te-connectivity-passive-product/RP73PF1E10KBTD/8260957"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Composition"; Value = "Thin Film"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Device Package"; Value = "0402 (1005 Metric)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height - Seated (Max)"; Value = "0.014" (0.35mm)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LastUpdated"; Value = "1/9/2022 12:46:57 pm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lifecycle Status"; Value = "Active"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "TE Connectivity Passive Product"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Minimum Order"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Terminations"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Temperature"; Value = "-55°C ~ 155°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package / Case"; Value = "0402 (1005 Metric)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "TapeAndReel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "RP73PF1E10KBTD"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Status"; Value = "Active"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PartId"; Value = "2434"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power (Watts)"; Value = "0.1W, 1/10W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "0.09"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistance"; Value = "10 kOhms"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Series"; Value = "RP73, Holsworthy"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Size / Dimension"; Value = "0.039" L x 0.020" W (1.00mm x 0.50mm)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "DigiKey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Device Package"; Value = "0402"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "A127415CT-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Coefficient"; Value = "±25ppm/°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "±0.1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10 kOhms"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=I2C_SCL Pin=R5-1
+Added Pin To Net: NetName=1V8 Pin=R5-2
+Added Pin To Net: NetName=I2C_SDA Pin=R6-1
+Added Pin To Net: NetName=1V8 Pin=R6-2
+Added Member To Class: ClassName=mcu Member=Component ANT1 PRO-OB-440
+Added Member To Class: ClassName=power Member=Component B1 2468
+Added Member To Class: ClassName=mcu Member=Component C1 0.1 µF
+Added Member To Class: ClassName=mcu Member=Component C2 1 µF
+Added Member To Class: ClassName=mcu Member=Component C3 1 µF
+Added Member To Class: ClassName=mcu Member=Component C4 0.1 µF
+Added Member To Class: ClassName=mcu Member=Component C6 0.1 µF
+Added Member To Class: ClassName=mcu Member=Component C7 0.1 µF
+Added Member To Class: ClassName=mcu Member=Component C8 1 µF
+Added Member To Class: ClassName=mcu Member=Component C9 2.3 pF
+Added Member To Class: ClassName=mcu Member=Component C10 1.6 pF
+Added Member To Class: ClassName=mcu Member=Component C11 18 pF
+Added Member To Class: ClassName=mcu Member=Component C12 1 µF
+Added Member To Class: ClassName=power Member=Component C13 10 µF
+Added Member To Class: ClassName=radar Member=Component C14 0.1 µF
+Added Member To Class: ClassName=radar Member=Component C15 0.1 µF
+Added Member To Class: ClassName=radar Member=Component C16 0.1 µF
+Added Member To Class: ClassName=radar Member=Component C17 1 µF
+Added Member To Class: ClassName=radar Member=Component C18 1 µF
+Added Member To Class: ClassName=radar Member=Component C19 1 µF
+Added Member To Class: ClassName=mcu Member=Component C20 10 µF
+Added Member To Class: ClassName=power Member=Component C21 4.7uF
+Added Member To Class: ClassName=mcu Member=Component D1 Yellow
+Added Member To Class: ClassName=mcu Member=Component D2 Yellow
+Added Member To Class: ClassName=mcu Member=Component D3 Yellow
+Added Member To Class: ClassName=mcu Member=Component J1 M40-3200545R
+Added Member To Class: ClassName=mcu Member=Component L1 2.5 nH
+Added Member To Class: ClassName=mcu Member=Component L2 1.7 nH
+Added Member To Class: ClassName=power Member=Component L3 2.2 µH
+Added Member To Class: ClassName=mcu Member=Component R1 10 kOhms
+Added Member To Class: ClassName=mcu Member=Component R2 1.5 kOhms
+Added Member To Class: ClassName=mcu Member=Component R3 1.5 kOhms
+Added Member To Class: ClassName=mcu Member=Component R4 1.5 kOhms
+Added Member To Class: ClassName=mcu Member=Component R5 10 kOhms
+Added Member To Class: ClassName=mcu Member=Component R6 10 kOhms
+Added Member To Class: ClassName=mcu Member=Component U1 EFR32MG24B220F1536IM48
+Added Member To Class: ClassName=radar Member=Component U2 A111
+Added Member To Class: ClassName=power Member=Component U3 TPS62840DLCR
+Added Member To Class: ClassName=mcu Member=Component U4 OPT3001DNPR
+Added Member To Class: ClassName=mcu Member=Component Y1 CX2016DB48000C0WPLA2
+Added Room: Name=mcu
+Added Room: Name=power
+Added Room: Name=radar
