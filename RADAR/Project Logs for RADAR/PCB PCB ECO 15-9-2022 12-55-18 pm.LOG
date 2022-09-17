@@ -1,0 +1,12 @@
+Removed Pin From Net: NetName=1V8 Pin=-J9
+Removed Pin From Net: NetName=1V8 Pin=-K9
+Removed Pin From Net: NetName=1V8 Pin=C24-2
+Added Component: Designator=L4(TAIYO YUDEN MAMK2520T1R0M)
+Add component (AddParameter): Name = "Part Number"; Value = "MAKK2520T2R2M"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=1V8A Pin=C24-2
+Added Pin To Net: NetName=1V8A Pin=L4-2
+Added Net: Name=1V8A
+Added Pin To Net: NetName=NetL4_1 Pin=L4-1
+Added Pin To Net: NetName=NetL4_1 Pin=-J9
+Added Pin To Net: NetName=NetL4_1 Pin=-K9
+Added Net: Name=NetL4_1
