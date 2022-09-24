@@ -1,0 +1,2 @@
+class\ com.silabs.ss.platform.api.apack.ip.DiscoveryPreference.SUBNET_CONFIGURATION=\# Examples of valid format for each line\:\n\#    10.4.178.22                - individual IP address\n\#    10.4.178.20-29             - range of addresses\n\#    10.4.178.*                 - subnet wildcard\n\#    10.4.178.0/255.255.255.0   - address with subnet mask\n\# Comment lines start with '\#'.\n\n
+eclipse.preferences.version=1

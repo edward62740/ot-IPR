@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<model:MDescriptors xmlns:model="http://www.silabs.com/ss/Studio.ecore">
+  <descriptors name="$registry.cache.settings">
+    <properties key="prevKnownDetectorClasses" value="com.silabs.ss.platform.internal.api.sdk.core.SDKDetector com.ember.workbench.app_framework.application.StackDetector com.silabs.ss.platform.internal.api.sdk.core.SDKRepoDetector"/>
+  </descriptors>
+</model:MDescriptors>
