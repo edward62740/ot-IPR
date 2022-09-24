@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<model:MDescriptors xmlns:model="http://www.silabs.com/ss/Studio.ecore">
+  <descriptors name="$registry.cache.settings">
+    <properties key="prevKnownDetectorClasses" value="com.silabs.ss.app.internal.ide.module.EsfTemplateModuleDetector com.silabs.ss.app.internal.ide.module.EsfPluginModuleDetector com.silabs.ss.framework.project.internal.api.core.modules.SDKModuleDetector"/>
+  </descriptors>
+</model:MDescriptors>
