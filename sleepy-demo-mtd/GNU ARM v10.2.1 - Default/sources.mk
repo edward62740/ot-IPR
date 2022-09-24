@@ -26,6 +26,7 @@ CPP_DEPS :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
+A111/integration \
 . \
 autogen \
 gecko_sdk_4.1.1/platform/Device/SiliconLabs/EFR32MG24/Source \

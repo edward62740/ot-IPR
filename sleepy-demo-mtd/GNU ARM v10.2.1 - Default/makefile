@@ -56,6 +56,7 @@ RM := rm -rf
 -include gecko_sdk_4.1.1/platform/common/src/subdir.mk
 -include gecko_sdk_4.1.1/platform/Device/SiliconLabs/EFR32MG24/Source/subdir.mk
 -include autogen/subdir.mk
+-include A111/integration/subdir.mk
 -include subdir.mk
 -include objects.mk
 
