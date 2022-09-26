@@ -62,13 +62,13 @@
     <properties key="core.builtin" value="true"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.stack.bootloader"/>
   </descriptors>
-  <descriptors name="com.silabs.sdk.stack.super:4.1.1._1224998501" label="Amazon" description="&lt;pre>Amazon&lt;/pre>">
+  <descriptors name="com.silabs.sdk.stack.super:4.0.2._1224998501" label="Amazon" description="&lt;pre>Amazon&lt;/pre>">
     <properties key="core.installationPath" value="file:///C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/app/amazon/app_amazon.properties"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
     <properties key="core.version" value="3.3.0.0_34307643"/>
     <properties key="sdk.subPropertyFiles" value=""/>
     <properties key="sdk.extensionPropertyFiles" value=""/>
-    <properties key="sdk.subLabel" value="Amazon\ 202012.00"/>
+    <properties key="sdk.subLabel" value="Amazon"/>
     <properties key="sdk.templatesFile" value="C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\amazon\amazon_platform_alpha_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\amazon\amazon_bluetooth_alpha_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\amazon\amazon_alpha_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\amazon\amazon_production_templates.xml"/>
     <properties key="sdk.demosFile" value="C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\amazon\amazon_demos.xml"/>
     <properties key="signature_trust.requiresTrust" value="false"/>
@@ -77,33 +77,14 @@
     <properties key="core.builtin" value="true"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.amazon"/>
   </descriptors>
-  <descriptors name="com.silabs.sdk.stack.super:4.1.1._1224998501" label="Matter Enablement Package" description="&lt;pre>&lt;b>Trust Status: &lt;/b>Trusted&#xD;&#xA;&lt;b>Signed Status: &lt;/b>Unsigned&#xD;&#xA;&lt;/pre>&#xA;&#xA;&lt;pre>Matter Enablement Package&lt;/pre>">
-    <properties key="core.installationPath" value="file:///C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/extension/matter_demo/"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
-    <properties key="core.version" value="0.3.0.1_-455678331"/>
-    <properties key="sdk.subPropertyFiles" value=""/>
-    <properties key="sdk.extensionPropertyFiles" value=""/>
-    <properties key="sdk.subLabel" value="Matter\ Demo"/>
-    <properties key="sdk.docsFile" value="C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\extension\matter_demo\matter_docs.xml"/>
-    <properties key="sdk.demosFile" value="C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\extension\matter_demo\matter_demos.xml"/>
-    <properties key="signature_trust.requiresTrust" value="true"/>
-    <properties key="signature_trust.trusted" value="true"/>
-    <properties key="signature_trust.isSigned" value="false"/>
-    <properties key="signature_trust.trustDescription" value="&lt;b>Trust Status: &lt;/b>Trusted&#xD;&#xA;&lt;b>Signed Status: &lt;/b>Unsigned&#xD;&#xA;"/>
-    <properties key="core.scannedErrorMessage" value=""/>
-    <properties key="core.detected" value="true"/>
-    <properties key="registry.providingDetector" value="com.silabs.ss.platform.internal.api.sdk.core.protocol.SDKProtocolDetector"/>
-    <properties key="core.builtin" value="true"/>
-    <properties key="CACHED_ID_STRING" value="com.silabs.sdk.matter_demo"/>
-  </descriptors>
-  <descriptors name="com.silabs.sdk.stack.super:4.1.1._1224998501" label="32-bit MCU SDK" description="&lt;pre>Silicon Labs 32-bit MCU SDK for EFM32 and EZR32&lt;/pre>">
+  <descriptors name="com.silabs.sdk.stack.super:4.0.2._1224998501" label="32-bit MCU SDK" description="&lt;pre>Silicon Labs 32-bit MCU SDK for EFM32 and EZR32&lt;/pre>">
     <properties key="core.installationPath" value="file:///C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/app/mcu_example/app_mcu.properties"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
-    <properties key="core.version" value="6.3.1.0_-1636638076"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
+    <properties key="core.version" value="6.2.2.0_-1636638076"/>
     <properties key="sdk.subPropertyFiles" value=""/>
     <properties key="sdk.extensionPropertyFiles" value=""/>
     <properties key="core.partCompatibility" value="mcu.arm.efm32.* mcu.arm.ezr32.* .*wgm16.*"/>
-    <properties key="sdk.subLabel" value="MCU\ 6.3.1.0"/>
+    <properties key="sdk.subLabel" value="MCU\ 6.2.2.0"/>
     <properties key="sdk.templatesFile" value="C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\mcu_example\mcu_production_templates.xml"/>
     <properties key="sdk.demosFile" value="C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\mcu_example\mcu_production_demos.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\mcu_example\mcu_alpha_demos.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\mcu_example\mcu_beta_demos.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\mcu_example\mcu_test_demos.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\mcu_example\mcu_internal_demos.xml"/>
     <properties key="sdk.docsFile" value="C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\mcu_example\documentation\slMCU_docContent.xml"/>
@@ -113,14 +94,14 @@
     <properties key="core.builtin" value="true"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.mcu"/>
   </descriptors>
-  <descriptors name="com.silabs.sdk.stack.super:4.1.1._1224998501" label="Micrium OS Kernel" description="&lt;pre>SL-MOS-KRNX-000000-P-P1&lt;/pre>">
+  <descriptors name="com.silabs.sdk.stack.super:4.0.2._1224998501" label="Micrium OS Kernel" description="&lt;pre>SL-MOS-KRNX-000000-P-P1&lt;/pre>">
     <properties key="core.installationPath" value="file:///C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/platform/micrium_os/micrium-krnx.properties"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
-    <properties key="core.version" value="5.13.10._-508138598"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
+    <properties key="core.version" value="5.12.1._-508138598"/>
     <properties key="sdk.subPropertyFiles" value=""/>
     <properties key="sdk.extensionPropertyFiles" value=""/>
     <properties key="core.partCompatibility" value="mcu.arm.efm32.g..* mcu.arm.efm32.gg.* mcu.arm.efm32.hg.* mcu.arm.efm32.pg.* mcu.arm.efm32.pg12.* mcu.arm.efm32.jg.* mcu.arm.efm32.jg12.* mcu.arm.efm32.lg.* mcu.arm.efm32.wg.* mcu.arm.efr32.*"/>
-    <properties key="sdk.subLabel" value="Micrium\ OS\ Kernel\ 5.13.10"/>
+    <properties key="sdk.subLabel" value="Micrium\ OS\ Kernel"/>
     <properties key="installedUnit" value="krnx"/>
     <properties key="sdk.docsFile" value="C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\platform\micrium_os\micrium-krnx-docs.xml"/>
     <properties key="signature_trust.requiresTrust" value="false"/>
@@ -129,14 +110,14 @@
     <properties key="core.builtin" value="true"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.micrium"/>
   </descriptors>
-  <descriptors name="com.silabs.sdk.stack.super:4.1.1._1224998501" label="Platform" description="&lt;pre>Platform&lt;/pre>">
+  <descriptors name="com.silabs.sdk.stack.super:4.0.2._1224998501" label="Platform" description="&lt;pre>Platform&lt;/pre>">
     <properties key="core.installationPath" value="file:///C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/app/common/app_common.properties"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
-    <properties key="core.version" value="4.1.0.0_-662316133"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
+    <properties key="core.version" value="4.0.2.0_-662316133"/>
     <properties key="sdk.subPropertyFiles" value=""/>
     <properties key="sdk.extensionPropertyFiles" value=""/>
-    <properties key="sdk.subLabel" value="Platform\ 4.1.0.0"/>
-    <properties key="sdk.templatesFile" value="C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\common\platform_beta_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\common\platform_development_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\common\platform_test_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\common\platform_alpha_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\common\builtin_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\common\platform_production_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\common\platform_internal_templates.xml"/>
+    <properties key="sdk.subLabel" value="Platform\ 4.0.2.0"/>
+    <properties key="sdk.templatesFile" value="C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\common\platform_test_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\common\platform_alpha_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\common\builtin_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\common\platform_production_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\common\platform_internal_templates.xml"/>
     <properties key="sdk.demosFile" value="C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\common\platform_production_demos.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\common\platform_beta_demos.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\common\platform_alpha_demos.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\common\platform_deprecated_demos.xml"/>
     <properties key="signature_trust.requiresTrust" value="false"/>
     <properties key="core.detected" value="true"/>
@@ -144,14 +125,15 @@
     <properties key="core.builtin" value="true"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.platform"/>
   </descriptors>
-  <descriptors name="com.silabs.sdk.stack.super:4.1.1._1224998501" label="Gecko Bootloader" description="&lt;pre>Gecko Bootloader for EFM32 and EFR32 devices&lt;/pre>">
+  <descriptors name="com.silabs.sdk.stack.super:4.0.2._1224998501" label="Gecko Bootloader" description="&lt;pre>Gecko Bootloader for EFM32 and EFR32 devices&lt;/pre>">
     <properties key="core.installationPath" value="file:///C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/platform/bootloader/esf.properties"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
-    <properties key="core.version" value="2.1.0._2114748622"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
+    <properties key="core.version" value="2.0.0._2114748622"/>
     <properties key="sdk.subPropertyFiles" value=""/>
     <properties key="sdk.extensionPropertyFiles" value=""/>
     <properties key="protocol.protocolKey" value="BOOTLOADER"/>
-    <properties key="sdk.templatesFile" value="C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\platform\bootloader\bootloader_beta_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\platform\bootloader\bootloader_internal_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\platform\bootloader\bootloader_production_templates.xml"/>
+    <properties key="sdk.templatesFile" value="C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\platform\bootloader\bootloader_production_templates.xml"/>
+    <properties key="stack.esf.appDirectory" value="C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\platform\bootloader\. C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\platform\bootloader\application"/>
     <properties key="sdk.docsFile" value="C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\platform\bootloader\documentation\gecko_bootloader_documentation.xml"/>
     <properties key="signature_trust.requiresTrust" value="false"/>
     <properties key="core.detected" value="true"/>
@@ -159,14 +141,14 @@
     <properties key="core.builtin" value="true"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.stack.bootloader"/>
   </descriptors>
-  <descriptors name="com.silabs.sdk.stack.super:4.1.1._1224998501" label="OpenThread SDK" description="&lt;pre>OpenThread stack support for EFR32 devices&lt;/pre>">
+  <descriptors name="com.silabs.sdk.stack.super:4.0.2._1224998501" label="OpenThread SDK" description="&lt;pre>OpenThread stack support for EFR32 devices&lt;/pre>">
     <properties key="core.installationPath" value="file:///C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/protocol/openthread/esf.properties"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
-    <properties key="core.version" value="2.1.1.0_2001522052"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
+    <properties key="core.version" value="2.0.2.0_2001522052"/>
     <properties key="sdk.subPropertyFiles" value=""/>
     <properties key="sdk.extensionPropertyFiles" value=""/>
     <properties key="core.partCompatibility" value=".*efr32m[gr].*"/>
-    <properties key="sdk.subLabel" value="OpenThread\ 2.1.1.0\ (GitHub-2ce3d3bf0)"/>
+    <properties key="sdk.subLabel" value="OpenThread\ 2.0.2.0\ (GitHub-3b79cb0d0)"/>
     <properties key="protocol.protocolKey" value="openthread"/>
     <properties key="sdk.templatesFile" value="C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\protocol\openthread\openthread_alpha_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\protocol\openthread\openthread_internal_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\protocol\openthread\openthread_production_templates.xml"/>
     <properties key="sdk.useGCCUserObjs" value="openthread"/>
@@ -179,9 +161,9 @@
     <properties key="core.builtin" value="true"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.stack.openthread"/>
   </descriptors>
-  <descriptors name="com.silabs.sdk.stack.super:4.1.1._1224998501" label="USB SDK" description="&lt;pre>USB stack support for EFM32 and EFR32 devices&lt;/pre>">
+  <descriptors name="com.silabs.sdk.stack.super:4.0.2._1224998501" label="USB SDK" description="&lt;pre>USB stack support for EFM32 and EFR32 devices&lt;/pre>">
     <properties key="core.installationPath" value="file:///C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/protocol/usb/usb.properties"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
     <properties key="core.version" value="1.0.0.0_-1880711040"/>
     <properties key="sdk.subPropertyFiles" value=""/>
     <properties key="sdk.extensionPropertyFiles" value=""/>
@@ -192,16 +174,16 @@
     <properties key="core.builtin" value="true"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.stack.usb"/>
   </descriptors>
-  <descriptors name="com.silabs.sdk.stack.super:4.1.1._1224998501" label="EmberZNet SDK" description="&lt;pre>Silicon Labs EmberZNet SDK&lt;/pre>">
+  <descriptors name="com.silabs.sdk.stack.super:4.0.2._1224998501" label="EmberZNet SDK" description="&lt;pre>Silicon Labs EmberZNet SDK&lt;/pre>">
     <properties key="core.installationPath" value="file:///C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/protocol/zigbee/esf.properties"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
-    <properties key="core.version" value="7.1.1.0_625951790"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
+    <properties key="core.version" value="7.0.2.0_625951790"/>
     <properties key="sdk.subPropertyFiles" value=""/>
     <properties key="sdk.extensionPropertyFiles" value=""/>
-    <properties key="core.partCompatibility" value=".*host.* .*efr32mg(12|13)p.* .*efr32mg2[1247].* .*mgm(12|13|21|22|24).* .*rm21.*"/>
-    <properties key="sdk.subLabel" value="EmberZNet\ 7.1.1.0"/>
+    <properties key="core.partCompatibility" value=".*host.* .*efr32mg(1|12|13|14)p.* .*efr32mg2[124].* .*mgm(1|12|13|21|22|24).* .*rm21.*"/>
+    <properties key="sdk.subLabel" value="EmberZNet\ 7.0.2.0"/>
     <properties key="protocol.protocolKey" value="znet"/>
-    <properties key="sdk.templatesFile" value="C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\protocol\zigbee\zigbee_alpha_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\protocol\zigbee\sleepy-to-sleepy_production_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\protocol\zigbee\zigbee_development_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\protocol\zigbee\zigbee_production_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\protocol\zigbee\zigbee_internal_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\protocol\zigbee\wwah_production_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\protocol\zigbee\smart-energy_production_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\protocol\zigbee\pro-compliance_internal_templates.xml"/>
+    <properties key="sdk.templatesFile" value="C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\protocol\zigbee\wirefree_production_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\protocol\zigbee\zigbee_production_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\protocol\zigbee\zigbee_internal_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\protocol\zigbee\wwah_production_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\protocol\zigbee\se-commshub_production_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\protocol\zigbee\pro-compliance_internal_templates.xml"/>
     <properties key="sdk.useGCCUserObjs" value="afv2 ncp znet"/>
     <properties key="stack.esf.ucMigrationFile" value="C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\protocol\zigbee\esf-migration.yaml"/>
     <properties key="sdk.docsFile" value="C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\protocol\zigbee\documentation\slEmberZNet_docContent.xml"/>
@@ -214,14 +196,14 @@
     <properties key="core.builtin" value="true"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.stack.znet"/>
   </descriptors>
-  <descriptors name="com.silabs.sdk.stack.super:4.1.1._1224998501" label="Z-Wave SDK" description="&lt;pre>Silicon Labs Z-Wave SDK for the EFR32 family&lt;/pre>">
+  <descriptors name="com.silabs.sdk.stack.super:4.0.2._1224998501" label="Z-Wave SDK" description="&lt;pre>Silicon Labs Z-Wave SDK for the EFR32 family&lt;/pre>">
     <properties key="core.installationPath" value="file:///C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/protocol/z-wave/esf.properties"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
-    <properties key="core.version" value="7.18.1.0_1289330412"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
+    <properties key="core.version" value="7.17.2.0_1289330412"/>
     <properties key="sdk.subPropertyFiles" value=""/>
     <properties key="sdk.extensionPropertyFiles" value=""/>
-    <properties key="core.partCompatibility" value=".*zgm13.* .*efr32zg.* .*zgm23.*"/>
-    <properties key="sdk.subLabel" value="Z-Wave\ SDK\ 7.18.1.0"/>
+    <properties key="core.partCompatibility" value=".*zgm13.* .*efr32zg.*"/>
+    <properties key="sdk.subLabel" value="Z-Wave\ SDK\ 7.17.2.0"/>
     <properties key="sdk.templatesFile" value="C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\protocol\z-wave\z-wave_production_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\protocol\z-wave\z-wave_alpha_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\protocol\z-wave\z-wave_beta_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\protocol\z-wave\z-wave_test_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\protocol\z-wave\z-wave_internal_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\protocol\z-wave\z-wave_development_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\protocol\z-wave\templates.xml"/>
     <properties key="sdk.docsFile" value="C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\protocol\z-wave\studio-docs\docs.xml"/>
     <properties key="sdk.demosFile" value="C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\protocol\z-wave\Apps\bin\demos.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\protocol\z-wave\z-wave_production_demos.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\protocol\z-wave\z-wave_alpha_demos.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\protocol\z-wave\z-wave_beta_demos.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\protocol\z-wave\z-wave_test_demos.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\protocol\z-wave\z-wave_internal_demos.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\protocol\z-wave\z-wave_development_demos.xml"/>
@@ -231,14 +213,14 @@
     <properties key="core.builtin" value="true"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.stack.zwave"/>
   </descriptors>
-  <descriptors name="com.silabs.sdk.stack.super:4.1.1._1224998501" label="Bluetooth SDK" description="&lt;pre>Bluetooth Software Development Kit&lt;/pre>">
+  <descriptors name="com.silabs.sdk.stack.super:4.0.2._1224998501" label="Bluetooth SDK" description="&lt;pre>Bluetooth Software Development Kit&lt;/pre>">
     <properties key="core.installationPath" value="file:///C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/app/bluetooth/esf.properties"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
-    <properties key="core.version" value="4.1.0.0_-884259061"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
+    <properties key="core.version" value="3.3.2.0_-884259061"/>
     <properties key="sdk.subPropertyFiles" value=""/>
     <properties key="sdk.extensionPropertyFiles" value=""/>
     <properties key="core.partCompatibility" value=".*efr32[bm]g(1[bp23]|2[124]).* .*efr32(mg14).* .*bgm(1|13|21|22).* .*mgm(1|12|13|21|22|24).*"/>
-    <properties key="sdk.subLabel" value="Bluetooth\ 4.1.0"/>
+    <properties key="sdk.subLabel" value="Bluetooth\ 3.3.2"/>
     <properties key="sdk.adapterPacks" value="C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\bluetooth\..\..\protocol\bluetooth\bin\gatt"/>
     <properties key="sdk.templatesFile" value="C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\bluetooth\bluetooth_production_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\bluetooth\bluetooth_alpha_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\bluetooth\bluetooth_beta_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\bluetooth\bluetooth_test_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\bluetooth\bluetooth_internal_templates.xml"/>
     <properties key="bleSDK.bgbuildToolchain" value="true"/>
@@ -254,16 +236,16 @@
     <properties key="core.builtin" value="true"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.stack.ble"/>
   </descriptors>
-  <descriptors name="com.silabs.sdk.stack.super:4.1.1._1224998501" label="Bluetooth Mesh SDK" description="&lt;pre>Bluetooth Mesh Software Development Kit&lt;/pre>">
+  <descriptors name="com.silabs.sdk.stack.super:4.0.2._1224998501" label="Bluetooth Mesh SDK" description="&lt;pre>Bluetooth Mesh Software Development Kit&lt;/pre>">
     <properties key="core.installationPath" value="file:///C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/app/bluetooth/btmesh.properties"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
-    <properties key="core.version" value="3.0.1.0_513615328"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
+    <properties key="core.version" value="2.2.2.0_513615328"/>
     <properties key="sdk.subPropertyFiles" value=""/>
     <properties key="sdk.extensionPropertyFiles" value=""/>
-    <properties key="core.partCompatibility" value=".*efr32bg2(1|2.*f512|4).* .*efr32mg2[1247].* .*efr32[mb]g1[23]p.* .*mgm(1[23]|2[124]).* .*bgm(13|21|22.*hna|24).*"/>
-    <properties key="sdk.subLabel" value="Bluetooth\ Mesh\ 3.0.1"/>
+    <properties key="core.partCompatibility" value=".*efr32bg2(1|2.*f512|4).* .*efr32mg2[124].* .*efr32[mb]g1[23]p.* .*mgm(1[23]|2[12]).* .*bgm(13|21|22.*hna).*"/>
+    <properties key="sdk.subLabel" value="Bluetooth\ Mesh\ 2.2.2"/>
     <properties key="sdk.adapterPacks" value="C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\bluetooth\..\..\protocol\bluetooth\bin\gatt C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\bluetooth\script\btmesh"/>
-    <properties key="sdk.templatesFile" value="C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\bluetooth\btmesh_production_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\bluetooth\btmesh_alpha_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\bluetooth\btmesh_beta_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\bluetooth\btmesh_test_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\bluetooth\btmesh_internal_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\bluetooth\btmesh_srtest_internal_templates.xml"/>
+    <properties key="sdk.templatesFile" value="C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\bluetooth\btmesh_production_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\bluetooth\btmesh_alpha_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\bluetooth\btmesh_beta_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\bluetooth\btmesh_test_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\bluetooth\btmesh_internal_templates.xml"/>
     <properties key="bleSDK.bgbuildToolchain" value="true"/>
     <properties key="btGattConfiguratorGroup.btConfGattItemDatabases" value="mesh"/>
     <properties key="sdk.docsFile" value="C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\bluetooth\documentation\slBtMesh_docContent.xml"/>
@@ -277,34 +259,34 @@
     <properties key="core.builtin" value="true"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.stack.btMesh"/>
   </descriptors>
-  <descriptors name="com.silabs.sdk.stack.super:4.1.1._1224998501" label="Flex SDK" description="&lt;pre>Flex Software Development Kit&lt;/pre>">
+  <descriptors name="com.silabs.sdk.stack.super:4.0.2._1224998501" label="Flex SDK" description="&lt;pre>Flex Software Development Kit&lt;/pre>">
     <properties key="core.installationPath" value="file:///C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/app/flex/esf.properties"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
-    <properties key="core.version" value="3.4.1.0_1604575768"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
+    <properties key="core.version" value="3.3.2.0_1604575768"/>
     <properties key="sdk.subPropertyFiles" value=""/>
     <properties key="sdk.extensionPropertyFiles" value=""/>
     <properties key="core.partCompatibility" value=".*efr32mg.* .*efr32fg.* .*efr32bg.*"/>
-    <properties key="sdk.subLabel" value="Flex\ 3.4.1.0"/>
+    <properties key="sdk.subLabel" value="Flex\ 3.3.2.0"/>
     <properties key="sdk.adapterPacks" value="C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\flex\..\..\platform\radio\efr32_multiphy_configurator"/>
     <properties key="core.boardCompatibility" value=".*"/>
-    <properties key="sdk.templatesFile" value="C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\flex\flex_production_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\flex\flex_demos_only_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\flex\flex_internal_templates.xml"/>
+    <properties key="sdk.templatesFile" value="C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\flex\flex_production_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\flex\flex_internal_templates.xml"/>
     <properties key="sdk.docsFile" value="C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\flex\documentation\slFlex_docContent.xml"/>
-    <properties key="sdk.demosFile" value="C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\flex\flex_production_demos.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\flex\flex_alpha_demos.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\flex\flex_beta_demos.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\flex\flex_test_demos.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\flex\flex_internal_demos.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\flex\flex_demos_only_demos.xml"/>
+    <properties key="sdk.demosFile" value="C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\flex\flex_production_demos.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\flex\flex_alpha_demos.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\flex\flex_beta_demos.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\flex\flex_test_demos.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\flex\flex_internal_demos.xml"/>
     <properties key="signature_trust.requiresTrust" value="false"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.platform.internal.api.sdk.core.protocol.SDKProtocolDetector"/>
     <properties key="core.builtin" value="true"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.stack.flex"/>
   </descriptors>
-  <descriptors name="com.silabs.sdk.stack.super:4.1.1._1224998501" label="Wi-SUN" description="&lt;pre>Silicon Labs Wi-SUN SDK&lt;/pre>">
+  <descriptors name="com.silabs.sdk.stack.super:4.0.2._1224998501" label="Wi-SUN" description="&lt;pre>Silicon Labs Wi-SUN SDK&lt;/pre>">
     <properties key="core.installationPath" value="file:///C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/app/wisun/esf.properties"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
-    <properties key="core.version" value="1.3.1.0_-1154241889"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
+    <properties key="core.version" value="1.2.2.0_-1154241889"/>
     <properties key="sdk.subPropertyFiles" value=""/>
     <properties key="sdk.extensionPropertyFiles" value=""/>
     <properties key="core.partCompatibility" value=".*efr32fg12.* .*efr32mg12.*"/>
-    <properties key="sdk.subLabel" value="Wi-SUN\ 1.3.1.0"/>
-    <properties key="sdk.adapterPacks" value="C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\wisun\..\..\platform\radio\efr32_multiphy_configurator C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\wisun\component\wisun_config\scripts"/>
+    <properties key="sdk.subLabel" value="Wi-SUN\ 1.2.3.0"/>
+    <properties key="sdk.adapterPacks" value="C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\wisun\..\..\platform\radio\efr32_multiphy_configurator"/>
     <properties key="core.boardCompatibility" value=".*"/>
     <properties key="sdk.templatesFile" value="C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\wisun\wisun_production_templates.xml C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\wisun\wisun_br_demos_templates.xml"/>
     <properties key="sdk.docsFile" value="C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\app\wisun\documentation\slWi-SUN_docContent.xml"/>

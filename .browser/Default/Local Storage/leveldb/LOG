@@ -1,3 +1,2 @@
-2022/09/24-16:21:24.910 50bc Reusing MANIFEST C:\Users\Workstation\Desktop\IPR\.browser\Default\Local Storage\leveldb/MANIFEST-000001
-2022/09/24-16:21:24.911 50bc Recovering log #3
-2022/09/24-16:21:24.911 50bc Reusing old log C:\Users\Workstation\Desktop\IPR\.browser\Default\Local Storage\leveldb/000003.log 
+2022/09/26-16:39:05.286 6104 Creating DB C:\Users\Workstation\Desktop\IPR\.browser\Default\Local Storage\leveldb since it was missing.
+2022/09/26-16:39:05.302 6104 Reusing MANIFEST C:\Users\Workstation\Desktop\IPR\.browser\Default\Local Storage\leveldb/MANIFEST-000001

@@ -30,6 +30,8 @@ component:
 - {id: power_manager}
 - instance: [btn0, btn1]
   id: simple_button
+- instance: [spi0]
+  id: spidrv_eusart
 - {id: ot_reference_device}
 - {id: EFR32MG24B220F1536IM48}
 - {id: ot_stack_mtd}

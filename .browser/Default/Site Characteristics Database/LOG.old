@@ -1,3 +1,5 @@
-2022/09/24-16:04:00.322 5b04 Reusing MANIFEST C:\Users\Workstation\Desktop\IPR\.browser\Default\Site Characteristics Database/MANIFEST-000001
-2022/09/24-16:04:00.322 5b04 Recovering log #3
-2022/09/24-16:04:00.322 5b04 Reusing old log C:\Users\Workstation\Desktop\IPR\.browser\Default\Site Characteristics Database/000003.log 
+2022/09/26-16:39:05.274 2f30 Log #3: 4 ops saved to Table #4 OK
+2022/09/26-16:39:05.275 2f30 Archiving C:\Users\Workstation\Desktop\IPR\.browser\Default\Site Characteristics Database/000003.log: OK
+2022/09/26-16:39:05.275 2f30 Table #4: 4 entries OK
+2022/09/26-16:39:05.276 2f30 Archiving C:\Users\Workstation\Desktop\IPR\.browser\Default\Site Characteristics Database/MANIFEST-000001: OK
+2022/09/26-16:39:05.292 2f30 **** Repaired leveldb C:\Users\Workstation\Desktop\IPR\.browser\Default\Site Characteristics Database; recovered 1 files; 215 bytes. Some data may have been lost. ****

@@ -6309,3 +6309,1020 @@ org.eclipse.core.runtime.CoreException: No property tester contributes a propert
 
 !ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-24 17:45:46.421
 !MESSAGE Deleted Shared Daemon Version File: C:\Users\Workstation\.uc\cli\mainstudio.running.version
+!SESSION 2022-09-26 16:23:51.257 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=11.0.5
+java.vendor=Amazon.com Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data C:\Users\Workstation\Desktop\IPR
+
+!ENTRY com.silabs.ss.platform.jetty.server 1 0 2022-09-26 16:23:54.290
+!MESSAGE Jetty listening on: http://127.0.0.1:63115/
+
+!ENTRY com.silabs.ss.platform.jetty.server 1 0 2022-09-26 16:23:54.290
+!MESSAGE ContentServer started at: 127.0.0.1, 63115
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 16:23:54.290
+!MESSAGE com.silabs.ss.tool.launcher.product found! Writing main studio shared file
+
+!ENTRY com.silabs.ss.platform.rcp.core 2 0 2022-09-26 16:23:56.779
+!MESSAGE Could not process part: si917-sb00
+!STACK 0
+java.text.ParseException: UnknownChip: unknown
+	at com.ember.workbench.chip.ChipModel.create(ChipModel.java:111)
+	at com.ember.workbench.kit_db.creator.PlatformDbArchitectureCreator.loadAliasMap(PlatformDbArchitectureCreator.java:74)
+	at com.ember.workbench.kit_db.creator.PlatformDbArchitectureCreator.aliases(PlatformDbArchitectureCreator.java:37)
+	at com.silabs.architecture.ArchitectureModel.lambda$1(ArchitectureModel.java:83)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1654)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:658)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:274)
+	at java.base/java.util.HashMap$ValueSpliterator.forEachRemaining(HashMap.java:1675)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
+	at com.silabs.architecture.ArchitectureModel.<init>(ArchitectureModel.java:63)
+	at com.silabs.architecture.ArchitectureModel$LazyInstantiator.<clinit>(ArchitectureModel.java:52)
+	at com.silabs.architecture.ArchitectureModel.instance(ArchitectureModel.java:145)
+	at com.ember.workbench.kit_db.api.Efr32DieCodeName.architectureId(Efr32DieCodeName.java:60)
+	at com.ember.workbench.wasp_efr32.esf.framework.Efr32StandaloneFrameworkData.lambda$1(Efr32StandaloneFrameworkData.java:40)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:550)
+	at java.base/java.util.stream.AbstractPipeline.evaluateToArrayNode(AbstractPipeline.java:260)
+	at java.base/java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:517)
+	at com.ember.workbench.wasp_efr32.esf.framework.Efr32StandaloneFrameworkData.<clinit>(Efr32StandaloneFrameworkData.java:40)
+	at com.ember.workbench.wasp_efr32.esf.framework.Efr32StandaloneConfiguration.scanStack(Efr32StandaloneConfiguration.java:45)
+	at com.ember.workbench.app_framework.extension.ExtendedFrameworkModel.lambda$0(ExtendedFrameworkModel.java:178)
+	at com.ember.workbench.app_framework.extension.ExtendedFrameworkModel.scanExtendedStack(ExtendedFrameworkModel.java:191)
+	at com.ember.workbench.app_framework.application.StackLoadingUtils.loadFrameworks(StackLoadingUtils.java:341)
+	at com.ember.workbench.app_framework.application.StackProvider.createStackEntity(StackProvider.java:129)
+	at com.ember.workbench.app_framework.application.StackDetector.scanStack(StackDetector.java:156)
+	at com.ember.workbench.app_framework.application.StackDetector.quickScan(StackDetector.java:91)
+	at com.silabs.ss.platform.api.descriptor.core.registry.BaseDetector.doDetectDescriptors(BaseDetector.java:71)
+	at com.silabs.ss.platform.api.descriptor.core.registry.BaseDetector.detectDescriptors(BaseDetector.java:57)
+	at com.ember.workbench.app_framework.application.StackDetector.detectDescriptors(StackDetector.java:63)
+	at com.ember.workbench.app_framework.application.StackDetector.detectDescriptors(StackDetector.java:1)
+	at com.silabs.ss.platform.api.descriptor.core.registry.BaseRegistry.detectDescriptors(BaseRegistry.java:711)
+	at com.silabs.ss.platform.api.descriptor.core.registry.BaseRegistry.detectDescriptors(BaseRegistry.java:673)
+	at com.silabs.ss.platform.api.descriptor.core.registry.BaseRegistry.scanForNewDescriptors(BaseRegistry.java:650)
+	at com.silabs.ss.platform.api.descriptor.core.registry.BaseRegistry.autoDetectDescriptors(BaseRegistry.java:634)
+	at com.silabs.ss.platform.api.descriptor.core.registry.BaseRegistry.loadInternalDescriptors(BaseRegistry.java:580)
+	at com.silabs.ss.platform.api.descriptor.core.registry.BaseRegistry.lambda$13(BaseRegistry.java:557)
+	at com.silabs.ss.platform.api.descriptor.core.registry.BaseDatabaseRegistry.invokeBatchOperation(BaseDatabaseRegistry.java:269)
+	at com.silabs.ss.platform.api.descriptor.core.registry.BaseRegistry.doEnsureSync(BaseRegistry.java:553)
+	at com.silabs.ss.platform.api.descriptor.core.registry.BaseRegistry.ensureSync(BaseRegistry.java:520)
+	at com.silabs.ss.platform.api.descriptor.core.manager.BaseDescriptorManager.ensureSync(BaseDescriptorManager.java:278)
+	at com.silabs.ss.platform.api.descriptor.core.manager.BaseDescriptorManager.getAllDescriptorIds(BaseDescriptorManager.java:333)
+	at com.silabs.ss.platform.api.descriptor.core.manager.BaseManager.findEnabledIds(BaseManager.java:680)
+	at com.silabs.ss.framework.uc.core.internal.setup.acts.apack.SdkAdapterPackWatcher.lambda$12(SdkAdapterPackWatcher.java:147)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY com.silabs.ss.platform.content.core 4 0 2022-09-26 16:24:02.257
+!MESSAGE Local timestamp file does not exist: C:\SiliconLabs\SimplicityStudio\v5\offline\common\Simplicity_Studio_Terms_of_Use_and_Privacy_Statement.timestamp
+
+!ENTRY com.silabs.ss.tool.installer.core 2 0 2022-09-26 16:24:23.866
+!MESSAGE Problem getting package resources: changelog
+
+!ENTRY com.silabs.ss.platform.content.core 4 0 2022-09-26 16:24:25.368
+!MESSAGE Local timestamp file does not exist: C:\SiliconLabs\SimplicityStudio\v5\offline\common\Simplicity_Studio_Terms_of_Use_and_Privacy_Statement.timestamp
+
+!ENTRY org.eclipse.core.expressions 4 201 2022-09-26 16:37:37.750
+!MESSAGE No property tester contributes a property org.eclipse.embedcdt.managedbuild.cross.core.isGnuMcu to type class org.eclipse.core.internal.resources.Project
+!STACK 1
+org.eclipse.core.runtime.CoreException: No property tester contributes a property org.eclipse.embedcdt.managedbuild.cross.core.isGnuMcu to type class org.eclipse.core.internal.resources.Project
+	at org.eclipse.core.internal.expressions.TypeExtensionManager.getProperty(TypeExtensionManager.java:131)
+	at org.eclipse.core.expressions.TestExpression.evaluate(TestExpression.java:104)
+	at org.eclipse.core.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:54)
+	at org.eclipse.core.expressions.AndExpression.evaluate(AndExpression.java:36)
+	at org.eclipse.ui.internal.dialogs.RegistryPageContributor.failsEnablement(RegistryPageContributor.java:284)
+	at org.eclipse.ui.internal.dialogs.RegistryPageContributor.isApplicableTo(RegistryPageContributor.java:227)
+	at org.eclipse.ui.internal.dialogs.PropertyPageContributorManager.getApplicableContributors(PropertyPageContributorManager.java:219)
+	at org.eclipse.ui.internal.dialogs.PropertyPageContributorManager.getApplicableContributors(PropertyPageContributorManager.java:237)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.hasPropertyPagesFor(PropertyDialogAction.java:104)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.isApplicableForSelection(PropertyDialogAction.java:145)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.isApplicableForSelection(PropertyDialogAction.java:126)
+	at org.eclipse.ui.internal.navigator.resources.actions.PropertiesActionProvider.fillContextMenu(PropertiesActionProvider.java:56)
+	at org.eclipse.ui.navigator.NavigatorActionService$2.run(NavigatorActionService.java:228)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.navigator.NavigatorActionService.addCommonActionProviderMenu(NavigatorActionService.java:222)
+	at org.eclipse.ui.navigator.NavigatorActionService.fillContextMenu(NavigatorActionService.java:177)
+	at org.eclipse.ui.navigator.CommonNavigatorManager.fillContextMenu(CommonNavigatorManager.java:258)
+	at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:338)
+	at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:468)
+	at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:495)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:259)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4243)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1063)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1087)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1068)
+	at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:5143)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4775)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:340)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1480)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2286)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5015)
+	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:237)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4101)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3626)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1155)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at com.silabs.ss.platform.internal.product.Application.start(Application.java:38)
+	at com.silabs.ss.tool.launcher.internal.product.StudioV5Application.start(StudioV5Application.java:28)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+!SUBENTRY 1 org.eclipse.core.expressions 4 201 2022-09-26 16:37:37.750
+!MESSAGE No property tester contributes a property org.eclipse.embedcdt.managedbuild.cross.core.isGnuMcu to type class org.eclipse.core.internal.resources.Project
+
+!ENTRY org.eclipse.core.expressions 4 201 2022-09-26 16:37:37.766
+!MESSAGE No property tester contributes a property org.eclipse.embedcdt.managedbuild.cross.core.isGnuMcu to type class org.eclipse.core.internal.resources.Project
+!STACK 1
+org.eclipse.core.runtime.CoreException: No property tester contributes a property org.eclipse.embedcdt.managedbuild.cross.core.isGnuMcu to type class org.eclipse.core.internal.resources.Project
+	at org.eclipse.core.internal.expressions.TypeExtensionManager.getProperty(TypeExtensionManager.java:131)
+	at org.eclipse.core.expressions.TestExpression.evaluate(TestExpression.java:104)
+	at org.eclipse.core.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:54)
+	at org.eclipse.core.expressions.AndExpression.evaluate(AndExpression.java:36)
+	at org.eclipse.ui.internal.dialogs.RegistryPageContributor.failsEnablement(RegistryPageContributor.java:284)
+	at org.eclipse.ui.internal.dialogs.RegistryPageContributor.isApplicableTo(RegistryPageContributor.java:227)
+	at org.eclipse.ui.internal.dialogs.PropertyPageContributorManager.getApplicableContributors(PropertyPageContributorManager.java:219)
+	at org.eclipse.ui.internal.dialogs.PropertyPageContributorManager.getApplicableContributors(PropertyPageContributorManager.java:237)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.hasPropertyPagesFor(PropertyDialogAction.java:104)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.isApplicableForSelection(PropertyDialogAction.java:145)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.isApplicableForSelection(PropertyDialogAction.java:126)
+	at org.eclipse.ui.internal.navigator.resources.actions.PropertiesActionProvider.fillContextMenu(PropertiesActionProvider.java:56)
+	at org.eclipse.ui.navigator.NavigatorActionService$2.run(NavigatorActionService.java:228)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.navigator.NavigatorActionService.addCommonActionProviderMenu(NavigatorActionService.java:222)
+	at org.eclipse.ui.navigator.NavigatorActionService.fillContextMenu(NavigatorActionService.java:177)
+	at org.eclipse.ui.navigator.CommonNavigatorManager.fillContextMenu(CommonNavigatorManager.java:258)
+	at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:338)
+	at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:468)
+	at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:495)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:259)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4243)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1063)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1087)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1068)
+	at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:5143)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4775)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:340)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1480)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2286)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5015)
+	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:237)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4101)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3626)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1155)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at com.silabs.ss.platform.internal.product.Application.start(Application.java:38)
+	at com.silabs.ss.tool.launcher.internal.product.StudioV5Application.start(StudioV5Application.java:28)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+!SUBENTRY 1 org.eclipse.core.expressions 4 201 2022-09-26 16:37:37.766
+!MESSAGE No property tester contributes a property org.eclipse.embedcdt.managedbuild.cross.core.isGnuMcu to type class org.eclipse.core.internal.resources.Project
+
+!ENTRY com.silabs.ss.platform.rcp.core 2 0 2022-09-26 16:39:02.024
+!MESSAGE Warning: C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\gecko_sdk.slcs
+  - specification_version is 7 but 10 is the latest. Some features may be disabled.
+
+
+!ENTRY com.silabs.ss.platform.rcp.core 4 0 2022-09-26 16:39:03.118
+!MESSAGE Failed to find Studio hardware for the input hardware OPN: gcc
+
+!ENTRY com.silabs.ss.platform.rcp.core 4 0 2022-09-26 16:39:03.165
+!MESSAGE Failed to find Studio hardware for the input hardware OPN: gcc
+
+!ENTRY com.silabs.ss.platform.rcp.core 4 0 2022-09-26 16:39:03.180
+!MESSAGE Failed to find Studio hardware for the input hardware OPN: gcc
+
+!ENTRY com.silabs.ss.support.browser.html 1 0 2022-09-26 16:39:03.758
+!MESSAGE Browser workarea set to: C:\Users\Workstation\Desktop\IPR\.browser
+
+!ENTRY com.silabs.ss.framework.hwconfig.core 4 0 2022-09-26 16:39:30.747
+!MESSAGE Attempting to open Device:com.silabs.sdk.stack.super:4.1.1._1224998501
+Context id com.silabs.sdk.stack.super:4.0.2._1224998501 => com.silabs.sdk.stack.super:4.0.2._1224998501
+!STACK 0
+java.lang.IllegalStateException: C:/Users/Workstation/Desktop/IPR/sleepy-demo-mtd/sleepy-demo-mtd.pintool was created with a newer SDK and cannot be used with the currently selected SDK! Please switch to a newer SDK or create a new Configuration file.
+	at com.silabs.ss.framework.hwconfig.internal.api.core.XMLDeviceUpgrader.throwUpgradeException(XMLDeviceUpgrader.java:153)
+	at com.silabs.ss.framework.hwconfig.internal.api.core.XMLDeviceUpgrader.findAndRunUpgrade(XMLDeviceUpgrader.java:132)
+	at com.silabs.ss.framework.hwconfig.internal.api.core.XMLDeviceUpgrader.<init>(XMLDeviceUpgrader.java:61)
+	at com.silabs.ss.framework.hwconfig.internal.api.core.XMLDeviceUpgrader.getContextId(XMLDeviceUpgrader.java:50)
+	at com.silabs.ss.framework.hwconfig.api.core.ABDeviceFactory.createABDevice(ABDeviceFactory.java:320)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.BaseAbDeviceAccessor.loadDeviceOrCreate(BaseAbDeviceAccessor.java:218)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.BaseAbDeviceAccessor.lambda$0(BaseAbDeviceAccessor.java:119)
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1705)
+	at com.silabs.ss.framework.hwconfig.api.core.util.DeviceCache.getOrCreateDevice(DeviceCache.java:141)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.BaseAbDeviceAccessor.createABDevice(BaseAbDeviceAccessor.java:117)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.BaseAbDeviceAccessor.checkAndLoadDevice(BaseAbDeviceAccessor.java:78)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.BaseAbDeviceAccessor.getAbDevice(BaseAbDeviceAccessor.java:267)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.IAbDeviceAccessor.abDevice(IAbDeviceAccessor.java:39)
+	at com.silabs.ss.framework.hwconfig.internal.core.uc.UcPinToolSetupData.getAbDevice(UcPinToolSetupData.java:65)
+	at com.silabs.ss.framework.hwconfig.internal.core.uc.UcPinToolSetup.runGeneration(UcPinToolSetup.java:60)
+	at com.silabs.ss.framework.hwconfig.internal.core.uc.UcPinToolSetup.lambda$0(UcPinToolSetup.java:52)
+	at org.eclipse.core.runtime.jobs.Job$1.run(Job.java:166)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY com.silabs.ss.framework.hwconfig.core 4 0 2022-09-26 16:39:30.747
+!MESSAGE C:/Users/Workstation/Desktop/IPR/sleepy-demo-mtd/sleepy-demo-mtd.pintool was created with a newer SDK and cannot be used with the currently selected SDK! Please switch to a newer SDK or create a new Configuration file.
+!STACK 0
+java.lang.IllegalStateException: C:/Users/Workstation/Desktop/IPR/sleepy-demo-mtd/sleepy-demo-mtd.pintool was created with a newer SDK and cannot be used with the currently selected SDK! Please switch to a newer SDK or create a new Configuration file.
+	at com.silabs.ss.framework.hwconfig.internal.api.core.XMLDeviceUpgrader.throwUpgradeException(XMLDeviceUpgrader.java:153)
+	at com.silabs.ss.framework.hwconfig.internal.api.core.XMLDeviceUpgrader.findAndRunUpgrade(XMLDeviceUpgrader.java:132)
+	at com.silabs.ss.framework.hwconfig.internal.api.core.XMLDeviceUpgrader.<init>(XMLDeviceUpgrader.java:61)
+	at com.silabs.ss.framework.hwconfig.internal.api.core.XMLDeviceUpgrader.getContextId(XMLDeviceUpgrader.java:50)
+	at com.silabs.ss.framework.hwconfig.api.core.ABDeviceFactory.createABDevice(ABDeviceFactory.java:320)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.BaseAbDeviceAccessor.loadDeviceOrCreate(BaseAbDeviceAccessor.java:218)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.BaseAbDeviceAccessor.lambda$0(BaseAbDeviceAccessor.java:119)
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1705)
+	at com.silabs.ss.framework.hwconfig.api.core.util.DeviceCache.getOrCreateDevice(DeviceCache.java:141)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.BaseAbDeviceAccessor.createABDevice(BaseAbDeviceAccessor.java:117)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.BaseAbDeviceAccessor.checkAndLoadDevice(BaseAbDeviceAccessor.java:78)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.BaseAbDeviceAccessor.getAbDevice(BaseAbDeviceAccessor.java:267)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.IAbDeviceAccessor.abDevice(IAbDeviceAccessor.java:39)
+	at com.silabs.ss.framework.hwconfig.internal.core.uc.UcPinToolSetupData.getAbDevice(UcPinToolSetupData.java:65)
+	at com.silabs.ss.framework.hwconfig.internal.core.uc.UcPinToolSetup.runGeneration(UcPinToolSetup.java:60)
+	at com.silabs.ss.framework.hwconfig.internal.core.uc.UcPinToolSetup.lambda$0(UcPinToolSetup.java:52)
+	at org.eclipse.core.runtime.jobs.Job$1.run(Job.java:166)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY com.silabs.ss.framework.hwconfig.core 4 0 2022-09-26 16:39:32.189
+!MESSAGE Attempting to open Device:com.silabs.sdk.stack.super:4.1.1._1224998501
+Context id com.silabs.sdk.stack.super:4.0.2._1224998501 => com.silabs.sdk.stack.super:4.0.2._1224998501
+!STACK 0
+java.lang.IllegalStateException: C:/Users/Workstation/Desktop/IPR/sleepy-demo-mtd/sleepy-demo-mtd.pintool was created with a newer SDK and cannot be used with the currently selected SDK! Please switch to a newer SDK or create a new Configuration file.
+	at com.silabs.ss.framework.hwconfig.internal.api.core.XMLDeviceUpgrader.throwUpgradeException(XMLDeviceUpgrader.java:153)
+	at com.silabs.ss.framework.hwconfig.internal.api.core.XMLDeviceUpgrader.findAndRunUpgrade(XMLDeviceUpgrader.java:132)
+	at com.silabs.ss.framework.hwconfig.internal.api.core.XMLDeviceUpgrader.<init>(XMLDeviceUpgrader.java:61)
+	at com.silabs.ss.framework.hwconfig.internal.api.core.XMLDeviceUpgrader.getContextId(XMLDeviceUpgrader.java:50)
+	at com.silabs.ss.framework.hwconfig.api.core.ABDeviceFactory.createABDevice(ABDeviceFactory.java:320)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.BaseAbDeviceAccessor.loadDeviceOrCreate(BaseAbDeviceAccessor.java:218)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.BaseAbDeviceAccessor.lambda$0(BaseAbDeviceAccessor.java:119)
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1705)
+	at com.silabs.ss.framework.hwconfig.api.core.util.DeviceCache.getOrCreateDevice(DeviceCache.java:141)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.BaseAbDeviceAccessor.createABDevice(BaseAbDeviceAccessor.java:117)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.BaseAbDeviceAccessor.checkAndLoadDevice(BaseAbDeviceAccessor.java:78)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.BaseAbDeviceAccessor.getAbDevice(BaseAbDeviceAccessor.java:267)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.IAbDeviceAccessor.abDevice(IAbDeviceAccessor.java:39)
+	at com.silabs.ss.framework.hwconfig.internal.core.uc.UcPinToolSetupData.getAbDevice(UcPinToolSetupData.java:65)
+	at com.silabs.ss.framework.hwconfig.internal.core.uc.UcPinToolSetup.runGeneration(UcPinToolSetup.java:60)
+	at com.silabs.ss.framework.hwconfig.internal.core.uc.UcPinToolSetup.lambda$0(UcPinToolSetup.java:52)
+	at org.eclipse.core.runtime.jobs.Job$1.run(Job.java:166)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY com.silabs.ss.framework.hwconfig.core 4 0 2022-09-26 16:39:32.277
+!MESSAGE Attempting to open Device:com.silabs.sdk.stack.super:4.1.1._1224998501
+Context id com.silabs.sdk.stack.super:4.0.2._1224998501 => com.silabs.sdk.stack.super:4.0.2._1224998501
+!STACK 0
+java.lang.IllegalStateException: C:/Users/Workstation/Desktop/IPR/sleepy-demo-mtd/sleepy-demo-mtd.pintool was created with a newer SDK and cannot be used with the currently selected SDK! Please switch to a newer SDK or create a new Configuration file.
+	at com.silabs.ss.framework.hwconfig.internal.api.core.XMLDeviceUpgrader.throwUpgradeException(XMLDeviceUpgrader.java:153)
+	at com.silabs.ss.framework.hwconfig.internal.api.core.XMLDeviceUpgrader.findAndRunUpgrade(XMLDeviceUpgrader.java:132)
+	at com.silabs.ss.framework.hwconfig.internal.api.core.XMLDeviceUpgrader.<init>(XMLDeviceUpgrader.java:61)
+	at com.silabs.ss.framework.hwconfig.internal.api.core.XMLDeviceUpgrader.getContextId(XMLDeviceUpgrader.java:50)
+	at com.silabs.ss.framework.hwconfig.api.core.ABDeviceFactory.createABDevice(ABDeviceFactory.java:320)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.BaseAbDeviceAccessor.loadDeviceOrCreate(BaseAbDeviceAccessor.java:218)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.BaseAbDeviceAccessor.lambda$0(BaseAbDeviceAccessor.java:119)
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1705)
+	at com.silabs.ss.framework.hwconfig.api.core.util.DeviceCache.getOrCreateDevice(DeviceCache.java:141)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.BaseAbDeviceAccessor.createABDevice(BaseAbDeviceAccessor.java:117)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.BaseAbDeviceAccessor.checkAndLoadDevice(BaseAbDeviceAccessor.java:78)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.BaseAbDeviceAccessor.getABDeviceFile(BaseAbDeviceAccessor.java:277)
+	at com.silabs.ss.framework.hwconfig.internal.core.uc.UcPinToolSetup.runGeneration(UcPinToolSetup.java:63)
+	at com.silabs.ss.framework.hwconfig.internal.core.uc.UcPinToolSetup.lambda$0(UcPinToolSetup.java:52)
+	at org.eclipse.core.runtime.jobs.Job$1.run(Job.java:166)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY com.silabs.ss.framework.hwconfig.core 4 0 2022-09-26 16:39:32.371
+!MESSAGE Attempting to open Device:com.silabs.sdk.stack.super:4.1.1._1224998501
+Context id com.silabs.sdk.stack.super:4.0.2._1224998501 => com.silabs.sdk.stack.super:4.0.2._1224998501
+!STACK 0
+java.lang.IllegalStateException: C:/Users/Workstation/Desktop/IPR/sleepy-demo-mtd/sleepy-demo-mtd.pintool was created with a newer SDK and cannot be used with the currently selected SDK! Please switch to a newer SDK or create a new Configuration file.
+	at com.silabs.ss.framework.hwconfig.internal.api.core.XMLDeviceUpgrader.throwUpgradeException(XMLDeviceUpgrader.java:153)
+	at com.silabs.ss.framework.hwconfig.internal.api.core.XMLDeviceUpgrader.findAndRunUpgrade(XMLDeviceUpgrader.java:132)
+	at com.silabs.ss.framework.hwconfig.internal.api.core.XMLDeviceUpgrader.<init>(XMLDeviceUpgrader.java:61)
+	at com.silabs.ss.framework.hwconfig.internal.api.core.XMLDeviceUpgrader.getContextId(XMLDeviceUpgrader.java:50)
+	at com.silabs.ss.framework.hwconfig.api.core.ABDeviceFactory.createABDevice(ABDeviceFactory.java:320)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.BaseAbDeviceAccessor.loadDeviceOrCreate(BaseAbDeviceAccessor.java:218)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.BaseAbDeviceAccessor.lambda$0(BaseAbDeviceAccessor.java:119)
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1705)
+	at com.silabs.ss.framework.hwconfig.api.core.util.DeviceCache.getOrCreateDevice(DeviceCache.java:141)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.BaseAbDeviceAccessor.createABDevice(BaseAbDeviceAccessor.java:117)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.BaseAbDeviceAccessor.checkAndLoadDevice(BaseAbDeviceAccessor.java:78)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.BaseAbDeviceAccessor.getABDeviceFile(BaseAbDeviceAccessor.java:277)
+	at com.silabs.ss.framework.hwconfig.internal.core.uc.UcPinToolSetup.runGeneration(UcPinToolSetup.java:63)
+	at com.silabs.ss.framework.hwconfig.internal.core.uc.UcPinToolSetup.lambda$0(UcPinToolSetup.java:52)
+	at org.eclipse.core.runtime.jobs.Job$1.run(Job.java:166)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 16:40:05.434
+!MESSAGE File was double clicked
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 16:40:06.294
+!MESSAGE File was double clicked
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 16:40:06.921
+!MESSAGE File was double clicked
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 16:40:29.586
+!MESSAGE File was double clicked
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 16:40:31.498
+!MESSAGE File was double clicked
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 16:40:32.538
+!MESSAGE File was double clicked
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 16:40:34.667
+!MESSAGE File was double clicked
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 16:40:35.362
+!MESSAGE File was double clicked
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 16:40:36.931
+!MESSAGE File was double clicked
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 16:40:37.747
+!MESSAGE File was double clicked
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 16:40:38.738
+!MESSAGE File was double clicked
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 16:43:29.310
+!MESSAGE File was double clicked
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 16:43:36.256
+!MESSAGE File was double clicked
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 16:43:40.048
+!MESSAGE File was double clicked
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 16:44:02.619
+!MESSAGE File was double clicked
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 16:44:04.628
+!MESSAGE File was double clicked
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 16:44:06.220
+!MESSAGE File was double clicked
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 16:44:10.172
+!MESSAGE File was double clicked
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 16:44:12.565
+!MESSAGE File was double clicked
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 16:44:16.899
+!MESSAGE File was double clicked
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 16:44:17.846
+!MESSAGE File was double clicked
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 16:44:19.158
+!MESSAGE File was double clicked
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 16:44:20.822
+!MESSAGE File was double clicked
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 16:44:25.119
+!MESSAGE File was double clicked
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 16:44:27.359
+!MESSAGE File was double clicked
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 16:44:27.919
+!MESSAGE File was double clicked
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 16:44:28.648
+!MESSAGE File was double clicked
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 16:44:30.336
+!MESSAGE File was double clicked
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 16:44:41.386
+!MESSAGE File was double clicked
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 16:44:57.172
+!MESSAGE File was double clicked
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 16:47:01.395
+!MESSAGE File was double clicked
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 16:47:36.713
+!MESSAGE editor file home calculation for Studio resulted in C:\Users\Workstation\Desktop\IPR\sleepy-demo-mtd\.uceditor for sleepy-demo-mtd with component SPIDRV (spi0)
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 16:47:36.861
+!MESSAGE Servlet registered: /rest/ucedit/metadata
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 16:47:36.863
+!MESSAGE Servlet registered: /rest/ucedit/action/opensource
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 16:47:36.865
+!MESSAGE Servlet registered: /rest/ucedit/action/cmsisedit
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 16:47:36.865
+!MESSAGE sockets ready servlet being set up
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 16:47:36.866
+!MESSAGE Servlet registered: /rest/ucedit/action/socketsready
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 16:47:36.867
+!MESSAGE sockets ready servlet is ready
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 16:47:36.869
+!MESSAGE Servlet registered: /rest/ucedit/action/configsready
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 16:47:36.869
+!MESSAGE Websocket on server side linked to /ws/ucedit/filechanges
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 16:47:36.878
+!MESSAGE editor file home calculation for Studio resulted in C:\Users\Workstation\Desktop\IPR\sleepy-demo-mtd\.uceditor for sleepy-demo-mtd with component SPIDRV (spi0)
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 16:47:36.963
+!MESSAGE Initial cmsis parsing: {sl_spidrv_spi0_config.h=Start Parse Offset: 3396
+End Parse Offset: 3396
+Parsing Error: null
+Parsing Error offset: -1
+fContainWizard: true
+}
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 16:47:36.974
+!MESSAGE CMSIS Parse success for sl_spidrv_spi0_config.h
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 16:47:36.980
+!MESSAGE PinTool annotations detected. Loading ABDevice
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 16:47:37.010
+!MESSAGE preparing cmsis websocket update: {"configurables":{"removed":[],"updated":[{"parent_category_id":"CMSIS_$sl_spidrv_spi0_config.h$_SPIDRV settings","conf_type":"spinner","initial":"1000000","header":"sl_spidrv_spi0_config.h","label":"SPI bitrate","id":"CMSIS_$sl_spidrv_spi0_config.h$_SL_SPIDRV_SPI0_BITRATE","type":"conf","desc":"Default: 1000000"},{"parent_category_id":"CMSIS_$sl_spidrv_spi0_config.h$_SPIDRV settings","conf_type":"spinner","min":4,"max":16,"initial":"8","header":"sl_spidrv_spi0_config.h","label":"SPI frame length","id":"CMSIS_$sl_spidrv_spi0_config.h$_SL_SPIDRV_SPI0_FRAME_LENGTH","type":"conf","desc":"Default: 8"},{"parent_category_id":"CMSIS_$sl_spidrv_spi0_config.h$_SPIDRV settings","conf_type":"combo","initial":"Master","header":"sl_spidrv_spi0_config.h","label":"SPI mode","id":"CMSIS_$sl_spidrv_spi0_config.h$_SL_SPIDRV_SPI0_TYPE","type":"conf","combo_options":["Master","Slave"]},{"parent_category_id":"CMSIS_$sl_spidrv_spi0_config.h$_SPIDRV settings","conf_type":"combo","initial":"MSB transmitted first","header":"sl_spidrv_spi0_config.h","label":"Bit order on the SPI bus","id":"CMSIS_$sl_spidrv_spi0_config.h$_SL_SPIDRV_SPI0_BIT_ORDER","type":"conf","combo_options":["LSB transmitted first","MSB transmitted first"]},{"parent_category_id":"CMSIS_$sl_spidrv_spi0_config.h$_SPIDRV settings","conf_type":"combo","initial":"SPI mode 0: CLKPOL=0, CLKPHA=0","header":"sl_spidrv_spi0_config.h","label":"SPI clock mode","id":"CMSIS_$sl_spidrv_spi0_config.h$_SL_SPIDRV_SPI0_CLOCK_MODE","type":"conf","combo_options":["SPI mode 0: CLKPOL=0, CLKPHA=0","SPI mode 1: CLKPOL=0, CLKPHA=1","SPI mode 2: CLKPOL=1, CLKPHA=0","SPI mode 3: CLKPOL=1, CLKPHA=1"]},{"parent_category_id":"CMSIS_$sl_spidrv_spi0_config.h$_SPIDRV settings","conf_type":"combo","initial":"CS controlled by the SPI driver","header":"sl_spidrv_spi0_config.h","label":"SPI master chip select (CS) control scheme.","id":"CMSIS_$sl_spidrv_spi0_config.h$_SL_SPIDRV_SPI0_CS_CONTROL","type":"conf","combo_options":["CS controlled by the SPI driver","CS controlled by the application"]},{"parent_category_id":"CMSIS_$sl_spidrv_spi0_config.h$_SPIDRV settings","conf_type":"combo","initial":"Transfer starts immediately","header":"sl_spidrv_spi0_config.h","label":"SPI slave transfer start scheme","id":"CMSIS_$sl_spidrv_spi0_config.h$_SL_SPIDRV_SPI0_SLAVE_START_MODE","type":"conf","combo_options":["Transfer starts immediately","Transfer starts when the bus is idle (CS deasserted)"],"desc":"Only applies if instance type is spidrvSlave"},{"header":"sl_spidrv_spi0_config.h","label":"SPIDRV settings","id":"CMSIS_$sl_spidrv_spi0_config.h$_SPIDRV settings","type":"cat","conf_class":"cmsis"}]},"clientId":"project/file_3A_2FC_3A_2FUsers_2FWorkstation_2FDesktop_2FIPR_2Fsleepy-demo-mtd_2Fsleepy-demo-mtd.slcp/component/spidrv_spi0","header":"sl_spidrv_spi0_config.h","wsType":"config_update","conf_class":"cmsis"}
+
+!ENTRY com.silabs.ss.framework.hwconfig.core 4 0 2022-09-26 16:47:37.189
+!MESSAGE Attempting to open Device:com.silabs.sdk.stack.super:4.1.1._1224998501
+Context id com.silabs.sdk.stack.super:4.0.2._1224998501 => com.silabs.sdk.stack.super:4.0.2._1224998501
+!STACK 0
+java.lang.IllegalStateException: C:/Users/Workstation/Desktop/IPR/sleepy-demo-mtd/sleepy-demo-mtd.pintool was created with a newer SDK and cannot be used with the currently selected SDK! Please switch to a newer SDK or create a new Configuration file.
+	at com.silabs.ss.framework.hwconfig.internal.api.core.XMLDeviceUpgrader.throwUpgradeException(XMLDeviceUpgrader.java:153)
+	at com.silabs.ss.framework.hwconfig.internal.api.core.XMLDeviceUpgrader.findAndRunUpgrade(XMLDeviceUpgrader.java:132)
+	at com.silabs.ss.framework.hwconfig.internal.api.core.XMLDeviceUpgrader.<init>(XMLDeviceUpgrader.java:61)
+	at com.silabs.ss.framework.hwconfig.internal.api.core.XMLDeviceUpgrader.getContextId(XMLDeviceUpgrader.java:50)
+	at com.silabs.ss.framework.hwconfig.api.core.ABDeviceFactory.createABDevice(ABDeviceFactory.java:320)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.BaseAbDeviceAccessor.loadDeviceOrCreate(BaseAbDeviceAccessor.java:218)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.BaseAbDeviceAccessor.lambda$0(BaseAbDeviceAccessor.java:119)
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1705)
+	at com.silabs.ss.framework.hwconfig.api.core.util.DeviceCache.getOrCreateDevice(DeviceCache.java:141)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.BaseAbDeviceAccessor.createABDevice(BaseAbDeviceAccessor.java:117)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.BaseAbDeviceAccessor.checkAndLoadDevice(BaseAbDeviceAccessor.java:78)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.BaseAbDeviceAccessor.getAbDevice(BaseAbDeviceAccessor.java:267)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.IAbDeviceAccessor.abDevice(IAbDeviceAccessor.java:39)
+	at com.silabs.ss.tool.uc.editor.editors.UcEditorController$6.run(UcEditorController.java:508)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 16:47:37.348
+!MESSAGE Client mentioned sockets are all ready: counting down latch
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 16:47:37.350
+!MESSAGE latch unlocked: cmsis socket response sending
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 16:47:37.466
+!MESSAGE Clear CMSIS Issues WS call: {"clientId":"project/file_3A_2FC_3A_2FUsers_2FWorkstation_2FDesktop_2FIPR_2Fsleepy-demo-mtd_2Fsleepy-demo-mtd.slcp/component/spidrv_spi0","ids":[],"wsType":"clear_issues"}
+
+!ENTRY com.silabs.ss.tool.uc.editor 4 0 2022-09-26 16:48:06.995
+!MESSAGE Could not load pintool device data within 30 second timeframe. Marker manager not connected to component editor -- device errors will not show up.
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 16:48:17.330
+!MESSAGE File was double clicked
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 16:48:18.353
+!MESSAGE File was double clicked
+
+!ENTRY org.eclipse.core.expressions 4 201 2022-09-26 16:53:37.240
+!MESSAGE No property tester contributes a property org.eclipse.embedcdt.managedbuild.cross.core.isGnuMcu to type class org.eclipse.core.internal.resources.Project
+!STACK 1
+org.eclipse.core.runtime.CoreException: No property tester contributes a property org.eclipse.embedcdt.managedbuild.cross.core.isGnuMcu to type class org.eclipse.core.internal.resources.Project
+	at org.eclipse.core.internal.expressions.TypeExtensionManager.getProperty(TypeExtensionManager.java:131)
+	at org.eclipse.core.expressions.TestExpression.evaluate(TestExpression.java:104)
+	at org.eclipse.core.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:54)
+	at org.eclipse.core.expressions.AndExpression.evaluate(AndExpression.java:36)
+	at org.eclipse.ui.internal.dialogs.RegistryPageContributor.failsEnablement(RegistryPageContributor.java:284)
+	at org.eclipse.ui.internal.dialogs.RegistryPageContributor.isApplicableTo(RegistryPageContributor.java:227)
+	at org.eclipse.ui.internal.dialogs.PropertyPageContributorManager.getApplicableContributors(PropertyPageContributorManager.java:219)
+	at org.eclipse.ui.internal.dialogs.PropertyPageContributorManager.getApplicableContributors(PropertyPageContributorManager.java:237)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.hasPropertyPagesFor(PropertyDialogAction.java:104)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.isApplicableForSelection(PropertyDialogAction.java:145)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.isApplicableForSelection(PropertyDialogAction.java:126)
+	at org.eclipse.ui.internal.navigator.resources.actions.PropertiesActionProvider.fillContextMenu(PropertiesActionProvider.java:56)
+	at org.eclipse.ui.navigator.NavigatorActionService$2.run(NavigatorActionService.java:228)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.navigator.NavigatorActionService.addCommonActionProviderMenu(NavigatorActionService.java:222)
+	at org.eclipse.ui.navigator.NavigatorActionService.fillContextMenu(NavigatorActionService.java:177)
+	at org.eclipse.ui.navigator.CommonNavigatorManager.fillContextMenu(CommonNavigatorManager.java:258)
+	at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:338)
+	at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:468)
+	at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:495)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:259)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4243)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1063)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1087)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1068)
+	at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:5143)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4775)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:340)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1480)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2286)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5015)
+	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:237)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4101)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3626)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1155)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at com.silabs.ss.platform.internal.product.Application.start(Application.java:38)
+	at com.silabs.ss.tool.launcher.internal.product.StudioV5Application.start(StudioV5Application.java:28)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+!SUBENTRY 1 org.eclipse.core.expressions 4 201 2022-09-26 16:53:37.240
+!MESSAGE No property tester contributes a property org.eclipse.embedcdt.managedbuild.cross.core.isGnuMcu to type class org.eclipse.core.internal.resources.Project
+
+!ENTRY org.eclipse.core.expressions 4 201 2022-09-26 16:53:37.240
+!MESSAGE No property tester contributes a property org.eclipse.embedcdt.managedbuild.cross.core.isGnuMcu to type class org.eclipse.core.internal.resources.Project
+!STACK 1
+org.eclipse.core.runtime.CoreException: No property tester contributes a property org.eclipse.embedcdt.managedbuild.cross.core.isGnuMcu to type class org.eclipse.core.internal.resources.Project
+	at org.eclipse.core.internal.expressions.TypeExtensionManager.getProperty(TypeExtensionManager.java:131)
+	at org.eclipse.core.expressions.TestExpression.evaluate(TestExpression.java:104)
+	at org.eclipse.core.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:54)
+	at org.eclipse.core.expressions.AndExpression.evaluate(AndExpression.java:36)
+	at org.eclipse.ui.internal.dialogs.RegistryPageContributor.failsEnablement(RegistryPageContributor.java:284)
+	at org.eclipse.ui.internal.dialogs.RegistryPageContributor.isApplicableTo(RegistryPageContributor.java:227)
+	at org.eclipse.ui.internal.dialogs.PropertyPageContributorManager.getApplicableContributors(PropertyPageContributorManager.java:219)
+	at org.eclipse.ui.internal.dialogs.PropertyPageContributorManager.getApplicableContributors(PropertyPageContributorManager.java:237)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.hasPropertyPagesFor(PropertyDialogAction.java:104)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.isApplicableForSelection(PropertyDialogAction.java:145)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.isApplicableForSelection(PropertyDialogAction.java:126)
+	at org.eclipse.ui.internal.navigator.resources.actions.PropertiesActionProvider.fillContextMenu(PropertiesActionProvider.java:56)
+	at org.eclipse.ui.navigator.NavigatorActionService$2.run(NavigatorActionService.java:228)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.navigator.NavigatorActionService.addCommonActionProviderMenu(NavigatorActionService.java:222)
+	at org.eclipse.ui.navigator.NavigatorActionService.fillContextMenu(NavigatorActionService.java:177)
+	at org.eclipse.ui.navigator.CommonNavigatorManager.fillContextMenu(CommonNavigatorManager.java:258)
+	at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:338)
+	at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:468)
+	at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:495)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:259)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4243)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1063)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1087)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1068)
+	at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:5143)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4775)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:340)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1480)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2286)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5015)
+	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:237)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4101)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3626)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1155)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at com.silabs.ss.platform.internal.product.Application.start(Application.java:38)
+	at com.silabs.ss.tool.launcher.internal.product.StudioV5Application.start(StudioV5Application.java:28)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+!SUBENTRY 1 org.eclipse.core.expressions 4 201 2022-09-26 16:53:37.256
+!MESSAGE No property tester contributes a property org.eclipse.embedcdt.managedbuild.cross.core.isGnuMcu to type class org.eclipse.core.internal.resources.Project
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 16:54:43.740
+!MESSAGE File was double clicked
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 16:55:07.748
+!MESSAGE Resource Changed: Reparsing L/sleepy-demo-mtd/config/sl_spidrv_spi0_config.h for cmsis
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 16:55:07.748
+!MESSAGE A Cmsis Reparse was triggered for sl_spidrv_spi0_config.h
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 16:55:07.748
+!MESSAGE CMSIS Parse success for sl_spidrv_spi0_config.h
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 16:55:07.748
+!MESSAGE preparing cmsis websocket update: {"configurables":{"removed":[],"updated":[]},"clientId":"project/file_3A_2FC_3A_2FUsers_2FWorkstation_2FDesktop_2FIPR_2Fsleepy-demo-mtd_2Fsleepy-demo-mtd.slcp/component/spidrv_spi0","header":"sl_spidrv_spi0_config.h","wsType":"config_update","conf_class":"cmsis"}
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 16:55:07.748
+!MESSAGE latch unlocked: cmsis socket response sending
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 16:55:07.795
+!MESSAGE Clear CMSIS Issues WS call: {"clientId":"project/file_3A_2FC_3A_2FUsers_2FWorkstation_2FDesktop_2FIPR_2Fsleepy-demo-mtd_2Fsleepy-demo-mtd.slcp/component/spidrv_spi0","ids":[],"wsType":"clear_issues"}
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 16:55:15.401
+!MESSAGE File was double clicked
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 16:55:16.203
+!MESSAGE File was double clicked
+
+!ENTRY org.eclipse.core.expressions 4 201 2022-09-26 17:22:04.798
+!MESSAGE No property tester contributes a property org.eclipse.embedcdt.managedbuild.cross.core.isGnuMcu to type class org.eclipse.core.internal.resources.Project
+!STACK 1
+org.eclipse.core.runtime.CoreException: No property tester contributes a property org.eclipse.embedcdt.managedbuild.cross.core.isGnuMcu to type class org.eclipse.core.internal.resources.Project
+	at org.eclipse.core.internal.expressions.TypeExtensionManager.getProperty(TypeExtensionManager.java:131)
+	at org.eclipse.core.expressions.TestExpression.evaluate(TestExpression.java:104)
+	at org.eclipse.core.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:54)
+	at org.eclipse.core.expressions.AndExpression.evaluate(AndExpression.java:36)
+	at org.eclipse.ui.internal.dialogs.RegistryPageContributor.failsEnablement(RegistryPageContributor.java:284)
+	at org.eclipse.ui.internal.dialogs.RegistryPageContributor.isApplicableTo(RegistryPageContributor.java:227)
+	at org.eclipse.ui.internal.dialogs.PropertyPageContributorManager.getApplicableContributors(PropertyPageContributorManager.java:219)
+	at org.eclipse.ui.internal.dialogs.PropertyPageContributorManager.getApplicableContributors(PropertyPageContributorManager.java:237)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.hasPropertyPagesFor(PropertyDialogAction.java:104)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.isApplicableForSelection(PropertyDialogAction.java:145)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.isApplicableForSelection(PropertyDialogAction.java:126)
+	at org.eclipse.ui.internal.navigator.resources.actions.PropertiesActionProvider.fillContextMenu(PropertiesActionProvider.java:56)
+	at org.eclipse.ui.navigator.NavigatorActionService$2.run(NavigatorActionService.java:228)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.navigator.NavigatorActionService.addCommonActionProviderMenu(NavigatorActionService.java:222)
+	at org.eclipse.ui.navigator.NavigatorActionService.fillContextMenu(NavigatorActionService.java:177)
+	at org.eclipse.ui.navigator.CommonNavigatorManager.fillContextMenu(CommonNavigatorManager.java:258)
+	at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:338)
+	at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:468)
+	at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:495)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:259)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4243)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1063)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1087)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1068)
+	at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:5143)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4775)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:340)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1480)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2286)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5015)
+	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:237)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4101)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3626)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1155)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at com.silabs.ss.platform.internal.product.Application.start(Application.java:38)
+	at com.silabs.ss.tool.launcher.internal.product.StudioV5Application.start(StudioV5Application.java:28)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+!SUBENTRY 1 org.eclipse.core.expressions 4 201 2022-09-26 17:22:04.798
+!MESSAGE No property tester contributes a property org.eclipse.embedcdt.managedbuild.cross.core.isGnuMcu to type class org.eclipse.core.internal.resources.Project
+
+!ENTRY org.eclipse.core.expressions 4 201 2022-09-26 17:22:04.798
+!MESSAGE No property tester contributes a property org.eclipse.embedcdt.managedbuild.cross.core.isGnuMcu to type class org.eclipse.core.internal.resources.Project
+!STACK 1
+org.eclipse.core.runtime.CoreException: No property tester contributes a property org.eclipse.embedcdt.managedbuild.cross.core.isGnuMcu to type class org.eclipse.core.internal.resources.Project
+	at org.eclipse.core.internal.expressions.TypeExtensionManager.getProperty(TypeExtensionManager.java:131)
+	at org.eclipse.core.expressions.TestExpression.evaluate(TestExpression.java:104)
+	at org.eclipse.core.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:54)
+	at org.eclipse.core.expressions.AndExpression.evaluate(AndExpression.java:36)
+	at org.eclipse.ui.internal.dialogs.RegistryPageContributor.failsEnablement(RegistryPageContributor.java:284)
+	at org.eclipse.ui.internal.dialogs.RegistryPageContributor.isApplicableTo(RegistryPageContributor.java:227)
+	at org.eclipse.ui.internal.dialogs.PropertyPageContributorManager.getApplicableContributors(PropertyPageContributorManager.java:219)
+	at org.eclipse.ui.internal.dialogs.PropertyPageContributorManager.getApplicableContributors(PropertyPageContributorManager.java:237)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.hasPropertyPagesFor(PropertyDialogAction.java:104)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.isApplicableForSelection(PropertyDialogAction.java:145)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.isApplicableForSelection(PropertyDialogAction.java:126)
+	at org.eclipse.ui.internal.navigator.resources.actions.PropertiesActionProvider.fillContextMenu(PropertiesActionProvider.java:56)
+	at org.eclipse.ui.navigator.NavigatorActionService$2.run(NavigatorActionService.java:228)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.navigator.NavigatorActionService.addCommonActionProviderMenu(NavigatorActionService.java:222)
+	at org.eclipse.ui.navigator.NavigatorActionService.fillContextMenu(NavigatorActionService.java:177)
+	at org.eclipse.ui.navigator.CommonNavigatorManager.fillContextMenu(CommonNavigatorManager.java:258)
+	at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:338)
+	at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:468)
+	at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:495)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:259)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4243)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1063)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1087)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1068)
+	at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:5143)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4775)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:340)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1480)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2286)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5015)
+	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:237)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4101)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3626)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1155)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at com.silabs.ss.platform.internal.product.Application.start(Application.java:38)
+	at com.silabs.ss.tool.launcher.internal.product.StudioV5Application.start(StudioV5Application.java:28)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+!SUBENTRY 1 org.eclipse.core.expressions 4 201 2022-09-26 17:22:04.798
+!MESSAGE No property tester contributes a property org.eclipse.embedcdt.managedbuild.cross.core.isGnuMcu to type class org.eclipse.core.internal.resources.Project
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 17:22:08.513
+!MESSAGE File was double clicked
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 17:22:36.606
+!MESSAGE File was double clicked
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 17:27:58.672
+!MESSAGE File was double clicked
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 17:28:02.156
+!MESSAGE editor file home calculation for Studio resulted in C:\Users\Workstation\Desktop\IPR\sleepy-demo-mtd\.uceditor for sleepy-demo-mtd with component SPIDRV (spi0)
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 17:28:04.445
+!MESSAGE UcEditorController: onWebSocketClose CALLED statusCode=1001 reason=null
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 17:28:18.549
+!MESSAGE editor file home calculation for Studio resulted in C:\Users\Workstation\Desktop\IPR\sleepy-demo-mtd\.uceditor for sleepy-demo-mtd with component SPIDRV Core
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 17:28:18.555
+!MESSAGE editor file home calculation for Studio resulted in C:\Users\Workstation\Desktop\IPR\sleepy-demo-mtd\.uceditor for sleepy-demo-mtd with component SPIDRV Core
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 17:28:18.560
+!MESSAGE Initial cmsis parsing: {spidrv_config.h=Start Parse Offset: 1945
+End Parse Offset: 1945
+Parsing Error: null
+Parsing Error offset: -1
+fContainWizard: false
+}
+
+!ENTRY com.silabs.ss.tool.uc.editor 4 0 2022-09-26 17:28:18.561
+!MESSAGE Could not load pintool device data within 30 second timeframe. Marker manager not connected to component editor -- device errors will not show up.
+
+!ENTRY com.silabs.ss.platform.rcp.core 2 0 2022-09-26 17:28:18.564
+!MESSAGE Could not parse spidrv_config.h cmsis contents as there were none. 
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 17:28:18.564
+!MESSAGE preparing cmsis websocket update: {"configurables":{"removed":[],"updated":[]},"clientId":"project/file_3A_2FC_3A_2FUsers_2FWorkstation_2FDesktop_2FIPR_2Fsleepy-demo-mtd_2Fsleepy-demo-mtd.slcp/component/spidrv_core","header":"spidrv_config.h","wsType":"config_update","conf_class":"cmsis"}
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 17:28:18.763
+!MESSAGE Client mentioned sockets are all ready: counting down latch
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 17:28:18.764
+!MESSAGE latch unlocked: cmsis socket response sending
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 17:28:18.816
+!MESSAGE Clear CMSIS Issues WS call: {"clientId":"project/file_3A_2FC_3A_2FUsers_2FWorkstation_2FDesktop_2FIPR_2Fsleepy-demo-mtd_2Fsleepy-demo-mtd.slcp/component/spidrv_core","ids":[],"wsType":"clear_issues"}
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 17:28:20.122
+!MESSAGE UcEditorController: onWebSocketClose CALLED statusCode=1001 reason=null
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 17:28:39.577
+!MESSAGE editor file home calculation for Studio resulted in C:\Users\Workstation\Desktop\IPR\sleepy-demo-mtd\.uceditor for sleepy-demo-mtd with component SPIDRV EUSART (spi0)
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 17:28:39.584
+!MESSAGE editor file home calculation for Studio resulted in C:\Users\Workstation\Desktop\IPR\sleepy-demo-mtd\.uceditor for sleepy-demo-mtd with component SPIDRV EUSART (spi0)
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 17:28:39.589
+!MESSAGE Initial cmsis parsing: {sl_spidrv_eusart_spi0_config.h=Start Parse Offset: 3626
+End Parse Offset: 3626
+Parsing Error: null
+Parsing Error offset: -1
+fContainWizard: true
+}
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 17:28:39.590
+!MESSAGE PinTool annotations detected. Loading ABDevice
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 17:28:39.594
+!MESSAGE CMSIS Parse success for sl_spidrv_eusart_spi0_config.h
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 17:28:39.595
+!MESSAGE preparing cmsis websocket update: {"configurables":{"removed":[],"updated":[{"parent_category_id":"CMSIS_$sl_spidrv_eusart_spi0_config.h$_SPIDRV settings","conf_type":"spinner","initial":"1000000","header":"sl_spidrv_eusart_spi0_config.h","label":"SPI bitrate","id":"CMSIS_$sl_spidrv_eusart_spi0_config.h$_SL_SPIDRV_EUSART_SPI0_BITRATE","type":"conf","desc":"Default: 1000000"},{"parent_category_id":"CMSIS_$sl_spidrv_eusart_spi0_config.h$_SPIDRV settings","conf_type":"spinner","min":7,"max":16,"initial":"8","header":"sl_spidrv_eusart_spi0_config.h","label":"SPI frame length","id":"CMSIS_$sl_spidrv_eusart_spi0_config.h$_SL_SPIDRV_EUSART_SPI0_FRAME_LENGTH","type":"conf","desc":"Default: 8"},{"parent_category_id":"CMSIS_$sl_spidrv_eusart_spi0_config.h$_SPIDRV settings","conf_type":"combo","initial":"Master","header":"sl_spidrv_eusart_spi0_config.h","label":"SPI mode","id":"CMSIS_$sl_spidrv_eusart_spi0_config.h$_SL_SPIDRV_EUSART_SPI0_TYPE","type":"conf","combo_options":["Master","Slave"]},{"parent_category_id":"CMSIS_$sl_spidrv_eusart_spi0_config.h$_SPIDRV settings","conf_type":"combo","initial":"MSB transmitted first","header":"sl_spidrv_eusart_spi0_config.h","label":"Bit order on the SPI bus","id":"CMSIS_$sl_spidrv_eusart_spi0_config.h$_SL_SPIDRV_EUSART_SPI0_BIT_ORDER","type":"conf","combo_options":["LSB transmitted first","MSB transmitted first"]},{"parent_category_id":"CMSIS_$sl_spidrv_eusart_spi0_config.h$_SPIDRV settings","conf_type":"combo","initial":"SPI mode 0: CLKPOL=0, CLKPHA=0","header":"sl_spidrv_eusart_spi0_config.h","label":"SPI clock mode","id":"CMSIS_$sl_spidrv_eusart_spi0_config.h$_SL_SPIDRV_EUSART_SPI0_CLOCK_MODE","type":"conf","combo_options":["SPI mode 0: CLKPOL=0, CLKPHA=0","SPI mode 1: CLKPOL=0, CLKPHA=1","SPI mode 2: CLKPOL=1, CLKPHA=0","SPI mode 3: CLKPOL=1, CLKPHA=1"]},{"parent_category_id":"CMSIS_$sl_spidrv_eusart_spi0_config.h$_SPIDRV settings","conf_type":"combo","initial":"CS controlled by the SPI driver","header":"sl_spidrv_eusart_spi0_config.h","label":"SPI master chip select (CS) control scheme.","id":"CMSIS_$sl_spidrv_eusart_spi0_config.h$_SL_SPIDRV_EUSART_SPI0_CS_CONTROL","type":"conf","combo_options":["CS controlled by the SPI driver","CS controlled by the application"]},{"parent_category_id":"CMSIS_$sl_spidrv_eusart_spi0_config.h$_SPIDRV settings","conf_type":"combo","initial":"Transfer starts immediately","header":"sl_spidrv_eusart_spi0_config.h","label":"SPI slave transfer start scheme","id":"CMSIS_$sl_spidrv_eusart_spi0_config.h$_SL_SPIDRV_EUSART_SPI0_SLAVE_START_MODE","type":"conf","combo_options":["Transfer starts immediately","Transfer starts when the bus is idle (CS deasserted)"],"desc":"Only applies if instance type is spidrvSlave"},{"header":"sl_spidrv_eusart_spi0_config.h","label":"SPIDRV settings","id":"CMSIS_$sl_spidrv_eusart_spi0_config.h$_SPIDRV settings","type":"cat","conf_class":"cmsis"}]},"clientId":"project/file_3A_2FC_3A_2FUsers_2FWorkstation_2FDesktop_2FIPR_2Fsleepy-demo-mtd_2Fsleepy-demo-mtd.slcp/component/spidrv_eusart_spi0","header":"sl_spidrv_eusart_spi0_config.h","wsType":"config_update","conf_class":"cmsis"}
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 17:28:39.801
+!MESSAGE Client mentioned sockets are all ready: counting down latch
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 17:28:39.802
+!MESSAGE latch unlocked: cmsis socket response sending
+
+!ENTRY com.silabs.ss.framework.hwconfig.core 4 0 2022-09-26 17:28:39.819
+!MESSAGE Attempting to open Device:com.silabs.sdk.stack.super:4.1.1._1224998501
+Context id com.silabs.sdk.stack.super:4.0.2._1224998501 => com.silabs.sdk.stack.super:4.0.2._1224998501
+!STACK 0
+java.lang.IllegalStateException: C:/Users/Workstation/Desktop/IPR/sleepy-demo-mtd/sleepy-demo-mtd.pintool was created with a newer SDK and cannot be used with the currently selected SDK! Please switch to a newer SDK or create a new Configuration file.
+	at com.silabs.ss.framework.hwconfig.internal.api.core.XMLDeviceUpgrader.throwUpgradeException(XMLDeviceUpgrader.java:153)
+	at com.silabs.ss.framework.hwconfig.internal.api.core.XMLDeviceUpgrader.findAndRunUpgrade(XMLDeviceUpgrader.java:132)
+	at com.silabs.ss.framework.hwconfig.internal.api.core.XMLDeviceUpgrader.<init>(XMLDeviceUpgrader.java:61)
+	at com.silabs.ss.framework.hwconfig.internal.api.core.XMLDeviceUpgrader.getContextId(XMLDeviceUpgrader.java:50)
+	at com.silabs.ss.framework.hwconfig.api.core.ABDeviceFactory.createABDevice(ABDeviceFactory.java:320)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.BaseAbDeviceAccessor.loadDeviceOrCreate(BaseAbDeviceAccessor.java:218)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.BaseAbDeviceAccessor.lambda$0(BaseAbDeviceAccessor.java:119)
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1705)
+	at com.silabs.ss.framework.hwconfig.api.core.util.DeviceCache.getOrCreateDevice(DeviceCache.java:141)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.BaseAbDeviceAccessor.createABDevice(BaseAbDeviceAccessor.java:117)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.BaseAbDeviceAccessor.checkAndLoadDevice(BaseAbDeviceAccessor.java:78)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.BaseAbDeviceAccessor.getAbDevice(BaseAbDeviceAccessor.java:267)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.IAbDeviceAccessor.abDevice(IAbDeviceAccessor.java:39)
+	at com.silabs.ss.tool.uc.editor.editors.UcEditorController$6.run(UcEditorController.java:508)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 17:28:39.890
+!MESSAGE Clear CMSIS Issues WS call: {"clientId":"project/file_3A_2FC_3A_2FUsers_2FWorkstation_2FDesktop_2FIPR_2Fsleepy-demo-mtd_2Fsleepy-demo-mtd.slcp/component/spidrv_eusart_spi0","ids":[],"wsType":"clear_issues"}
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 17:28:50.817
+!MESSAGE Saving document for L/sleepy-demo-mtd/config/sl_spidrv_eusart_spi0_config.h
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 17:28:50.823
+!MESSAGE Resource Changed: Reparsing L/sleepy-demo-mtd/config/sl_spidrv_eusart_spi0_config.h for cmsis
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 17:28:50.828
+!MESSAGE A Cmsis Reparse was triggered for sl_spidrv_eusart_spi0_config.h
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 17:28:50.828
+!MESSAGE A Cmsis Reparse updated but did not alert client -- change came from editor and 'force' was false. Starting a parsing job that updates context model but client will not be alerted.
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 17:28:50.832
+!MESSAGE CMSIS Parse success for sl_spidrv_eusart_spi0_config.h
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 17:28:50.864
+!MESSAGE Clear CMSIS Issues WS call: {"clientId":"project/file_3A_2FC_3A_2FUsers_2FWorkstation_2FDesktop_2FIPR_2Fsleepy-demo-mtd_2Fsleepy-demo-mtd.slcp/component/spidrv_eusart_spi0","ids":[],"wsType":"clear_issues"}
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 17:28:50.904
+!MESSAGE Clear CMSIS Issues WS call: {"clientId":"project/file_3A_2FC_3A_2FUsers_2FWorkstation_2FDesktop_2FIPR_2Fsleepy-demo-mtd_2Fsleepy-demo-mtd.slcp/component/spidrv_eusart_spi0","ids":[],"wsType":"clear_issues"}
+
+!ENTRY com.silabs.ss.framework.hwconfig.core 4 0 2022-09-26 17:28:53.553
+!MESSAGE Attempting to open Device:com.silabs.sdk.stack.super:4.1.1._1224998501
+Context id com.silabs.sdk.stack.super:4.0.2._1224998501 => com.silabs.sdk.stack.super:4.0.2._1224998501
+!STACK 0
+java.lang.IllegalStateException: C:/Users/Workstation/Desktop/IPR/sleepy-demo-mtd/sleepy-demo-mtd.pintool was created with a newer SDK and cannot be used with the currently selected SDK! Please switch to a newer SDK or create a new Configuration file.
+	at com.silabs.ss.framework.hwconfig.internal.api.core.XMLDeviceUpgrader.throwUpgradeException(XMLDeviceUpgrader.java:153)
+	at com.silabs.ss.framework.hwconfig.internal.api.core.XMLDeviceUpgrader.findAndRunUpgrade(XMLDeviceUpgrader.java:132)
+	at com.silabs.ss.framework.hwconfig.internal.api.core.XMLDeviceUpgrader.<init>(XMLDeviceUpgrader.java:61)
+	at com.silabs.ss.framework.hwconfig.internal.api.core.XMLDeviceUpgrader.getContextId(XMLDeviceUpgrader.java:50)
+	at com.silabs.ss.framework.hwconfig.api.core.ABDeviceFactory.createABDevice(ABDeviceFactory.java:320)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.BaseAbDeviceAccessor.loadDeviceOrCreate(BaseAbDeviceAccessor.java:218)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.BaseAbDeviceAccessor.lambda$0(BaseAbDeviceAccessor.java:119)
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1705)
+	at com.silabs.ss.framework.hwconfig.api.core.util.DeviceCache.getOrCreateDevice(DeviceCache.java:141)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.BaseAbDeviceAccessor.createABDevice(BaseAbDeviceAccessor.java:117)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.BaseAbDeviceAccessor.checkAndLoadDevice(BaseAbDeviceAccessor.java:78)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.BaseAbDeviceAccessor.getAbDevice(BaseAbDeviceAccessor.java:267)
+	at com.silabs.ss.framework.hwconfig.api.core.uc.IAbDeviceAccessor.abDevice(IAbDeviceAccessor.java:39)
+	at com.silabs.ss.framework.hwconfig.internal.core.uc.UcPinToolSetupData.getAbDevice(UcPinToolSetupData.java:65)
+	at com.silabs.ss.tool.hwconfig.ui.pintool.PinToolEditor2.updateForUCContext(PinToolEditor2.java:558)
+	at com.silabs.ss.tool.hwconfig.ui.pintool.PinToolEditor2.loadDevice(PinToolEditor2.java:512)
+	at com.silabs.ss.tool.hwconfig.ui.pintool.PinToolEditor2.loadDevice(PinToolEditor2.java:463)
+	at com.silabs.ss.tool.hwconfig.ui.pintool.PinToolEditor2.getDevice(PinToolEditor2.java:453)
+	at com.silabs.ss.tool.hwconfig.ui.pintool.PinToolEditor2.lambda$14(PinToolEditor2.java:871)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY com.silabs.ss.tool.hwconfig.ui.pintool 4 0 2022-09-26 17:28:53.554
+!MESSAGE could not open editor from input: org.eclipse.ui.part.FileEditorInput(/sleepy-demo-mtd/sleepy-demo-mtd.pintool)
+!STACK 0
+java.lang.NullPointerException
+	at com.silabs.ss.tool.hwconfig.ui.pintool.PinToolEditor2.updateForUCContext(PinToolEditor2.java:559)
+	at com.silabs.ss.tool.hwconfig.ui.pintool.PinToolEditor2.loadDevice(PinToolEditor2.java:512)
+	at com.silabs.ss.tool.hwconfig.ui.pintool.PinToolEditor2.loadDevice(PinToolEditor2.java:463)
+	at com.silabs.ss.tool.hwconfig.ui.pintool.PinToolEditor2.getDevice(PinToolEditor2.java:453)
+	at com.silabs.ss.tool.hwconfig.ui.pintool.PinToolEditor2.lambda$14(PinToolEditor2.java:871)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 17:28:56.608
+!MESSAGE File was double clicked
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 17:29:01.897
+!MESSAGE File was double clicked
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 17:29:07.122
+!MESSAGE File was double clicked
+
+!ENTRY com.silabs.ss.tool.uc.editor 4 0 2022-09-26 17:29:09.603
+!MESSAGE Could not load pintool device data within 30 second timeframe. Marker manager not connected to component editor -- device errors will not show up.
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 17:30:06.219
+!MESSAGE File was double clicked
+
+!ENTRY com.silabs.ss.tool.uc.editor 1 0 2022-09-26 17:30:06.948
+!MESSAGE File was double clicked
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 17:33:46.714
+!MESSAGE UcEditorController: onWebSocketClose CALLED statusCode=1001 reason=null
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 17:33:47.011
+!MESSAGE Deleted Shared Daemon File: C:\Users\Workstation\.uc\cli\mainstudio.running
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-26 17:33:47.012
+!MESSAGE Deleted Shared Daemon Version File: C:\Users\Workstation\.uc\cli\mainstudio.running.version

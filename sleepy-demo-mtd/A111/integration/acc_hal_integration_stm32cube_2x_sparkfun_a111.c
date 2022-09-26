@@ -10,7 +10,7 @@
 #include <stdio.h>
 #include <string.h>
 
-
+#include "spidrv.h"
 
 #include "acc_definitions_common.h"
 #include "acc_hal_definitions.h"
@@ -20,12 +20,14 @@
 
 
 /* spi handle */
-extern SPI_HandleTypeDef A111_SPI_HANDLE;
+SPIDRV_HandleData_t handleData;
+SPIDRV_Handle_t handle = &handleData;
+
 
 /**
  * @brief The number of sensors available on the board
  */
-#define SENSOR_COUNT 2
+#define SENSOR_COUNT 1
 
 /**
  * @brief Size of SPI transfer buffer
@@ -86,9 +88,10 @@ static void acc_hal_integration_sensor_transfer(acc_sensor_id_t sensor_id, uint8
 
 	const uint32_t SPI_TRANSMIT_RECEIVE_TIMEOUT = 5000;
 
-	HAL_GPIO_WritePin(sensor_cs_port, sensor_cs_pin, GPIO_PIN_RESET);
-	HAL_SPI_TransmitReceive(&A111_SPI_HANDLE, buffer, buffer, buffer_size, SPI_TRANSMIT_RECEIVE_TIMEOUT);
-	HAL_GPIO_WritePin(sensor_cs_port, sensor_cs_pin, GPIO_PIN_SET);
+	GPIO_PinOutClear(EUS1CS_PORT, EUS1CS_PIN);
+  for (int i = 0; i < buffer_size; i++)
+    buffer[i] = EUSART_Spi_TxRx(EUSART1, buffer[i]);
+  GPIO_PinOutSet(EUS1CS_PORT, EUS1CS_PIN);
 }
 
 
