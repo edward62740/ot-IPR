@@ -95,18 +95,6 @@
           <file name="sl_slist.c" uri="studio:/sdk/platform/common/src/sl_slist.c"/>
         </folder>
       </folder>
-      <folder name="driver">
-        <folder name="button">
-          <folder name="src">
-            <file name="sl_button.c" uri="studio:/sdk/platform/driver/button/src/sl_button.c"/>
-            <file name="sl_simple_button.c" uri="studio:/sdk/platform/driver/button/src/sl_simple_button.c"/>
-          </folder>
-          <folder name="inc">
-            <file name="sl_button.h" uri="studio:/sdk/platform/driver/button/inc/sl_button.h"/>
-            <file name="sl_simple_button.h" uri="studio:/sdk/platform/driver/button/inc/sl_simple_button.h"/>
-          </folder>
-        </folder>
-      </folder>
       <folder name="CMSIS">
         <folder name="Include">
           <file name="arm_common_tables.h" uri="studio:/sdk/platform/CMSIS/Include/arm_common_tables.h"/>
@@ -1346,7 +1334,6 @@
   <includePath uri="studio:/project/"/>
   <includePath uri="studio:/sdk/platform/Device/SiliconLabs/EFR32MG24/Include"/>
   <includePath uri="studio:/sdk/platform/common/inc"/>
-  <includePath uri="studio:/sdk/platform/driver/button/inc"/>
   <includePath uri="studio:/sdk/platform/CMSIS/Include"/>
   <includePath uri="studio:/sdk/platform/service/device_init/inc"/>
   <includePath uri="studio:/sdk/platform/emdrv/dmadrv/inc"/>

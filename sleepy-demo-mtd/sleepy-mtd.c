@@ -30,9 +30,6 @@
 #include <common/code_utils.hpp>
 #include <common/logging.hpp>
 
-#include "sl_button.h"
-#include "sl_simple_button.h"
-#include "sl_simple_button_instances.h"
 
 #include "sl_component_catalog.h"
 #ifdef SL_CATALOG_POWER_MANAGER_PRESENT
@@ -103,7 +100,7 @@ void setNetworkConfiguration(void)
      *     Network Name, Mesh Local Prefix, Extended PAN ID, PAN ID, Delay Timer,
      *     Channel, Channel Mask Page 0, Network Key, PSKc, Security Policy
      */
-    aDataset.mActiveTimestamp.mSeconds             = 1;
+    //aDataset.mActiveTimestamp.mSeconds             = 1;
     aDataset.mComponents.mIsActiveTimestampPresent = true;
 
     /* Set Channel to 15 */
@@ -167,21 +164,7 @@ void initUdp(void)
     }
 }
 
-void sl_button_on_change(const sl_button_t *handle)
-{
-    if (sl_button_get_state(handle) == SL_SIMPLE_BUTTON_PRESSED)
-    {
-        if (&sl_button_btn0 == handle)
-        {
-            sRxOnIdleButtonPressed = true;
-        }
-        else if (&sl_button_btn1 == handle)
-        {
-            sButtonPressed = true;
-        }
-        otSysEventSignalPending();
-    }
-}
+
 
 #ifdef SL_CATALOG_KERNEL_PRESENT
 #define applicationTick sl_ot_rtos_application_tick

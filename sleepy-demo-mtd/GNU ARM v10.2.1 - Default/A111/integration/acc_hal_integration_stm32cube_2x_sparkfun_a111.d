@@ -1,7 +1,8 @@
 A111/integration/acc_hal_integration_stm32cube_2x_sparkfun_a111.o: \
  ../A111/integration/acc_hal_integration_stm32cube_2x_sparkfun_a111.c \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h \
- c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emdrv\spidrv\inc\spidrv.h \
+ C\:\Users\Workstation\Desktop\IPR\sleepy-demo-mtd\A111\integration/acc_integration.c \
+ C\:\Users\Workstation\Desktop\IPR\sleepy-demo-mtd\A111\integration/acc_integration.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\em_device.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\efr32mg24b220f1536im48.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\cmsis\include\core_cm33.h \
@@ -65,24 +66,22 @@ A111/integration/acc_hal_integration_stm32cube_2x_sparkfun_a111.o: \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\efr32mg24_prs_signals.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\efr32mg24_dma_descriptor.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\efr32mg24_ldmaxbar_defines.h \
- c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_cmu.h \
+ c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_chip.h \
+ c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_common.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_assert.h \
+ c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_system.h \
+ c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_gpio.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_bus.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_core.h \
- c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_common.h \
  C\:\Users\Workstation\Desktop\IPR\sleepy-demo-mtd\autogen/sl_component_catalog.h \
  C\:\Users\Workstation\Desktop\IPR\sleepy-demo-mtd\config/emlib_core_debug_config.h \
+ c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_cmu.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_cmu_compat.h \
+ c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_emu.h \
+ c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_eusart.h \
+ c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_eusart_compat.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_gpio.h \
- c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emdrv\common\inc\ecode.h \
- C\:\Users\Workstation\Desktop\IPR\sleepy-demo-mtd\config/spidrv_config.h \
- c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\service\sleeptimer\inc\sl_sleeptimer.h \
- C\:\Users\Workstation\Desktop\IPR\sleepy-demo-mtd\config/sl_sleeptimer_config.h \
- c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_status.h \
- c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_slist.h \
- c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emdrv\dmadrv\inc\dmadrv.h \
- c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_ldma.h \
- C\:\Users\Workstation\Desktop\IPR\sleepy-demo-mtd\config/dmadrv_config.h \
+ C\:\Users\Workstation\Desktop\IPR\sleepy-demo-mtd/app.h \
  C\:\Users\Workstation\Desktop\IPR\sleepy-demo-mtd\A111\rss\include/acc_definitions_common.h \
  C\:\Users\Workstation\Desktop\IPR\sleepy-demo-mtd\A111\rss\include/acc_hal_definitions.h \
  C\:\Users\Workstation\Desktop\IPR\sleepy-demo-mtd\A111\rss\include/acc_definitions_common.h \
@@ -90,7 +89,8 @@ A111/integration/acc_hal_integration_stm32cube_2x_sparkfun_a111.o: \
  ../A111/integration/acc_integration.h \
  ../A111/integration/acc_integration_log.h
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h:
-c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emdrv\spidrv\inc\spidrv.h:
+C\:\Users\Workstation\Desktop\IPR\sleepy-demo-mtd\A111\integration/acc_integration.c:
+C\:\Users\Workstation\Desktop\IPR\sleepy-demo-mtd\A111\integration/acc_integration.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\em_device.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\efr32mg24b220f1536im48.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\cmsis\include\core_cm33.h:
@@ -154,24 +154,22 @@ c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlab
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\efr32mg24_prs_signals.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\efr32mg24_dma_descriptor.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\efr32mg24_ldmaxbar_defines.h:
-c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_cmu.h:
+c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_chip.h:
+c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_common.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_assert.h:
+c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_system.h:
+c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_gpio.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_bus.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_core.h:
-c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_common.h:
 C\:\Users\Workstation\Desktop\IPR\sleepy-demo-mtd\autogen/sl_component_catalog.h:
 C\:\Users\Workstation\Desktop\IPR\sleepy-demo-mtd\config/emlib_core_debug_config.h:
+c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_cmu.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_cmu_compat.h:
+c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_emu.h:
+c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_eusart.h:
+c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_eusart_compat.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_gpio.h:
-c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emdrv\common\inc\ecode.h:
-C\:\Users\Workstation\Desktop\IPR\sleepy-demo-mtd\config/spidrv_config.h:
-c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\service\sleeptimer\inc\sl_sleeptimer.h:
-C\:\Users\Workstation\Desktop\IPR\sleepy-demo-mtd\config/sl_sleeptimer_config.h:
-c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_status.h:
-c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_slist.h:
-c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emdrv\dmadrv\inc\dmadrv.h:
-c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_ldma.h:
-C\:\Users\Workstation\Desktop\IPR\sleepy-demo-mtd\config/dmadrv_config.h:
+C\:\Users\Workstation\Desktop\IPR\sleepy-demo-mtd/app.h:
 C\:\Users\Workstation\Desktop\IPR\sleepy-demo-mtd\A111\rss\include/acc_definitions_common.h:
 C\:\Users\Workstation\Desktop\IPR\sleepy-demo-mtd\A111\rss\include/acc_hal_definitions.h:
 C\:\Users\Workstation\Desktop\IPR\sleepy-demo-mtd\A111\rss\include/acc_definitions_common.h:

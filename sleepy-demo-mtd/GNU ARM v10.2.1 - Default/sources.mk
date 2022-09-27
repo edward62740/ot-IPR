@@ -33,7 +33,6 @@ gecko_sdk_4.0.2/platform/Device/SiliconLabs/EFR32MG24/Source/GCC \
 gecko_sdk_4.0.2/platform/Device/SiliconLabs/EFR32MG24/Source \
 gecko_sdk_4.0.2/platform/common/src \
 gecko_sdk_4.0.2/platform/common/toolchain/src \
-gecko_sdk_4.0.2/platform/driver/button/src \
 gecko_sdk_4.0.2/platform/emdrv/dmadrv/src \
 gecko_sdk_4.0.2/platform/emdrv/gpiointerrupt/src \
 gecko_sdk_4.0.2/platform/emdrv/nvm3/src \

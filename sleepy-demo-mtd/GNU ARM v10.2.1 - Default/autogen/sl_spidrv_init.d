@@ -84,7 +84,7 @@ autogen/sl_spidrv_init.o: ../autogen/sl_spidrv_init.c \
  C\:\Users\Workstation\Desktop\IPR\sleepy-demo-mtd\config/dmadrv_config.h \
  ../autogen/sl_spidrv_instances.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_assert.h \
- C\:\Users\Workstation\Desktop\IPR\sleepy-demo-mtd\config/sl_spidrv_spi0_config.h
+ C\:\Users\Workstation\Desktop\IPR\sleepy-demo-mtd\config/sl_spidrv_eusart_spi0_config.h
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emdrv\spidrv\inc\spidrv.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\em_device.h:
@@ -170,4 +170,4 @@ c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_ldma
 C\:\Users\Workstation\Desktop\IPR\sleepy-demo-mtd\config/dmadrv_config.h:
 ../autogen/sl_spidrv_instances.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_assert.h:
-C\:\Users\Workstation\Desktop\IPR\sleepy-demo-mtd\config/sl_spidrv_spi0_config.h:
+C\:\Users\Workstation\Desktop\IPR\sleepy-demo-mtd\config/sl_spidrv_eusart_spi0_config.h:

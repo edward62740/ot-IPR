@@ -52,7 +52,6 @@ RM := rm -rf
 -include gecko_sdk_4.0.2/platform/emdrv/nvm3/src/subdir.mk
 -include gecko_sdk_4.0.2/platform/emdrv/gpiointerrupt/src/subdir.mk
 -include gecko_sdk_4.0.2/platform/emdrv/dmadrv/src/subdir.mk
--include gecko_sdk_4.0.2/platform/driver/button/src/subdir.mk
 -include gecko_sdk_4.0.2/platform/common/toolchain/src/subdir.mk
 -include gecko_sdk_4.0.2/platform/common/src/subdir.mk
 -include gecko_sdk_4.0.2/platform/Device/SiliconLabs/EFR32MG24/Source/GCC/subdir.mk

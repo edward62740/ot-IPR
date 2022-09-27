@@ -27,8 +27,8 @@
     <properties key="core.category" value="HAL Config"/>
     <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/hardware/kit/common/module/./bspstk.slsproj"/>
     <properties key="core.builtin" value="true"/>
-    <properties key="core.version" value="4.1.1._1224998501"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.framework.project.internal.api.core.modules.SDKModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="SDK.HAL.BSPSTK.COMMON"/>
@@ -60,8 +60,8 @@
     <properties key="core.category" value="HAL Config"/>
     <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/util/plugin/./plugin-afv2/power-meter-cs5463/cs5463.slsproj"/>
     <properties key="core.builtin" value="true"/>
-    <properties key="core.version" value="4.1.1._1224998501"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.framework.project.internal.api.core.modules.SDKModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="SDK.HAL.CS5463.BASE"/>
@@ -126,8 +126,8 @@
     <properties key="core.category" value="HAL Config"/>
     <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/util/plugin/./plugin-common/fem-control/fem-base.slsproj"/>
     <properties key="core.builtin" value="true"/>
-    <properties key="core.version" value="4.1.1._1224998501"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.framework.project.internal.api.core.modules.SDKModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="SDK.HAL.FEM.BASE"/>
@@ -148,8 +148,8 @@
     <properties key="core.category" value="HAL Config"/>
     <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/util/plugin/./plugin-common/fem-control/fem-flex.slsproj"/>
     <properties key="core.builtin" value="true"/>
-    <properties key="core.version" value="4.1.1._1224998501"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.framework.project.internal.api.core.modules.SDKModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="SDK.HAL.FEM.FLEX"/>
@@ -170,8 +170,8 @@
     <properties key="core.category" value="HAL Config"/>
     <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/hardware/kit/common/module/./i2csensor.slsproj"/>
     <properties key="core.builtin" value="true"/>
-    <properties key="core.version" value="4.1.1._1224998501"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.framework.project.internal.api.core.modules.SDKModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="SDK.HAL.I2CSENSOR.COMMON"/>
@@ -192,8 +192,8 @@
     <properties key="core.category" value="HAL Config"/>
     <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/hardware/kit/common/module/./i2cspm.slsproj"/>
     <properties key="core.builtin" value="true"/>
-    <properties key="core.version" value="4.1.1._1224998501"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.framework.project.internal.api.core.modules.SDKModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="SDK.HAL.I2CSPM.COMMON"/>
@@ -214,8 +214,8 @@
     <properties key="core.category" value="HAL Config"/>
     <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/hardware/kit/common/module/./ioexp.slsproj"/>
     <properties key="core.builtin" value="true"/>
-    <properties key="core.version" value="4.1.1._1224998501"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.framework.project.internal.api.core.modules.SDKModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="SDK.HAL.IOEXP.COMMON"/>
@@ -247,8 +247,8 @@
     <properties key="core.category" value="HAL Config"/>
     <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/hardware/kit/common/module/./led.slsproj"/>
     <properties key="core.builtin" value="true"/>
-    <properties key="core.version" value="4.1.1._1224998501"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.framework.project.internal.api.core.modules.SDKModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="SDK.HAL.LED.BSP"/>
@@ -280,8 +280,8 @@
     <properties key="core.category" value="HAL Config"/>
     <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/hardware/kit/common/module/./serial.slsproj"/>
     <properties key="core.builtin" value="true"/>
-    <properties key="core.version" value="4.1.1._1224998501"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.framework.project.internal.api.core.modules.SDKModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="SDK.HAL.SERIAL.COMMON"/>
@@ -302,8 +302,8 @@
     <properties key="core.category" value="HAL Config"/>
     <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/hardware/kit/common/module/./spidisplay.slsproj"/>
     <properties key="core.builtin" value="true"/>
-    <properties key="core.version" value="4.1.1._1224998501"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.framework.project.internal.api.core.modules.SDKModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="SDK.HAL.SPIDISPLAY.COMMON"/>
@@ -372,12 +372,52 @@
     <properties key="registry.providingDetector" value="com.silabs.ss.app.internal.ide.module.EsfPluginModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.module.plugin.external.com.silabs.sdk.stack.super.application.Configurable Application.bootloader-interface-base."/>
   </descriptors>
+  <descriptors name="com.silabs.module.plugin.external.com.silabs.sdk.stack.super.application.Configurable Application.bootloader-interface-base." label="Bootloader - Source" description="Bootloader api" propertyScope="module">
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="core.builtin" value="true"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
+    <properties key="protocol.contributingProtocol" value="com.silabs.sdk.stack.super:4.0.2._1224998501.com.silabs.sdk.stack.bootloader:2.0.0._2114748622"/>
+    <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/platform/bootloader/api/"/>
+    <properties key="generalProj.esf.stackId" value="com.silabs.sdk.stack.super"/>
+    <properties key="generalProj.esf.stackIsInternal" value="false"/>
+    <properties key="generalProj.esf.frameworkId" value="application"/>
+    <properties key="generalProj.esf.frameworkName" value="Configurable Application"/>
+    <properties key="generalProj.esf.pluginId" value="bootloader-interface"/>
+    <properties key="module.IsESFPluginModule" value="true"/>
+    <properties key="module.isLibraryModule" value="false"/>
+    <properties key="module.isBaseModule" value="true"/>
+    <properties key="core.hidden" value="true"/>
+    <properties key="core.category" value="Plugin Modules|Configurable Application|Core"/>
+    <properties key="core.detected" value="true"/>
+    <properties key="registry.providingDetector" value="com.silabs.ss.app.internal.ide.module.EsfPluginModuleDetector"/>
+    <properties key="CACHED_ID_STRING" value="com.silabs.module.plugin.external.com.silabs.sdk.stack.super.application.Configurable Application.bootloader-interface-base."/>
+  </descriptors>
   <descriptors name="com.silabs.module.plugin.external.com.silabs.sdk.stack.super.application.Configurable Application.core-base." label="Application Core - Source" description="Core library for bootloader applications" propertyScope="module">
     <properties key="core.version" value="3.2.2._640221276"/>
     <properties key="core.builtin" value="true"/>
     <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:3.2.2._640221276"/>
     <properties key="protocol.contributingProtocol" value="com.silabs.sdk.stack.super:3.2.2._640221276.com.silabs.sdk.stack.bootloader:1.12.0._110297463"/>
     <properties key="core.installationPath" value="file:/C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/platform/Device/SiliconLabs/"/>
+    <properties key="generalProj.esf.stackId" value="com.silabs.sdk.stack.super"/>
+    <properties key="generalProj.esf.stackIsInternal" value="false"/>
+    <properties key="generalProj.esf.frameworkId" value="application"/>
+    <properties key="generalProj.esf.frameworkName" value="Configurable Application"/>
+    <properties key="generalProj.esf.pluginId" value="core"/>
+    <properties key="module.IsESFPluginModule" value="true"/>
+    <properties key="module.isLibraryModule" value="false"/>
+    <properties key="module.isBaseModule" value="true"/>
+    <properties key="core.hidden" value="true"/>
+    <properties key="core.category" value="Plugin Modules|Configurable Application|Core"/>
+    <properties key="core.detected" value="true"/>
+    <properties key="registry.providingDetector" value="com.silabs.ss.app.internal.ide.module.EsfPluginModuleDetector"/>
+    <properties key="CACHED_ID_STRING" value="com.silabs.module.plugin.external.com.silabs.sdk.stack.super.application.Configurable Application.core-base."/>
+  </descriptors>
+  <descriptors name="com.silabs.module.plugin.external.com.silabs.sdk.stack.super.application.Configurable Application.core-base." label="Application Core - Source" description="Core library for bootloader applications" propertyScope="module">
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="core.builtin" value="true"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
+    <properties key="protocol.contributingProtocol" value="com.silabs.sdk.stack.super:4.0.2._1224998501.com.silabs.sdk.stack.bootloader:2.0.0._2114748622"/>
+    <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/platform/Device/SiliconLabs/"/>
     <properties key="generalProj.esf.stackId" value="com.silabs.sdk.stack.super"/>
     <properties key="generalProj.esf.stackIsInternal" value="false"/>
     <properties key="generalProj.esf.frameworkId" value="application"/>
@@ -412,12 +452,52 @@
     <properties key="registry.providingDetector" value="com.silabs.ss.app.internal.ide.module.EsfPluginModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.module.plugin.external.com.silabs.sdk.stack.super.application.Configurable Application.emlib-base."/>
   </descriptors>
+  <descriptors name="com.silabs.module.plugin.external.com.silabs.sdk.stack.super.application.Configurable Application.emlib-base." label="EMLIB - Source" description="EMLIB Peripheral Library" propertyScope="module">
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="core.builtin" value="true"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
+    <properties key="protocol.contributingProtocol" value="com.silabs.sdk.stack.super:4.0.2._1224998501.com.silabs.sdk.stack.bootloader:2.0.0._2114748622"/>
+    <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/platform/emlib/src/"/>
+    <properties key="generalProj.esf.stackId" value="com.silabs.sdk.stack.super"/>
+    <properties key="generalProj.esf.stackIsInternal" value="false"/>
+    <properties key="generalProj.esf.frameworkId" value="application"/>
+    <properties key="generalProj.esf.frameworkName" value="Configurable Application"/>
+    <properties key="generalProj.esf.pluginId" value="emlib"/>
+    <properties key="module.IsESFPluginModule" value="true"/>
+    <properties key="module.isLibraryModule" value="false"/>
+    <properties key="module.isBaseModule" value="true"/>
+    <properties key="core.hidden" value="true"/>
+    <properties key="core.category" value="Plugin Modules|Configurable Application|Utils"/>
+    <properties key="core.detected" value="true"/>
+    <properties key="registry.providingDetector" value="com.silabs.ss.app.internal.ide.module.EsfPluginModuleDetector"/>
+    <properties key="CACHED_ID_STRING" value="com.silabs.module.plugin.external.com.silabs.sdk.stack.super.application.Configurable Application.emlib-base."/>
+  </descriptors>
   <descriptors name="com.silabs.module.plugin.external.com.silabs.sdk.stack.super.application.Configurable Application.fatfs-base." label="FatFs - Source" description="Fat filesystem module" propertyScope="module">
     <properties key="core.version" value="3.2.2._640221276"/>
     <properties key="core.builtin" value="true"/>
     <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:3.2.2._640221276"/>
     <properties key="protocol.contributingProtocol" value="com.silabs.sdk.stack.super:3.2.2._640221276.com.silabs.sdk.stack.bootloader:1.12.0._110297463"/>
     <properties key="core.installationPath" value="file:/C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/util/third_party/fatfs/src/"/>
+    <properties key="generalProj.esf.stackId" value="com.silabs.sdk.stack.super"/>
+    <properties key="generalProj.esf.stackIsInternal" value="false"/>
+    <properties key="generalProj.esf.frameworkId" value="application"/>
+    <properties key="generalProj.esf.frameworkName" value="Configurable Application"/>
+    <properties key="generalProj.esf.pluginId" value="fatfs"/>
+    <properties key="module.IsESFPluginModule" value="true"/>
+    <properties key="module.isLibraryModule" value="false"/>
+    <properties key="module.isBaseModule" value="true"/>
+    <properties key="core.hidden" value="true"/>
+    <properties key="core.category" value="Plugin Modules|Configurable Application|Utils"/>
+    <properties key="core.detected" value="true"/>
+    <properties key="registry.providingDetector" value="com.silabs.ss.app.internal.ide.module.EsfPluginModuleDetector"/>
+    <properties key="CACHED_ID_STRING" value="com.silabs.module.plugin.external.com.silabs.sdk.stack.super.application.Configurable Application.fatfs-base."/>
+  </descriptors>
+  <descriptors name="com.silabs.module.plugin.external.com.silabs.sdk.stack.super.application.Configurable Application.fatfs-base." label="FatFs - Source" description="Fat filesystem module" propertyScope="module">
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="core.builtin" value="true"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
+    <properties key="protocol.contributingProtocol" value="com.silabs.sdk.stack.super:4.0.2._1224998501.com.silabs.sdk.stack.bootloader:2.0.0._2114748622"/>
+    <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/util/third_party/fatfs/src/"/>
     <properties key="generalProj.esf.stackId" value="com.silabs.sdk.stack.super"/>
     <properties key="generalProj.esf.stackIsInternal" value="false"/>
     <properties key="generalProj.esf.frameworkId" value="application"/>
@@ -452,12 +532,52 @@
     <properties key="registry.providingDetector" value="com.silabs.ss.app.internal.ide.module.EsfPluginModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.module.plugin.external.com.silabs.sdk.stack.super.application.Configurable Application.gecko-usb-base."/>
   </descriptors>
+  <descriptors name="com.silabs.module.plugin.external.com.silabs.sdk.stack.super.application.Configurable Application.gecko-usb-base." label="USB - Source" description="USB Pheripheral Library" propertyScope="module">
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="core.builtin" value="true"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
+    <properties key="protocol.contributingProtocol" value="com.silabs.sdk.stack.super:4.0.2._1224998501.com.silabs.sdk.stack.bootloader:2.0.0._2114748622"/>
+    <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/platform/middleware/usb_gecko/src/"/>
+    <properties key="generalProj.esf.stackId" value="com.silabs.sdk.stack.super"/>
+    <properties key="generalProj.esf.stackIsInternal" value="false"/>
+    <properties key="generalProj.esf.frameworkId" value="application"/>
+    <properties key="generalProj.esf.frameworkName" value="Configurable Application"/>
+    <properties key="generalProj.esf.pluginId" value="gecko-usb"/>
+    <properties key="module.IsESFPluginModule" value="true"/>
+    <properties key="module.isLibraryModule" value="false"/>
+    <properties key="module.isBaseModule" value="true"/>
+    <properties key="core.hidden" value="true"/>
+    <properties key="core.category" value="Plugin Modules|Configurable Application|Utils"/>
+    <properties key="core.detected" value="true"/>
+    <properties key="registry.providingDetector" value="com.silabs.ss.app.internal.ide.module.EsfPluginModuleDetector"/>
+    <properties key="CACHED_ID_STRING" value="com.silabs.module.plugin.external.com.silabs.sdk.stack.super.application.Configurable Application.gecko-usb-base."/>
+  </descriptors>
   <descriptors name="com.silabs.module.plugin.external.com.silabs.sdk.stack.super.application.Configurable Application.msd-usb-device-loader-base." label="USB Device Loader - Source" description="USB device loader" propertyScope="module">
     <properties key="core.version" value="3.2.2._640221276"/>
     <properties key="core.builtin" value="true"/>
     <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:3.2.2._640221276"/>
     <properties key="protocol.contributingProtocol" value="com.silabs.sdk.stack.super:3.2.2._640221276.com.silabs.sdk.stack.bootloader:1.12.0._110297463"/>
     <properties key="core.installationPath" value="file:/C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/platform/bootloader/application/plugin/msd-usb-device-loader/"/>
+    <properties key="generalProj.esf.stackId" value="com.silabs.sdk.stack.super"/>
+    <properties key="generalProj.esf.stackIsInternal" value="false"/>
+    <properties key="generalProj.esf.frameworkId" value="application"/>
+    <properties key="generalProj.esf.frameworkName" value="Configurable Application"/>
+    <properties key="generalProj.esf.pluginId" value="msd-usb-device-loader"/>
+    <properties key="module.IsESFPluginModule" value="true"/>
+    <properties key="module.isLibraryModule" value="false"/>
+    <properties key="module.isBaseModule" value="true"/>
+    <properties key="core.hidden" value="true"/>
+    <properties key="core.category" value="Plugin Modules|Configurable Application|Application"/>
+    <properties key="core.detected" value="true"/>
+    <properties key="registry.providingDetector" value="com.silabs.ss.app.internal.ide.module.EsfPluginModuleDetector"/>
+    <properties key="CACHED_ID_STRING" value="com.silabs.module.plugin.external.com.silabs.sdk.stack.super.application.Configurable Application.msd-usb-device-loader-base."/>
+  </descriptors>
+  <descriptors name="com.silabs.module.plugin.external.com.silabs.sdk.stack.super.application.Configurable Application.msd-usb-device-loader-base." label="USB Device Loader - Source" description="USB device loader" propertyScope="module">
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="core.builtin" value="true"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
+    <properties key="protocol.contributingProtocol" value="com.silabs.sdk.stack.super:4.0.2._1224998501.com.silabs.sdk.stack.bootloader:2.0.0._2114748622"/>
+    <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/platform/bootloader/application/plugin/msd-usb-device-loader/"/>
     <properties key="generalProj.esf.stackId" value="com.silabs.sdk.stack.super"/>
     <properties key="generalProj.esf.stackIsInternal" value="false"/>
     <properties key="generalProj.esf.frameworkId" value="application"/>
@@ -492,6 +612,26 @@
     <properties key="registry.providingDetector" value="com.silabs.ss.app.internal.ide.module.EsfPluginModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.module.plugin.external.com.silabs.sdk.stack.super.application.Configurable Application.msd-usb-host-loader-base."/>
   </descriptors>
+  <descriptors name="com.silabs.module.plugin.external.com.silabs.sdk.stack.super.application.Configurable Application.msd-usb-host-loader-base." label="USB Host Loader - Source" description="USB host loader" propertyScope="module">
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="core.builtin" value="true"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
+    <properties key="protocol.contributingProtocol" value="com.silabs.sdk.stack.super:4.0.2._1224998501.com.silabs.sdk.stack.bootloader:2.0.0._2114748622"/>
+    <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/platform/bootloader/application/plugin/msd-usb-host-loader/"/>
+    <properties key="generalProj.esf.stackId" value="com.silabs.sdk.stack.super"/>
+    <properties key="generalProj.esf.stackIsInternal" value="false"/>
+    <properties key="generalProj.esf.frameworkId" value="application"/>
+    <properties key="generalProj.esf.frameworkName" value="Configurable Application"/>
+    <properties key="generalProj.esf.pluginId" value="msd-usb-host-loader"/>
+    <properties key="module.IsESFPluginModule" value="true"/>
+    <properties key="module.isLibraryModule" value="false"/>
+    <properties key="module.isBaseModule" value="true"/>
+    <properties key="core.hidden" value="true"/>
+    <properties key="core.category" value="Plugin Modules|Configurable Application|Application"/>
+    <properties key="core.detected" value="true"/>
+    <properties key="registry.providingDetector" value="com.silabs.ss.app.internal.ide.module.EsfPluginModuleDetector"/>
+    <properties key="CACHED_ID_STRING" value="com.silabs.module.plugin.external.com.silabs.sdk.stack.super.application.Configurable Application.msd-usb-host-loader-base."/>
+  </descriptors>
   <descriptors name="com.silabs.module.plugin.external.com.silabs.sdk.stack.super.application.Configurable Application.usbd-driver-base." label="USB Device Driver - Source" description="USB Device driver" propertyScope="module">
     <properties key="core.version" value="3.2.2._640221276"/>
     <properties key="core.builtin" value="true"/>
@@ -512,12 +652,52 @@
     <properties key="registry.providingDetector" value="com.silabs.ss.app.internal.ide.module.EsfPluginModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.module.plugin.external.com.silabs.sdk.stack.super.application.Configurable Application.usbd-driver-base."/>
   </descriptors>
+  <descriptors name="com.silabs.module.plugin.external.com.silabs.sdk.stack.super.application.Configurable Application.usbd-driver-base." label="USB Device Driver - Source" description="USB Device driver" propertyScope="module">
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="core.builtin" value="true"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
+    <properties key="protocol.contributingProtocol" value="com.silabs.sdk.stack.super:4.0.2._1224998501.com.silabs.sdk.stack.bootloader:2.0.0._2114748622"/>
+    <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/hardware/kit/common/drivers/"/>
+    <properties key="generalProj.esf.stackId" value="com.silabs.sdk.stack.super"/>
+    <properties key="generalProj.esf.stackIsInternal" value="false"/>
+    <properties key="generalProj.esf.frameworkId" value="application"/>
+    <properties key="generalProj.esf.frameworkName" value="Configurable Application"/>
+    <properties key="generalProj.esf.pluginId" value="usbd-driver"/>
+    <properties key="module.IsESFPluginModule" value="true"/>
+    <properties key="module.isLibraryModule" value="false"/>
+    <properties key="module.isBaseModule" value="true"/>
+    <properties key="core.hidden" value="true"/>
+    <properties key="core.category" value="Plugin Modules|Configurable Application|Drivers"/>
+    <properties key="core.detected" value="true"/>
+    <properties key="registry.providingDetector" value="com.silabs.ss.app.internal.ide.module.EsfPluginModuleDetector"/>
+    <properties key="CACHED_ID_STRING" value="com.silabs.module.plugin.external.com.silabs.sdk.stack.super.application.Configurable Application.usbd-driver-base."/>
+  </descriptors>
   <descriptors name="com.silabs.module.plugin.external.com.silabs.sdk.stack.super.application.Configurable Application.usbh-driver-base." label="USB Host Driver - Source" description="USB Host driver" propertyScope="module">
     <properties key="core.version" value="3.2.2._640221276"/>
     <properties key="core.builtin" value="true"/>
     <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:3.2.2._640221276"/>
     <properties key="protocol.contributingProtocol" value="com.silabs.sdk.stack.super:3.2.2._640221276.com.silabs.sdk.stack.bootloader:1.12.0._110297463"/>
     <properties key="core.installationPath" value="file:/C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/hardware/kit/common/drivers/"/>
+    <properties key="generalProj.esf.stackId" value="com.silabs.sdk.stack.super"/>
+    <properties key="generalProj.esf.stackIsInternal" value="false"/>
+    <properties key="generalProj.esf.frameworkId" value="application"/>
+    <properties key="generalProj.esf.frameworkName" value="Configurable Application"/>
+    <properties key="generalProj.esf.pluginId" value="usbh-driver"/>
+    <properties key="module.IsESFPluginModule" value="true"/>
+    <properties key="module.isLibraryModule" value="false"/>
+    <properties key="module.isBaseModule" value="true"/>
+    <properties key="core.hidden" value="true"/>
+    <properties key="core.category" value="Plugin Modules|Configurable Application|Drivers"/>
+    <properties key="core.detected" value="true"/>
+    <properties key="registry.providingDetector" value="com.silabs.ss.app.internal.ide.module.EsfPluginModuleDetector"/>
+    <properties key="CACHED_ID_STRING" value="com.silabs.module.plugin.external.com.silabs.sdk.stack.super.application.Configurable Application.usbh-driver-base."/>
+  </descriptors>
+  <descriptors name="com.silabs.module.plugin.external.com.silabs.sdk.stack.super.application.Configurable Application.usbh-driver-base." label="USB Host Driver - Source" description="USB Host driver" propertyScope="module">
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="core.builtin" value="true"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
+    <properties key="protocol.contributingProtocol" value="com.silabs.sdk.stack.super:4.0.2._1224998501.com.silabs.sdk.stack.bootloader:2.0.0._2114748622"/>
+    <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/hardware/kit/common/drivers/"/>
     <properties key="generalProj.esf.stackId" value="com.silabs.sdk.stack.super"/>
     <properties key="generalProj.esf.stackIsInternal" value="false"/>
     <properties key="generalProj.esf.frameworkId" value="application"/>
@@ -1107,6 +1287,21 @@
     <properties key="registry.providingDetector" value="com.silabs.ss.app.internal.ide.module.EsfTemplateModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.module.template.external.com.silabs.sdk.stack.super.application.Configurable Application.addition"/>
   </descriptors>
+  <descriptors name="com.silabs.module.template.external.com.silabs.sdk.stack.super.application.Configurable Application.addition" label="application addition (external)" description="Base module template for application framework" propertyScope="module">
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="core.builtin" value="true"/>
+    <properties key="generalProj.esf.stackId" value="com.silabs.sdk.stack.super"/>
+    <properties key="generalProj.esf.stackIsInternal" value="false"/>
+    <properties key="generalProj.esf.frameworkName" value="Configurable Application"/>
+    <properties key="generalProj.esf.frameworkId" value="application"/>
+    <properties key="module.IsESFPluginModule" value="true"/>
+    <properties key="core.hidden" value="true"/>
+    <properties key="core.category" value="Plugin Modules|Configurable Application|Module Templates"/>
+    <properties key="module.clientModelURI" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/platform/bootloader/application/meta-inf/template/efx32/addition.slsproj"/>
+    <properties key="core.detected" value="true"/>
+    <properties key="registry.providingDetector" value="com.silabs.ss.app.internal.ide.module.EsfTemplateModuleDetector"/>
+    <properties key="CACHED_ID_STRING" value="com.silabs.module.template.external.com.silabs.sdk.stack.super.application.Configurable Application.addition"/>
+  </descriptors>
   <descriptors name="com.silabs.module.template.external.com.silabs.sdk.stack.super.application.Configurable Application.base" label="application base (external)" description="Base module template for application framework" propertyScope="module">
     <properties key="core.version" value="3.2.2._640221276"/>
     <properties key="core.builtin" value="true"/>
@@ -1118,6 +1313,21 @@
     <properties key="core.hidden" value="true"/>
     <properties key="core.category" value="Plugin Modules|Configurable Application|Module Templates"/>
     <properties key="module.clientModelURI" value="file:/C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/platform/bootloader/application/meta-inf/template/efx32/base.slsproj"/>
+    <properties key="core.detected" value="true"/>
+    <properties key="registry.providingDetector" value="com.silabs.ss.app.internal.ide.module.EsfTemplateModuleDetector"/>
+    <properties key="CACHED_ID_STRING" value="com.silabs.module.template.external.com.silabs.sdk.stack.super.application.Configurable Application.base"/>
+  </descriptors>
+  <descriptors name="com.silabs.module.template.external.com.silabs.sdk.stack.super.application.Configurable Application.base" label="application base (external)" description="Base module template for application framework" propertyScope="module">
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="core.builtin" value="true"/>
+    <properties key="generalProj.esf.stackId" value="com.silabs.sdk.stack.super"/>
+    <properties key="generalProj.esf.stackIsInternal" value="false"/>
+    <properties key="generalProj.esf.frameworkName" value="Configurable Application"/>
+    <properties key="generalProj.esf.frameworkId" value="application"/>
+    <properties key="module.IsESFPluginModule" value="true"/>
+    <properties key="core.hidden" value="true"/>
+    <properties key="core.category" value="Plugin Modules|Configurable Application|Module Templates"/>
+    <properties key="module.clientModelURI" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/platform/bootloader/application/meta-inf/template/efx32/base.slsproj"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.app.internal.ide.module.EsfTemplateModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.module.template.external.com.silabs.sdk.stack.super.application.Configurable Application.base"/>
@@ -1168,8 +1378,8 @@
     <properties key="core.category" value="efm32|Common"/>
     <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/.studio/./modules/AllBoardsModule.slsproj"/>
     <properties key="core.builtin" value="true"/>
-    <properties key="core.version" value="4.1.1._1224998501"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.framework.project.internal.api.core.modules.SDKModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.exx32.board"/>
@@ -1190,8 +1400,8 @@
     <properties key="core.category" value="efm32|Common"/>
     <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/.studio/./modules/Common/CMSIS/CMSISClient.slsproj"/>
     <properties key="core.builtin" value="true"/>
-    <properties key="core.version" value="4.1.1._1224998501"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.framework.project.internal.api.core.modules.SDKModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.exx32.common.CMSIS"/>
@@ -1212,8 +1422,8 @@
     <properties key="core.category" value="efm32|Common"/>
     <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/.studio/./modules/Common/CMSIS/CMSISExamplesClient.slsproj"/>
     <properties key="core.builtin" value="true"/>
-    <properties key="core.version" value="4.1.1._1224998501"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.framework.project.internal.api.core.modules.SDKModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.exx32.common.CMSISExamples"/>
@@ -1234,8 +1444,8 @@
     <properties key="core.category" value="efm32|Common"/>
     <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/.studio/./modules/Common/BSP/bspClient.slsproj"/>
     <properties key="core.builtin" value="true"/>
-    <properties key="core.version" value="4.1.1._1224998501"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.framework.project.internal.api.core.modules.SDKModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.exx32.common.bsp"/>
@@ -1256,8 +1466,8 @@
     <properties key="core.category" value="efm32|Common"/>
     <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/.studio/./modules/Common/Drivers/driversClient.slsproj"/>
     <properties key="core.builtin" value="true"/>
-    <properties key="core.version" value="4.1.1._1224998501"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.framework.project.internal.api.core.modules.SDKModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.exx32.common.drivers"/>
@@ -1278,8 +1488,8 @@
     <properties key="core.category" value="efm32|Common"/>
     <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/.studio/./modules/Common/EFP/efpClient.slsproj"/>
     <properties key="core.builtin" value="true"/>
-    <properties key="core.version" value="4.1.1._1224998501"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.framework.project.internal.api.core.modules.SDKModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.exx32.common.efp"/>
@@ -1300,8 +1510,8 @@
     <properties key="core.category" value="efm32|Common"/>
     <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/.studio/./modules/Common/emdrv/nvm3.slsproj"/>
     <properties key="core.builtin" value="true"/>
-    <properties key="core.version" value="4.1.1._1224998501"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.framework.project.internal.api.core.modules.SDKModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.exx32.common.emdrv.nvm3"/>
@@ -1322,8 +1532,8 @@
     <properties key="core.category" value="efm32|Common"/>
     <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/.studio/./modules/Common/emdrv/emdrvClient.slsproj"/>
     <properties key="core.builtin" value="true"/>
-    <properties key="core.version" value="4.1.1._1224998501"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.framework.project.internal.api.core.modules.SDKModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.exx32.common.emdrv"/>
@@ -1344,8 +1554,8 @@
     <properties key="core.category" value="efm32|Common"/>
     <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/.studio/./modules/Common/emlib/emlibClient.slsproj"/>
     <properties key="core.builtin" value="true"/>
-    <properties key="core.version" value="4.1.1._1224998501"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.framework.project.internal.api.core.modules.SDKModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.exx32.common.emlib"/>
@@ -1366,8 +1576,8 @@
     <properties key="core.category" value="efm32|Common"/>
     <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/.studio/./modules/Common/peripheral/peripheralClient.slsproj"/>
     <properties key="core.builtin" value="true"/>
-    <properties key="core.version" value="4.1.1._1224998501"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.framework.project.internal.api.core.modules.SDKModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.exx32.common.peripheral"/>
@@ -1388,8 +1598,8 @@
     <properties key="core.category" value="efm32|Common"/>
     <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/.studio/./modules/Common/Platform/platformClient.slsproj"/>
     <properties key="core.builtin" value="true"/>
-    <properties key="core.version" value="4.1.1._1224998501"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.framework.project.internal.api.core.modules.SDKModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.exx32.common.platform"/>
@@ -1410,8 +1620,8 @@
     <properties key="core.category" value="efm32|Third party"/>
     <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/.studio/./modules/LibraryModules/FreeRTOS/FreeRTOSClient.slsproj"/>
     <properties key="core.builtin" value="true"/>
-    <properties key="core.version" value="4.1.1._1224998501"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.framework.project.internal.api.core.modules.SDKModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.exx32.external.FreeRTOS"/>
@@ -1432,8 +1642,8 @@
     <properties key="core.category" value="efm32|Third party"/>
     <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/.studio/./modules/LibraryModules/RTX/RTXClient.slsproj"/>
     <properties key="core.builtin" value="true"/>
-    <properties key="core.version" value="4.1.1._1224998501"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.framework.project.internal.api.core.modules.SDKModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.exx32.external.RTX"/>
@@ -1454,8 +1664,8 @@
     <properties key="core.category" value="efm32|Middleware"/>
     <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/.studio/./modules/LibraryModules/si114xhrm/si114xhrmClient.slsproj"/>
     <properties key="core.builtin" value="true"/>
-    <properties key="core.version" value="4.1.1._1224998501"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.framework.project.internal.api.core.modules.SDKModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.exx32.external.Si114xHRM"/>
@@ -1476,8 +1686,8 @@
     <properties key="core.category" value="efm32|Middleware"/>
     <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/.studio/./modules/Common/USB/USBClient.slsproj"/>
     <properties key="core.builtin" value="true"/>
-    <properties key="core.version" value="4.1.1._1224998501"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.framework.project.internal.api.core.modules.SDKModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.exx32.external.USB"/>
@@ -1498,8 +1708,8 @@
     <properties key="core.category" value="efm32|Middleware"/>
     <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/.studio/./modules/LibraryModules/cslib/cslibClient.slsproj"/>
     <properties key="core.builtin" value="true"/>
-    <properties key="core.version" value="4.1.1._1224998501"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.framework.project.internal.api.core.modules.SDKModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.exx32.external.cslib"/>
@@ -1520,8 +1730,8 @@
     <properties key="core.category" value="efm32|Third party"/>
     <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/.studio/./modules/LibraryModules/emwin/emwinClient.slsproj"/>
     <properties key="core.builtin" value="true"/>
-    <properties key="core.version" value="4.1.1._1224998501"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.framework.project.internal.api.core.modules.SDKModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.exx32.external.emwin"/>
@@ -1542,8 +1752,8 @@
     <properties key="core.category" value="efm32|Third party"/>
     <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/.studio/./modules/LibraryModules/fatfs/fatfsClient.slsproj"/>
     <properties key="core.builtin" value="true"/>
-    <properties key="core.version" value="4.1.1._1224998501"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.framework.project.internal.api.core.modules.SDKModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.exx32.external.fatfs"/>
@@ -1564,8 +1774,8 @@
     <properties key="core.category" value="efm32|Middleware"/>
     <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/.studio/./modules/LibraryModules/glib/glibClient.slsproj"/>
     <properties key="core.builtin" value="true"/>
-    <properties key="core.version" value="4.1.1._1224998501"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.framework.project.internal.api.core.modules.SDKModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.exx32.external.glib"/>
@@ -1586,8 +1796,8 @@
     <properties key="core.category" value="efm32|Third party"/>
     <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/.studio/./modules/LibraryModules/iec60335/iec60335Client.slsproj"/>
     <properties key="core.builtin" value="true"/>
-    <properties key="core.version" value="4.1.1._1224998501"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.framework.project.internal.api.core.modules.SDKModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.exx32.external.iec60335"/>
@@ -1608,8 +1818,8 @@
     <properties key="core.category" value="efm32|Third party"/>
     <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/.studio/./modules/LibraryModules/lwip/lwipClient.slsproj"/>
     <properties key="core.builtin" value="true"/>
-    <properties key="core.version" value="4.1.1._1224998501"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.framework.project.internal.api.core.modules.SDKModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.exx32.external.lwip"/>
@@ -1630,8 +1840,8 @@
     <properties key="core.category" value="efm32|Middleware"/>
     <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/.studio/./modules/LibraryModules/Micrium/micriumos.slsproj"/>
     <properties key="core.builtin" value="true"/>
-    <properties key="core.version" value="4.1.1._1224998501"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.framework.project.internal.api.core.modules.SDKModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.exx32.external.micriumos"/>
@@ -1652,8 +1862,8 @@
     <properties key="core.category" value="efm32|Middleware"/>
     <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/.studio/./modules/LibraryModules/Micrium/micriumos_fs.slsproj"/>
     <properties key="core.builtin" value="true"/>
-    <properties key="core.version" value="4.1.1._1224998501"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.framework.project.internal.api.core.modules.SDKModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.exx32.external.micriumos_fs"/>
@@ -1674,8 +1884,8 @@
     <properties key="core.category" value="efm32|Middleware"/>
     <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/.studio/./modules/LibraryModules/Micrium/micriumos_net.slsproj"/>
     <properties key="core.builtin" value="true"/>
-    <properties key="core.version" value="4.1.1._1224998501"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.framework.project.internal.api.core.modules.SDKModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.exx32.external.micriumos_net"/>
@@ -1696,8 +1906,8 @@
     <properties key="core.category" value="efm32|Middleware"/>
     <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/.studio/./modules/LibraryModules/Micrium/micriumos_usbd.slsproj"/>
     <properties key="core.builtin" value="true"/>
-    <properties key="core.version" value="4.1.1._1224998501"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.framework.project.internal.api.core.modules.SDKModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.exx32.external.micriumos_usbd"/>
@@ -1718,8 +1928,8 @@
     <properties key="core.category" value="efm32|Middleware"/>
     <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/.studio/./modules/LibraryModules/Micrium/micriumos_usbh.slsproj"/>
     <properties key="core.builtin" value="true"/>
-    <properties key="core.version" value="4.1.1._1224998501"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.framework.project.internal.api.core.modules.SDKModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.exx32.external.micriumos_usbh"/>
@@ -1740,8 +1950,8 @@
     <properties key="core.category" value="efm32|Third party"/>
     <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/.studio/./modules/LibraryModules/Micrium/uCos2Client.slsproj"/>
     <properties key="core.builtin" value="true"/>
-    <properties key="core.version" value="4.1.1._1224998501"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.framework.project.internal.api.core.modules.SDKModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.exx32.external.uCos2"/>
@@ -1762,8 +1972,8 @@
     <properties key="core.category" value="efm32|Middleware"/>
     <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/.studio/./modules/LibraryModules/usbxpress/usbxpressClient.slsproj"/>
     <properties key="core.builtin" value="true"/>
-    <properties key="core.version" value="4.1.1._1224998501"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.framework.project.internal.api.core.modules.SDKModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.exx32.external.usbxpress"/>
@@ -1784,8 +1994,8 @@
     <properties key="core.category" value="efm32|Common"/>
     <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/.studio/./modules/AllPartsModule.slsproj"/>
     <properties key="core.builtin" value="true"/>
-    <properties key="core.version" value="4.1.1._1224998501"/>
-    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.1.1._1224998501"/>
+    <properties key="core.version" value="4.0.2._1224998501"/>
+    <properties key="coreSdk.contributingSdk" value="com.silabs.sdk.stack.super:4.0.2._1224998501"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.framework.project.internal.api.core.modules.SDKModuleDetector"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.exx32.part"/>

@@ -32,81 +32,199 @@
 #include "sl_system_process_action.h"
 #endif // SL_CATALOG_KERNEL_PRESENT
 
-#define EUS1MOSI_PORT gpioPortC
-#define EUS1MOSI_PIN    1
-#define EUS1MISO_PORT   gpioPortC
-#define EUS1MISO_PIN    2
-#define EUS1SCLK_PORT   gpioPortC
-#define EUS1SCLK_PIN    3
-#define EUS1CS_PORT     gpioPortC
-#define EUS1CS_PIN      0
+#include "acc_hal_definitions.h"
+#include "acc_hal_integration.h"
+#include "acc_rss.h"
+#include "acc_rss_assembly_test.h"
+#include "acc_version.h"
+#include <stdio.h>
 
+#define DEFAULT_SENSOR_ID 1
 
-int main(void)
-{
-  // Initialize Silicon Labs device, system, service(s) and protocol stack(s).
-  // Note that if the kernel is present, processing task(s) will be created by
-  // this call.
-  sl_system_init();
+static bool run_test(acc_rss_assembly_test_configuration_t configuration);
 
-  // Initialize the application. For example, create periodic timer(s) or
-  // task(s) if the kernel is present.
-  app_init();
+int main(void) {
+	// Initialize Silicon Labs device, system, service(s) and protocol stack(s).
+	// Note that if the kernel is present, processing task(s) will be created by
+	// this call.
+	sl_system_init();
+
+	// Initialize the application. For example, create periodic timer(s) or
+	// task(s) if the kernel is present.
+	app_init();
+	printf("Acconeer software version %s\n", acc_version_get());
+
+		const acc_hal_t *hal = acc_hal_integration_get_implementation();
+
+		if (!acc_rss_activate(hal))
+		{
+			return EXIT_FAILURE;
+		}
+
+		acc_rss_assembly_test_configuration_t configuration = acc_rss_assembly_test_configuration_create();
+		acc_rss_assembly_test_configuration_sensor_set(configuration, DEFAULT_SENSOR_ID);
+
+		// Disable all tests (they are enabled by default)
+		acc_rss_assembly_test_configuration_all_tests_disable(configuration);
+
+		// Enable and run: Read Test
+		acc_rss_assembly_test_configuration_communication_read_test_enable(configuration);
+		if (!run_test(configuration))
+		{
+			printf("Bring up test: Read Test failed\n");
+			acc_rss_assembly_test_configuration_destroy(&configuration);
+			acc_rss_deactivate();
+			return EXIT_FAILURE;
+		}
+
+		acc_rss_assembly_test_configuration_communication_read_test_disable(configuration);
+
+		// Enable and run: Write Read Test
+		acc_rss_assembly_test_configuration_communication_write_read_test_enable(configuration);
+		if (!run_test(configuration))
+		{
+			printf("Bring up test: Write Read Test failed\n");
+			acc_rss_assembly_test_configuration_destroy(&configuration);
+			acc_rss_deactivate();
+			return EXIT_FAILURE;
+		}
+
+		acc_rss_assembly_test_configuration_communication_write_read_test_disable(configuration);
+
+		// Enable and run: Interrupt Test
+		acc_rss_assembly_test_configuration_communication_interrupt_test_enable(configuration);
+		if (!run_test(configuration))
+		{
+			printf("Bring up test: Interrupt Test failed\n");
+			acc_rss_assembly_test_configuration_destroy(&configuration);
+			acc_rss_deactivate();
+			return EXIT_FAILURE;
+		}
+
+		acc_rss_assembly_test_configuration_communication_interrupt_test_disable(configuration);
+
+		// Enable and run: Hibernate Test
+		acc_rss_assembly_test_configuration_communication_hibernate_test_enable(configuration);
+		if (!run_test(configuration))
+		{
+			printf("Bring up test: Hibernate Test failed\n");
+			acc_rss_assembly_test_configuration_destroy(&configuration);
+			acc_rss_deactivate();
+			return EXIT_FAILURE;
+		}
+
+		acc_rss_assembly_test_configuration_communication_hibernate_test_disable(configuration);
+
+		// Enable and run: Supply Test
+		acc_rss_assembly_test_configuration_supply_test_enable(configuration);
+		if (!run_test(configuration))
+		{
+			printf("Bring up test: Supply Test failed\n");
+			acc_rss_assembly_test_configuration_destroy(&configuration);
+			acc_rss_deactivate();
+			return EXIT_FAILURE;
+		}
+
+		acc_rss_assembly_test_configuration_supply_test_disable(configuration);
+
+		// Enable and run: Clock Test
+		acc_rss_assembly_test_configuration_clock_test_enable(configuration);
+		if (!run_test(configuration))
+		{
+			printf("Bring up test: Clock Test failed\n");
+			acc_rss_assembly_test_configuration_destroy(&configuration);
+			acc_rss_deactivate();
+			return EXIT_FAILURE;
+		}
+
+		acc_rss_assembly_test_configuration_clock_test_disable(configuration);
+
+		printf("Bring up test: All tests passed\n");
+
+		acc_rss_assembly_test_configuration_destroy(&configuration);
+		acc_rss_deactivate();
 
 #if defined(SL_CATALOG_KERNEL_PRESENT)
   // Start the kernel. Task(s) created in app_init() will start running.
   sl_system_kernel_start();
 #else // SL_CATALOG_KERNEL_PRESENT
-  while (1) {
-    // Do not remove this call: Silicon Labs components process action routine
-    // must be called from the super loop.
-    sl_system_process_action();
+	while (1) {
+		// Do not remove this call: Silicon Labs components process action routine
+		// must be called from the super loop.
+		sl_system_process_action();
 
-    // Application process.
-    app_process_action();
+		// Application process.
+		app_process_action();
 
 #if defined(SL_CATALOG_POWER_MANAGER_PRESENT)
-    // Let the CPU go to sleep if the system allows it.
-    sl_power_manager_sleep();
+		// Let the CPU go to sleep if the system allows it.
+		sl_power_manager_sleep();
 #endif
-  }
-  // Clean-up when exiting the application.
-  app_exit();
+	}
+	// Clean-up when exiting the application.
+	app_exit();
 #endif // SL_CATALOG_KERNEL_PRESENT
 }
 
-void initEUSART1(void)
+static bool run_test(acc_rss_assembly_test_configuration_t configuration)
 {
-  CMU_ClockEnable(cmuClock_EUSART1, true);
+	acc_rss_assembly_test_result_t test_results[ACC_RSS_ASSEMBLY_TEST_MAX_NUMBER_OF_TESTS];
+	uint16_t                       nr_of_test_results = ACC_RSS_ASSEMBLY_TEST_MAX_NUMBER_OF_TESTS;
 
-  // SPI advanced configuration (part of the initializer)
-  EUSART_SpiAdvancedInit_TypeDef adv = EUSART_SPI_ADVANCED_INIT_DEFAULT;
+	bool success = acc_rss_assembly_test(configuration, test_results, &nr_of_test_results);
 
-  adv.msbFirst = true;        // SPI standard MSB first
+	if (success)
+	{
+		for (uint16_t i = 0; i < nr_of_test_results; i++)
+		{
+			const bool passed = test_results[i].test_passed;
+			printf("Name: %s, result: %s\n", test_results[i].test_name, passed ? "Pass" : "Fail");
+		}
+	}
+	else
+	{
+		printf("Bring up test: Failed to complete\n");
+		return success;
+	}
 
-  // Default asynchronous initializer (main/master mode and 8-bit data)
-  EUSART_SpiInit_TypeDef init = EUSART_SPI_MASTER_INIT_DEFAULT_HF;
+	return success;
+}
 
-  init.bitRate = 1000000;        // 1 MHz shift clock
-  init.advancedSettings = &adv;  // Advanced settings structure
 
-  /*
-   * Route EUSART1 MOSI, MISO, and SCLK to the specified pins.  CS is
-   * not controlled by EUSART1 so there is no write to the corresponding
-   * EUSARTROUTE register to do this.
-   */
-  GPIO->EUSARTROUTE[1].TXROUTE = (EUS1MOSI_PORT << _GPIO_EUSART_TXROUTE_PORT_SHIFT)
-      | (EUS1MOSI_PIN << _GPIO_EUSART_TXROUTE_PIN_SHIFT);
-  GPIO->EUSARTROUTE[1].RXROUTE = (EUS1MISO_PORT << _GPIO_EUSART_RXROUTE_PORT_SHIFT)
-      | (EUS1MISO_PIN << _GPIO_EUSART_RXROUTE_PIN_SHIFT);
-  GPIO->EUSARTROUTE[1].SCLKROUTE = (EUS1SCLK_PORT << _GPIO_EUSART_SCLKROUTE_PORT_SHIFT)
-      | (EUS1SCLK_PIN << _GPIO_EUSART_SCLKROUTE_PIN_SHIFT);
+void initEUSART1(void) {
+	CMU_ClockEnable(cmuClock_EUSART1, true);
 
-  // Enable EUSART interface pins
-  GPIO->EUSARTROUTE[1].ROUTEEN = GPIO_EUSART_ROUTEEN_RXPEN |    // MISO
-                                 GPIO_EUSART_ROUTEEN_TXPEN |    // MOSI
-                                 GPIO_EUSART_ROUTEEN_SCLKPEN;
+	// SPI advanced configuration (part of the initializer)
+	EUSART_SpiAdvancedInit_TypeDef adv = EUSART_SPI_ADVANCED_INIT_DEFAULT;
 
-  // Configure and enable EUSART1
-  EUSART_SpiInit(EUSART1, &init);
+	adv.msbFirst = true;        // SPI standard MSB first
+
+	// Default asynchronous initializer (main/master mode and 8-bit data)
+	EUSART_SpiInit_TypeDef init = EUSART_SPI_MASTER_INIT_DEFAULT_HF;
+
+	init.bitRate = 1000000;        // 1 MHz shift clock
+	init.advancedSettings = &adv;  // Advanced settings structure
+
+	/*
+	 * Route EUSART1 MOSI, MISO, and SCLK to the specified pins.  CS is
+	 * not controlled by EUSART1 so there is no write to the corresponding
+	 * EUSARTROUTE register to do this.
+	 */
+	GPIO->EUSARTROUTE[1].TXROUTE = (A111_MOSI_PORT
+			<< _GPIO_EUSART_TXROUTE_PORT_SHIFT)
+			| (A111_MOSI_PIN << _GPIO_EUSART_TXROUTE_PIN_SHIFT);
+	GPIO->EUSARTROUTE[1].RXROUTE = (A111_MISO_PORT
+			<< _GPIO_EUSART_RXROUTE_PORT_SHIFT)
+			| (A111_MISO_PIN << _GPIO_EUSART_RXROUTE_PIN_SHIFT);
+	GPIO->EUSARTROUTE[1].SCLKROUTE = (A111_SCLK_PORT
+			<< _GPIO_EUSART_SCLKROUTE_PORT_SHIFT)
+			| (A111_SCLK_PIN << _GPIO_EUSART_SCLKROUTE_PIN_SHIFT);
+
+	// Enable EUSART interface pins
+	GPIO->EUSARTROUTE[1].ROUTEEN = GPIO_EUSART_ROUTEEN_RXPEN |    // MISO
+			GPIO_EUSART_ROUTEEN_TXPEN |    // MOSI
+			GPIO_EUSART_ROUTEEN_SCLKPEN;
+
+	// Configure and enable EUSART1
+	EUSART_SpiInit(EUSART1, &init);
 }

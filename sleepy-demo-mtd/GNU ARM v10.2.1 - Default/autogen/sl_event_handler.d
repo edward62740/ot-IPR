@@ -111,11 +111,7 @@ autogen/sl_event_handler.o: ../autogen/sl_event_handler.c \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_assert.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_common.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emdrv\nvm3\inc\nvm3_default.h \
- ../autogen/sl_ot_init.h ../autogen/sl_simple_button_instances.h \
- c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\driver\button\inc\sl_simple_button.h \
- c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\driver\button\inc\sl_button.h \
- c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_gpio.h \
- ../autogen/sl_spidrv_instances.h \
+ ../autogen/sl_ot_init.h ../autogen/sl_spidrv_instances.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emdrv\spidrv\inc\spidrv.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_cmu.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_cmu_compat.h \
@@ -134,6 +130,7 @@ autogen/sl_event_handler.o: ../autogen/sl_event_handler.c \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_usart.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_eusart.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_eusart_compat.h \
+ c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_gpio.h \
  C\:\Users\Workstation\Desktop\IPR\sleepy-demo-mtd\config/uartdrv_config.h
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h:
 ../autogen/sl_event_handler.h:
@@ -248,10 +245,6 @@ c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_asse
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_common.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emdrv\nvm3\inc\nvm3_default.h:
 ../autogen/sl_ot_init.h:
-../autogen/sl_simple_button_instances.h:
-c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\driver\button\inc\sl_simple_button.h:
-c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\driver\button\inc\sl_button.h:
-c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_gpio.h:
 ../autogen/sl_spidrv_instances.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emdrv\spidrv\inc\spidrv.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_cmu.h:
@@ -271,4 +264,5 @@ c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_emu.
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_usart.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_eusart.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_eusart_compat.h:
+c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_gpio.h:
 C\:\Users\Workstation\Desktop\IPR\sleepy-demo-mtd\config/uartdrv_config.h:

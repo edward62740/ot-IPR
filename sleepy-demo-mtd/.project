@@ -312,26 +312,6 @@
 			<locationURI>STUDIO_SDK_LOC/platform/common/toolchain/src/sl_memory.c</locationURI>
 		</link>
 		<link>
-			<name>gecko_sdk_4.0.2/platform/driver/button/inc/sl_button.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/driver/button/inc/sl_button.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/driver/button/inc/sl_simple_button.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/driver/button/inc/sl_simple_button.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/driver/button/src/sl_button.c</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/driver/button/src/sl_button.c</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/driver/button/src/sl_simple_button.c</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/driver/button/src/sl_simple_button.c</locationURI>
-		</link>
-		<link>
 			<name>gecko_sdk_4.0.2/platform/emdrv/common/inc/ecode.h</name>
 			<type>1</type>
 			<locationURI>STUDIO_SDK_LOC/platform/emdrv/common/inc/ecode.h</locationURI>

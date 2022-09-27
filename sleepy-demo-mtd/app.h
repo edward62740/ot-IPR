@@ -18,6 +18,22 @@
 #ifndef APP_H
 #define APP_H
 
+#include "sl_spidrv_eusart_spi0_config.h"
+
+
+#define A111_MOSI_PORT   SL_SPIDRV_EUSART_SPI0_TX_PORT
+#define A111_MOSI_PIN    SL_SPIDRV_EUSART_SPI0_TX_PIN
+#define A111_MISO_PORT   SL_SPIDRV_EUSART_SPI0_RX_PORT
+#define A111_MISO_PIN    SL_SPIDRV_EUSART_SPI0_RX_PIN
+#define A111_SCLK_PORT   SL_SPIDRV_EUSART_SPI0_SCLK_PORT
+#define A111_SCLK_PIN    SL_SPIDRV_EUSART_SPI0_SCLK_PIN
+#define A111_CS_PORT     SL_SPIDRV_EUSART_SPI0_CS_PORT
+#define A111_CS_PIN      SL_SPIDRV_EUSART_SPI0_CS_PIN
+#define A111_EN_PORT     gpioPortC
+#define A111_EN_PIN      5
+#define A111_INT_PORT    gpioPortC
+#define A111_INT_PIN     6
+
 /**************************************************************************//**
  * Application Init.
  *****************************************************************************/
