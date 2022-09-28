@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="com.ti.ccstudio.project.ui.internal.preferences.DynamicPreferencePageManager">
+	</section>
+	<section name="com.ti.ccstudio.project.ui.internal.properties.DynamicPropertiesPageManager">
+	</section>
+	<section name="com.ti.ccstudio.project.ui.internal.wizards.importexport.ProjectImportPage">
+	</section>
+	<section name="com.ti.ccstudio.project.ui.internal.wizards.project.ProjectSettingsPage">
+		<section name="1">
+		</section>
+	</section>
+</section>
