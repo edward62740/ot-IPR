@@ -5972,3 +5972,96 @@ org.eclipse.core.runtime.CoreException: No property tester contributes a propert
 
 !ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-27 14:57:53.197
 !MESSAGE Deleted Shared Daemon Version File: C:\Users\Workstation\.uc\cli\mainstudio.running.version
+!SESSION 2022-09-28 13:48:48.262 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=11.0.5
+java.vendor=Amazon.com Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.silabs.ss.platform.jetty.server 1 0 2022-09-28 13:48:55.114
+!MESSAGE Jetty listening on: http://127.0.0.1:55744/
+
+!ENTRY com.silabs.ss.platform.jetty.server 1 0 2022-09-28 13:48:55.114
+!MESSAGE ContentServer started at: 127.0.0.1, 55744
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-28 13:48:55.130
+!MESSAGE com.silabs.ss.tool.launcher.product found! Writing main studio shared file
+
+!ENTRY com.silabs.ss.platform.rcp.core 2 0 2022-09-28 13:49:01.061
+!MESSAGE Could not process part: si917-sb00
+!STACK 0
+java.text.ParseException: UnknownChip: unknown
+	at com.ember.workbench.chip.ChipModel.create(ChipModel.java:111)
+	at com.ember.workbench.kit_db.creator.PlatformDbArchitectureCreator.loadAliasMap(PlatformDbArchitectureCreator.java:74)
+	at com.ember.workbench.kit_db.creator.PlatformDbArchitectureCreator.aliases(PlatformDbArchitectureCreator.java:37)
+	at com.silabs.architecture.ArchitectureModel.lambda$1(ArchitectureModel.java:83)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1654)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:658)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:274)
+	at java.base/java.util.HashMap$ValueSpliterator.forEachRemaining(HashMap.java:1675)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
+	at com.silabs.architecture.ArchitectureModel.<init>(ArchitectureModel.java:63)
+	at com.silabs.architecture.ArchitectureModel$LazyInstantiator.<clinit>(ArchitectureModel.java:52)
+	at com.silabs.architecture.ArchitectureModel.instance(ArchitectureModel.java:145)
+	at com.ember.workbench.kit_db.api.Efr32DieCodeName.architectureId(Efr32DieCodeName.java:60)
+	at com.ember.workbench.wasp_efr32.esf.framework.Efr32StandaloneFrameworkData.lambda$1(Efr32StandaloneFrameworkData.java:40)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:550)
+	at java.base/java.util.stream.AbstractPipeline.evaluateToArrayNode(AbstractPipeline.java:260)
+	at java.base/java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:517)
+	at com.ember.workbench.wasp_efr32.esf.framework.Efr32StandaloneFrameworkData.<clinit>(Efr32StandaloneFrameworkData.java:40)
+	at com.ember.workbench.wasp_efr32.esf.framework.Efr32StandaloneConfiguration.scanStack(Efr32StandaloneConfiguration.java:45)
+	at com.ember.workbench.app_framework.extension.ExtendedFrameworkModel.lambda$0(ExtendedFrameworkModel.java:178)
+	at com.ember.workbench.app_framework.extension.ExtendedFrameworkModel.scanExtendedStack(ExtendedFrameworkModel.java:191)
+	at com.ember.workbench.app_framework.application.StackLoadingUtils.loadFrameworks(StackLoadingUtils.java:341)
+	at com.ember.workbench.app_framework.application.StackProvider.createStackEntity(StackProvider.java:129)
+	at com.ember.workbench.app_framework.application.StackDetector.scanStack(StackDetector.java:156)
+	at com.ember.workbench.app_framework.application.StackDetector.quickScan(StackDetector.java:91)
+	at com.silabs.ss.platform.api.descriptor.core.registry.BaseDetector.doDetectDescriptors(BaseDetector.java:71)
+	at com.silabs.ss.platform.api.descriptor.core.registry.BaseDetector.detectDescriptors(BaseDetector.java:57)
+	at com.ember.workbench.app_framework.application.StackDetector.detectDescriptors(StackDetector.java:63)
+	at com.ember.workbench.app_framework.application.StackDetector.detectDescriptors(StackDetector.java:1)
+	at com.silabs.ss.platform.api.descriptor.core.registry.BaseRegistry.detectDescriptors(BaseRegistry.java:711)
+	at com.silabs.ss.platform.api.descriptor.core.registry.BaseRegistry.detectDescriptors(BaseRegistry.java:673)
+	at com.silabs.ss.platform.api.descriptor.core.registry.BaseRegistry.scanForNewDescriptors(BaseRegistry.java:650)
+	at com.silabs.ss.platform.api.descriptor.core.registry.BaseRegistry.autoDetectDescriptors(BaseRegistry.java:634)
+	at com.silabs.ss.platform.api.descriptor.core.registry.BaseRegistry.loadInternalDescriptors(BaseRegistry.java:580)
+	at com.silabs.ss.platform.api.descriptor.core.registry.BaseRegistry.lambda$13(BaseRegistry.java:557)
+	at com.silabs.ss.platform.api.descriptor.core.registry.BaseDatabaseRegistry.invokeBatchOperation(BaseDatabaseRegistry.java:269)
+	at com.silabs.ss.platform.api.descriptor.core.registry.BaseRegistry.doEnsureSync(BaseRegistry.java:553)
+	at com.silabs.ss.platform.api.descriptor.core.registry.BaseRegistry.ensureSync(BaseRegistry.java:520)
+	at com.silabs.ss.platform.api.descriptor.core.manager.BaseDescriptorManager.ensureSync(BaseDescriptorManager.java:278)
+	at com.silabs.ss.platform.api.descriptor.core.manager.BaseDescriptorManager.getAllDescriptorIds(BaseDescriptorManager.java:333)
+	at com.silabs.ss.platform.api.descriptor.core.manager.BaseManager.findEnabledIds(BaseManager.java:680)
+	at com.silabs.ss.framework.uc.core.internal.setup.acts.apack.SdkAdapterPackWatcher.lambda$12(SdkAdapterPackWatcher.java:147)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY com.silabs.ss.platform.content.core 4 0 2022-09-28 13:49:07.711
+!MESSAGE Local timestamp file does not exist: C:\SiliconLabs\SimplicityStudio\v5\offline\common\Simplicity_Studio_Terms_of_Use_and_Privacy_Statement.timestamp
+
+!ENTRY com.silabs.ss.tool.installer.core 2 0 2022-09-28 13:49:29.222
+!MESSAGE Problem getting package resources: changelog
+
+!ENTRY com.silabs.ss.platform.content.core 4 0 2022-09-28 13:49:30.691
+!MESSAGE Local timestamp file does not exist: C:\SiliconLabs\SimplicityStudio\v5\offline\common\Simplicity_Studio_Terms_of_Use_and_Privacy_Statement.timestamp
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-28 15:53:38.867
+!MESSAGE Deleted Shared Daemon File: C:\Users\Workstation\.uc\cli\mainstudio.running
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-09-28 15:53:38.867
+!MESSAGE Deleted Shared Daemon Version File: C:\Users\Workstation\.uc\cli\mainstudio.running.version
