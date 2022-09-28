@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="ASCII"?>
-<model:MDescriptors xmlns:model="http://www.silabs.com/ss/Studio.ecore">
-  <descriptors name="$registry.cache.settings">
-    <properties key="prevKnownDetectorClasses" value="com.silabs.ss.platform.internal.api.sdk.core.protocol.SDKProtocolDetector com.silabs.ss.framework.uc.internal.api.sdk.UcSdkProtocolDetector"/>
-  </descriptors>
-</model:MDescriptors>

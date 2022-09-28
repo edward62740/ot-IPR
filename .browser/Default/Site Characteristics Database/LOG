@@ -1,3 +1,2 @@
-2022/09/27-13:38:48.735 195c Reusing MANIFEST C:\Users\Workstation\Desktop\IPR\.browser\Default\Site Characteristics Database/MANIFEST-000001
-2022/09/27-13:38:48.747 195c Recovering log #6
-2022/09/27-13:38:48.747 195c Reusing old log C:\Users\Workstation\Desktop\IPR\.browser\Default\Site Characteristics Database/000006.log 
+2022/09/28-16:38:01.313 9e38 Creating DB C:\Users\Workstation\Desktop\IPR\.browser\Default\Site Characteristics Database since it was missing.
+2022/09/28-16:38:01.355 9e38 Reusing MANIFEST C:\Users\Workstation\Desktop\IPR\.browser\Default\Site Characteristics Database/MANIFEST-000001
