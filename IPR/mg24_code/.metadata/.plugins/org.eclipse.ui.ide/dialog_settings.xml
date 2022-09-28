@@ -1,23 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<list key="installedFeatures">
-		<item value="org.eclipse.cdt.debug.ui.memory:10.6.0.202201122357"/>
-		<item value="org.eclipse.cdt.gnu.build:10.6.0.202201122357"/>
-		<item value="org.eclipse.cdt.native:10.6.0.202203091838"/>
-		<item value="org.eclipse.cdt.platform:10.6.0.202203091838"/>
-		<item value="org.eclipse.draw2d:3.10.100.201606061308"/>
-		<item value="org.eclipse.embedcdt.debug.gdbjtag.jlink:6.1.2.202102181132"/>
-		<item value="org.eclipse.embedcdt.debug.gdbjtag:6.1.2.202102181132"/>
-		<item value="org.eclipse.emf.common:2.25.0.v20220123-0838"/>
-		<item value="org.eclipse.emf.ecore:2.27.0.v20220123-0838"/>
-		<item value="org.eclipse.help:2.3.900.v20220308-0310"/>
-		<item value="org.eclipse.platform:4.23.0.v20220308-0722"/>
-		<item value="org.eclipse.rcp:4.23.0.v20220308-0722"/>
-		<item value="org.eclipse.zest:1.7.0.201606061308"/>
-	</list>
-	<section name="NewWizardAction">
-		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="com.silabs.ss.framework.ide.project.ui.NewMCUProjectWizardV5"/>
-		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+	<section name="ChooseWorkspaceDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="196"/>
+		<item key="DIALOG_Y_ORIGIN" value="197"/>
+	</section>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
 		</list>
 	</section>
 </section>

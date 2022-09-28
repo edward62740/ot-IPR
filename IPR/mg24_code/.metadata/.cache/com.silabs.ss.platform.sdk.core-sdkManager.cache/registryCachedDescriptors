@@ -5,6 +5,7 @@
     <properties key="core.installationPath" value="file:/C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/"/>
     <properties key="core.version" value="3.2.2._640221276"/>
     <properties key="sdk.subPropertyFiles" value="C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/app/common/app_common.properties C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/util/plugin/plugin.properties C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/platform/bootloader/esf.properties C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/platform/halconfig/halconfig.properties C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/platform/base/base.properties C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/app/amazon/app_amazon.properties C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/hardware/kit/kit.properties C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/hardware/reference_design/ref_design.properties C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/app/mcu_example/app_mcu.properties C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/.studio/efm32.properties"/>
+    <properties key="sdk.extensionPropertyFiles" value=""/>
     <properties key="core.partCompatibility" value="mcu.arm.efm32.* mcu.arm.ezr32.* .*wgm16.*"/>
     <properties key="stack.esf.useAdditionalLibraries" value="true"/>
     <properties key="sdk.supportModules" value="true"/>
@@ -30,13 +31,6 @@
     <properties key="signature_trust.trustDescription" value="&lt;b>Trust Status: &lt;/b>Trusted&#xD;&#xA;&lt;b>Signed Status: &lt;/b>Unsigned&#xD;&#xA;"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.platform.internal.api.sdk.core.SDKDetector"/>
-    <properties key="sdk.extensionPropertyFiles" value=""/>
-    <properties key="stack.esf.stackId" value="com.silabs.sdk.stack.super"/>
-    <properties key="stack.esf.halDir" value="file:/C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/platform/base/hal/"/>
-    <properties key="stack.esf.frameworkIds" value="application bootloader"/>
-    <properties key="stack.esf.stackHalPath" value="file:/C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/platform/base/hal/"/>
-    <properties key="stack.esf.stackLibPath" value="file:/C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/platform/base/"/>
-    <properties key="core.boardCompatibility" value="brd2207a brd2503a com.silabs.board.none:0.0.0 brd4.* brd2102a wstk:0.0.0 brd2500a brd2501a brd2204a"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.stack.super"/>
   </descriptors>
   <descriptors name="com.silabs.sdk.stack.super" label="Gecko SDK Suite: Amazon, Bluetooth 3.3.2, Bluetooth Mesh 2.2.2, EmberZNet 7.0.2.0, Flex 3.3.2.0, MCU 6.2.2.0, Micrium OS Kernel, OpenThread 2.0.2.0 (GitHub-3b79cb0d0), Platform 4.0.2.0, USB 1.0.0.0, Wi-SUN 1.2.3.0, Z-Wave SDK 7.17.2.0" description="&lt;pre>&lt;b>Trust Status: &lt;/b>Trusted&#xD;&#xA;&lt;b>Signed Status: &lt;/b>Unsigned&#xD;&#xA;&lt;/pre>&#xA;&#xA;&lt;pre>Gecko SDK Suite&lt;/pre>">
@@ -44,6 +38,7 @@
     <properties key="core.installationPath" value="file:/C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/"/>
     <properties key="core.version" value="4.0.2._1224998501"/>
     <properties key="sdk.subPropertyFiles" value="C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/.studio/efm32.properties C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/app/bluetooth/esf.properties C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/protocol/zigbee/esf.properties C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/platform/bootloader/esf.properties C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/protocol/usb/usb.properties C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/protocol/openthread/esf.properties C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/hardware/kit/kit.properties C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/util/third_party/tensorflow_extra/apack.properties C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/hardware/reference_design/ref_design.properties C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/platform/micrium_os/micrium-krnx.properties C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/app/wisun/esf.properties C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/platform/halconfig/halconfig.properties C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/app/amazon/app_amazon.properties C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/util/plugin/plugin.properties C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/protocol/z-wave/esf.properties C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/app/mcu_example/app_mcu.properties C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/app/flex/esf.properties C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/app/bluetooth/btmesh.properties C:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/app/common/app_common.properties"/>
+    <properties key="sdk.extensionPropertyFiles" value=""/>
     <properties key="core.partCompatibility" value="mcu.arm.efm32.* mcu.arm.ezr32.* .*wgm16.* .*efr32bg2(1|2.*f512|4).* .*efr32mg2[124].* .*efr32[mb]g1[23]p.* .*mgm(1[23]|2[12]).* .*bgm(13|21|22.*hna).* .*efr32[bm]g(1[bp23]|2[124]).* .*efr32(mg14).* .*bgm(1|13|21|22).* .*mgm(1|12|13|21|22|24).* .*efr32mg.* .*efr32fg.* .*efr32bg.* .*efr32fg12.* .*efr32mg12.* mcu.arm.efm32.g..* mcu.arm.efm32.gg.* mcu.arm.efm32.hg.* mcu.arm.efm32.pg.* mcu.arm.efm32.pg12.* mcu.arm.efm32.jg.* mcu.arm.efm32.jg12.* mcu.arm.efm32.lg.* mcu.arm.efm32.wg.* mcu.arm.efr32.* .*efr32m[gr].* .*zgm13.* .*efr32zg.* .*host.* .*efr32mg(1|12|13|14)p.* .*efr32mg2[124].* .*mgm(1|12|13|21|22|24).* .*rm21.*"/>
     <properties key="stack.esf.useAdditionalLibraries" value="true"/>
     <properties key="sdk.supportModules" value="true"/>
@@ -79,9 +74,6 @@
     <properties key="signature_trust.trustDescription" value="&lt;b>Trust Status: &lt;/b>Trusted&#xD;&#xA;&lt;b>Signed Status: &lt;/b>Unsigned&#xD;&#xA;"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.platform.internal.api.sdk.core.SDKRepoDetector"/>
-    <properties key="sdk.extensionPropertyFiles" value=""/>
-    <properties key="gccSDK.gccLinkerScript" value="C:\Users\Workstation\SimplicityStudio\SDKs\gecko_sdk\.studio\linkerScripts\linkerfile.ld"/>
-    <properties key="stack.esf.stackId" value="com.silabs.sdk.stack.super"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.stack.super"/>
   </descriptors>
   <descriptors name="com.silabs.stack.external.stackless" label="Stackless applications" description="">
@@ -100,7 +92,6 @@
     <properties key="stack.esf.frameworkCount" value="3"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.ember.workbench.app_framework.application.StackDetector"/>
-    <properties key="signature_trust.requiresTrust" value="false"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.stack.external.stackless"/>
   </descriptors>
 </model:MDescriptors>
