@@ -1,0 +1,15 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+SHELL = cmd.exe
+
+# Each subdirectory must supply rules for building sources it contributes
+src/core/utils/parse_cmdline.o: C:/ti/simplelink_cc13xx_cc26xx_sdk_6_20_00_29/source/third_party/openthread/src/core/utils/parse_cmdline.cpp $(GEN_OPTS) | $(GEN_FILES) $(GEN_MISC_FILES)
+	@echo 'Building file: "$<"'
+	@echo 'Invoking: Arm Compiler'
+	"C:/ti/ccs1200/ccs/tools/compiler/ti-cgt-armllvm_2.1.0.LTS/bin/tiarmclang.exe" -c -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -mlittle-endian -mthumb -Oz -I"C:/Users/Edward/workspace_v12/libopenthread_radio_cc13x2_26x2_ticlang" -I"C:/ti/simplelink_cc13xx_cc26xx_sdk_6_20_00_29/source/third_party/openthread/examples/platforms" -I"C:/ti/simplelink_cc13xx_cc26xx_sdk_6_20_00_29/source" -I"C:/ti/simplelink_cc13xx_cc26xx_sdk_6_20_00_29/source/third_party/openthread/third_party/mbedtls" -I"C:/ti/simplelink_cc13xx_cc26xx_sdk_6_20_00_29/source/third_party/openthread/third_party/mbedtls/repo/include" -I"C:/ti/simplelink_cc13xx_cc26xx_sdk_6_20_00_29/source/third_party/openthread/include" -I"C:/Users/Edward/workspace_v12/libmbedcrypto_cc13x2_26x2_ticlang/config" -I"C:/Users/Edward/workspace_v12/libopenthread_radio_cc13x2_26x2_ticlang/config" -I"C:/ti/simplelink_cc13xx_cc26xx_sdk_6_20_00_29/source/third_party/openthread/src/core" -I"C:/ti/simplelink_cc13xx_cc26xx_sdk_6_20_00_29/source/third_party/openthread/src" -DHAVE_CONFIG_H -D_BSD_SOURCE=1 -D_DEFAULT_SOURCE=1 -DMBEDTLS_CONFIG_FILE='"mbedtls-config-cc13x2_26x2.h"' -DDeviceFamily_CC13X2_CC26X2 -DOPENTHREAD_RADIO=1 -DOPENTHREAD_CONFIG_FILE='"openthread-config-cc13x2_26x2-rcp.h"' -DOPENTHREAD_PROJECT_CORE_CONFIG_FILE='"openthread-core-cc13x2_26x2-config.h"' -gstrict-dwarf -gdwarf-3 -Wextra -Wshadow -Wall -Wno-ti-macros -ffunction-sections -march=armv7e-m -MMD -MP -MF"src/core/utils/$(basename $(<F)).d_raw" -MT"$(@)"  $(GEN_OPTS__FLAG) -o"$@" "$<"
+	@echo 'Finished building: "$<"'
+	@echo ' '
+
+

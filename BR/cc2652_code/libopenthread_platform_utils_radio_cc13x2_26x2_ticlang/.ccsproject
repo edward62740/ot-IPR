@@ -10,7 +10,7 @@
 	<createSlaveProjects value=""/>
 	<ignoreDefaultDeviceSettings value="true"/>
 	<ignoreDefaultCCSSettings value="true"/>
-	<templateProperties value="id=libmbedcrypto_cc13x2_26x2_ticlang.projectspec.libmbedcrypto_cc13x2_26x2_ticlang,isHybrid=true"/>
-	<origin value="C:\ti\simplelink_cc13xx_cc26xx_sdk_6_20_00_29\source\ti\thread\cc13x2_26x2\libmbedcrypto\lib\ticlang\m4f\libmbedcrypto_cc13x2_26x2_ticlang.projectspec"/>
+	<templateProperties value="id=libopenthread_platform_utils_radio_cc13x2_26x2_ticlang.projectspec.libopenthread_platform_utils_radio_cc13x2_26x2_ticlang,isHybrid=true"/>
+	<origin value="C:\ti\simplelink_cc13xx_cc26xx_sdk_6_20_00_29\source\ti\thread\cc13x2_26x2\libopenthread_platform_utils_radio\lib\ticlang\m4f\libopenthread_platform_utils_radio_cc13x2_26x2_ticlang.projectspec"/>
 	<filesToOpen value=""/>
 </projectOptions>

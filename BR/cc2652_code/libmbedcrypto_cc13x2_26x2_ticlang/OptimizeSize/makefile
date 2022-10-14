@@ -4,7 +4,7 @@
 
 SHELL = cmd.exe
 
-CG_TOOL_ROOT := C:/ti/ccs1030/ccs/tools/compiler/ti-cgt-armllvm_1.3.0.LTS
+CG_TOOL_ROOT := C:/ti/ccs1200/ccs/tools/compiler/ti-cgt-armllvm_2.1.0.LTS
 
 GEN_OPTS__FLAG := 
 GEN_CMDS__FLAG := 
@@ -226,7 +226,7 @@ libmbedcrypto.a: $(OBJS)
 ifneq ($(strip $(ORDERED_OBJS)),)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: Arm Archiver'
-	"C:/ti/ccs1030/ccs/tools/compiler/ti-cgt-armllvm_1.3.0.LTS/bin/tiarmar.exe" rc "libmbedcrypto.a" $(ORDERED_OBJS)
+	"C:/ti/ccs1200/ccs/tools/compiler/ti-cgt-armllvm_2.1.0.LTS/bin/tiarmar.exe" rc "libmbedcrypto.a" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 endif
