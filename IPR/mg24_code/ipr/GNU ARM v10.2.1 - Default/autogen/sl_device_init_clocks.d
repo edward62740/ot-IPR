@@ -1,5 +1,4 @@
 autogen/sl_device_init_clocks.o: ../autogen/sl_device_init_clocks.c \
- C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\service\device_init\inc\sl_device_init_clocks.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_status.h \
@@ -75,7 +74,6 @@ autogen/sl_device_init_clocks.o: ../autogen/sl_device_init_clocks.c \
  C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/emlib_core_debug_config.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_cmu_compat.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_gpio.h
-C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\service\device_init\inc\sl_device_init_clocks.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_status.h:

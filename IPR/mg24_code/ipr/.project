@@ -77,11 +77,6 @@
 			<locationURI>STUDIO_SDK_LOC/platform/common/inc/sl_atomic.h</locationURI>
 		</link>
 		<link>
-			<name>gecko_sdk_4.0.2/platform/common/inc/sl_cmsis_os2_common.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/common/inc/sl_cmsis_os2_common.h</locationURI>
-		</link>
-		<link>
 			<name>gecko_sdk_4.0.2/platform/common/inc/sl_enum.h</name>
 			<type>1</type>
 			<locationURI>STUDIO_SDK_LOC/platform/common/inc/sl_enum.h</locationURI>
@@ -297,21 +292,6 @@
 			<locationURI>STUDIO_SDK_LOC/protocol/openthread/libs/libsl_openthread_efr32mg2x_gcc.a</locationURI>
 		</link>
 		<link>
-			<name>gecko_sdk_4.0.2/platform/CMSIS/RTOS2/Include/cmsis_os2.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/CMSIS/RTOS2/Include/cmsis_os2.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/CMSIS/RTOS2/Include/os_tick.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/CMSIS/RTOS2/Include/os_tick.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/CMSIS/RTOS2/Source/os_systick.c</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/CMSIS/RTOS2/Source/os_systick.c</locationURI>
-		</link>
-		<link>
 			<name>gecko_sdk_4.0.2/platform/common/toolchain/inc/sl_gcc_preinclude.h</name>
 			<type>1</type>
 			<locationURI>STUDIO_SDK_LOC/platform/common/toolchain/inc/sl_gcc_preinclude.h</locationURI>
@@ -420,221 +400,6 @@
 			<name>gecko_sdk_4.0.2/platform/emdrv/uartdrv/src/uartdrv.c</name>
 			<type>1</type>
 			<locationURI>STUDIO_SDK_LOC/platform/emdrv/uartdrv/src/uartdrv.c</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/common/include/common.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/common/include/common.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/common/include/kal.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/common/include/kal.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/common/include/lib_ascii.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/common/include/lib_ascii.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/common/include/lib_def.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/common/include/lib_def.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/common/include/lib_math.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/common/include/lib_math.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/common/include/lib_mem.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/common/include/lib_mem.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/common/include/lib_str.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/common/include/lib_str.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/common/include/lib_utils.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/common/include/lib_utils.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/common/include/logging.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/common/include/logging.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/common/include/rtos_err.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/common/include/rtos_err.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/common/include/rtos_opt_def.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/common/include/rtos_opt_def.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/common/include/rtos_path.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/common/include/rtos_path.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/common/include/rtos_prio.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/common/include/rtos_prio.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/common/include/rtos_types.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/common/include/rtos_types.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/common/include/rtos_utils.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/common/include/rtos_utils.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/common/include/rtos_version.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/common/include/rtos_version.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/common/include/toolchains.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/common/include/toolchains.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/cpu/include/cpu.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/cpu/include/cpu.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/cpu/include/cpu_cache.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/cpu/include/cpu_cache.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/cpu/include/cpu_def.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/cpu/include/cpu_def.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/cpu/include/cpu_port_sel.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/cpu/include/cpu_port_sel.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/cpu/source/cpu_core.c</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/cpu/source/cpu_core.c</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/kernel/include/os.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/kernel/include/os.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/kernel/include/os_port_sel.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/kernel/include/os_port_sel.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/kernel/include/os_trace.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/kernel/include/os_trace.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/kernel/include/os_type.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/kernel/include/os_type.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/kernel/source/cmsis_os2.c</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/kernel/source/cmsis_os2.c</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/kernel/source/os_cfg_app.c</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/kernel/source/os_cfg_app.c</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/kernel/source/os_core.c</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/kernel/source/os_core.c</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/kernel/source/os_dbg.c</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/kernel/source/os_dbg.c</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/kernel/source/os_flag.c</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/kernel/source/os_flag.c</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/kernel/source/os_mon.c</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/kernel/source/os_mon.c</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/kernel/source/os_msg.c</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/kernel/source/os_msg.c</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/kernel/source/os_mutex.c</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/kernel/source/os_mutex.c</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/kernel/source/os_prio.c</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/kernel/source/os_prio.c</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/kernel/source/os_priv.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/kernel/source/os_priv.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/kernel/source/os_q.c</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/kernel/source/os_q.c</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/kernel/source/os_sem.c</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/kernel/source/os_sem.c</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/kernel/source/os_stat.c</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/kernel/source/os_stat.c</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/kernel/source/os_task.c</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/kernel/source/os_task.c</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/kernel/source/os_time.c</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/kernel/source/os_time.c</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/kernel/source/os_tmr.c</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/kernel/source/os_tmr.c</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/kernel/source/os_var.c</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/kernel/source/os_var.c</locationURI>
 		</link>
 		<link>
 			<name>gecko_sdk_4.0.2/platform/radio/rail_lib/common/rail.h</name>
@@ -812,9 +577,9 @@
 			<locationURI>STUDIO_SDK_LOC/platform/service/system/inc/sl_system_init.h</locationURI>
 		</link>
 		<link>
-			<name>gecko_sdk_4.0.2/platform/service/system/inc/sl_system_kernel.h</name>
+			<name>gecko_sdk_4.0.2/platform/service/system/inc/sl_system_process_action.h</name>
 			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/service/system/inc/sl_system_kernel.h</locationURI>
+			<locationURI>STUDIO_SDK_LOC/platform/service/system/inc/sl_system_process_action.h</locationURI>
 		</link>
 		<link>
 			<name>gecko_sdk_4.0.2/platform/service/system/src/sl_system_init.c</name>
@@ -822,9 +587,9 @@
 			<locationURI>STUDIO_SDK_LOC/platform/service/system/src/sl_system_init.c</locationURI>
 		</link>
 		<link>
-			<name>gecko_sdk_4.0.2/platform/service/system/src/sl_system_kernel.c</name>
+			<name>gecko_sdk_4.0.2/platform/service/system/src/sl_system_process_action.c</name>
 			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/service/system/src/sl_system_kernel.c</locationURI>
+			<locationURI>STUDIO_SDK_LOC/platform/service/system/src/sl_system_process_action.c</locationURI>
 		</link>
 		<link>
 			<name>gecko_sdk_4.0.2/protocol/openthread/platform-abstraction/efr32/alarm.c</name>
@@ -955,16 +720,6 @@
 			<name>gecko_sdk_4.0.2/protocol/openthread/platform-abstraction/efr32/uartdrv_uart.c</name>
 			<type>1</type>
 			<locationURI>STUDIO_SDK_LOC/protocol/openthread/platform-abstraction/efr32/uartdrv_uart.c</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/protocol/openthread/platform-abstraction/rtos/sl_ot_rtos_adaptation.c</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/protocol/openthread/platform-abstraction/rtos/sl_ot_rtos_adaptation.c</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/protocol/openthread/platform-abstraction/rtos/sl_ot_rtos_adaptation.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/protocol/openthread/platform-abstraction/rtos/sl_ot_rtos_adaptation.h</locationURI>
 		</link>
 		<link>
 			<name>gecko_sdk_4.0.2/util/silicon_labs/silabs_core/memory_manager/sl_malloc.c</name>
@@ -1270,121 +1025,6 @@
 			<name>gecko_sdk_4.0.2/platform/Device/SiliconLabs/EFR32MG24/Source/system_efr32mg24.c</name>
 			<type>1</type>
 			<locationURI>STUDIO_SDK_LOC/platform/Device/SiliconLabs/EFR32MG24/Source/system_efr32mg24.c</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/common/source/common/common_priv.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/common/source/common/common_priv.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/common/source/kal/kal_kernel.c</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/common/source/kal/kal_kernel.c</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/common/source/kal/kal_priv.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/common/source/kal/kal_priv.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/common/source/lib/lib_ascii.c</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/common/source/lib/lib_ascii.c</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/common/source/lib/lib_mem.c</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/common/source/lib/lib_mem.c</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/common/source/lib/lib_str.c</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/common/source/lib/lib_str.c</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/common/source/lib/lib_str_priv.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/common/source/lib/lib_str_priv.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/common/source/logging/logging.c</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/common/source/logging/logging.c</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/common/source/logging/logging_chk_priv.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/common/source/logging/logging_chk_priv.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/common/source/logging/logging_priv.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/common/source/logging/logging_priv.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/common/source/preprocessor/preprocessor_priv.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/common/source/preprocessor/preprocessor_priv.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/common/source/ring_buf/ring_buf.c</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/common/source/ring_buf/ring_buf.c</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/common/source/ring_buf/ring_buf_priv.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/common/source/ring_buf/ring_buf_priv.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/common/source/rtos/rtos_err_str.c</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/common/source/rtos/rtos_err_str.c</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/common/source/rtos/rtos_utils.c</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/common/source/rtos/rtos_utils.c</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/common/source/rtos/rtos_utils_priv.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/common/source/rtos/rtos_utils_priv.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/ports/source/generic/arm_cpu_dwt_ts.c</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/ports/source/generic/arm_cpu_dwt_ts.c</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/ports/source/gnu/armv7m_cpu_c.c</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/ports/source/gnu/armv7m_cpu_c.c</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/ports/source/gnu/armv7m_cpu_port.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/ports/source/gnu/armv7m_cpu_port.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/ports/source/gnu/armv7m_os_cpu.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/ports/source/gnu/armv7m_os_cpu.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/ports/source/gnu/armv7m_os_cpu_c.c</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/ports/source/gnu/armv7m_os_cpu_c.c</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/ports/source/gnu/armv8m_cpu_a.S</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/ports/source/gnu/armv8m_cpu_a.S</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.0.2/platform/micrium_os/ports/source/gnu/armv8m_os_cpu_a.S</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/micrium_os/ports/source/gnu/armv8m_os_cpu_a.S</locationURI>
 		</link>
 		<link>
 			<name>gecko_sdk_4.0.2/platform/radio/rail_lib/autogen/librail_release/librail_efr32xg24_gcc_release.a</name>
@@ -2847,9 +2487,9 @@
 			<locationURI>STUDIO_SDK_LOC/util/third_party/crypto/sl_component/se_manager/src/sli_se_manager_osal.h</locationURI>
 		</link>
 		<link>
-			<name>gecko_sdk_4.0.2/util/third_party/crypto/sl_component/se_manager/src/sli_se_manager_osal_cmsis_rtos2.h</name>
+			<name>gecko_sdk_4.0.2/util/third_party/crypto/sl_component/se_manager/src/sli_se_manager_osal_baremetal.h</name>
 			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/util/third_party/crypto/sl_component/se_manager/src/sli_se_manager_osal_cmsis_rtos2.h</locationURI>
+			<locationURI>STUDIO_SDK_LOC/util/third_party/crypto/sl_component/se_manager/src/sli_se_manager_osal_baremetal.h</locationURI>
 		</link>
 		<link>
 			<name>gecko_sdk_4.0.2/util/third_party/crypto/sl_component/sl_mbedtls_support/config/config-device-acceleration.h</name>

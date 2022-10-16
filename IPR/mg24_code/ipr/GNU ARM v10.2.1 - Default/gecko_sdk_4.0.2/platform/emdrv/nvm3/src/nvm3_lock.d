@@ -1,6 +1,5 @@
 gecko_sdk_4.0.2/platform/emdrv/nvm3/src/nvm3_lock.o: \
  C\:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/platform/emdrv/nvm3/src/nvm3_lock.c \
- C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emdrv\nvm3\inc\nvm3_lock.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emdrv\nvm3\inc\nvm3.h \
@@ -80,7 +79,6 @@ gecko_sdk_4.0.2/platform/emdrv/nvm3/src/nvm3_lock.o: \
  C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/emlib_core_debug_config.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\service\mpu\inc\sl_mpu.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_status.h
-C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emdrv\nvm3\inc\nvm3_lock.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emdrv\nvm3\inc\nvm3.h:

@@ -1,6 +1,5 @@
 gecko_sdk_4.0.2/util/third_party/openthread/examples/platforms/utils/link_metrics.o: \
  C\:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/util/third_party/openthread/examples/platforms/utils/link_metrics.cpp \
- C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h \
  C\:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/util/third_party/openthread/examples/platforms/utils/link_metrics.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\include\openthread\link_metrics.h \
@@ -150,7 +149,6 @@ gecko_sdk_4.0.2/util/third_party/openthread/examples/platforms/utils/link_metric
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\src\core\common\binary_search.hpp \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\src\core\common\code_utils.hpp \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\src\core\common\arg_macros.hpp
-C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h:
 C\:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/util/third_party/openthread/examples/platforms/utils/link_metrics.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\include\openthread\link_metrics.h:

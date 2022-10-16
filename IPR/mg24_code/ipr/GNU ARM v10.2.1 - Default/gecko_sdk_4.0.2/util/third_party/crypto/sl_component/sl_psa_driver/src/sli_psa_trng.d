@@ -1,6 +1,5 @@
 gecko_sdk_4.0.2/util/third_party/crypto/sl_component/sl_psa_driver/src/sli_psa_trng.o: \
  C\:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/util/third_party/crypto/sl_component/sl_psa_driver/src/sli_psa_trng.c \
- C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\mbedtls\include\psa\crypto_platform.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\mbedtls\include\mbedtls\private_access.h \
@@ -129,7 +128,6 @@ gecko_sdk_4.0.2/util/third_party/crypto/sl_component/sl_psa_driver/src/sli_psa_t
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\mbedtls\include\mbedtls\bignum.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\mbedtls\include\psa\crypto_extra.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\sl_component\se_manager\inc\sl_se_manager_entropy.h
-C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\mbedtls\include\psa\crypto_platform.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\mbedtls\include\mbedtls\private_access.h:

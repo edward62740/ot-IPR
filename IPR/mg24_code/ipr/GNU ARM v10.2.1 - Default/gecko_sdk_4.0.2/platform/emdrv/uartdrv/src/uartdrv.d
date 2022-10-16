@@ -1,6 +1,5 @@
 gecko_sdk_4.0.2/platform/emdrv/uartdrv/src/uartdrv.o: \
  C\:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/platform/emdrv/uartdrv/src/uartdrv.c \
- C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h \
  C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\autogen/sl_component_catalog.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emdrv\uartdrv\inc\uartdrv.h \
@@ -94,7 +93,6 @@ gecko_sdk_4.0.2/platform/emdrv/uartdrv/src/uartdrv.o: \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_ldma.h \
  C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/dmadrv_config.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emdrv\gpiointerrupt\inc\gpiointerrupt.h
-C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h:
 C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\autogen/sl_component_catalog.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emdrv\uartdrv\inc\uartdrv.h:

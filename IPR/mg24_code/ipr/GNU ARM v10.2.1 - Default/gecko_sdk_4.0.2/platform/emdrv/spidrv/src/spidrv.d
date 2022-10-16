@@ -1,6 +1,5 @@
 gecko_sdk_4.0.2/platform/emdrv/spidrv/src/spidrv.o: \
  C\:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/platform/emdrv/spidrv/src/spidrv.c \
- C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h \
  C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\autogen/sl_component_catalog.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\em_device.h \
@@ -93,7 +92,6 @@ gecko_sdk_4.0.2/platform/emdrv/spidrv/src/spidrv.o: \
  C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_power_manager_config.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_enum.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_emu.h
-C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h:
 C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\autogen/sl_component_catalog.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\em_device.h:

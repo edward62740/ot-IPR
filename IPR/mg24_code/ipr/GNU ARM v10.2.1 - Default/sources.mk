@@ -29,7 +29,6 @@ SUBDIRS := \
 A111/integration \
 . \
 autogen \
-gecko_sdk_4.0.2/platform/CMSIS/RTOS2/Source \
 gecko_sdk_4.0.2/platform/Device/SiliconLabs/EFR32MG24/Source/GCC \
 gecko_sdk_4.0.2/platform/Device/SiliconLabs/EFR32MG24/Source \
 gecko_sdk_4.0.2/platform/common/src \
@@ -40,15 +39,6 @@ gecko_sdk_4.0.2/platform/emdrv/nvm3/src \
 gecko_sdk_4.0.2/platform/emdrv/spidrv/src \
 gecko_sdk_4.0.2/platform/emdrv/uartdrv/src \
 gecko_sdk_4.0.2/platform/emlib/src \
-gecko_sdk_4.0.2/platform/micrium_os/common/source/kal \
-gecko_sdk_4.0.2/platform/micrium_os/common/source/lib \
-gecko_sdk_4.0.2/platform/micrium_os/common/source/logging \
-gecko_sdk_4.0.2/platform/micrium_os/common/source/ring_buf \
-gecko_sdk_4.0.2/platform/micrium_os/common/source/rtos \
-gecko_sdk_4.0.2/platform/micrium_os/cpu/source \
-gecko_sdk_4.0.2/platform/micrium_os/kernel/source \
-gecko_sdk_4.0.2/platform/micrium_os/ports/source/generic \
-gecko_sdk_4.0.2/platform/micrium_os/ports/source/gnu \
 gecko_sdk_4.0.2/platform/peripheral/src \
 gecko_sdk_4.0.2/platform/radio/rail_lib/plugin/pa-conversions \
 gecko_sdk_4.0.2/platform/radio/rail_lib/plugin/rail_util_pti \
@@ -60,7 +50,6 @@ gecko_sdk_4.0.2/platform/service/power_manager/src \
 gecko_sdk_4.0.2/platform/service/sleeptimer/src \
 gecko_sdk_4.0.2/platform/service/system/src \
 gecko_sdk_4.0.2/protocol/openthread/platform-abstraction/efr32 \
-gecko_sdk_4.0.2/protocol/openthread/platform-abstraction/rtos \
 gecko_sdk_4.0.2/util/silicon_labs/silabs_core/memory_manager \
 gecko_sdk_4.0.2/util/third_party/crypto/mbedtls/library \
 gecko_sdk_4.0.2/util/third_party/crypto/sl_component/se_manager/src \

@@ -31,6 +31,12 @@
     <properties key="signature_trust.trustDescription" value="&lt;b>Trust Status: &lt;/b>Trusted&#xD;&#xA;&lt;b>Signed Status: &lt;/b>Unsigned&#xD;&#xA;"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.platform.internal.api.sdk.core.SDKDetector"/>
+    <properties key="stack.esf.stackId" value="com.silabs.sdk.stack.super"/>
+    <properties key="stack.esf.halDir" value="file:/C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/platform/base/hal/"/>
+    <properties key="stack.esf.frameworkIds" value="application bootloader"/>
+    <properties key="stack.esf.stackHalPath" value="file:/C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/platform/base/hal/"/>
+    <properties key="stack.esf.stackLibPath" value="file:/C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/platform/base/"/>
+    <properties key="core.boardCompatibility" value="brd2207a brd2503a com.silabs.board.none:0.0.0 brd4.* brd2102a wstk:0.0.0 brd2500a brd2501a brd2204a"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.stack.super"/>
   </descriptors>
   <descriptors name="com.silabs.sdk.stack.super" label="Gecko SDK Suite: Amazon, Bluetooth 3.3.2, Bluetooth Mesh 2.2.2, EmberZNet 7.0.2.0, Flex 3.3.2.0, MCU 6.2.2.0, Micrium OS Kernel, OpenThread 2.0.2.0 (GitHub-3b79cb0d0), Platform 4.0.2.0, USB 1.0.0.0, Wi-SUN 1.2.3.0, Z-Wave SDK 7.17.2.0" description="&lt;pre>&lt;b>Trust Status: &lt;/b>Trusted&#xD;&#xA;&lt;b>Signed Status: &lt;/b>Unsigned&#xD;&#xA;&lt;/pre>&#xA;&#xA;&lt;pre>Gecko SDK Suite&lt;/pre>">
@@ -74,6 +80,8 @@
     <properties key="signature_trust.trustDescription" value="&lt;b>Trust Status: &lt;/b>Trusted&#xD;&#xA;&lt;b>Signed Status: &lt;/b>Unsigned&#xD;&#xA;"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.silabs.ss.platform.internal.api.sdk.core.SDKRepoDetector"/>
+    <properties key="stack.esf.stackId" value="com.silabs.sdk.stack.super"/>
+    <properties key="stack.esf.frameworkIds" value="application"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.sdk.stack.super"/>
   </descriptors>
   <descriptors name="com.silabs.stack.external.stackless" label="Stackless applications" description="">
@@ -92,6 +100,7 @@
     <properties key="stack.esf.frameworkCount" value="3"/>
     <properties key="core.detected" value="true"/>
     <properties key="registry.providingDetector" value="com.ember.workbench.app_framework.application.StackDetector"/>
+    <properties key="signature_trust.requiresTrust" value="false"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.stack.external.stackless"/>
   </descriptors>
 </model:MDescriptors>

@@ -29,10 +29,10 @@
 #define A111_SCLK_PIN    SL_SPIDRV_EUSART_SPI0_SCLK_PIN
 #define A111_CS_PORT     SL_SPIDRV_EUSART_SPI0_CS_PORT
 #define A111_CS_PIN      SL_SPIDRV_EUSART_SPI0_CS_PIN
-#define A111_EN_PORT     gpioPortC
-#define A111_EN_PIN      5
-#define A111_INT_PORT    gpioPortC
-#define A111_INT_PIN     6
+#define A111_EN_PORT     gpioPortA
+#define A111_EN_PIN      4
+#define A111_INT_PORT    gpioPortA
+#define A111_INT_PIN     5
 
 /**************************************************************************//**
  * Application Init.

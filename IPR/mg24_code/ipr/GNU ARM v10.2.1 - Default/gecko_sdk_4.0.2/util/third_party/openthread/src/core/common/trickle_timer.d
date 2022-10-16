@@ -1,6 +1,5 @@
 gecko_sdk_4.0.2/util/third_party/openthread/src/core/common/trickle_timer.o: \
  C\:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/util/third_party/openthread/src/core/common/trickle_timer.cpp \
- C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h \
  C\:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/util/third_party/openthread/src/core/common/trickle_timer.hpp \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\src\core\openthread-core-config.h \
@@ -153,7 +152,6 @@ gecko_sdk_4.0.2/util/third_party/openthread/src/core/common/trickle_timer.o: \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\src\core\common\random.hpp \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\src\core\common\random_manager.hpp \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\include\openthread\platform\crypto.h
-C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h:
 C\:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/util/third_party/openthread/src/core/common/trickle_timer.hpp:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\src\core\openthread-core-config.h:

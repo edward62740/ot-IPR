@@ -1,6 +1,5 @@
 gecko_sdk_4.0.2/util/third_party/crypto/mbedtls/library/pk_wrap.o: \
  C\:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/util/third_party/crypto/mbedtls/library/pk_wrap.c \
- C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h \
  C\:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/util/third_party/crypto/mbedtls/library/common.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\mbedtls\include\mbedtls\build_info.h \
@@ -134,16 +133,11 @@ gecko_sdk_4.0.2/util/third_party/crypto/mbedtls/library/pk_wrap.o: \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\mbedtls\include\psa\crypto_compat.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\mbedtls\include\mbedtls\error.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\mbedtls\include\mbedtls\rsa.h \
- c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\mbedtls\include\mbedtls\threading.h \
- c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\sl_component\sl_mbedtls_support\inc\threading_alt.h \
- c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\cmsis\rtos2\include\cmsis_os2.h \
- c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_assert.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\mbedtls\include\mbedtls\asn1write.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\mbedtls\include\mbedtls\asn1.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\mbedtls\include\mbedtls\psa_util.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\mbedtls\include\mbedtls\oid.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\mbedtls\include\mbedtls\platform.h
-C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h:
 C\:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/util/third_party/crypto/mbedtls/library/common.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\mbedtls\include\mbedtls\build_info.h:
@@ -277,10 +271,6 @@ c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\mb
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\mbedtls\include\psa\crypto_compat.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\mbedtls\include\mbedtls\error.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\mbedtls\include\mbedtls\rsa.h:
-c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\mbedtls\include\mbedtls\threading.h:
-c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\sl_component\sl_mbedtls_support\inc\threading_alt.h:
-c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\cmsis\rtos2\include\cmsis_os2.h:
-c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_assert.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\mbedtls\include\mbedtls\asn1write.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\mbedtls\include\mbedtls\asn1.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\mbedtls\include\mbedtls\psa_util.h:

@@ -1,5 +1,4 @@
 app.o: ../app.c \
- C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\src\core\openthread-core-config.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\include\openthread\config.h \
@@ -157,7 +156,6 @@ app.o: ../app.c \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emdrv\dmadrv\inc\dmadrv.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_ldma.h \
  C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/dmadrv_config.h
-C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\src\core\openthread-core-config.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\include\openthread\config.h:

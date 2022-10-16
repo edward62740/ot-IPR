@@ -1,6 +1,5 @@
 gecko_sdk_4.0.2/platform/service/power_manager/src/sl_power_manager_debug.o: \
  C\:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/platform/service/power_manager/src/sl_power_manager_debug.c \
- C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\service\power_manager\inc\sl_power_manager.h \
  C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_power_manager_config.h \
@@ -83,7 +82,6 @@ gecko_sdk_4.0.2/platform/service/power_manager/src/sl_power_manager_debug.o: \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\service\power_manager\inc\sl_power_manager_debug.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\service\power_manager\inc\sl_power_manager.h \
  C\:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/platform/service/power_manager/src/sli_power_manager_private.h
-C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\service\power_manager\inc\sl_power_manager.h:
 C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_power_manager_config.h:

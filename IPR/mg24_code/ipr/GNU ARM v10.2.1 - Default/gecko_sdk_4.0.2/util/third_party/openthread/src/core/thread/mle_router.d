@@ -1,6 +1,5 @@
 gecko_sdk_4.0.2/util/third_party/openthread/src/core/thread/mle_router.o: \
  C\:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/util/third_party/openthread/src/core/thread/mle_router.cpp \
- C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h \
  C\:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/util/third_party/openthread/src/core/thread/mle_router.hpp \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\src\core\openthread-core-config.h \
@@ -305,7 +304,6 @@ gecko_sdk_4.0.2/util/third_party/openthread/src/core/thread/mle_router.o: \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\src\core\thread\radio_selector.hpp \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\src\core\thread\router_table.hpp \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\src\core\thread\thread_tlvs.hpp
-C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h:
 C\:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/util/third_party/openthread/src/core/thread/mle_router.hpp:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\src\core\openthread-core-config.h:

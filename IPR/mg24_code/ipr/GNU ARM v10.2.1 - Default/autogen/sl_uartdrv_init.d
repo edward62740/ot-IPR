@@ -1,5 +1,4 @@
 autogen/sl_uartdrv_init.o: ../autogen/sl_uartdrv_init.c \
- C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emdrv\uartdrv\inc\uartdrv.h \
  C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\autogen/sl_component_catalog.h \
@@ -94,7 +93,6 @@ autogen/sl_uartdrv_init.o: ../autogen/sl_uartdrv_init.c \
  C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/dmadrv_config.h \
  ../autogen/sl_uartdrv_instances.h \
  C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_uartdrv_usart_vcom_config.h
-C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emdrv\uartdrv\inc\uartdrv.h:
 C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\autogen/sl_component_catalog.h:

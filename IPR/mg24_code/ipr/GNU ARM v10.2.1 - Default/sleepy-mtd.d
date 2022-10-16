@@ -1,5 +1,4 @@
 sleepy-mtd.o: ../sleepy-mtd.c \
- C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\include\openthread\cli.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\include\openthread\instance.h \
@@ -154,7 +153,6 @@ sleepy-mtd.o: ../sleepy-mtd.c \
  C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_sleeptimer_config.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_enum.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_emu.h
-C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\include\openthread\cli.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\include\openthread\instance.h:

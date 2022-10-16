@@ -1,5 +1,4 @@
 main.o: ../main.c \
- C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h \
  C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\autogen/sl_component_catalog.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\service\system\inc\sl_system_init.h \
@@ -96,7 +95,7 @@ main.o: ../main.c \
  C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_power_manager_config.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_core.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_enum.h \
- c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\service\system\inc\sl_system_kernel.h \
+ c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\service\system\inc\sl_system_process_action.h \
  C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\A111\rss\include/acc_hal_definitions.h \
  C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\A111\rss\include/acc_definitions_common.h \
  C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\A111\integration/acc_hal_integration.h \
@@ -105,8 +104,8 @@ main.o: ../main.c \
  C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\A111\rss\include/acc_definitions_a111.h \
  C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\A111\rss\include/acc_hal_definitions.h \
  C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\A111\rss\include/acc_rss_assembly_test.h \
- C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\A111\rss\include/acc_version.h
-C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h:
+ C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\A111\rss\include/acc_version.h \
+ C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\A111\rss\include/acc_detector_distance.h
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h:
 C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\autogen/sl_component_catalog.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\service\system\inc\sl_system_init.h:
@@ -203,7 +202,7 @@ c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\service\power_man
 C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_power_manager_config.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_core.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_enum.h:
-c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\service\system\inc\sl_system_kernel.h:
+c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\service\system\inc\sl_system_process_action.h:
 C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\A111\rss\include/acc_hal_definitions.h:
 C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\A111\rss\include/acc_definitions_common.h:
 C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\A111\integration/acc_hal_integration.h:
@@ -213,3 +212,4 @@ C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\A111\rss\include/acc_definit
 C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\A111\rss\include/acc_hal_definitions.h:
 C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\A111\rss\include/acc_rss_assembly_test.h:
 C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\A111\rss\include/acc_version.h:
+C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\A111\rss\include/acc_detector_distance.h:

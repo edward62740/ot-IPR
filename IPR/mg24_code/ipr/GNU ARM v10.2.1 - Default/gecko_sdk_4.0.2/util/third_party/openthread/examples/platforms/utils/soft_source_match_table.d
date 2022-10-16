@@ -1,6 +1,5 @@
 gecko_sdk_4.0.2/util/third_party/openthread/examples/platforms/utils/soft_source_match_table.o: \
  C\:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/util/third_party/openthread/examples/platforms/utils/soft_source_match_table.c \
- C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\examples\platforms\utils\soft_source_match_table.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\src\core\openthread-core-config.h \
@@ -138,7 +137,6 @@ gecko_sdk_4.0.2/util/third_party/openthread/examples/platforms/utils/soft_source
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\src\core\common\arg_macros.hpp \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\src\core\common\debug.hpp \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\examples\platforms\utils\code_utils.h
-C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\examples\platforms\utils\soft_source_match_table.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\src\core\openthread-core-config.h:

@@ -1,6 +1,5 @@
 gecko_sdk_4.0.2/util/third_party/crypto/mbedtls/library/sha256.o: \
  C\:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/util/third_party/crypto/mbedtls/library/sha256.c \
- C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h \
  C\:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/util/third_party/crypto/mbedtls/library/common.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\mbedtls\include\mbedtls\build_info.h \
@@ -103,7 +102,6 @@ gecko_sdk_4.0.2/util/third_party/crypto/mbedtls/library/sha256.o: \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\sl_component\sl_psa_driver\inc\sli_se_driver_cipher.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\mbedtls\include\mbedtls\platform_util.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\mbedtls\include\mbedtls\error.h
-C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h:
 C\:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/util/third_party/crypto/mbedtls/library/common.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\mbedtls\include\mbedtls\build_info.h:

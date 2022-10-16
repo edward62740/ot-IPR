@@ -8,9 +8,9 @@
     <file name="sl_event_handler.c" builtin="true" generated="true"/>
     <file name="mbedtls_config_autogen.h" builtin="true" generated="true"/>
     <file name="sl_mbedtls_config_transform_autogen.h" builtin="true" generated="true"/>
-    <file name="rtos_description.h" builtin="true" generated="true"/>
     <file name="sl_ot_init.c" builtin="true" generated="true"/>
     <file name="sl_ot_init.h" builtin="true" generated="true"/>
+    <file name="sl_power_manager_handler.c" builtin="true" generated="true"/>
     <file name="psa_crypto_config_autogen.h" builtin="true" generated="true"/>
     <file name="sl_spidrv_init.c" builtin="true" generated="true"/>
     <file name="sl_spidrv_instances.h" builtin="true" generated="true"/>

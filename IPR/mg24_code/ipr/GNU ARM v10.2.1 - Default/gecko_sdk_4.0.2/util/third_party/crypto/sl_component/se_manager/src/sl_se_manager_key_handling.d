@@ -1,6 +1,5 @@
 gecko_sdk_4.0.2/util/third_party/crypto/sl_component/se_manager/src/sl_se_manager_key_handling.o: \
  C\:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/util/third_party/crypto/sl_component/se_manager/src/sl_se_manager_key_handling.c \
- C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\em_device.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\efr32mg24b220f1536im48.h \
@@ -80,7 +79,6 @@ gecko_sdk_4.0.2/util/third_party/crypto/sl_component/se_manager/src/sl_se_manage
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\sl_component\se_manager\inc\sli_se_manager_internal.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\sl_component\se_manager\inc\sl_se_manager.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\sl_component\se_manager\inc\sl_se_manager_key_handling.h
-C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\em_device.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\efr32mg24b220f1536im48.h:

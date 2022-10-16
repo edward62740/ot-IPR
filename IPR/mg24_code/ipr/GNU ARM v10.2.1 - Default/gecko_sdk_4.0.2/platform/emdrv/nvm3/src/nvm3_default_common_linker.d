@@ -1,6 +1,5 @@
 gecko_sdk_4.0.2/platform/emdrv/nvm3/src/nvm3_default_common_linker.o: \
  C\:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/platform/emdrv/nvm3/src/nvm3_default_common_linker.c \
- C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emdrv\nvm3\inc\nvm3.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emdrv\nvm3\inc\nvm3_hal.h \
@@ -75,7 +74,6 @@ gecko_sdk_4.0.2/platform/emdrv/nvm3/src/nvm3_default_common_linker.o: \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emdrv\nvm3\inc\nvm3.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emdrv\nvm3\inc\nvm3_hal_flash.h \
  C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/nvm3_default_config.h
-C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emdrv\nvm3\inc\nvm3.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emdrv\nvm3\inc\nvm3_hal.h:

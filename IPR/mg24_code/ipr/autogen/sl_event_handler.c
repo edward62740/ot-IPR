@@ -16,10 +16,9 @@
 #include "sl_mbedtls.h"
 #include "sl_mpu.h"
 #include "nvm3_default.h"
-#include "sl_ot_rtos_adaptation.h"
+#include "sl_ot_init.h"
 #include "sl_spidrv_instances.h"
 #include "sl_uartdrv_instances.h"
-#include "cpu.h"
 #include "sl_power_manager.h"
 
 void sl_platform_init(void)
@@ -32,12 +31,7 @@ void sl_platform_init(void)
   sl_device_init_clocks();
   sl_device_init_emu();
   nvm3_initDefault();
-  CPU_Init();
   sl_power_manager_init();
-}
-
-void sl_kernel_start(void)
-{
 }
 
 void sl_driver_init(void)
@@ -65,6 +59,22 @@ void sl_stack_init(void)
 
 void sl_internal_app_init(void)
 {
-  sl_ot_rtos_init();
+  sl_ot_init();
+}
+
+void sl_platform_process_action(void)
+{
+}
+
+void sl_service_process_action(void)
+{
+}
+
+void sl_stack_process_action(void)
+{
+}
+
+void sl_internal_app_process_action(void)
+{
 }
 

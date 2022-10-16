@@ -3,16 +3,11 @@
   <folder name="config">
     <file name="SEGGER_RTT_Conf.h" generated="true" linked="false"/>
     <file name="sl_device_init_dcdc_config.h" generated="true" linked="false"/>
-    <file name="sl_openthread_rtos_config.h" generated="true" linked="false"/>
     <file name="sl_hfxo_manager_config.h" generated="true" linked="false"/>
     <file name="sl_openthread_features_config.h" generated="true" linked="false"/>
     <file name="sl_openthread_generic_config.h" generated="true" linked="false"/>
     <file name="uartdrv_config.h" generated="true" linked="false"/>
     <file name="sl_uartdrv_usart_vcom_config.h" generated="true" linked="false"/>
-    <file name="cpu_cfg.h" generated="true" linked="false"/>
-    <file name="common_cfg.h" generated="true" linked="false"/>
-    <file name="rtos_cfg.h" generated="true" linked="false"/>
-    <file name="rtos_err_cfg.h" generated="true" linked="false"/>
     <file name="sl_sleeptimer_config.h" generated="true" linked="false"/>
     <file name="sl_power_manager_config.h" generated="true" linked="false"/>
     <file name="sl_spidrv_eusart_spi0_config.h" generated="true" linked="false"/>
@@ -21,7 +16,6 @@
     <file name="sl_rail_util_pti_config.h" generated="true" linked="false"/>
     <file name="nvm3_default_config.h" generated="true" linked="false"/>
     <file name="sl_rail_util_rssi_config.h" generated="true" linked="false"/>
-    <file name="os_cfg.h" generated="true" linked="false"/>
     <file name="sl_device_init_emu_config.h" generated="true" linked="false"/>
     <file name="spidrv_config.h" generated="true" linked="false"/>
     <file name="sl_device_init_hfxo_config.h" generated="true" linked="false"/>

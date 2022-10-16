@@ -1,6 +1,5 @@
 gecko_sdk_4.0.2/protocol/openthread/platform-abstraction/efr32/flash.o: \
  C\:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/protocol/openthread/platform-abstraction/efr32/flash.c \
- C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h \
  C\:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/protocol/openthread/platform-abstraction/efr32/openthread-core-efr32-config.h \
  C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_features_config.h \
@@ -143,7 +142,6 @@ gecko_sdk_4.0.2/protocol/openthread/platform-abstraction/efr32/flash.o: \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_assert.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_common.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emdrv\nvm3\inc\nvm3_default.h
-C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h:
 C\:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/protocol/openthread/platform-abstraction/efr32/openthread-core-efr32-config.h:
 C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_features_config.h:

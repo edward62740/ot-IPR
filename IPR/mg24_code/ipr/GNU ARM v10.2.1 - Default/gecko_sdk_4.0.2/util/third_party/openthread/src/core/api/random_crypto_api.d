@@ -1,6 +1,5 @@
 gecko_sdk_4.0.2/util/third_party/openthread/src/core/api/random_crypto_api.o: \
  C\:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/util/third_party/openthread/src/core/api/random_crypto_api.cpp \
- C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\include\openthread\random_crypto.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\mbedtls\include\mbedtls\ctr_drbg.h \
@@ -83,11 +82,6 @@ gecko_sdk_4.0.2/util/third_party/openthread/src/core/api/random_crypto_api.o: \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\mbedtls\include\mbedtls\check_config.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\mbedtls\include\mbedtls\aes.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\sl_component\sl_mbedtls_support\inc\aes_alt.h \
- c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\mbedtls\include\mbedtls\threading.h \
- c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\sl_component\sl_mbedtls_support\inc\threading_alt.h \
- C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\autogen/sl_component_catalog.h \
- c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\cmsis\rtos2\include\cmsis_os2.h \
- c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_assert.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\include\openthread\error.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\include\openthread\platform\toolchain.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\src\core\common\random.hpp \
@@ -100,6 +94,7 @@ gecko_sdk_4.0.2/util/third_party/openthread/src/core/api/random_crypto_api.o: \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_msc.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_bus.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_core.h \
+ C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\autogen/sl_component_catalog.h \
  C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/emlib_core_debug_config.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_msc_compat.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_ramfunc.h \
@@ -154,7 +149,6 @@ gecko_sdk_4.0.2/util/third_party/openthread/src/core/api/random_crypto_api.o: \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\src\core\common\random_manager.hpp \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\include\openthread\platform\crypto.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\src\core\common\non_copyable.hpp
-C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\include\openthread\random_crypto.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\mbedtls\include\mbedtls\ctr_drbg.h:
@@ -237,11 +231,6 @@ C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\autogen/psa_crypto_config_au
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\mbedtls\include\mbedtls\check_config.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\mbedtls\include\mbedtls\aes.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\sl_component\sl_mbedtls_support\inc\aes_alt.h:
-c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\mbedtls\include\mbedtls\threading.h:
-c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\sl_component\sl_mbedtls_support\inc\threading_alt.h:
-C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\autogen/sl_component_catalog.h:
-c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\cmsis\rtos2\include\cmsis_os2.h:
-c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_assert.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\include\openthread\error.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\include\openthread\platform\toolchain.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\src\core\common\random.hpp:
@@ -254,6 +243,7 @@ c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\protocol\openthread\platfo
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_msc.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_bus.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_core.h:
+C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\autogen/sl_component_catalog.h:
 C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/emlib_core_debug_config.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_msc_compat.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_ramfunc.h:

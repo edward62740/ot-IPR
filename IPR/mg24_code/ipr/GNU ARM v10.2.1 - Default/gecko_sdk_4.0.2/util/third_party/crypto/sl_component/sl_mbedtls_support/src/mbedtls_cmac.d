@@ -1,6 +1,5 @@
 gecko_sdk_4.0.2/util/third_party/crypto/sl_component/sl_mbedtls_support/src/mbedtls_cmac.o: \
  C\:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/util/third_party/crypto/sl_component/sl_mbedtls_support/src/mbedtls_cmac.c \
- C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h \
  C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/mbedtls_config.h \
  C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\autogen/mbedtls_config_autogen.h \
@@ -132,7 +131,6 @@ gecko_sdk_4.0.2/util/third_party/crypto/sl_component/sl_mbedtls_support/src/mbed
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\sl_component\sl_psa_driver\inc\sli_se_transparent_functions.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\sl_component\sl_psa_driver\inc\sli_se_transparent_types.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\sl_component\sl_protocol_crypto\src\sli_protocol_crypto.h
-C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h:
 C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/mbedtls_config.h:
 C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\autogen/mbedtls_config_autogen.h:

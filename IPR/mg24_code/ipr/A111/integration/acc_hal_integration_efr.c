@@ -118,13 +118,16 @@ static void acc_hal_integration_sensor_power_off(acc_sensor_id_t sensor_id) {
 static bool acc_hal_integration_wait_for_sensor_interrupt(acc_sensor_id_t sensor_id, uint32_t timeout_ms) {
 	(void) sensor_id; // Ignore parameter sensor_id
 
-	const uint32_t wait_begin_ms = sl_sleeptimer_get_tick_count();
-	while ((GPIO_PinInGet(A111_INT_PORT, A111_INT_PIN) != 1) && (sl_sleeptimer_get_tick_count() - wait_begin_ms < timeout_ms)) {
+	const uint32_t wait_begin_ms = sl_sleeptimer_tick_to_ms(sl_sleeptimer_get_tick_count());
+	while ((GPIO_PinInGet(A111_INT_PORT, A111_INT_PIN) != 1) && ((sl_sleeptimer_tick_to_ms(sl_sleeptimer_get_tick_count()) - wait_begin_ms) < timeout_ms)) {
 		// Wait for the GPIO interrupt
 		disable_interrupts();
 		// Check again so that IRQ did not occur
 		if (GPIO_PinInGet(A111_INT_PORT, A111_INT_PIN) != 1)
-			__WFI();
+        {
+            __WFE();
+        }
+
 
 	// Enable interrupts again to allow pending interrupt to be handled
 	enable_interrupts();

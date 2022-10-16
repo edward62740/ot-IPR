@@ -1,5 +1,4 @@
 autogen/sl_event_handler.o: ../autogen/sl_event_handler.c \
- C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h \
  ../autogen/sl_event_handler.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_chip.h \
@@ -112,8 +111,7 @@ autogen/sl_event_handler.o: ../autogen/sl_event_handler.c \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_assert.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_common.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emdrv\nvm3\inc\nvm3_default.h \
- c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\protocol\openthread\platform-abstraction\rtos\sl_ot_rtos_adaptation.h \
- ../autogen/sl_spidrv_instances.h \
+ ../autogen/sl_ot_init.h ../autogen/sl_spidrv_instances.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emdrv\spidrv\inc\spidrv.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_cmu.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_cmu_compat.h \
@@ -133,22 +131,7 @@ autogen/sl_event_handler.o: ../autogen/sl_event_handler.c \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_eusart.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_eusart_compat.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_gpio.h \
- C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/uartdrv_config.h \
- c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\micrium_os\cpu\include\cpu.h \
- c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\micrium_os\cpu\include\cpu_def.h \
- c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\micrium_os\common\include\rtos_path.h \
- C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\autogen/rtos_description.h \
- c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\micrium_os\common\include\rtos_opt_def.h \
- C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/cpu_cfg.h \
- c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\micrium_os\cpu\include\cpu_def.h \
- c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\micrium_os\cpu\include\cpu_port_sel.h \
- c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\micrium_os\ports\source\gnu\armv7m_cpu_port.h \
- c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\micrium_os\common\include\rtos_err.h \
- c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\micrium_os\cpu\include\cpu_port_sel.h \
- c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\micrium_os\common\include\lib_def.h \
- c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\micrium_os\common\include\toolchains.h \
- C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/rtos_err_cfg.h
-C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h:
+ C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/uartdrv_config.h
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h:
 ../autogen/sl_event_handler.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_chip.h:
@@ -261,7 +244,7 @@ c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emdrv\common\inc\
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_assert.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_common.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emdrv\nvm3\inc\nvm3_default.h:
-c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\protocol\openthread\platform-abstraction\rtos\sl_ot_rtos_adaptation.h:
+../autogen/sl_ot_init.h:
 ../autogen/sl_spidrv_instances.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emdrv\spidrv\inc\spidrv.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_cmu.h:
@@ -283,17 +266,3 @@ c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_eusa
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_eusart_compat.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_gpio.h:
 C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/uartdrv_config.h:
-c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\micrium_os\cpu\include\cpu.h:
-c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\micrium_os\cpu\include\cpu_def.h:
-c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\micrium_os\common\include\rtos_path.h:
-C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\autogen/rtos_description.h:
-c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\micrium_os\common\include\rtos_opt_def.h:
-C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/cpu_cfg.h:
-c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\micrium_os\cpu\include\cpu_def.h:
-c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\micrium_os\cpu\include\cpu_port_sel.h:
-c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\micrium_os\ports\source\gnu\armv7m_cpu_port.h:
-c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\micrium_os\common\include\rtos_err.h:
-c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\micrium_os\cpu\include\cpu_port_sel.h:
-c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\micrium_os\common\include\lib_def.h:
-c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\micrium_os\common\include\toolchains.h:
-C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/rtos_err_cfg.h:

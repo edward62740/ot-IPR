@@ -1,6 +1,5 @@
 gecko_sdk_4.0.2/protocol/openthread/platform-abstraction/efr32/security_manager.o: \
  C\:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/protocol/openthread/platform-abstraction/efr32/security_manager.c \
- C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h \
  C\:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/protocol/openthread/platform-abstraction/efr32/security_manager.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\mbedtls\include\psa\crypto_types.h \
@@ -143,7 +142,6 @@ gecko_sdk_4.0.2/protocol/openthread/platform-abstraction/efr32/security_manager.
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_common.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emdrv\nvm3\inc\nvm3_default.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emdrv\nvm3\inc\nvm3.h
-C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h:
 C\:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/protocol/openthread/platform-abstraction/efr32/security_manager.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\crypto\mbedtls\include\psa\crypto_types.h:

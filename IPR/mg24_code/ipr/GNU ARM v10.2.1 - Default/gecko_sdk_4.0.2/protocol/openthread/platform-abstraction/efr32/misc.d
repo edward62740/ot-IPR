@@ -1,6 +1,5 @@
 gecko_sdk_4.0.2/protocol/openthread/platform-abstraction/efr32/misc.o: \
  C\:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/protocol/openthread/platform-abstraction/efr32/misc.c \
- C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\include\openthread\platform\misc.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\include\openthread\instance.h \
@@ -79,7 +78,6 @@ gecko_sdk_4.0.2/protocol/openthread/platform-abstraction/efr32/misc.o: \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\radio\rail_lib\chip\efr32\efr32xg2x\rail_chip_specific.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\radio\rail_lib\common\rail_features.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\radio\rail_lib\common\rail_assert_error_codes.h
-C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_openthread_rtos_config.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\include\openthread\platform\misc.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\include\openthread\instance.h:

@@ -66,14 +66,14 @@ autogen/sl_power_manager_handler.o: ../autogen/sl_power_manager_handler.c \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\efr32mg24_ldmaxbar_defines.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_common.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_assert.h \
- C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\sleepy-demo-mtd\autogen/sl_component_catalog.h \
- C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\sleepy-demo-mtd\config/emlib_core_debug_config.h \
+ C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\autogen/sl_component_catalog.h \
+ C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/emlib_core_debug_config.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\service\power_manager\inc\sl_power_manager.h \
- C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\sleepy-demo-mtd\config/sl_power_manager_config.h \
+ C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_power_manager_config.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_slist.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_status.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\service\sleeptimer\inc\sl_sleeptimer.h \
- C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\sleepy-demo-mtd\config/sl_sleeptimer_config.h \
+ C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_sleeptimer_config.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_enum.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_emu.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_bus.h \
@@ -88,10 +88,10 @@ autogen/sl_power_manager_handler.o: ../autogen/sl_power_manager_handler.c \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_cmu_compat.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_gpio.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emdrv\common\inc\ecode.h \
- C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\sleepy-demo-mtd\config/uartdrv_config.h \
+ C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/uartdrv_config.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emdrv\dmadrv\inc\dmadrv.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_ldma.h \
- C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\sleepy-demo-mtd\config/dmadrv_config.h
+ C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/dmadrv_config.h
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_core.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\em_device.h:
@@ -159,14 +159,14 @@ c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlab
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\efr32mg24_ldmaxbar_defines.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_common.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_assert.h:
-C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\sleepy-demo-mtd\autogen/sl_component_catalog.h:
-C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\sleepy-demo-mtd\config/emlib_core_debug_config.h:
+C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\autogen/sl_component_catalog.h:
+C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/emlib_core_debug_config.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\service\power_manager\inc\sl_power_manager.h:
-C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\sleepy-demo-mtd\config/sl_power_manager_config.h:
+C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_power_manager_config.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_slist.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_status.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\service\sleeptimer\inc\sl_sleeptimer.h:
-C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\sleepy-demo-mtd\config/sl_sleeptimer_config.h:
+C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_sleeptimer_config.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_enum.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_emu.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_bus.h:
@@ -181,7 +181,7 @@ c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_cmu.
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_cmu_compat.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_gpio.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emdrv\common\inc\ecode.h:
-C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\sleepy-demo-mtd\config/uartdrv_config.h:
+C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/uartdrv_config.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emdrv\dmadrv\inc\dmadrv.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_ldma.h:
-C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\sleepy-demo-mtd\config/dmadrv_config.h:
+C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/dmadrv_config.h:

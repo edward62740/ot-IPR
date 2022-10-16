@@ -89,7 +89,7 @@ bool efr32AllowSleepCallback(void)
  */
 void setNetworkConfiguration(void)
 {
-    static char          aNetworkName[] = "SleepyEFR32";
+    static char          aNetworkName[] = "OpenThread X-1";
     otError              error;
     otOperationalDataset aDataset;
 
@@ -104,11 +104,11 @@ void setNetworkConfiguration(void)
     aDataset.mComponents.mIsActiveTimestampPresent = true;
 
     /* Set Channel to 15 */
-    aDataset.mChannel                      = 15;
+    aDataset.mChannel                      = 11;
     aDataset.mComponents.mIsChannelPresent = true;
 
     /* Set Pan ID to 2222 */
-    aDataset.mPanId                      = (otPanId)0x2222;
+    aDataset.mPanId                      = (otPanId)0xDEAD;
     aDataset.mComponents.mIsPanIdPresent = true;
 
     /* Set Extended Pan ID to C0DE1AB5C0DE1AB5 */
