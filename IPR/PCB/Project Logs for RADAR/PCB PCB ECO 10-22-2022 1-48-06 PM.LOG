@@ -1,0 +1,12 @@
+Add Component: Footprint Not Found CAP 0402_1005 RF
+Add Component: Footprint Not Found CAP 0402_1005 RF
+Add Component: Footprint Not Found IND 0402_1005 RF WW
+Add Pin To Net: Unknown Pin: Pin C26-1
+Add Pin To Net: Unknown Pin: Pin C26-2
+Add Pin To Net: Unknown Pin: Pin C27-1
+Add Pin To Net: Unknown Pin: Pin C27-2
+Add Pin To Net: Unknown Pin: Pin L4-1
+Add Pin To Net: Unknown Pin: Pin L4-2
+Add Class Member: Failed to add class member : Component C26 NC
+Add Class Member: Failed to add class member : Component C27 0.5pF
+Add Class Member: Failed to add class member : Component L4 1.5nH

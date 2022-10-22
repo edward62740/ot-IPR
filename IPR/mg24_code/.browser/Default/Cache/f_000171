@@ -1,0 +1,3999 @@
+{
+  "Base": {
+    "label": "Base Profile",
+    "description": "Profile used for most PHYs on EFR32xG23 parts",
+    "inputs": {
+      "base_frequency_hz": {
+        "type": "REQUIRED",
+        "min": 100000000,
+        "max": 2480000000,
+        "label": "Base Channel Frequency",
+        "symbol": "M",
+        "factor": 6,
+        "unit": "Hz",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 100000000
+      },
+      "channel_spacing_hz": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 10000000,
+        "label": "Channel Spacing",
+        "symbol": "k",
+        "factor": 3,
+        "unit": "Hz",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 0
+      },
+      "xtal_frequency_hz": {
+        "type": "REQUIRED",
+        "min": 38000000,
+        "max": 40000000,
+        "label": "Crystal Frequency",
+        "symbol": "M",
+        "factor": 6,
+        "unit": "Hz",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 38000000
+      },
+      "rx_xtal_error_ppm": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 200,
+        "label": "RX Crystal Accuracy",
+        "unit": "ppm",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 0
+      },
+      "tx_xtal_error_ppm": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 200,
+        "label": "TX Crystal Accuracy",
+        "unit": "ppm",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 0
+      },
+      "syncword_0": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 4294967295,
+        "label": "Sync Word 0",
+        "variableType": "INT",
+        "variableFormat": "HEX",
+        "value": 0
+      },
+      "syncword_1": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 4294967295,
+        "label": "Sync Word 1",
+        "variableType": "INT",
+        "variableFormat": "HEX",
+        "value": 0
+      },
+      "syncword_length": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 32,
+        "label": "Sync Word Length",
+        "unit": "bits",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 0
+      },
+      "preamble_pattern_len": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 4,
+        "label": "Preamble Pattern Length",
+        "unit": "bits",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 0
+      },
+      "preamble_length": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 2097151,
+        "label": "Preamble Length Total",
+        "unit": "bits",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 0
+      },
+      "preamble_pattern": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 15,
+        "label": "Preamble Base Pattern",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 0
+      },
+      "modulation_type": {
+        "type": "REQUIRED",
+        "label": "Modulation Type",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "FSK2", "value": 0 },
+          { "label": "FSK4", "value": 1 },
+          { "label": "OOK", "value": 4 },
+          { "label": "MSK", "value": 6 },
+          { "label": "OQPSK", "value": 7 }
+        ],
+        "value": 0
+      },
+      "deviation": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 1000000,
+        "label": "Deviation",
+        "symbol": "k",
+        "factor": 3,
+        "unit": "Hz",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 0
+      },
+      "bitrate": {
+        "type": "REQUIRED",
+        "min": 100,
+        "max": 2000000,
+        "label": "Bitrate",
+        "symbol": "k",
+        "factor": 3,
+        "unit": "bps",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 100
+      },
+      "baudrate_tol_ppm": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 200000,
+        "label": "Baudrate Tolerance",
+        "unit": "ppm",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 0
+      },
+      "shaping_filter": {
+        "type": "REQUIRED",
+        "label": "Shaping Filter",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "NONE", "value": 0 },
+          { "label": "Gaussian", "value": 1 },
+          { "label": "Raised_Cosine", "value": 2 },
+          { "label": "Root_Raised_Cosine", "value": 3 },
+          { "label": "Custom_OQPSK", "value": 4 },
+          { "label": "Custom_PSK", "value": 5 }
+        ],
+        "value": 0
+      },
+      "fsk_symbol_map": {
+        "type": "REQUIRED",
+        "label": "FSK symbol map",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "MAP0", "value": 0 },
+          { "label": "MAP1", "value": 1 },
+          { "label": "MAP2", "value": 2 },
+          { "label": "MAP3", "value": 3 },
+          { "label": "MAP4", "value": 4 },
+          { "label": "MAP5", "value": 5 },
+          { "label": "MAP6", "value": 6 },
+          { "label": "MAP7", "value": 7 }
+        ],
+        "value": 0
+      },
+      "diff_encoding_mode": {
+        "type": "REQUIRED",
+        "label": "Differential Encoding Mode",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "DISABLED", "value": 0 },
+          { "label": "RR0", "value": 1 },
+          { "label": "RE0", "value": 2 },
+          { "label": "RR1", "value": 3 },
+          { "label": "RE1", "value": 4 }
+        ],
+        "value": 0
+      },
+      "dsss_chipping_code": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 4294967295,
+        "label": "DSSS Chipping Code Base",
+        "variableType": "INT",
+        "variableFormat": "HEX",
+        "value": 0
+      },
+      "dsss_len": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 32,
+        "label": "DSSS Chipping Code Length",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 0
+      },
+      "dsss_spreading_factor": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 100,
+        "label": "DSSS Spreading Factor",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 0
+      },
+      "syncword_tx_skip": {
+        "type": "REQUIRED",
+        "label": "Sync Word TX Skip",
+        "variableType": "BOOL",
+        "value": false
+      },
+      "asynchronous_rx_enable": {
+        "type": "REQUIRED",
+        "label": "Enable Asynchronous direct mode",
+        "variableType": "BOOL",
+        "value": false
+      },
+      "symbol_encoding": {
+        "type": "REQUIRED",
+        "label": "Symbol Encoding",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "NRZ", "value": 0 },
+          { "label": "Manchester", "value": 1 },
+          { "label": "Inv_Manchester", "value": 4 },
+          { "label": "DSSS", "value": 2 },
+          { "label": "LINECODE", "value": 3 },
+          { "label": "MBUS_3OF6", "value": 5 },
+          { "label": "UART_NO_VAL", "value": 6 },
+          { "label": "UART_VAL", "value": 7 }
+        ],
+        "value": 0
+      },
+      "test_ber": {
+        "type": "REQUIRED",
+        "label": "Reconfigure for BER testing",
+        "variableType": "BOOL",
+        "value": false
+      },
+      "deviation_tol_ppm": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 500000,
+        "label": "Maximum deviation offset expected in ppm",
+        "unit": "ppm",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 0
+      },
+      "shaping_filter_param": {
+        "type": "REQUIRED",
+        "min": 0.3,
+        "max": 2,
+        "label": "Shaping Filter Parameter (BT or R)",
+        "variableType": "FLOAT",
+        "variableFormat": "DECIMAL",
+        "value": 0.5
+      },
+      "fec_tx_enable": {
+        "type": "LINKEDIO",
+        "label": "Enable FEC",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "DISABLED", "value": 0 },
+          { "label": "ENABLED", "value": 1 }
+        ],
+        "value": 0
+      },
+      "skip2ant": {
+        "type": "LINKEDIO",
+        "label": "Skip 2nd antenna check with phase demod antenna diversity",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "SKIP2ANT", "value": 0 },
+          { "label": "NOSKIP2ANT", "value": 1 }
+        ],
+        "value": 0
+      },
+      "preamble_detection_length": {
+        "type": "LINKEDIO",
+        "min": 0,
+        "max": 2097151,
+        "label": "Preamble Detection Length",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 0
+      },
+      "lo_injection_side": {
+        "type": "LINKEDIO",
+        "label": "Injection side",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "HIGH_SIDE", "value": 0 },
+          { "label": "LOW_SIDE", "value": 1 }
+        ],
+        "value": 0
+      },
+      "fast_detect_enable": {
+        "type": "LINKEDIO",
+        "label": "Fast preamble detect",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "DISABLED", "value": 0 },
+          { "label": "ENABLED", "value": 1 }
+        ],
+        "value": 0
+      },
+      "bandwidth_hz": {
+        "type": "LINKEDIO",
+        "min": 100,
+        "max": 2530000,
+        "label": "Acquisition Channel Bandwidth",
+        "symbol": "k",
+        "factor": 3,
+        "unit": "Hz",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 100
+      },
+      "if_frequency_hz": {
+        "type": "LINKEDIO",
+        "min": 70000,
+        "max": 1900000,
+        "label": "IF Frequency",
+        "symbol": "k",
+        "factor": 3,
+        "unit": "Hz",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 70000
+      },
+      "rssi_period": {
+        "type": "LINKEDIO",
+        "min": 1,
+        "max": 15,
+        "label": "RSSI Update Period",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 1
+      },
+      "etsi_cat1_compatible": {
+        "type": "LINKEDIO",
+        "label": "ETSI Category 1 Compatibility",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "Normal", "value": 0 },
+          { "label": "Band_169", "value": 1 },
+          { "label": "Band_868", "value": 2 }
+        ],
+        "value": 0
+      },
+      "antdivmode": {
+        "type": "LINKEDIO",
+        "label": "Antenna diversity mode",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "DISABLE", "value": 0 },
+          { "label": "ANTENNA1", "value": 1 },
+          { "label": "ANTSELFIRST", "value": 2 },
+          { "label": "ANTSELCORR", "value": 3 },
+          { "label": "ANTSELRSSI", "value": 4 },
+          { "label": "PHDEMODANTDIV", "value": 5 }
+        ],
+        "value": 0
+      },
+      "antdivrepeatdis": {
+        "type": "LINKEDIO",
+        "label": "Diversity Select-Best repeat",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "REPEATFIRST", "value": 0 },
+          { "label": "NOREPEATFIRST", "value": 1 }
+        ],
+        "value": 0
+      },
+      "var_length_loc": {
+        "type": "LINKEDIO",
+        "min": 0,
+        "max": 4096,
+        "label": "Byte position of dynamic length byte",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 0
+      },
+      "firstframe_bitsperword": {
+        "type": "LINKEDIO",
+        "min": 1,
+        "max": 8,
+        "label": "Length of the First Word",
+        "unit": "bits",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 1
+      },
+      "frame_bitendian": {
+        "type": "REQUIRED",
+        "label": "Frame Bit Endian",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "LSB_FIRST", "value": 0 },
+          { "label": "MSB_FIRST", "value": 1 }
+        ],
+        "value": 0
+      },
+      "frame_length_type": {
+        "type": "REQUIRED",
+        "label": "Frame Length Algorithm",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "FIXED_LENGTH", "value": 0 },
+          { "label": "VARIABLE_LENGTH", "value": 1 },
+          { "label": "FRAME_TYPE", "value": 2 }
+        ],
+        "value": 0
+      },
+      "header_en": {
+        "type": "REQUIRED",
+        "label": "Header Enable",
+        "variableType": "BOOL",
+        "value": false
+      },
+      "payload_white_en": {
+        "type": "REQUIRED",
+        "label": "Payload Whitening Enable",
+        "variableType": "BOOL",
+        "value": false
+      },
+      "payload_crc_en": {
+        "type": "REQUIRED",
+        "label": "Insert/Check CRC after payload",
+        "variableType": "BOOL",
+        "value": true
+      },
+      "header_size": {
+        "type": "REQUIRED",
+        "min": 1,
+        "max": 254,
+        "label": "Header Size",
+        "unit": "bytes",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 1
+      },
+      "header_calc_crc": {
+        "type": "REQUIRED",
+        "label": "CRC Header",
+        "variableType": "BOOL",
+        "value": false
+      },
+      "header_white_en": {
+        "type": "REQUIRED",
+        "label": "Whiten Header",
+        "variableType": "BOOL",
+        "value": false
+      },
+      "fixed_length_size": {
+        "type": "REQUIRED",
+        "min": 1,
+        "max": 2147483647,
+        "label": "Fixed Payload Size",
+        "unit": "bytes",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 1
+      },
+      "var_length_numbits": {
+        "type": "REQUIRED",
+        "min": 1,
+        "max": 12,
+        "label": "Variable Length Bit Size",
+        "unit": "bits",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 8
+      },
+      "var_length_bitendian": {
+        "type": "REQUIRED",
+        "label": "Variable Length Bit Endian",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "LSB_FIRST", "value": 0 },
+          { "label": "MSB_FIRST", "value": 1 }
+        ],
+        "value": 0
+      },
+      "var_length_byteendian": {
+        "type": "REQUIRED",
+        "label": "Variable Length Byte Endian",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "LSB_FIRST", "value": 0 },
+          { "label": "MSB_FIRST", "value": 1 }
+        ],
+        "value": 0
+      },
+      "var_length_shift": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 7,
+        "label": "Variable Length Bit Location",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 0
+      },
+      "var_length_minlength": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 4095,
+        "label": "Minimum Length",
+        "unit": "bytes",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 0
+      },
+      "var_length_maxlength": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 4095,
+        "label": "Maximum Length",
+        "unit": "bytes",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 255
+      },
+      "var_length_includecrc": {
+        "type": "REQUIRED",
+        "label": "Length Includes CRC Bytes",
+        "variableType": "BOOL",
+        "value": false
+      },
+      "var_length_adjust": {
+        "type": "REQUIRED",
+        "min": -4096,
+        "max": 4095,
+        "label": "Variable Frame Length Adjust",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 0
+      },
+      "frame_type_loc": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 255,
+        "label": "Frame Type Location",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 0
+      },
+      "frame_type_bits": {
+        "type": "REQUIRED",
+        "min": 1,
+        "max": 3,
+        "label": "Number of Frame Type Bits",
+        "unit": "bits",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 3
+      },
+      "frame_type_lsbit": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 7,
+        "label": "Frame Type Bit 0 Location",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 0
+      },
+      "frame_type_0_length": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 65535,
+        "label": "Frame Type 0 Length",
+        "unit": "bytes",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 16
+      },
+      "frame_type_1_length": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 65535,
+        "label": "Frame Type 1 Length",
+        "unit": "bytes",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 16
+      },
+      "frame_type_2_length": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 65535,
+        "label": "Frame Type 2 Length",
+        "unit": "bytes",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 16
+      },
+      "frame_type_3_length": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 65535,
+        "label": "Frame Type 3 Length",
+        "unit": "bytes",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 16
+      },
+      "frame_type_4_length": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 65535,
+        "label": "Frame Type 4 Length",
+        "unit": "bytes",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 16
+      },
+      "frame_type_5_length": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 65535,
+        "label": "Frame Type 5 Length",
+        "unit": "bytes",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 16
+      },
+      "frame_type_6_length": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 65535,
+        "label": "Frame Type 6 Length",
+        "unit": "bytes",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 16
+      },
+      "frame_type_7_length": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 65535,
+        "label": "Frame Type 7 Length",
+        "unit": "bytes",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 16
+      },
+      "frame_type_0_valid": {
+        "type": "REQUIRED",
+        "label": "Accept Frame Type 0",
+        "variableType": "BOOL",
+        "value": true
+      },
+      "frame_type_1_valid": {
+        "type": "REQUIRED",
+        "label": "Accept Frame Type 1",
+        "variableType": "BOOL",
+        "value": true
+      },
+      "frame_type_2_valid": {
+        "type": "REQUIRED",
+        "label": "Accept Frame Type 2",
+        "variableType": "BOOL",
+        "value": true
+      },
+      "frame_type_3_valid": {
+        "type": "REQUIRED",
+        "label": "Accept Frame Type 3",
+        "variableType": "BOOL",
+        "value": true
+      },
+      "frame_type_4_valid": {
+        "type": "REQUIRED",
+        "label": "Accept Frame Type 4",
+        "variableType": "BOOL",
+        "value": true
+      },
+      "frame_type_5_valid": {
+        "type": "REQUIRED",
+        "label": "Accept Frame Type 5",
+        "variableType": "BOOL",
+        "value": true
+      },
+      "frame_type_6_valid": {
+        "type": "REQUIRED",
+        "label": "Accept Frame Type 6",
+        "variableType": "BOOL",
+        "value": true
+      },
+      "frame_type_7_valid": {
+        "type": "REQUIRED",
+        "label": "Accept Frame Type 7",
+        "variableType": "BOOL",
+        "value": true
+      },
+      "frame_type_0_filter": {
+        "type": "REQUIRED",
+        "label": "Apply Address Filter for Frame Type 0",
+        "variableType": "BOOL",
+        "value": false
+      },
+      "frame_type_1_filter": {
+        "type": "REQUIRED",
+        "label": "Apply Address Filter for Frame Type 1",
+        "variableType": "BOOL",
+        "value": false
+      },
+      "frame_type_2_filter": {
+        "type": "REQUIRED",
+        "label": "Apply Address Filter for Frame Type 2",
+        "variableType": "BOOL",
+        "value": false
+      },
+      "frame_type_3_filter": {
+        "type": "REQUIRED",
+        "label": "Apply Address Filter for Frame Type 3",
+        "variableType": "BOOL",
+        "value": false
+      },
+      "frame_type_4_filter": {
+        "type": "REQUIRED",
+        "label": "Apply Address Filter for Frame Type 4",
+        "variableType": "BOOL",
+        "value": false
+      },
+      "frame_type_5_filter": {
+        "type": "REQUIRED",
+        "label": "Apply Address Filter for Frame Type 5",
+        "variableType": "BOOL",
+        "value": false
+      },
+      "frame_type_6_filter": {
+        "type": "REQUIRED",
+        "label": "Apply Address Filter for Frame Type 6",
+        "variableType": "BOOL",
+        "value": false
+      },
+      "frame_type_7_filter": {
+        "type": "REQUIRED",
+        "label": "Apply Address Filter for Frame Type 7",
+        "variableType": "BOOL",
+        "value": false
+      },
+      "crc_poly": {
+        "type": "REQUIRED",
+        "label": "CRC Polynomial",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "NONE", "value": 0 },
+          { "label": "CRC_8", "value": 1 },
+          { "label": "CRC_16", "value": 2 },
+          { "label": "CCITT_16", "value": 3 },
+          { "label": "DNP_16", "value": 4 },
+          { "label": "BLE_24", "value": 5 },
+          { "label": "CRC_32Q", "value": 6 },
+          { "label": "ANSIX366_1979", "value": 7 },
+          { "label": "ZWAVE", "value": 8 },
+          { "label": "BCH15_11", "value": 9 }
+        ],
+        "value": 2
+      },
+      "crc_seed": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 4294967295,
+        "label": "CRC Seed",
+        "variableType": "INT",
+        "variableFormat": "HEX",
+        "value": 0
+      },
+      "crc_byte_endian": {
+        "type": "REQUIRED",
+        "label": "CRC Byte Endian",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "LSB_FIRST", "value": 0 },
+          { "label": "MSB_FIRST", "value": 1 }
+        ],
+        "value": 1
+      },
+      "crc_bit_endian": {
+        "type": "REQUIRED",
+        "label": "CRC Output Bit Endian",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "LSB_FIRST", "value": 0 },
+          { "label": "MSB_FIRST", "value": 1 }
+        ],
+        "value": 1
+      },
+      "crc_pad_input": {
+        "type": "REQUIRED",
+        "label": "CRC Input Padding",
+        "variableType": "BOOL",
+        "value": false
+      },
+      "crc_input_order": {
+        "type": "REQUIRED",
+        "label": "CRC Input Bit Endian",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "LSB_FIRST", "value": 0 },
+          { "label": "MSB_FIRST", "value": 1 }
+        ],
+        "value": 0
+      },
+      "crc_invert": {
+        "type": "REQUIRED",
+        "label": "CRC Invert",
+        "variableType": "BOOL",
+        "value": false
+      },
+      "white_poly": {
+        "type": "REQUIRED",
+        "label": "Whitening Polynomial",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "NONE", "value": 0 },
+          { "label": "PN9", "value": 1 },
+          { "label": "PN9_BYTE", "value": 2 },
+          { "label": "PN16", "value": 3 },
+          { "label": "BLE", "value": 4 },
+          { "label": "Bytewise_XOR_seed_LSB", "value": 5 },
+          { "label": "PN9_802154", "value": 6 }
+        ],
+        "value": 0
+      },
+      "white_seed": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 65535,
+        "label": "Whitening Seed",
+        "variableType": "INT",
+        "variableFormat": "HEX",
+        "value": 65535
+      },
+      "white_output_bit": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 15,
+        "label": "Whitening Output Bit",
+        "variableType": "INT",
+        "variableFormat": "HEX",
+        "value": 0
+      },
+      "fec_en": {
+        "type": "REQUIRED",
+        "label": "FEC Algorithm",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "NONE", "value": 0 },
+          { "label": "FEC_154G_NRNSC_INTERLEAVING", "value": 1 },
+          { "label": "FEC_154G_RSC_INTERLEAVING", "value": 2 },
+          { "label": "FEC_154G_RSC_NO_INTERLEAVING", "value": 3 },
+          { "label": "FEC_K7_INTERLEAVING", "value": 4 }
+        ],
+        "value": 0
+      }
+    },
+    "phys": {
+      "PHY_Datasheet_169M_2GFSK_2p4Kbps_1p2K_ETSI": {
+        "label": "169MHz 2GFSK 2.4Kbps 1.2KHz ETSI",
+        "values": {
+          "base_frequency_hz": 169000000,
+          "channel_spacing_hz": 25000,
+          "xtal_frequency_hz": 39000000,
+          "rx_xtal_error_ppm": 8,
+          "tx_xtal_error_ppm": 8,
+          "syncword_0": 63117,
+          "syncword_1": 0,
+          "syncword_length": 16,
+          "preamble_pattern_len": 2,
+          "preamble_length": 40,
+          "preamble_pattern": 1,
+          "modulation_type": 0,
+          "deviation": 1200,
+          "bitrate": 2400,
+          "baudrate_tol_ppm": 0,
+          "shaping_filter": 1,
+          "fsk_symbol_map": 0,
+          "diff_encoding_mode": 0,
+          "dsss_chipping_code": 0,
+          "dsss_len": 0,
+          "dsss_spreading_factor": 0,
+          "shaping_filter_param": 0.5,
+          "bandwidth_hz": 10000,
+          "etsi_cat1_compatible": 1,
+          "frame_bitendian": 0,
+          "frame_length_type": 0,
+          "header_en": false,
+          "payload_white_en": false,
+          "payload_crc_en": true,
+          "fixed_length_size": 16,
+          "crc_poly": 2,
+          "crc_seed": 0,
+          "crc_byte_endian": 0,
+          "crc_bit_endian": 1,
+          "crc_pad_input": false,
+          "crc_input_order": 0,
+          "crc_invert": false
+        }
+      },
+      "PHY_Datasheet_490M_2GFSK_10Kbps_25K_20ppm": {
+        "label": "490MHz 2GFSK 10Kbps 25KHz 20ppm",
+        "values": {
+          "base_frequency_hz": 490000000,
+          "channel_spacing_hz": 1000000,
+          "xtal_frequency_hz": 39000000,
+          "rx_xtal_error_ppm": 20,
+          "tx_xtal_error_ppm": 20,
+          "syncword_0": 63117,
+          "syncword_1": 0,
+          "syncword_length": 16,
+          "preamble_pattern_len": 2,
+          "preamble_length": 40,
+          "preamble_pattern": 1,
+          "modulation_type": 0,
+          "deviation": 25000,
+          "bitrate": 10000,
+          "baudrate_tol_ppm": 0,
+          "shaping_filter": 1,
+          "fsk_symbol_map": 0,
+          "diff_encoding_mode": 0,
+          "dsss_chipping_code": 0,
+          "dsss_len": 0,
+          "dsss_spreading_factor": 0,
+          "shaping_filter_param": 0.5,
+          "frame_bitendian": 0,
+          "frame_length_type": 0,
+          "header_en": false,
+          "payload_white_en": false,
+          "payload_crc_en": true,
+          "fixed_length_size": 16,
+          "crc_poly": 2,
+          "crc_seed": 0,
+          "crc_byte_endian": 0,
+          "crc_bit_endian": 1,
+          "crc_pad_input": false,
+          "crc_input_order": 0,
+          "crc_invert": false
+        }
+      },
+      "PHY_Datasheet_868M_2GFSK_2p4Kbps_1p2K_ETSI": {
+        "label": "868MHz 2GFSK 2.4Kbps 1.2KHz ETSI",
+        "values": {
+          "base_frequency_hz": 868300000,
+          "channel_spacing_hz": 25000,
+          "xtal_frequency_hz": 39000000,
+          "rx_xtal_error_ppm": 2,
+          "tx_xtal_error_ppm": 2,
+          "syncword_0": 63117,
+          "syncword_1": 0,
+          "syncword_length": 16,
+          "preamble_pattern_len": 2,
+          "preamble_length": 40,
+          "preamble_pattern": 1,
+          "modulation_type": 0,
+          "deviation": 1200,
+          "bitrate": 2400,
+          "baudrate_tol_ppm": 0,
+          "shaping_filter": 1,
+          "fsk_symbol_map": 0,
+          "diff_encoding_mode": 0,
+          "dsss_chipping_code": 0,
+          "dsss_len": 0,
+          "dsss_spreading_factor": 0,
+          "shaping_filter_param": 0.5,
+          "bandwidth_hz": 10000,
+          "etsi_cat1_compatible": 2,
+          "frame_bitendian": 0,
+          "frame_length_type": 0,
+          "header_en": false,
+          "payload_white_en": false,
+          "payload_crc_en": true,
+          "fixed_length_size": 16,
+          "crc_poly": 2,
+          "crc_seed": 0,
+          "crc_byte_endian": 0,
+          "crc_bit_endian": 1,
+          "crc_pad_input": false,
+          "crc_input_order": 0,
+          "crc_invert": false
+        }
+      },
+      "PHY_Studio_169M_2GFSK_2p4Kbps_1p2K": {
+        "label": "169MHz 2GFSK 2.4Kbps 1.2KHz",
+        "values": {
+          "base_frequency_hz": 169000000,
+          "channel_spacing_hz": 1000000,
+          "xtal_frequency_hz": 39000000,
+          "rx_xtal_error_ppm": 10,
+          "tx_xtal_error_ppm": 10,
+          "syncword_0": 63117,
+          "syncword_1": 0,
+          "syncword_length": 16,
+          "preamble_pattern_len": 2,
+          "preamble_length": 40,
+          "preamble_pattern": 1,
+          "modulation_type": 0,
+          "deviation": 1200,
+          "bitrate": 2400,
+          "baudrate_tol_ppm": 0,
+          "shaping_filter": 1,
+          "fsk_symbol_map": 0,
+          "diff_encoding_mode": 0,
+          "dsss_chipping_code": 0,
+          "dsss_len": 0,
+          "dsss_spreading_factor": 0,
+          "shaping_filter_param": 0.5,
+          "frame_bitendian": 0,
+          "frame_length_type": 0,
+          "header_en": false,
+          "payload_white_en": false,
+          "payload_crc_en": true,
+          "fixed_length_size": 16,
+          "crc_poly": 2,
+          "crc_seed": 0,
+          "crc_byte_endian": 0,
+          "crc_bit_endian": 1,
+          "crc_pad_input": false,
+          "crc_input_order": 0,
+          "crc_invert": false
+        }
+      },
+      "PHY_Studio_169M_2GFSK_38p4Kbps_20K": {
+        "label": "169MHz 2GFSK 38.4Kbps 20KHz",
+        "values": {
+          "base_frequency_hz": 169000000,
+          "channel_spacing_hz": 1000000,
+          "xtal_frequency_hz": 39000000,
+          "rx_xtal_error_ppm": 10,
+          "tx_xtal_error_ppm": 10,
+          "syncword_0": 63117,
+          "syncword_1": 0,
+          "syncword_length": 16,
+          "preamble_pattern_len": 2,
+          "preamble_length": 40,
+          "preamble_pattern": 1,
+          "modulation_type": 0,
+          "deviation": 20000,
+          "bitrate": 38400,
+          "baudrate_tol_ppm": 0,
+          "shaping_filter": 1,
+          "fsk_symbol_map": 0,
+          "diff_encoding_mode": 0,
+          "dsss_chipping_code": 0,
+          "dsss_len": 0,
+          "dsss_spreading_factor": 0,
+          "shaping_filter_param": 0.5,
+          "frame_bitendian": 0,
+          "frame_length_type": 0,
+          "header_en": false,
+          "payload_white_en": false,
+          "payload_crc_en": true,
+          "fixed_length_size": 16,
+          "crc_poly": 2,
+          "crc_seed": 0,
+          "crc_byte_endian": 0,
+          "crc_bit_endian": 1,
+          "crc_pad_input": false,
+          "crc_input_order": 0,
+          "crc_invert": false
+        }
+      },
+      "PHY_Studio_315M_2GFSK_38p4Kbps_20K": {
+        "label": "315MHz 2GFSK 38.4Kbps 20KHz",
+        "values": {
+          "base_frequency_hz": 315000000,
+          "channel_spacing_hz": 1000000,
+          "xtal_frequency_hz": 39000000,
+          "rx_xtal_error_ppm": 10,
+          "tx_xtal_error_ppm": 10,
+          "syncword_0": 63117,
+          "syncword_1": 0,
+          "syncword_length": 16,
+          "preamble_pattern_len": 2,
+          "preamble_length": 40,
+          "preamble_pattern": 1,
+          "modulation_type": 0,
+          "deviation": 20000,
+          "bitrate": 38400,
+          "baudrate_tol_ppm": 0,
+          "shaping_filter": 1,
+          "fsk_symbol_map": 0,
+          "diff_encoding_mode": 0,
+          "dsss_chipping_code": 0,
+          "dsss_len": 0,
+          "dsss_spreading_factor": 0,
+          "shaping_filter_param": 0.5,
+          "frame_bitendian": 0,
+          "frame_length_type": 0,
+          "header_en": false,
+          "payload_white_en": false,
+          "payload_crc_en": true,
+          "fixed_length_size": 16,
+          "crc_poly": 2,
+          "crc_seed": 0,
+          "crc_byte_endian": 0,
+          "crc_bit_endian": 1,
+          "crc_pad_input": false,
+          "crc_input_order": 0,
+          "crc_invert": false
+        }
+      },
+      "PHY_Studio_315M_OOK_40kbps": {
+        "label": "315M OOK 40kbps Manchester",
+        "values": {
+          "base_frequency_hz": 315000000,
+          "channel_spacing_hz": 1000000,
+          "xtal_frequency_hz": 39000000,
+          "rx_xtal_error_ppm": 10,
+          "tx_xtal_error_ppm": 10,
+          "syncword_0": 63117,
+          "syncword_1": 0,
+          "syncword_length": 16,
+          "preamble_pattern_len": 2,
+          "preamble_length": 40,
+          "preamble_pattern": 1,
+          "modulation_type": 4,
+          "deviation": 0,
+          "bitrate": 40000,
+          "baudrate_tol_ppm": 1000,
+          "shaping_filter": 0,
+          "fsk_symbol_map": 0,
+          "diff_encoding_mode": 0,
+          "dsss_chipping_code": 0,
+          "dsss_len": 0,
+          "dsss_spreading_factor": 0,
+          "symbol_encoding": 1,
+          "shaping_filter_param": 1.5,
+          "bandwidth_hz": 350000,
+          "frame_bitendian": 0,
+          "frame_length_type": 0,
+          "header_en": false,
+          "payload_white_en": false,
+          "payload_crc_en": true,
+          "fixed_length_size": 16,
+          "crc_poly": 2,
+          "crc_seed": 0,
+          "crc_byte_endian": 0,
+          "crc_bit_endian": 1,
+          "crc_pad_input": false,
+          "crc_input_order": 0,
+          "crc_invert": false
+        }
+      },
+      "PHY_Studio_315M_OOK_4p8kbps": {
+        "label": "315M OOK 4.8kbps Manchester",
+        "values": {
+          "base_frequency_hz": 315000000,
+          "channel_spacing_hz": 1000000,
+          "xtal_frequency_hz": 39000000,
+          "rx_xtal_error_ppm": 10,
+          "tx_xtal_error_ppm": 10,
+          "syncword_0": 63117,
+          "syncword_1": 0,
+          "syncword_length": 16,
+          "preamble_pattern_len": 2,
+          "preamble_length": 40,
+          "preamble_pattern": 1,
+          "modulation_type": 4,
+          "deviation": 0,
+          "bitrate": 4800,
+          "baudrate_tol_ppm": 1000,
+          "shaping_filter": 0,
+          "fsk_symbol_map": 0,
+          "diff_encoding_mode": 0,
+          "dsss_chipping_code": 0,
+          "dsss_len": 0,
+          "dsss_spreading_factor": 0,
+          "symbol_encoding": 1,
+          "shaping_filter_param": 1.5,
+          "bandwidth_hz": 350000,
+          "frame_bitendian": 0,
+          "frame_length_type": 0,
+          "header_en": false,
+          "payload_white_en": false,
+          "payload_crc_en": true,
+          "fixed_length_size": 16,
+          "crc_poly": 2,
+          "crc_seed": 0,
+          "crc_byte_endian": 0,
+          "crc_bit_endian": 1,
+          "crc_pad_input": false,
+          "crc_input_order": 0,
+          "crc_invert": false
+        }
+      },
+      "PHY_Studio_433M_OOK_4p8kbps": {
+        "label": "433M OOK 4.8kbps Manchester",
+        "values": {
+          "base_frequency_hz": 433920000,
+          "channel_spacing_hz": 1000000,
+          "xtal_frequency_hz": 39000000,
+          "rx_xtal_error_ppm": 10,
+          "tx_xtal_error_ppm": 10,
+          "syncword_0": 63117,
+          "syncword_1": 0,
+          "syncword_length": 16,
+          "preamble_pattern_len": 2,
+          "preamble_length": 40,
+          "preamble_pattern": 1,
+          "modulation_type": 4,
+          "deviation": 0,
+          "bitrate": 4800,
+          "baudrate_tol_ppm": 1000,
+          "shaping_filter": 0,
+          "fsk_symbol_map": 0,
+          "diff_encoding_mode": 0,
+          "dsss_chipping_code": 0,
+          "dsss_len": 0,
+          "dsss_spreading_factor": 0,
+          "symbol_encoding": 1,
+          "shaping_filter_param": 1.5,
+          "bandwidth_hz": 350000,
+          "frame_bitendian": 0,
+          "frame_length_type": 0,
+          "header_en": false,
+          "payload_white_en": false,
+          "payload_crc_en": true,
+          "fixed_length_size": 16,
+          "crc_poly": 2,
+          "crc_seed": 0,
+          "crc_byte_endian": 0,
+          "crc_bit_endian": 1,
+          "crc_pad_input": false,
+          "crc_input_order": 0,
+          "crc_invert": false
+        }
+      },
+      "PHY_Studio_434M_2GFSK_100Kbps_50K": {
+        "label": "434M 2GFSK 100Kbps 50K",
+        "values": {
+          "base_frequency_hz": 434000000,
+          "channel_spacing_hz": 1000000,
+          "xtal_frequency_hz": 39000000,
+          "rx_xtal_error_ppm": 10,
+          "tx_xtal_error_ppm": 10,
+          "syncword_0": 63117,
+          "syncword_1": 0,
+          "syncword_length": 16,
+          "preamble_pattern_len": 2,
+          "preamble_length": 40,
+          "preamble_pattern": 1,
+          "modulation_type": 0,
+          "deviation": 50000,
+          "bitrate": 100000,
+          "baudrate_tol_ppm": 0,
+          "shaping_filter": 1,
+          "fsk_symbol_map": 0,
+          "diff_encoding_mode": 0,
+          "dsss_chipping_code": 0,
+          "dsss_len": 0,
+          "dsss_spreading_factor": 0,
+          "shaping_filter_param": 0.5,
+          "frame_bitendian": 0,
+          "frame_length_type": 0,
+          "header_en": false,
+          "payload_white_en": false,
+          "payload_crc_en": true,
+          "fixed_length_size": 16,
+          "crc_poly": 2,
+          "crc_seed": 0,
+          "crc_byte_endian": 0,
+          "crc_bit_endian": 1,
+          "crc_pad_input": false,
+          "crc_input_order": 0,
+          "crc_invert": false
+        }
+      },
+      "PHY_Studio_434M_2GFSK_2p4Kbps_1p2K": {
+        "label": "434M 2GFSK 2.4Kbps 1.2K",
+        "values": {
+          "base_frequency_hz": 434000000,
+          "channel_spacing_hz": 1000000,
+          "xtal_frequency_hz": 39000000,
+          "rx_xtal_error_ppm": 10,
+          "tx_xtal_error_ppm": 10,
+          "syncword_0": 63117,
+          "syncword_1": 0,
+          "syncword_length": 16,
+          "preamble_pattern_len": 2,
+          "preamble_length": 40,
+          "preamble_pattern": 1,
+          "modulation_type": 0,
+          "deviation": 1200,
+          "bitrate": 2400,
+          "baudrate_tol_ppm": 0,
+          "shaping_filter": 1,
+          "fsk_symbol_map": 0,
+          "diff_encoding_mode": 0,
+          "dsss_chipping_code": 0,
+          "dsss_len": 0,
+          "dsss_spreading_factor": 0,
+          "shaping_filter_param": 0.5,
+          "frame_bitendian": 0,
+          "frame_length_type": 0,
+          "header_en": false,
+          "payload_white_en": false,
+          "payload_crc_en": true,
+          "fixed_length_size": 16,
+          "crc_poly": 2,
+          "crc_seed": 0,
+          "crc_byte_endian": 0,
+          "crc_bit_endian": 1,
+          "crc_pad_input": false,
+          "crc_input_order": 0,
+          "crc_invert": false
+        }
+      },
+      "PHY_Studio_434M_2GFSK_50Kbps_25K": {
+        "label": "434M 2GFSK 50Kbps 25K",
+        "values": {
+          "base_frequency_hz": 434000000,
+          "channel_spacing_hz": 1000000,
+          "xtal_frequency_hz": 39000000,
+          "rx_xtal_error_ppm": 10,
+          "tx_xtal_error_ppm": 10,
+          "syncword_0": 63117,
+          "syncword_1": 0,
+          "syncword_length": 16,
+          "preamble_pattern_len": 2,
+          "preamble_length": 40,
+          "preamble_pattern": 1,
+          "modulation_type": 0,
+          "deviation": 25000,
+          "bitrate": 50000,
+          "baudrate_tol_ppm": 0,
+          "shaping_filter": 1,
+          "fsk_symbol_map": 0,
+          "diff_encoding_mode": 0,
+          "dsss_chipping_code": 0,
+          "dsss_len": 0,
+          "dsss_spreading_factor": 0,
+          "shaping_filter_param": 0.5,
+          "frame_bitendian": 0,
+          "frame_length_type": 0,
+          "header_en": false,
+          "payload_white_en": false,
+          "payload_crc_en": true,
+          "fixed_length_size": 16,
+          "crc_poly": 2,
+          "crc_seed": 0,
+          "crc_byte_endian": 0,
+          "crc_bit_endian": 1,
+          "crc_pad_input": false,
+          "crc_input_order": 0,
+          "crc_invert": false
+        }
+      },
+      "PHY_Studio_434M_4GFSK_50Kbps_8p33K": {
+        "label": "434M 4GFSK 50Kbps 8.33K",
+        "values": {
+          "base_frequency_hz": 434000000,
+          "channel_spacing_hz": 1000000,
+          "xtal_frequency_hz": 39000000,
+          "rx_xtal_error_ppm": 10,
+          "tx_xtal_error_ppm": 10,
+          "syncword_0": 63117,
+          "syncword_1": 0,
+          "syncword_length": 16,
+          "preamble_pattern_len": 2,
+          "preamble_length": 40,
+          "preamble_pattern": 1,
+          "modulation_type": 1,
+          "deviation": 8330,
+          "bitrate": 50000,
+          "baudrate_tol_ppm": 0,
+          "shaping_filter": 1,
+          "fsk_symbol_map": 0,
+          "diff_encoding_mode": 0,
+          "dsss_chipping_code": 0,
+          "dsss_len": 0,
+          "dsss_spreading_factor": 0,
+          "shaping_filter_param": 1,
+          "frame_bitendian": 0,
+          "frame_length_type": 0,
+          "header_en": false,
+          "payload_white_en": false,
+          "payload_crc_en": true,
+          "fixed_length_size": 16,
+          "crc_poly": 2,
+          "crc_seed": 0,
+          "crc_byte_endian": 0,
+          "crc_bit_endian": 1,
+          "crc_pad_input": false,
+          "crc_input_order": 0,
+          "crc_invert": false
+        }
+      },
+      "PHY_Studio_490M_2GFSK_10Kbps_5K": {
+        "label": "490MHz 2GFSK 10Kbps 5KHz",
+        "values": {
+          "base_frequency_hz": 490000000,
+          "channel_spacing_hz": 1000000,
+          "xtal_frequency_hz": 39000000,
+          "rx_xtal_error_ppm": 10,
+          "tx_xtal_error_ppm": 10,
+          "syncword_0": 63117,
+          "syncword_1": 0,
+          "syncword_length": 16,
+          "preamble_pattern_len": 2,
+          "preamble_length": 40,
+          "preamble_pattern": 1,
+          "modulation_type": 0,
+          "deviation": 5000,
+          "bitrate": 10000,
+          "baudrate_tol_ppm": 0,
+          "shaping_filter": 1,
+          "fsk_symbol_map": 0,
+          "diff_encoding_mode": 0,
+          "dsss_chipping_code": 0,
+          "dsss_len": 0,
+          "dsss_spreading_factor": 0,
+          "shaping_filter_param": 0.5,
+          "frame_bitendian": 0,
+          "frame_length_type": 0,
+          "header_en": false,
+          "payload_white_en": false,
+          "payload_crc_en": true,
+          "fixed_length_size": 16,
+          "crc_poly": 2,
+          "crc_seed": 0,
+          "crc_byte_endian": 0,
+          "crc_bit_endian": 1,
+          "crc_pad_input": false,
+          "crc_input_order": 0,
+          "crc_invert": false
+        }
+      },
+      "PHY_Studio_490M_2GFSK_2p4Kbps_1p2K": {
+        "label": "490MHz 2GFSK 2.4Kbps 1.2KHz",
+        "values": {
+          "base_frequency_hz": 490000000,
+          "channel_spacing_hz": 1000000,
+          "xtal_frequency_hz": 39000000,
+          "rx_xtal_error_ppm": 10,
+          "tx_xtal_error_ppm": 10,
+          "syncword_0": 63117,
+          "syncword_1": 0,
+          "syncword_length": 16,
+          "preamble_pattern_len": 2,
+          "preamble_length": 40,
+          "preamble_pattern": 1,
+          "modulation_type": 0,
+          "deviation": 1200,
+          "bitrate": 2400,
+          "baudrate_tol_ppm": 0,
+          "shaping_filter": 1,
+          "fsk_symbol_map": 0,
+          "diff_encoding_mode": 0,
+          "dsss_chipping_code": 0,
+          "dsss_len": 0,
+          "dsss_spreading_factor": 0,
+          "shaping_filter_param": 0.5,
+          "frame_bitendian": 0,
+          "frame_length_type": 0,
+          "header_en": false,
+          "payload_white_en": false,
+          "payload_crc_en": true,
+          "fixed_length_size": 16,
+          "crc_poly": 2,
+          "crc_seed": 0,
+          "crc_byte_endian": 0,
+          "crc_bit_endian": 1,
+          "crc_pad_input": false,
+          "crc_input_order": 0,
+          "crc_invert": false
+        }
+      },
+      "PHY_Studio_490M_2GFSK_38p4Kbps_20K": {
+        "label": "490MHz 2GFSK 38.4Kbps 20KHz",
+        "values": {
+          "base_frequency_hz": 490000000,
+          "channel_spacing_hz": 1000000,
+          "xtal_frequency_hz": 39000000,
+          "rx_xtal_error_ppm": 10,
+          "tx_xtal_error_ppm": 10,
+          "syncword_0": 63117,
+          "syncword_1": 0,
+          "syncword_length": 16,
+          "preamble_pattern_len": 2,
+          "preamble_length": 40,
+          "preamble_pattern": 1,
+          "modulation_type": 0,
+          "deviation": 20000,
+          "bitrate": 38400,
+          "baudrate_tol_ppm": 0,
+          "shaping_filter": 1,
+          "fsk_symbol_map": 0,
+          "diff_encoding_mode": 0,
+          "dsss_chipping_code": 0,
+          "dsss_len": 0,
+          "dsss_spreading_factor": 0,
+          "shaping_filter_param": 0.5,
+          "frame_bitendian": 0,
+          "frame_length_type": 0,
+          "header_en": false,
+          "payload_white_en": false,
+          "payload_crc_en": true,
+          "fixed_length_size": 16,
+          "crc_poly": 2,
+          "crc_seed": 0,
+          "crc_byte_endian": 0,
+          "crc_bit_endian": 1,
+          "crc_pad_input": false,
+          "crc_input_order": 0,
+          "crc_invert": false
+        }
+      },
+      "PHY_Studio_868M_2GFSK_38p4Kbps_20K": {
+        "label": "868M 2GFSK 38.4Kbps 20K",
+        "values": {
+          "base_frequency_hz": 868000000,
+          "channel_spacing_hz": 1000000,
+          "xtal_frequency_hz": 39000000,
+          "rx_xtal_error_ppm": 10,
+          "tx_xtal_error_ppm": 10,
+          "syncword_0": 63117,
+          "syncword_1": 0,
+          "syncword_length": 16,
+          "preamble_pattern_len": 2,
+          "preamble_length": 40,
+          "preamble_pattern": 1,
+          "modulation_type": 0,
+          "deviation": 20000,
+          "bitrate": 38400,
+          "baudrate_tol_ppm": 0,
+          "shaping_filter": 1,
+          "fsk_symbol_map": 0,
+          "diff_encoding_mode": 0,
+          "dsss_chipping_code": 0,
+          "dsss_len": 0,
+          "dsss_spreading_factor": 0,
+          "shaping_filter_param": 0.5,
+          "frame_bitendian": 0,
+          "frame_length_type": 0,
+          "header_en": false,
+          "payload_white_en": false,
+          "payload_crc_en": true,
+          "fixed_length_size": 16,
+          "crc_poly": 2,
+          "crc_seed": 0,
+          "crc_byte_endian": 0,
+          "crc_bit_endian": 1,
+          "crc_pad_input": false,
+          "crc_input_order": 0,
+          "crc_invert": false
+        }
+      },
+      "PHY_Studio_868M_2GFSK_50Kbps_25K": {
+        "label": "868M 2GFSK 50Kbps 25K",
+        "values": {
+          "base_frequency_hz": 868000000,
+          "channel_spacing_hz": 1000000,
+          "xtal_frequency_hz": 39000000,
+          "rx_xtal_error_ppm": 10,
+          "tx_xtal_error_ppm": 10,
+          "syncword_0": 63117,
+          "syncword_1": 0,
+          "syncword_length": 16,
+          "preamble_pattern_len": 2,
+          "preamble_length": 40,
+          "preamble_pattern": 1,
+          "modulation_type": 0,
+          "deviation": 25000,
+          "bitrate": 50000,
+          "baudrate_tol_ppm": 0,
+          "shaping_filter": 1,
+          "fsk_symbol_map": 0,
+          "diff_encoding_mode": 0,
+          "dsss_chipping_code": 0,
+          "dsss_len": 0,
+          "dsss_spreading_factor": 0,
+          "shaping_filter_param": 0.5,
+          "frame_bitendian": 0,
+          "frame_length_type": 0,
+          "header_en": false,
+          "payload_white_en": false,
+          "payload_crc_en": true,
+          "fixed_length_size": 16,
+          "crc_poly": 2,
+          "crc_seed": 0,
+          "crc_byte_endian": 0,
+          "crc_bit_endian": 1,
+          "crc_pad_input": false,
+          "crc_input_order": 0,
+          "crc_invert": false
+        }
+      },
+      "PHY_Studio_868M_2GFSK_600bps_800": {
+        "label": "868MHz 2GFSK 600bps 800Hz",
+        "values": {
+          "base_frequency_hz": 868000000,
+          "channel_spacing_hz": 1000000,
+          "xtal_frequency_hz": 39000000,
+          "rx_xtal_error_ppm": 5,
+          "tx_xtal_error_ppm": 5,
+          "syncword_0": 63117,
+          "syncword_1": 0,
+          "syncword_length": 16,
+          "preamble_pattern_len": 2,
+          "preamble_length": 40,
+          "preamble_pattern": 1,
+          "modulation_type": 0,
+          "deviation": 800,
+          "bitrate": 600,
+          "baudrate_tol_ppm": 0,
+          "shaping_filter": 1,
+          "fsk_symbol_map": 0,
+          "diff_encoding_mode": 0,
+          "dsss_chipping_code": 0,
+          "dsss_len": 0,
+          "dsss_spreading_factor": 0,
+          "shaping_filter_param": 0.5,
+          "frame_bitendian": 0,
+          "frame_length_type": 0,
+          "header_en": false,
+          "payload_white_en": false,
+          "payload_crc_en": true,
+          "fixed_length_size": 16,
+          "crc_poly": 2,
+          "crc_seed": 0,
+          "crc_byte_endian": 0,
+          "crc_bit_endian": 1,
+          "crc_pad_input": false,
+          "crc_input_order": 0,
+          "crc_invert": false
+        }
+      },
+      "PHY_Studio_868M_GMSK_500Kbps": {
+        "label": "868M GMSK 500Kbps",
+        "values": {
+          "base_frequency_hz": 868000000,
+          "channel_spacing_hz": 1000000,
+          "xtal_frequency_hz": 39000000,
+          "rx_xtal_error_ppm": 10,
+          "tx_xtal_error_ppm": 10,
+          "syncword_0": 63117,
+          "syncword_1": 0,
+          "syncword_length": 16,
+          "preamble_pattern_len": 2,
+          "preamble_length": 40,
+          "preamble_pattern": 1,
+          "modulation_type": 6,
+          "deviation": 125000,
+          "bitrate": 500000,
+          "baudrate_tol_ppm": 0,
+          "shaping_filter": 1,
+          "fsk_symbol_map": 0,
+          "diff_encoding_mode": 0,
+          "dsss_chipping_code": 0,
+          "dsss_len": 0,
+          "dsss_spreading_factor": 0,
+          "shaping_filter_param": 0.5,
+          "frame_bitendian": 0,
+          "frame_length_type": 0,
+          "header_en": false,
+          "payload_white_en": false,
+          "payload_crc_en": true,
+          "fixed_length_size": 16,
+          "crc_poly": 2,
+          "crc_seed": 0,
+          "crc_byte_endian": 0,
+          "crc_bit_endian": 1,
+          "crc_pad_input": false,
+          "crc_input_order": 0,
+          "crc_invert": false
+        }
+      },
+      "PHY_Studio_915M_2GFSK_100Kbps_50K_antdiv": {
+        "label": "915M 2GFSK 100Kbps 50K antenna diversity",
+        "values": {
+          "base_frequency_hz": 915000000,
+          "channel_spacing_hz": 1000000,
+          "xtal_frequency_hz": 39000000,
+          "rx_xtal_error_ppm": 10,
+          "tx_xtal_error_ppm": 10,
+          "syncword_0": 63117,
+          "syncword_1": 0,
+          "syncword_length": 16,
+          "preamble_pattern_len": 2,
+          "preamble_length": 60,
+          "preamble_pattern": 1,
+          "modulation_type": 0,
+          "deviation": 50000,
+          "bitrate": 100000,
+          "baudrate_tol_ppm": 0,
+          "shaping_filter": 1,
+          "fsk_symbol_map": 0,
+          "diff_encoding_mode": 0,
+          "dsss_chipping_code": 0,
+          "dsss_len": 0,
+          "dsss_spreading_factor": 0,
+          "shaping_filter_param": 0.5,
+          "skip2ant": 0,
+          "antdivmode": 5,
+          "frame_bitendian": 0,
+          "frame_length_type": 0,
+          "header_en": false,
+          "payload_white_en": false,
+          "payload_crc_en": true,
+          "fixed_length_size": 16,
+          "crc_poly": 2,
+          "crc_seed": 0,
+          "crc_byte_endian": 0,
+          "crc_bit_endian": 1,
+          "crc_pad_input": false,
+          "crc_input_order": 0,
+          "crc_invert": false
+        }
+      },
+      "PHY_Studio_915M_2GFSK_2Mbps_500K": {
+        "label": "915M 2GFSK 2Mbps 500K",
+        "values": {
+          "base_frequency_hz": 915000000,
+          "channel_spacing_hz": 1000000,
+          "xtal_frequency_hz": 39000000,
+          "rx_xtal_error_ppm": 10,
+          "tx_xtal_error_ppm": 10,
+          "syncword_0": 63117,
+          "syncword_1": 0,
+          "syncword_length": 16,
+          "preamble_pattern_len": 2,
+          "preamble_length": 40,
+          "preamble_pattern": 1,
+          "modulation_type": 0,
+          "deviation": 500000,
+          "bitrate": 2000000,
+          "baudrate_tol_ppm": 0,
+          "shaping_filter": 1,
+          "fsk_symbol_map": 0,
+          "diff_encoding_mode": 0,
+          "dsss_chipping_code": 0,
+          "dsss_len": 0,
+          "dsss_spreading_factor": 0,
+          "shaping_filter_param": 0.5,
+          "frame_bitendian": 0,
+          "frame_length_type": 0,
+          "header_en": false,
+          "payload_white_en": false,
+          "payload_crc_en": true,
+          "fixed_length_size": 16,
+          "crc_poly": 2,
+          "crc_seed": 0,
+          "crc_byte_endian": 0,
+          "crc_bit_endian": 1,
+          "crc_pad_input": false,
+          "crc_input_order": 0,
+          "crc_invert": false
+        }
+      },
+      "PHY_Studio_915M_2GFSK_500Kbps_175K_mi0p7": {
+        "label": "915M 2GFSK 500Kbps 175K",
+        "values": {
+          "base_frequency_hz": 915000000,
+          "channel_spacing_hz": 1000000,
+          "xtal_frequency_hz": 39000000,
+          "rx_xtal_error_ppm": 10,
+          "tx_xtal_error_ppm": 10,
+          "syncword_0": 63117,
+          "syncword_1": 0,
+          "syncword_length": 16,
+          "preamble_pattern_len": 2,
+          "preamble_length": 40,
+          "preamble_pattern": 1,
+          "modulation_type": 0,
+          "deviation": 175000,
+          "bitrate": 500000,
+          "baudrate_tol_ppm": 0,
+          "shaping_filter": 1,
+          "fsk_symbol_map": 0,
+          "diff_encoding_mode": 0,
+          "dsss_chipping_code": 0,
+          "dsss_len": 0,
+          "dsss_spreading_factor": 0,
+          "shaping_filter_param": 0.5,
+          "frame_bitendian": 0,
+          "frame_length_type": 0,
+          "header_en": false,
+          "payload_white_en": false,
+          "payload_crc_en": true,
+          "fixed_length_size": 16,
+          "crc_poly": 2,
+          "crc_seed": 0,
+          "crc_byte_endian": 0,
+          "crc_bit_endian": 1,
+          "crc_pad_input": false,
+          "crc_input_order": 0,
+          "crc_invert": false
+        }
+      },
+      "PHY_Studio_915M_2GFSK_50Kbps_25K": {
+        "label": "915M 2GFSK 50Kbps 25K",
+        "values": {
+          "base_frequency_hz": 915000000,
+          "channel_spacing_hz": 1000000,
+          "xtal_frequency_hz": 39000000,
+          "rx_xtal_error_ppm": 10,
+          "tx_xtal_error_ppm": 10,
+          "syncword_0": 63117,
+          "syncword_1": 0,
+          "syncword_length": 16,
+          "preamble_pattern_len": 2,
+          "preamble_length": 40,
+          "preamble_pattern": 1,
+          "modulation_type": 0,
+          "deviation": 25000,
+          "bitrate": 50000,
+          "baudrate_tol_ppm": 0,
+          "shaping_filter": 1,
+          "fsk_symbol_map": 0,
+          "diff_encoding_mode": 0,
+          "dsss_chipping_code": 0,
+          "dsss_len": 0,
+          "dsss_spreading_factor": 0,
+          "shaping_filter_param": 0.5,
+          "frame_bitendian": 0,
+          "frame_length_type": 0,
+          "header_en": false,
+          "payload_white_en": false,
+          "payload_crc_en": true,
+          "fixed_length_size": 16,
+          "crc_poly": 2,
+          "crc_seed": 0,
+          "crc_byte_endian": 0,
+          "crc_bit_endian": 1,
+          "crc_pad_input": false,
+          "crc_input_order": 0,
+          "crc_invert": false
+        }
+      },
+      "PHY_Studio_915M_4GFSK_200Kbps_16p6K": {
+        "label": "915M 4GFSK 200Kbps 16.6K",
+        "values": {
+          "base_frequency_hz": 915000000,
+          "channel_spacing_hz": 1000000,
+          "xtal_frequency_hz": 39000000,
+          "rx_xtal_error_ppm": 10,
+          "tx_xtal_error_ppm": 10,
+          "syncword_0": 63117,
+          "syncword_1": 0,
+          "syncword_length": 16,
+          "preamble_pattern_len": 2,
+          "preamble_length": 40,
+          "preamble_pattern": 1,
+          "modulation_type": 1,
+          "deviation": 16666,
+          "bitrate": 200000,
+          "baudrate_tol_ppm": 0,
+          "shaping_filter": 1,
+          "fsk_symbol_map": 0,
+          "diff_encoding_mode": 0,
+          "dsss_chipping_code": 0,
+          "dsss_len": 0,
+          "dsss_spreading_factor": 0,
+          "shaping_filter_param": 1,
+          "frame_bitendian": 0,
+          "frame_length_type": 0,
+          "header_en": false,
+          "payload_white_en": false,
+          "payload_crc_en": true,
+          "fixed_length_size": 16,
+          "crc_poly": 2,
+          "crc_seed": 0,
+          "crc_byte_endian": 0,
+          "crc_bit_endian": 1,
+          "crc_pad_input": false,
+          "crc_input_order": 0,
+          "crc_invert": false
+        }
+      },
+      "PHY_Studio_915M_OOK_120kbps": {
+        "label": "915M OOK 120kbps",
+        "values": {
+          "base_frequency_hz": 915000000,
+          "channel_spacing_hz": 1000000,
+          "xtal_frequency_hz": 39000000,
+          "rx_xtal_error_ppm": 10,
+          "tx_xtal_error_ppm": 10,
+          "syncword_0": 63117,
+          "syncword_1": 0,
+          "syncword_length": 16,
+          "preamble_pattern_len": 2,
+          "preamble_length": 40,
+          "preamble_pattern": 1,
+          "modulation_type": 4,
+          "deviation": 0,
+          "bitrate": 120000,
+          "baudrate_tol_ppm": 1000,
+          "shaping_filter": 0,
+          "fsk_symbol_map": 0,
+          "diff_encoding_mode": 0,
+          "dsss_chipping_code": 0,
+          "dsss_len": 0,
+          "dsss_spreading_factor": 0,
+          "symbol_encoding": 0,
+          "shaping_filter_param": 1.5,
+          "bandwidth_hz": 350000,
+          "frame_bitendian": 0,
+          "frame_length_type": 0,
+          "header_en": false,
+          "payload_white_en": false,
+          "payload_crc_en": true,
+          "fixed_length_size": 16,
+          "crc_poly": 2,
+          "crc_seed": 0,
+          "crc_byte_endian": 0,
+          "crc_bit_endian": 1,
+          "crc_pad_input": false,
+          "crc_input_order": 0,
+          "crc_invert": false
+        }
+      },
+      "PHY_Studio_915M_OOK_4p8kbps": {
+        "label": "915M OOK 4.8kbps Manchester",
+        "values": {
+          "base_frequency_hz": 915000000,
+          "channel_spacing_hz": 1000000,
+          "xtal_frequency_hz": 39000000,
+          "rx_xtal_error_ppm": 10,
+          "tx_xtal_error_ppm": 10,
+          "syncword_0": 63117,
+          "syncword_1": 0,
+          "syncword_length": 16,
+          "preamble_pattern_len": 2,
+          "preamble_length": 40,
+          "preamble_pattern": 1,
+          "modulation_type": 4,
+          "deviation": 0,
+          "bitrate": 4800,
+          "baudrate_tol_ppm": 1000,
+          "shaping_filter": 0,
+          "fsk_symbol_map": 0,
+          "diff_encoding_mode": 0,
+          "dsss_chipping_code": 0,
+          "dsss_len": 0,
+          "dsss_spreading_factor": 0,
+          "symbol_encoding": 1,
+          "shaping_filter_param": 1.5,
+          "bandwidth_hz": 350000,
+          "frame_bitendian": 0,
+          "frame_length_type": 0,
+          "header_en": false,
+          "payload_white_en": false,
+          "payload_crc_en": true,
+          "fixed_length_size": 16,
+          "crc_poly": 2,
+          "crc_seed": 0,
+          "crc_byte_endian": 0,
+          "crc_bit_endian": 1,
+          "crc_pad_input": false,
+          "crc_input_order": 0,
+          "crc_invert": false
+        }
+      },
+      "PHY_IEEE802154_SUN_FSK_169MHz_2FSK_2p4kbps": {
+        "label": "IEEE 802.15.4 SUN FSK 169MHz 2FSK 2.4kbps mi=2.0",
+        "values": {
+          "base_frequency_hz": 169406250,
+          "channel_spacing_hz": 12500,
+          "xtal_frequency_hz": 39000000,
+          "rx_xtal_error_ppm": 16,
+          "tx_xtal_error_ppm": 16,
+          "syncword_0": 36942,
+          "syncword_1": 28494,
+          "syncword_length": 16,
+          "preamble_pattern_len": 2,
+          "preamble_length": 64,
+          "preamble_pattern": 1,
+          "modulation_type": 0,
+          "deviation": 2400,
+          "bitrate": 2400,
+          "baudrate_tol_ppm": 300,
+          "shaping_filter": 1,
+          "fsk_symbol_map": 0,
+          "diff_encoding_mode": 0,
+          "dsss_chipping_code": 0,
+          "dsss_len": 0,
+          "dsss_spreading_factor": 0,
+          "deviation_tol_ppm": 300000,
+          "shaping_filter_param": 2,
+          "fec_tx_enable": 0,
+          "frame_bitendian": 0,
+          "frame_length_type": 1,
+          "header_en": true,
+          "payload_white_en": true,
+          "payload_crc_en": true,
+          "header_size": 2,
+          "header_calc_crc": false,
+          "header_white_en": false,
+          "var_length_numbits": 11,
+          "var_length_bitendian": 1,
+          "var_length_byteendian": 1,
+          "var_length_shift": 0,
+          "var_length_minlength": 0,
+          "var_length_maxlength": 2047,
+          "var_length_includecrc": true,
+          "var_length_adjust": 0,
+          "crc_poly": 7,
+          "crc_seed": 4294967295,
+          "crc_byte_endian": 1,
+          "crc_bit_endian": 1,
+          "crc_pad_input": true,
+          "crc_input_order": 0,
+          "crc_invert": true,
+          "white_poly": 6,
+          "white_seed": 255,
+          "white_output_bit": 8,
+          "fec_en": 1
+        }
+      },
+      "PHY_IEEE802154_SUN_FSK_169MHz_2FSK_4p8kbps": {
+        "label": "IEEE 802.15.4 SUN FSK 169MHz 2FSK 4.8kbps mi=0.5",
+        "values": {
+          "base_frequency_hz": 169406250,
+          "channel_spacing_hz": 12500,
+          "xtal_frequency_hz": 39000000,
+          "rx_xtal_error_ppm": 8,
+          "tx_xtal_error_ppm": 8,
+          "syncword_0": 36942,
+          "syncword_1": 28494,
+          "syncword_length": 16,
+          "preamble_pattern_len": 2,
+          "preamble_length": 64,
+          "preamble_pattern": 1,
+          "modulation_type": 0,
+          "deviation": 1200,
+          "bitrate": 4800,
+          "baudrate_tol_ppm": 300,
+          "shaping_filter": 1,
+          "fsk_symbol_map": 0,
+          "diff_encoding_mode": 0,
+          "dsss_chipping_code": 0,
+          "dsss_len": 0,
+          "dsss_spreading_factor": 0,
+          "deviation_tol_ppm": 300000,
+          "shaping_filter_param": 2,
+          "fec_tx_enable": 0,
+          "frame_bitendian": 0,
+          "frame_length_type": 1,
+          "header_en": true,
+          "payload_white_en": true,
+          "payload_crc_en": true,
+          "header_size": 2,
+          "header_calc_crc": false,
+          "header_white_en": false,
+          "var_length_numbits": 11,
+          "var_length_bitendian": 1,
+          "var_length_byteendian": 1,
+          "var_length_shift": 0,
+          "var_length_minlength": 0,
+          "var_length_maxlength": 2047,
+          "var_length_includecrc": true,
+          "var_length_adjust": 0,
+          "crc_poly": 7,
+          "crc_seed": 4294967295,
+          "crc_byte_endian": 1,
+          "crc_bit_endian": 1,
+          "crc_pad_input": true,
+          "crc_input_order": 0,
+          "crc_invert": true,
+          "white_poly": 6,
+          "white_seed": 255,
+          "white_output_bit": 8,
+          "fec_en": 1
+        }
+      },
+      "PHY_IEEE802154_SUN_FSK_169MHz_4FSK_9p6kbps": {
+        "label": "IEEE 802.15.4 SUN FSK 169MHz 4FSK 9.6kbps mi=0.33",
+        "values": {
+          "base_frequency_hz": 169406250,
+          "channel_spacing_hz": 12500,
+          "xtal_frequency_hz": 39000000,
+          "rx_xtal_error_ppm": 6,
+          "tx_xtal_error_ppm": 6,
+          "syncword_0": 36942,
+          "syncword_1": 28494,
+          "syncword_length": 16,
+          "preamble_pattern_len": 2,
+          "preamble_length": 64,
+          "preamble_pattern": 1,
+          "modulation_type": 1,
+          "deviation": 800,
+          "bitrate": 9600,
+          "baudrate_tol_ppm": 300,
+          "shaping_filter": 1,
+          "fsk_symbol_map": 0,
+          "diff_encoding_mode": 0,
+          "dsss_chipping_code": 0,
+          "dsss_len": 0,
+          "dsss_spreading_factor": 0,
+          "deviation_tol_ppm": 300000,
+          "shaping_filter_param": 2,
+          "fec_tx_enable": 0,
+          "frame_bitendian": 0,
+          "frame_length_type": 1,
+          "header_en": true,
+          "payload_white_en": true,
+          "payload_crc_en": true,
+          "header_size": 2,
+          "header_calc_crc": false,
+          "header_white_en": false,
+          "var_length_numbits": 11,
+          "var_length_bitendian": 1,
+          "var_length_byteendian": 1,
+          "var_length_shift": 0,
+          "var_length_minlength": 0,
+          "var_length_maxlength": 2047,
+          "var_length_includecrc": true,
+          "var_length_adjust": 0,
+          "crc_poly": 7,
+          "crc_seed": 4294967295,
+          "crc_byte_endian": 1,
+          "crc_bit_endian": 1,
+          "crc_pad_input": true,
+          "crc_input_order": 0,
+          "crc_invert": true,
+          "white_poly": 6,
+          "white_seed": 255,
+          "white_output_bit": 8,
+          "fec_en": 1
+        }
+      },
+      "PHY_IEEE802154_SUN_FSK_450MHz_2FSK_4p8kbps": {
+        "label": "IEEE 802.15.4 SUN FSK 450MHz 2FSK 4.8kbps mi=1.0",
+        "values": {
+          "base_frequency_hz": 450006250,
+          "channel_spacing_hz": 12500,
+          "xtal_frequency_hz": 39000000,
+          "rx_xtal_error_ppm": 6,
+          "tx_xtal_error_ppm": 6,
+          "syncword_0": 36942,
+          "syncword_1": 28494,
+          "syncword_length": 16,
+          "preamble_pattern_len": 2,
+          "preamble_length": 64,
+          "preamble_pattern": 1,
+          "modulation_type": 0,
+          "deviation": 2400,
+          "bitrate": 4800,
+          "baudrate_tol_ppm": 300,
+          "shaping_filter": 1,
+          "fsk_symbol_map": 0,
+          "diff_encoding_mode": 0,
+          "dsss_chipping_code": 0,
+          "dsss_len": 0,
+          "dsss_spreading_factor": 0,
+          "deviation_tol_ppm": 300000,
+          "shaping_filter_param": 2,
+          "fec_tx_enable": 0,
+          "frame_bitendian": 0,
+          "frame_length_type": 1,
+          "header_en": true,
+          "payload_white_en": true,
+          "payload_crc_en": true,
+          "header_size": 2,
+          "header_calc_crc": false,
+          "header_white_en": false,
+          "var_length_numbits": 11,
+          "var_length_bitendian": 1,
+          "var_length_byteendian": 1,
+          "var_length_shift": 0,
+          "var_length_minlength": 0,
+          "var_length_maxlength": 2047,
+          "var_length_includecrc": true,
+          "var_length_adjust": 0,
+          "crc_poly": 7,
+          "crc_seed": 4294967295,
+          "crc_byte_endian": 1,
+          "crc_bit_endian": 1,
+          "crc_pad_input": true,
+          "crc_input_order": 0,
+          "crc_invert": true,
+          "white_poly": 6,
+          "white_seed": 255,
+          "white_output_bit": 8,
+          "fec_en": 1
+        }
+      },
+      "PHY_IEEE802154_SUN_FSK_450MHz_4FSK_9p6kbps": {
+        "label": "IEEE 802.15.4 SUN FSK 450MHz 4FSK 9.6kbps mi=0.33",
+        "values": {
+          "base_frequency_hz": 450006250,
+          "channel_spacing_hz": 12500,
+          "xtal_frequency_hz": 39000000,
+          "rx_xtal_error_ppm": 2,
+          "tx_xtal_error_ppm": 2,
+          "syncword_0": 36942,
+          "syncword_1": 28494,
+          "syncword_length": 16,
+          "preamble_pattern_len": 2,
+          "preamble_length": 64,
+          "preamble_pattern": 1,
+          "modulation_type": 1,
+          "deviation": 800,
+          "bitrate": 9600,
+          "baudrate_tol_ppm": 300,
+          "shaping_filter": 1,
+          "fsk_symbol_map": 0,
+          "diff_encoding_mode": 0,
+          "dsss_chipping_code": 0,
+          "dsss_len": 0,
+          "dsss_spreading_factor": 0,
+          "deviation_tol_ppm": 300000,
+          "shaping_filter_param": 2,
+          "fec_tx_enable": 0,
+          "frame_bitendian": 0,
+          "frame_length_type": 1,
+          "header_en": true,
+          "payload_white_en": true,
+          "payload_crc_en": true,
+          "header_size": 2,
+          "header_calc_crc": false,
+          "header_white_en": false,
+          "var_length_numbits": 11,
+          "var_length_bitendian": 1,
+          "var_length_byteendian": 1,
+          "var_length_shift": 0,
+          "var_length_minlength": 0,
+          "var_length_maxlength": 2047,
+          "var_length_includecrc": true,
+          "var_length_adjust": 0,
+          "crc_poly": 7,
+          "crc_seed": 4294967295,
+          "crc_byte_endian": 1,
+          "crc_bit_endian": 1,
+          "crc_pad_input": true,
+          "crc_input_order": 0,
+          "crc_invert": true,
+          "white_poly": 6,
+          "white_seed": 255,
+          "white_output_bit": 8,
+          "fec_en": 1
+        }
+      },
+      "PHY_IEEE802154_SUN_FSK_896MHz_2FSK_40kbps": {
+        "label": "IEEE 802.15.4 SUN FSK 896MHz 2FSK 40kbps mi=0.5",
+        "values": {
+          "base_frequency_hz": 896050000,
+          "channel_spacing_hz": 12500,
+          "xtal_frequency_hz": 39000000,
+          "rx_xtal_error_ppm": 13,
+          "tx_xtal_error_ppm": 13,
+          "syncword_0": 36942,
+          "syncword_1": 28494,
+          "syncword_length": 16,
+          "preamble_pattern_len": 2,
+          "preamble_length": 64,
+          "preamble_pattern": 1,
+          "modulation_type": 0,
+          "deviation": 10000,
+          "bitrate": 40000,
+          "baudrate_tol_ppm": 300,
+          "shaping_filter": 1,
+          "fsk_symbol_map": 0,
+          "diff_encoding_mode": 0,
+          "dsss_chipping_code": 0,
+          "dsss_len": 0,
+          "dsss_spreading_factor": 0,
+          "deviation_tol_ppm": 300000,
+          "shaping_filter_param": 2,
+          "fec_tx_enable": 0,
+          "frame_bitendian": 0,
+          "frame_length_type": 1,
+          "header_en": true,
+          "payload_white_en": true,
+          "payload_crc_en": true,
+          "header_size": 2,
+          "header_calc_crc": false,
+          "header_white_en": false,
+          "var_length_numbits": 11,
+          "var_length_bitendian": 1,
+          "var_length_byteendian": 1,
+          "var_length_shift": 0,
+          "var_length_minlength": 0,
+          "var_length_maxlength": 2047,
+          "var_length_includecrc": true,
+          "var_length_adjust": 0,
+          "crc_poly": 7,
+          "crc_seed": 4294967295,
+          "crc_byte_endian": 1,
+          "crc_bit_endian": 1,
+          "crc_pad_input": true,
+          "crc_input_order": 0,
+          "crc_invert": true,
+          "white_poly": 6,
+          "white_seed": 255,
+          "white_output_bit": 8,
+          "fec_en": 1
+        }
+      },
+      "PHY_IEEE802154_SUN_FSK_920MHz_4FSK_400kbps": {
+        "label": "IEEE 802.15.4 SUN FSK 920MHz 4FSK 400kbps mi=0.33",
+        "values": {
+          "base_frequency_hz": 920800000,
+          "channel_spacing_hz": 600000,
+          "xtal_frequency_hz": 39000000,
+          "rx_xtal_error_ppm": 40,
+          "tx_xtal_error_ppm": 40,
+          "syncword_0": 36942,
+          "syncword_1": 28494,
+          "syncword_length": 16,
+          "preamble_pattern_len": 2,
+          "preamble_length": 64,
+          "preamble_pattern": 1,
+          "modulation_type": 1,
+          "deviation": 33333,
+          "bitrate": 400000,
+          "baudrate_tol_ppm": 300,
+          "shaping_filter": 1,
+          "fsk_symbol_map": 0,
+          "diff_encoding_mode": 0,
+          "dsss_chipping_code": 0,
+          "dsss_len": 0,
+          "dsss_spreading_factor": 0,
+          "deviation_tol_ppm": 300000,
+          "shaping_filter_param": 2,
+          "fec_tx_enable": 0,
+          "frame_bitendian": 0,
+          "frame_length_type": 1,
+          "header_en": true,
+          "payload_white_en": true,
+          "payload_crc_en": true,
+          "header_size": 2,
+          "header_calc_crc": false,
+          "header_white_en": false,
+          "var_length_numbits": 11,
+          "var_length_bitendian": 1,
+          "var_length_byteendian": 1,
+          "var_length_shift": 0,
+          "var_length_minlength": 0,
+          "var_length_maxlength": 2047,
+          "var_length_includecrc": true,
+          "var_length_adjust": 0,
+          "crc_poly": 7,
+          "crc_seed": 4294967295,
+          "crc_byte_endian": 1,
+          "crc_bit_endian": 1,
+          "crc_pad_input": true,
+          "crc_input_order": 0,
+          "crc_invert": true,
+          "white_poly": 6,
+          "white_seed": 255,
+          "white_output_bit": 8,
+          "fec_en": 1
+        }
+      }
+    },
+    "defaultPhy": "PHY_Studio_868M_2GFSK_38p4Kbps_20K"
+  },
+  "Connect": {
+    "label": "Connect Profile",
+    "description": "Profile used for Connect phys",
+    "inputs": {
+      "base_frequency_hz": {
+        "type": "REQUIRED",
+        "min": 100000000,
+        "max": 2480000000,
+        "label": "Base Channel Frequency",
+        "symbol": "M",
+        "factor": 6,
+        "unit": "Hz",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 100000000
+      },
+      "channel_spacing_hz": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 10000000,
+        "label": "Channel Spacing",
+        "symbol": "k",
+        "factor": 3,
+        "unit": "Hz",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 0
+      },
+      "xtal_frequency_hz": {
+        "type": "REQUIRED",
+        "min": 38000000,
+        "max": 40000000,
+        "label": "Crystal Frequency",
+        "symbol": "M",
+        "factor": 6,
+        "unit": "Hz",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 38000000
+      },
+      "rx_xtal_error_ppm": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 200,
+        "label": "RX Crystal Accuracy",
+        "unit": "ppm",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 0
+      },
+      "tx_xtal_error_ppm": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 200,
+        "label": "TX Crystal Accuracy",
+        "unit": "ppm",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 0
+      },
+      "syncword_0": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 4294967295,
+        "label": "Sync Word 0",
+        "variableType": "INT",
+        "variableFormat": "HEX",
+        "value": 0
+      },
+      "syncword_1": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 4294967295,
+        "label": "Sync Word 1",
+        "variableType": "INT",
+        "variableFormat": "HEX",
+        "value": 0
+      },
+      "syncword_length": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 32,
+        "label": "Sync Word Length",
+        "unit": "bits",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 0
+      },
+      "preamble_pattern_len": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 4,
+        "label": "Preamble Pattern Length",
+        "unit": "bits",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 0
+      },
+      "preamble_length": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 2097151,
+        "label": "Preamble Length Total",
+        "unit": "bits",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 0
+      },
+      "preamble_pattern": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 15,
+        "label": "Preamble Base Pattern",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 0
+      },
+      "modulation_type": {
+        "type": "REQUIRED",
+        "label": "Modulation Type",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "FSK2", "value": 0 },
+          { "label": "FSK4", "value": 1 },
+          { "label": "OOK", "value": 4 },
+          { "label": "MSK", "value": 6 },
+          { "label": "OQPSK", "value": 7 }
+        ],
+        "value": 0
+      },
+      "deviation": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 1000000,
+        "label": "Deviation",
+        "symbol": "k",
+        "factor": 3,
+        "unit": "Hz",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 0
+      },
+      "bitrate": {
+        "type": "REQUIRED",
+        "min": 100,
+        "max": 2000000,
+        "label": "Bitrate",
+        "symbol": "k",
+        "factor": 3,
+        "unit": "bps",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 100
+      },
+      "baudrate_tol_ppm": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 200000,
+        "label": "Baudrate Tolerance",
+        "unit": "ppm",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 0
+      },
+      "shaping_filter": {
+        "type": "REQUIRED",
+        "label": "Shaping Filter",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "NONE", "value": 0 },
+          { "label": "Gaussian", "value": 1 },
+          { "label": "Raised_Cosine", "value": 2 },
+          { "label": "Root_Raised_Cosine", "value": 3 },
+          { "label": "Custom_OQPSK", "value": 4 },
+          { "label": "Custom_PSK", "value": 5 }
+        ],
+        "value": 0
+      },
+      "fsk_symbol_map": {
+        "type": "REQUIRED",
+        "label": "FSK symbol map",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "MAP0", "value": 0 },
+          { "label": "MAP1", "value": 1 },
+          { "label": "MAP2", "value": 2 },
+          { "label": "MAP3", "value": 3 },
+          { "label": "MAP4", "value": 4 },
+          { "label": "MAP5", "value": 5 },
+          { "label": "MAP6", "value": 6 },
+          { "label": "MAP7", "value": 7 }
+        ],
+        "value": 0
+      },
+      "diff_encoding_mode": {
+        "type": "REQUIRED",
+        "label": "Differential Encoding Mode",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "DISABLED", "value": 0 },
+          { "label": "RR0", "value": 1 },
+          { "label": "RE0", "value": 2 },
+          { "label": "RR1", "value": 3 },
+          { "label": "RE1", "value": 4 }
+        ],
+        "value": 0
+      },
+      "dsss_chipping_code": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 4294967295,
+        "label": "DSSS Chipping Code Base",
+        "variableType": "INT",
+        "variableFormat": "HEX",
+        "value": 0
+      },
+      "dsss_len": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 32,
+        "label": "DSSS Chipping Code Length",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 0
+      },
+      "dsss_spreading_factor": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 100,
+        "label": "DSSS Spreading Factor",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 0
+      },
+      "syncword_tx_skip": {
+        "type": "REQUIRED",
+        "label": "Sync Word TX Skip",
+        "variableType": "BOOL",
+        "value": false
+      },
+      "asynchronous_rx_enable": {
+        "type": "REQUIRED",
+        "label": "Enable Asynchronous direct mode",
+        "variableType": "BOOL",
+        "value": false
+      },
+      "symbol_encoding": {
+        "type": "REQUIRED",
+        "label": "Symbol Encoding",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "NRZ", "value": 0 },
+          { "label": "Manchester", "value": 1 },
+          { "label": "Inv_Manchester", "value": 4 },
+          { "label": "DSSS", "value": 2 },
+          { "label": "LINECODE", "value": 3 },
+          { "label": "MBUS_3OF6", "value": 5 },
+          { "label": "UART_NO_VAL", "value": 6 },
+          { "label": "UART_VAL", "value": 7 }
+        ],
+        "value": 0
+      },
+      "test_ber": {
+        "type": "REQUIRED",
+        "label": "Reconfigure for BER testing",
+        "variableType": "BOOL",
+        "value": false
+      },
+      "deviation_tol_ppm": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 500000,
+        "label": "Maximum deviation offset expected in ppm",
+        "unit": "ppm",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 0
+      },
+      "shaping_filter_param": {
+        "type": "REQUIRED",
+        "min": 0.3,
+        "max": 2,
+        "label": "Shaping Filter Parameter (BT or R)",
+        "variableType": "FLOAT",
+        "variableFormat": "DECIMAL",
+        "value": 0.5
+      },
+      "fec_tx_enable": {
+        "type": "LINKEDIO",
+        "label": "Enable FEC",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "DISABLED", "value": 0 },
+          { "label": "ENABLED", "value": 1 }
+        ],
+        "value": 0
+      },
+      "skip2ant": {
+        "type": "LINKEDIO",
+        "label": "Skip 2nd antenna check with phase demod antenna diversity",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "SKIP2ANT", "value": 0 },
+          { "label": "NOSKIP2ANT", "value": 1 }
+        ],
+        "value": 0
+      },
+      "preamble_detection_length": {
+        "type": "LINKEDIO",
+        "min": 0,
+        "max": 2097151,
+        "label": "Preamble Detection Length",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 0
+      },
+      "lo_injection_side": {
+        "type": "LINKEDIO",
+        "label": "Injection side",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "HIGH_SIDE", "value": 0 },
+          { "label": "LOW_SIDE", "value": 1 }
+        ],
+        "value": 0
+      },
+      "fast_detect_enable": {
+        "type": "LINKEDIO",
+        "label": "Fast preamble detect",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "DISABLED", "value": 0 },
+          { "label": "ENABLED", "value": 1 }
+        ],
+        "value": 0
+      },
+      "bandwidth_hz": {
+        "type": "LINKEDIO",
+        "min": 100,
+        "max": 2530000,
+        "label": "Acquisition Channel Bandwidth",
+        "symbol": "k",
+        "factor": 3,
+        "unit": "Hz",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 100
+      },
+      "if_frequency_hz": {
+        "type": "LINKEDIO",
+        "min": 70000,
+        "max": 1900000,
+        "label": "IF Frequency",
+        "symbol": "k",
+        "factor": 3,
+        "unit": "Hz",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 70000
+      },
+      "rssi_period": {
+        "type": "LINKEDIO",
+        "min": 1,
+        "max": 15,
+        "label": "RSSI Update Period",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 1
+      },
+      "etsi_cat1_compatible": {
+        "type": "LINKEDIO",
+        "label": "ETSI Category 1 Compatibility",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "Normal", "value": 0 },
+          { "label": "Band_169", "value": 1 },
+          { "label": "Band_868", "value": 2 }
+        ],
+        "value": 0
+      },
+      "antdivmode": {
+        "type": "LINKEDIO",
+        "label": "Antenna diversity mode",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "DISABLE", "value": 0 },
+          { "label": "ANTENNA1", "value": 1 },
+          { "label": "ANTSELFIRST", "value": 2 },
+          { "label": "ANTSELCORR", "value": 3 },
+          { "label": "ANTSELRSSI", "value": 4 },
+          { "label": "PHDEMODANTDIV", "value": 5 }
+        ],
+        "value": 0
+      },
+      "antdivrepeatdis": {
+        "type": "LINKEDIO",
+        "label": "Diversity Select-Best repeat",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "REPEATFIRST", "value": 0 },
+          { "label": "NOREPEATFIRST", "value": 1 }
+        ],
+        "value": 0
+      },
+      "var_length_loc": {
+        "type": "LINKEDIO",
+        "min": 0,
+        "max": 4096,
+        "label": "Byte position of dynamic length byte",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 0
+      },
+      "firstframe_bitsperword": {
+        "type": "LINKEDIO",
+        "min": 1,
+        "max": 8,
+        "label": "Length of the First Word",
+        "unit": "bits",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 1
+      },
+      "crc_byte_endian": {
+        "type": "REQUIRED",
+        "label": "CRC Byte Endian",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "LSB_FIRST", "value": 0 },
+          { "label": "MSB_FIRST", "value": 1 }
+        ],
+        "value": 1
+      },
+      "crc_bit_endian": {
+        "type": "REQUIRED",
+        "label": "CRC Output Bit Endian",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "LSB_FIRST", "value": 0 },
+          { "label": "MSB_FIRST", "value": 1 }
+        ],
+        "value": 1
+      },
+      "white_poly": {
+        "type": "REQUIRED",
+        "label": "Whitening Polynomial",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "NONE", "value": 0 },
+          { "label": "PN9", "value": 1 },
+          { "label": "PN9_BYTE", "value": 2 },
+          { "label": "PN16", "value": 3 },
+          { "label": "BLE", "value": 4 },
+          { "label": "Bytewise_XOR_seed_LSB", "value": 5 },
+          { "label": "PN9_802154", "value": 6 }
+        ],
+        "value": 0
+      },
+      "fec_en": {
+        "type": "REQUIRED",
+        "label": "FEC Algorithm",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "NONE", "value": 0 },
+          { "label": "FEC_154G_NRNSC_INTERLEAVING", "value": 1 },
+          { "label": "FEC_154G_RSC_INTERLEAVING", "value": 2 },
+          { "label": "FEC_154G_RSC_NO_INTERLEAVING", "value": 3 },
+          { "label": "FEC_K7_INTERLEAVING", "value": 4 }
+        ],
+        "value": 0
+      }
+    },
+    "phys": {
+      "PHY_Studio_Connect_169MHz_2GFSK_4p8kbps": {
+        "label": "Connect 169MHz 2GFSK 4.8kbps",
+        "values": {
+          "base_frequency_hz": 169000000,
+          "channel_spacing_hz": 12500,
+          "xtal_frequency_hz": 39000000,
+          "rx_xtal_error_ppm": 10,
+          "tx_xtal_error_ppm": 10,
+          "syncword_0": 11732,
+          "syncword_1": 0,
+          "syncword_length": 16,
+          "preamble_pattern_len": 2,
+          "preamble_length": 32,
+          "preamble_pattern": 1,
+          "modulation_type": 0,
+          "deviation": 1200,
+          "bitrate": 4800,
+          "baudrate_tol_ppm": 0,
+          "shaping_filter": 1,
+          "fsk_symbol_map": 0,
+          "diff_encoding_mode": 0,
+          "dsss_chipping_code": 0,
+          "dsss_len": 0,
+          "dsss_spreading_factor": 0,
+          "syncword_tx_skip": false,
+          "symbol_encoding": 0,
+          "shaping_filter_param": 0.5,
+          "crc_byte_endian": 1,
+          "crc_bit_endian": 1,
+          "white_poly": 1
+        }
+      },
+      "PHY_Studio_Connect_434MHz_2GFSK_200kbps": {
+        "label": "Connect 434MHz 2GFSK 200kbps",
+        "values": {
+          "base_frequency_hz": 434000000,
+          "channel_spacing_hz": 500000,
+          "xtal_frequency_hz": 39000000,
+          "rx_xtal_error_ppm": 10,
+          "tx_xtal_error_ppm": 10,
+          "syncword_0": 11732,
+          "syncword_1": 0,
+          "syncword_length": 16,
+          "preamble_pattern_len": 2,
+          "preamble_length": 32,
+          "preamble_pattern": 1,
+          "modulation_type": 0,
+          "deviation": 100000,
+          "bitrate": 200000,
+          "baudrate_tol_ppm": 0,
+          "shaping_filter": 1,
+          "fsk_symbol_map": 0,
+          "diff_encoding_mode": 0,
+          "dsss_chipping_code": 0,
+          "dsss_len": 0,
+          "dsss_spreading_factor": 0,
+          "syncword_tx_skip": false,
+          "symbol_encoding": 0,
+          "shaping_filter_param": 0.5,
+          "crc_byte_endian": 1,
+          "crc_bit_endian": 1,
+          "white_poly": 1
+        }
+      },
+      "PHY_Studio_Connect_863MHz_2GFSK_100kbps": {
+        "label": "Connect 863MHz 2GFSK 100kbps",
+        "values": {
+          "base_frequency_hz": 863000000,
+          "channel_spacing_hz": 400000,
+          "xtal_frequency_hz": 39000000,
+          "rx_xtal_error_ppm": 10,
+          "tx_xtal_error_ppm": 10,
+          "syncword_0": 11732,
+          "syncword_1": 0,
+          "syncword_length": 16,
+          "preamble_pattern_len": 2,
+          "preamble_length": 32,
+          "preamble_pattern": 1,
+          "modulation_type": 0,
+          "deviation": 50000,
+          "bitrate": 100000,
+          "baudrate_tol_ppm": 0,
+          "shaping_filter": 1,
+          "fsk_symbol_map": 0,
+          "diff_encoding_mode": 0,
+          "dsss_chipping_code": 0,
+          "dsss_len": 0,
+          "dsss_spreading_factor": 0,
+          "syncword_tx_skip": false,
+          "symbol_encoding": 0,
+          "shaping_filter_param": 0.5,
+          "crc_byte_endian": 1,
+          "crc_bit_endian": 1,
+          "white_poly": 1
+        }
+      },
+      "PHY_Studio_Connect_915MHz_2GFSK_500kbps": {
+        "label": "Connect 915MHz 2GFSK 500kbps",
+        "values": {
+          "base_frequency_hz": 915000000,
+          "channel_spacing_hz": 400000,
+          "xtal_frequency_hz": 39000000,
+          "rx_xtal_error_ppm": 10,
+          "tx_xtal_error_ppm": 10,
+          "syncword_0": 11732,
+          "syncword_1": 0,
+          "syncword_length": 16,
+          "preamble_pattern_len": 2,
+          "preamble_length": 40,
+          "preamble_pattern": 1,
+          "modulation_type": 0,
+          "deviation": 175000,
+          "bitrate": 500000,
+          "baudrate_tol_ppm": 0,
+          "shaping_filter": 1,
+          "fsk_symbol_map": 0,
+          "diff_encoding_mode": 0,
+          "dsss_chipping_code": 0,
+          "dsss_len": 0,
+          "dsss_spreading_factor": 0,
+          "syncword_tx_skip": false,
+          "symbol_encoding": 0,
+          "shaping_filter_param": 0.5,
+          "crc_byte_endian": 1,
+          "crc_bit_endian": 1,
+          "white_poly": 1
+        }
+      },
+      "PHY_Studio_Connect_915MHz_OQPSK_500kbps": {
+        "label": "Connect 915MHz OQPSK 500Kbps",
+        "values": {
+          "base_frequency_hz": 915000000,
+          "channel_spacing_hz": 400000,
+          "xtal_frequency_hz": 39000000,
+          "rx_xtal_error_ppm": 10,
+          "tx_xtal_error_ppm": 10,
+          "syncword_0": 167,
+          "syncword_1": 0,
+          "syncword_length": 8,
+          "preamble_pattern_len": 4,
+          "preamble_length": 40,
+          "preamble_pattern": 0,
+          "modulation_type": 7,
+          "deviation": 250000,
+          "bitrate": 500000,
+          "baudrate_tol_ppm": 0,
+          "shaping_filter": 4,
+          "fsk_symbol_map": 0,
+          "diff_encoding_mode": 0,
+          "dsss_chipping_code": 31433,
+          "dsss_len": 16,
+          "dsss_spreading_factor": 4,
+          "syncword_tx_skip": false,
+          "symbol_encoding": 2,
+          "shaping_filter_param": 0.5,
+          "crc_byte_endian": 1,
+          "crc_bit_endian": 1,
+          "white_poly": 1
+        }
+      },
+      "PHY_Studio_Connect_915mhz_oqpsk_2Mcps_250kbps": {
+        "label": "Connect 915MHz OQPSK 2Mcps 250kbps",
+        "values": {
+          "base_frequency_hz": 915000000,
+          "channel_spacing_hz": 2000000,
+          "xtal_frequency_hz": 39000000,
+          "rx_xtal_error_ppm": 10,
+          "tx_xtal_error_ppm": 10,
+          "syncword_0": 167,
+          "syncword_1": 0,
+          "syncword_length": 8,
+          "preamble_pattern_len": 4,
+          "preamble_length": 32,
+          "preamble_pattern": 0,
+          "modulation_type": 7,
+          "deviation": 500000,
+          "bitrate": 250000,
+          "baudrate_tol_ppm": 4000,
+          "shaping_filter": 4,
+          "fsk_symbol_map": 0,
+          "diff_encoding_mode": 0,
+          "dsss_chipping_code": 1951056795,
+          "dsss_len": 32,
+          "dsss_spreading_factor": 8,
+          "syncword_tx_skip": false,
+          "symbol_encoding": 2,
+          "shaping_filter_param": 0.5,
+          "crc_byte_endian": 0,
+          "crc_bit_endian": 0,
+          "white_poly": 1
+        }
+      },
+      "PHY_Studio_Connect_915mhz_oqpsk_800kcps_100kbps": {
+        "label": "Connect 915MHz OQPSK 800kcps 100kbps",
+        "values": {
+          "base_frequency_hz": 915000000,
+          "channel_spacing_hz": 2000000,
+          "xtal_frequency_hz": 39000000,
+          "rx_xtal_error_ppm": 10,
+          "tx_xtal_error_ppm": 10,
+          "syncword_0": 167,
+          "syncword_1": 0,
+          "syncword_length": 8,
+          "preamble_pattern_len": 4,
+          "preamble_length": 32,
+          "preamble_pattern": 0,
+          "modulation_type": 7,
+          "deviation": 200000,
+          "bitrate": 100000,
+          "baudrate_tol_ppm": 4000,
+          "shaping_filter": 4,
+          "fsk_symbol_map": 0,
+          "diff_encoding_mode": 0,
+          "dsss_chipping_code": 1951056795,
+          "dsss_len": 32,
+          "dsss_spreading_factor": 8,
+          "syncword_tx_skip": false,
+          "symbol_encoding": 2,
+          "shaping_filter_param": 0.5,
+          "crc_byte_endian": 0,
+          "crc_bit_endian": 0,
+          "white_poly": 1
+        }
+      },
+      "PHY_Studio_Connect_920MHz_2GFSK_100kbps": {
+        "label": "Connect 920MHz 2GFSK 100kbps",
+        "values": {
+          "base_frequency_hz": 920000000,
+          "channel_spacing_hz": 400000,
+          "xtal_frequency_hz": 39000000,
+          "rx_xtal_error_ppm": 10,
+          "tx_xtal_error_ppm": 10,
+          "syncword_0": 11732,
+          "syncword_1": 0,
+          "syncword_length": 16,
+          "preamble_pattern_len": 2,
+          "preamble_length": 32,
+          "preamble_pattern": 1,
+          "modulation_type": 0,
+          "deviation": 50000,
+          "bitrate": 100000,
+          "baudrate_tol_ppm": 0,
+          "shaping_filter": 1,
+          "fsk_symbol_map": 0,
+          "diff_encoding_mode": 0,
+          "dsss_chipping_code": 0,
+          "dsss_len": 0,
+          "dsss_spreading_factor": 0,
+          "syncword_tx_skip": false,
+          "symbol_encoding": 0,
+          "shaping_filter_param": 0.5,
+          "crc_byte_endian": 1,
+          "crc_bit_endian": 1,
+          "white_poly": 1
+        }
+      }
+    },
+    "defaultPhy": "PHY_Studio_Connect_920MHz_2GFSK_100kbps"
+  },
+  "Long_Range": {
+    "label": "Long Range Profile",
+    "description": "Profile used for Long Range PHYs",
+    "inputs": {
+      "base_frequency_hz": {
+        "type": "REQUIRED",
+        "min": 358000000,
+        "max": 956000000,
+        "label": "Base Channel Frequency",
+        "symbol": "M",
+        "factor": 6,
+        "unit": "Hz",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 358000000
+      },
+      "channel_spacing_hz": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 10000000,
+        "label": "Channel Spacing",
+        "symbol": "k",
+        "factor": 3,
+        "unit": "Hz",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 0
+      },
+      "longrange_mode": {
+        "type": "REQUIRED",
+        "label": "Long Range Mode",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "LR_1p2k", "value": 0 },
+          { "label": "LR_2p4k", "value": 1 },
+          { "label": "LR_4p8k", "value": 2 },
+          { "label": "LR_9p6k", "value": 3 },
+          { "label": "LR_19p2k", "value": 4 },
+          { "label": "LR_38p4k", "value": 5 },
+          { "label": "LR_80p0k", "value": 6 }
+        ],
+        "value": 0
+      },
+      "xtal_frequency_hz": {
+        "type": "REQUIRED",
+        "min": 38000000,
+        "max": 40000000,
+        "label": "Crystal Frequency",
+        "symbol": "M",
+        "factor": 6,
+        "unit": "Hz",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 38000000
+      },
+      "fec_en": {
+        "type": "LINKEDIO",
+        "label": "FEC Algorithm",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "NONE", "value": 0 },
+          { "label": "FEC_154G_NRNSC_INTERLEAVING", "value": 1 },
+          { "label": "FEC_154G_RSC_INTERLEAVING", "value": 2 },
+          { "label": "FEC_154G_RSC_NO_INTERLEAVING", "value": 3 },
+          { "label": "FEC_K7_INTERLEAVING", "value": 4 }
+        ],
+        "value": 0
+      }
+    },
+    "phys": {
+      "PHY_Longrange_490M_OQPSK_DSSS8_19p2kbps": {
+        "label": "490M OQPSK 19.2kbps DSSS8",
+        "values": {
+          "base_frequency_hz": 490000000,
+          "channel_spacing_hz": 35000,
+          "longrange_mode": 4,
+          "xtal_frequency_hz": 39000000
+        }
+      },
+      "PHY_Longrange_490M_OQPSK_DSSS8_2p4kbps": {
+        "label": "490M OQPSK 2.4kbps DSSS8",
+        "values": {
+          "base_frequency_hz": 490000000,
+          "channel_spacing_hz": 35000,
+          "longrange_mode": 1,
+          "xtal_frequency_hz": 39000000
+        }
+      },
+      "PHY_Longrange_490M_OQPSK_DSSS8_4p8kbps": {
+        "label": "490M OQPSK 4.8kbps DSSS8",
+        "values": {
+          "base_frequency_hz": 490000000,
+          "channel_spacing_hz": 35000,
+          "longrange_mode": 2,
+          "xtal_frequency_hz": 39000000
+        }
+      },
+      "PHY_Longrange_490M_OQPSK_DSSS8_9p6kbps": {
+        "label": "490M OQPSK 9.6kbps DSSS8",
+        "values": {
+          "base_frequency_hz": 490000000,
+          "channel_spacing_hz": 35000,
+          "longrange_mode": 3,
+          "xtal_frequency_hz": 39000000
+        }
+      },
+      "PHY_Longrange_915M_OQPSK_DSSS8_19p2kbps": {
+        "label": "915M OQPSK 19.2kbps DSSS8",
+        "values": {
+          "base_frequency_hz": 915000000,
+          "channel_spacing_hz": 35000,
+          "longrange_mode": 4,
+          "xtal_frequency_hz": 39000000
+        }
+      },
+      "PHY_Longrange_915M_OQPSK_DSSS8_38p4kbps": {
+        "label": "915M OQPSK 38.4kbps DSSS8",
+        "values": {
+          "base_frequency_hz": 915000000,
+          "channel_spacing_hz": 35000,
+          "longrange_mode": 5,
+          "xtal_frequency_hz": 39000000
+        }
+      },
+      "PHY_Longrange_915M_OQPSK_DSSS8_4p8kbps": {
+        "label": "915M OQPSK 4.8kbps DSSS8",
+        "values": {
+          "base_frequency_hz": 915000000,
+          "channel_spacing_hz": 35000,
+          "longrange_mode": 2,
+          "xtal_frequency_hz": 39000000
+        }
+      },
+      "PHY_Longrange_915M_OQPSK_DSSS8_80p0kbps": {
+        "label": "FCC 15.247 80 kbps OQPSK",
+        "values": {
+          "base_frequency_hz": 915000000,
+          "channel_spacing_hz": 35000,
+          "longrange_mode": 6,
+          "xtal_frequency_hz": 39000000
+        }
+      },
+      "PHY_Longrange_915M_OQPSK_DSSS8_9p6kbps": {
+        "label": "915M OQPSK 9.6kbps DSSS8",
+        "values": {
+          "base_frequency_hz": 915000000,
+          "channel_spacing_hz": 35000,
+          "longrange_mode": 3,
+          "xtal_frequency_hz": 39000000
+        }
+      }
+    }
+  },
+  "Mbus": {
+    "label": "Mbus Profile",
+    "description": "Profile used for Mbus phys",
+    "inputs": {
+      "preamble_length": {
+        "type": "REQUIRED",
+        "min": 16,
+        "max": 2097151,
+        "label": "Preamble Length Total",
+        "unit": "bits",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 16
+      },
+      "mbus_mode": {
+        "type": "REQUIRED",
+        "label": "Mbus Mode",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "ModeC_M2O_100k", "value": 0 },
+          { "label": "ModeC_O2M_50k", "value": 1 },
+          { "label": "ModeF_2p4k", "value": 2 },
+          { "label": "ModeNg", "value": 3 },
+          { "label": "ModeN1a_4p8K", "value": 4 },
+          { "label": "ModeN1c_2p4K", "value": 5 },
+          { "label": "ModeR_4p8k", "value": 6 },
+          { "label": "ModeT_M2O_100k", "value": 7 },
+          { "label": "ModeT_O2M_32p768k", "value": 8 },
+          { "label": "ModeS_32p768k", "value": 9 },
+          { "label": "ModeN_6p4k", "value": 10 }
+        ],
+        "value": 0
+      },
+      "mbus_frame_format": {
+        "type": "REQUIRED",
+        "label": "Mbus Frame Format",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "NoFormat", "value": 0 },
+          { "label": "FrameA", "value": 1 },
+          { "label": "FrameB", "value": 2 }
+        ],
+        "value": 0
+      },
+      "mbus_symbol_encoding": {
+        "type": "REQUIRED",
+        "label": "Symbol Encoding",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "NRZ", "value": 0 },
+          { "label": "Manchester", "value": 1 },
+          { "label": "MBUS_3OF6", "value": 2 }
+        ],
+        "value": 0
+      },
+      "syncword_dualsync": {
+        "type": "REQUIRED",
+        "label": "Enable Dual Syncword Detection",
+        "variableType": "BOOL",
+        "value": false
+      },
+      "base_frequency_hz": {
+        "type": "REQUIRED",
+        "min": 100000000,
+        "max": 2480000000,
+        "label": "Base Channel Frequency",
+        "symbol": "M",
+        "factor": 6,
+        "unit": "Hz",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 100000000
+      },
+      "channel_spacing_hz": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 10000000,
+        "label": "Channel Spacing",
+        "symbol": "k",
+        "factor": 3,
+        "unit": "Hz",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 0
+      },
+      "xtal_frequency_hz": {
+        "type": "REQUIRED",
+        "min": 38000000,
+        "max": 40000000,
+        "label": "Crystal Frequency",
+        "symbol": "M",
+        "factor": 6,
+        "unit": "Hz",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 38000000
+      },
+      "test_ber": {
+        "type": "REQUIRED",
+        "label": "Reconfigure for BER testing",
+        "variableType": "BOOL",
+        "value": false
+      },
+      "deviation_tol_ppm": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 500000,
+        "label": "Maximum deviation offset expected in ppm",
+        "unit": "ppm",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 0
+      },
+      "mbus_postamble_length": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 4,
+        "label": "Mbus postamble legnth",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 0
+      }
+    },
+    "phys": {
+      "PHY_wMbus_ModeC_M2O_100k_frameA": {
+        "label": "WMbus C M2O frameA (100k)",
+        "values": {
+          "preamble_length": 38,
+          "mbus_mode": 0,
+          "mbus_frame_format": 1,
+          "mbus_symbol_encoding": 0,
+          "syncword_dualsync": false,
+          "base_frequency_hz": 868950000,
+          "channel_spacing_hz": 1000000,
+          "xtal_frequency_hz": 39000000
+        }
+      },
+      "PHY_wMbus_ModeC_M2O_100k_frameB": {
+        "label": "WMbus C M2O frameB (100k)",
+        "values": {
+          "preamble_length": 38,
+          "mbus_mode": 0,
+          "mbus_frame_format": 2,
+          "mbus_symbol_encoding": 0,
+          "syncword_dualsync": false,
+          "base_frequency_hz": 868950000,
+          "channel_spacing_hz": 1000000,
+          "xtal_frequency_hz": 39000000
+        }
+      },
+      "PHY_wMbus_ModeC_O2M_50k_frameA": {
+        "label": "WMbus C O2M frameA (50k)",
+        "values": {
+          "preamble_length": 38,
+          "mbus_mode": 1,
+          "mbus_frame_format": 1,
+          "mbus_symbol_encoding": 0,
+          "syncword_dualsync": false,
+          "base_frequency_hz": 869525000,
+          "channel_spacing_hz": 1000000,
+          "xtal_frequency_hz": 39000000
+        }
+      },
+      "PHY_wMbus_ModeC_O2M_50k_frameB": {
+        "label": "WMbus C O2M frameB (50k)",
+        "values": {
+          "preamble_length": 38,
+          "mbus_mode": 1,
+          "mbus_frame_format": 2,
+          "mbus_symbol_encoding": 0,
+          "syncword_dualsync": false,
+          "base_frequency_hz": 869525000,
+          "channel_spacing_hz": 1000000,
+          "xtal_frequency_hz": 39000000
+        }
+      },
+      "PHY_wMbus_ModeF_2p4k_frameA": {
+        "label": "WMbus F, frameA (2.4k)",
+        "values": {
+          "preamble_length": 78,
+          "mbus_mode": 2,
+          "mbus_frame_format": 1,
+          "mbus_symbol_encoding": 0,
+          "syncword_dualsync": false,
+          "base_frequency_hz": 433820000,
+          "channel_spacing_hz": 50000,
+          "xtal_frequency_hz": 39000000
+        }
+      },
+      "PHY_wMbus_ModeF_2p4k_frameB": {
+        "label": "WMbus F, frameB (2.4k)",
+        "values": {
+          "preamble_length": 78,
+          "mbus_mode": 2,
+          "mbus_frame_format": 2,
+          "mbus_symbol_encoding": 0,
+          "syncword_dualsync": false,
+          "base_frequency_hz": 433820000,
+          "channel_spacing_hz": 50000,
+          "xtal_frequency_hz": 39000000
+        }
+      },
+      "PHY_wMbus_ModeN2g_19p2k_frameA": {
+        "label": "WMbus N, index 4/13, frameA (19.2k)",
+        "values": {
+          "preamble_length": 16,
+          "mbus_mode": 3,
+          "mbus_frame_format": 1,
+          "mbus_symbol_encoding": 0,
+          "syncword_dualsync": false,
+          "base_frequency_hz": 169437500,
+          "channel_spacing_hz": 50000,
+          "xtal_frequency_hz": 39000000
+        }
+      },
+      "PHY_wMbus_ModeN2g_19p2k_frameB": {
+        "label": "WMbus N, index 4/13, frameB (19.2k)",
+        "values": {
+          "preamble_length": 16,
+          "mbus_mode": 3,
+          "mbus_frame_format": 2,
+          "mbus_symbol_encoding": 0,
+          "syncword_dualsync": false,
+          "base_frequency_hz": 169437500,
+          "channel_spacing_hz": 50000,
+          "xtal_frequency_hz": 39000000
+        }
+      },
+      "PHY_wMbus_ModeN_6p4k_frameA": {
+        "label": "WMbus N, index 3/9/12, frameA (6.4k)",
+        "values": {
+          "preamble_length": 16,
+          "mbus_mode": 10,
+          "mbus_frame_format": 1,
+          "mbus_symbol_encoding": 0,
+          "syncword_dualsync": false,
+          "base_frequency_hz": 169406250,
+          "channel_spacing_hz": 12500,
+          "xtal_frequency_hz": 39000000
+        }
+      },
+      "PHY_wMbus_ModeN_6p4k_frameB": {
+        "label": "WMbus N, index 3/9/12, frameB (6.4k)",
+        "values": {
+          "preamble_length": 16,
+          "mbus_mode": 10,
+          "mbus_frame_format": 2,
+          "mbus_symbol_encoding": 0,
+          "syncword_dualsync": false,
+          "base_frequency_hz": 169406250,
+          "channel_spacing_hz": 12500,
+          "xtal_frequency_hz": 39000000
+        }
+      },
+      "PHY_wMbus_ModeNabef_4p8K_frameA": {
+        "label": "WMbus N, index 2/6/8/11, frameA (4.8k)",
+        "values": {
+          "preamble_length": 16,
+          "mbus_mode": 4,
+          "mbus_frame_format": 1,
+          "mbus_symbol_encoding": 0,
+          "syncword_dualsync": false,
+          "base_frequency_hz": 169406250,
+          "channel_spacing_hz": 12500,
+          "xtal_frequency_hz": 39000000
+        }
+      },
+      "PHY_wMbus_ModeNabef_4p8K_frameB": {
+        "label": "WMbus N, index 2/6/8/11, frameB (4.8k)",
+        "values": {
+          "preamble_length": 16,
+          "mbus_mode": 4,
+          "mbus_frame_format": 2,
+          "mbus_symbol_encoding": 0,
+          "syncword_dualsync": false,
+          "base_frequency_hz": 169406250,
+          "channel_spacing_hz": 12500,
+          "xtal_frequency_hz": 39000000
+        }
+      },
+      "PHY_wMbus_ModeNcd_2p4K_frameA": {
+        "label": "WMbus N, index 1/5/7/10, frameA (2.4k)",
+        "values": {
+          "preamble_length": 16,
+          "mbus_mode": 5,
+          "mbus_frame_format": 1,
+          "mbus_symbol_encoding": 0,
+          "syncword_dualsync": false,
+          "base_frequency_hz": 169431250,
+          "channel_spacing_hz": 12500,
+          "xtal_frequency_hz": 39000000
+        }
+      },
+      "PHY_wMbus_ModeNcd_2p4K_frameB": {
+        "label": "WMbus N, index 1/5/7/10, frameB (2.4k)",
+        "values": {
+          "preamble_length": 16,
+          "mbus_mode": 5,
+          "mbus_frame_format": 2,
+          "mbus_symbol_encoding": 0,
+          "syncword_dualsync": false,
+          "base_frequency_hz": 169431250,
+          "channel_spacing_hz": 12500,
+          "xtal_frequency_hz": 39000000
+        }
+      },
+      "PHY_wMbus_ModeR_4p8k_frameA": {
+        "label": "WMbus R2 (4.8k, Manchester)",
+        "values": {
+          "preamble_length": 78,
+          "mbus_mode": 6,
+          "mbus_frame_format": 1,
+          "mbus_symbol_encoding": 1,
+          "syncword_dualsync": false,
+          "base_frequency_hz": 868330000,
+          "channel_spacing_hz": 60000,
+          "xtal_frequency_hz": 39000000,
+          "mbus_postamble_length": 1
+        }
+      },
+      "PHY_wMbus_ModeS_32p768k_frameA": {
+        "label": "WMbus S (32.768k, Manchester)",
+        "values": {
+          "preamble_length": 30,
+          "mbus_mode": 9,
+          "mbus_frame_format": 1,
+          "mbus_symbol_encoding": 1,
+          "syncword_dualsync": false,
+          "base_frequency_hz": 868300000,
+          "channel_spacing_hz": 300000,
+          "xtal_frequency_hz": 39000000,
+          "mbus_postamble_length": 1
+        }
+      },
+      "PHY_wMbus_ModeTC_M2O_100k_noFrame": {
+        "label": "WMbus T M2O (100k, no framing)",
+        "values": {
+          "preamble_length": 38,
+          "mbus_mode": 7,
+          "mbus_frame_format": 0,
+          "mbus_symbol_encoding": 0,
+          "syncword_dualsync": false,
+          "base_frequency_hz": 868950000,
+          "channel_spacing_hz": 1000000,
+          "xtal_frequency_hz": 39000000
+        }
+      },
+      "PHY_wMbus_ModeT_M2O_100k_frameA": {
+        "label": "WMbus T M2O (100k, 3of6)",
+        "values": {
+          "preamble_length": 38,
+          "mbus_mode": 7,
+          "mbus_frame_format": 1,
+          "mbus_symbol_encoding": 2,
+          "syncword_dualsync": false,
+          "base_frequency_hz": 868950000,
+          "channel_spacing_hz": 1000000,
+          "xtal_frequency_hz": 39000000,
+          "mbus_postamble_length": 1
+        }
+      },
+      "PHY_wMbus_ModeT_O2M_32p768k_frameA": {
+        "label": "WMbus T O2M (32.768k, Manchester)",
+        "values": {
+          "preamble_length": 30,
+          "mbus_mode": 8,
+          "mbus_frame_format": 1,
+          "mbus_symbol_encoding": 1,
+          "syncword_dualsync": false,
+          "base_frequency_hz": 868300000,
+          "channel_spacing_hz": 300000,
+          "xtal_frequency_hz": 39000000,
+          "mbus_postamble_length": 1
+        }
+      }
+    },
+    "defaultPhy": "PHY_wMbus_ModeS_32p768k_frameA"
+  },
+  "WiSUN": {
+    "label": "Wi-SUN FSK Profile",
+    "description": "Profile used for Wi-SUN FSK PHYs",
+    "inputs": {
+      "base_frequency_hz": {
+        "type": "REQUIRED",
+        "min": 358000000,
+        "max": 956000000,
+        "label": "Base Channel Frequency",
+        "symbol": "M",
+        "factor": 6,
+        "unit": "Hz",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 358000000
+      },
+      "channel_spacing_hz": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 10000000,
+        "label": "Channel Spacing",
+        "symbol": "k",
+        "factor": 3,
+        "unit": "Hz",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 0
+      },
+      "xtal_frequency_hz": {
+        "type": "REQUIRED",
+        "min": 38000000,
+        "max": 40000000,
+        "label": "Crystal Frequency",
+        "symbol": "M",
+        "factor": 6,
+        "unit": "Hz",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 38000000
+      },
+      "preamble_length": {
+        "type": "REQUIRED",
+        "min": 0,
+        "max": 2097151,
+        "label": "Preamble Length Total",
+        "unit": "bits",
+        "variableType": "INT",
+        "variableFormat": "DECIMAL",
+        "value": 0
+      },
+      "wisun_mode": {
+        "type": "REQUIRED",
+        "label": "Wi-SUN Mode",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "Mode1a", "value": 0 },
+          { "label": "Mode1b", "value": 1 },
+          { "label": "Mode2a", "value": 2 },
+          { "label": "Mode2b", "value": 3 },
+          { "label": "Mode3", "value": 4 },
+          { "label": "Mode4a", "value": 5 },
+          { "label": "Mode4b", "value": 6 },
+          { "label": "Mode5", "value": 7 }
+        ],
+        "value": 0
+      },
+      "crc_poly": {
+        "type": "REQUIRED",
+        "label": "CRC Polynomial",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "NONE", "value": 0 },
+          { "label": "CRC_8", "value": 1 },
+          { "label": "CRC_16", "value": 2 },
+          { "label": "CCITT_16", "value": 3 },
+          { "label": "DNP_16", "value": 4 },
+          { "label": "BLE_24", "value": 5 },
+          { "label": "CRC_32Q", "value": 6 },
+          { "label": "ANSIX366_1979", "value": 7 },
+          { "label": "ZWAVE", "value": 8 },
+          { "label": "BCH15_11", "value": 9 }
+        ],
+        "value": 0
+      },
+      "payload_white_en": {
+        "type": "REQUIRED",
+        "label": "Payload Whitening Enable",
+        "variableType": "BOOL",
+        "value": true
+      },
+      "shaping_filter": {
+        "type": "REQUIRED",
+        "label": "Shaping Filter",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "NONE", "value": 0 },
+          { "label": "Gaussian", "value": 1 },
+          { "label": "Raised_Cosine", "value": 2 },
+          { "label": "Root_Raised_Cosine", "value": 3 },
+          { "label": "Custom_OQPSK", "value": 4 },
+          { "label": "Custom_PSK", "value": 5 }
+        ],
+        "value": 1
+      },
+      "shaping_filter_param": {
+        "type": "REQUIRED",
+        "min": 0.3,
+        "max": 2,
+        "label": "Shaping Filter Parameter (BT or R)",
+        "variableType": "FLOAT",
+        "variableFormat": "DECIMAL",
+        "value": 2
+      },
+      "test_ber": {
+        "type": "REQUIRED",
+        "label": "Reconfigure for BER testing",
+        "variableType": "BOOL",
+        "value": false
+      },
+      "fec_tx_enable": {
+        "type": "REQUIRED",
+        "label": "Enable FEC",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "DISABLED", "value": 0 },
+          { "label": "ENABLED", "value": 1 }
+        ],
+        "value": 0
+      },
+      "antdivmode": {
+        "type": "LINKEDIO",
+        "label": "Antenna diversity mode",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "DISABLE", "value": 0 },
+          { "label": "ANTENNA1", "value": 1 },
+          { "label": "ANTSELFIRST", "value": 2 },
+          { "label": "ANTSELCORR", "value": 3 },
+          { "label": "ANTSELRSSI", "value": 4 },
+          { "label": "PHDEMODANTDIV", "value": 5 }
+        ],
+        "value": 0
+      },
+      "antdivrepeatdis": {
+        "type": "LINKEDIO",
+        "label": "Diversity Select-Best repeat",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "REPEATFIRST", "value": 0 },
+          { "label": "NOREPEATFIRST", "value": 1 }
+        ],
+        "value": 0
+      },
+      "skip2ant": {
+        "type": "LINKEDIO",
+        "label": "Skip 2nd antenna check with phase demod antenna diversity",
+        "variableType": "ENUM",
+        "items": [
+          { "label": "SKIP2ANT", "value": 0 },
+          { "label": "NOSKIP2ANT", "value": 1 }
+        ],
+        "value": 0
+      }
+    },
+    "phys": {
+      "PHY_IEEE802154_WISUN_470MHz_2GFSK_100kbps_2a_CN": {
+        "label": "Wi-SUN FAN, CN-470MHz, 2a (2FSK 100kbps mi=0.5)",
+        "values": {
+          "base_frequency_hz": 470200000,
+          "channel_spacing_hz": 200000,
+          "xtal_frequency_hz": 39000000,
+          "preamble_length": 64,
+          "wisun_mode": 2,
+          "crc_poly": 7
+        }
+      },
+      "PHY_IEEE802154_WISUN_470MHz_2GFSK_50kbps_1b_CN": {
+        "label": "Wi-SUN FAN, CN-470MHz, 1b (2FSK 50kbps mi=1.0)",
+        "values": {
+          "base_frequency_hz": 470200000,
+          "channel_spacing_hz": 200000,
+          "xtal_frequency_hz": 39000000,
+          "preamble_length": 64,
+          "wisun_mode": 1,
+          "crc_poly": 7
+        }
+      },
+      "PHY_IEEE802154_WISUN_868MHz_2GFSK_100kbps_2a_EU": {
+        "label": "Wi-SUN FAN, EU-868MHz, 2a (2FSK 100kbps mi=0.5)",
+        "values": {
+          "base_frequency_hz": 863100000,
+          "channel_spacing_hz": 200000,
+          "xtal_frequency_hz": 39000000,
+          "preamble_length": 64,
+          "wisun_mode": 2,
+          "crc_poly": 7
+        }
+      },
+      "PHY_IEEE802154_WISUN_868MHz_2GFSK_150kbps_3_EU": {
+        "label": "Wi-SUN FAN, EU-868MHz, 3 (2FSK 150kbps mi=0.5)",
+        "values": {
+          "base_frequency_hz": 863100000,
+          "channel_spacing_hz": 200000,
+          "xtal_frequency_hz": 39000000,
+          "preamble_length": 96,
+          "wisun_mode": 4,
+          "crc_poly": 7
+        }
+      },
+      "PHY_IEEE802154_WISUN_868MHz_2GFSK_50kbps_1a_EU": {
+        "label": "Wi-SUN FAN, EU-868MHz, 1a (2FSK 50kbps mi=0.5)",
+        "values": {
+          "base_frequency_hz": 863100000,
+          "channel_spacing_hz": 100000,
+          "xtal_frequency_hz": 39000000,
+          "preamble_length": 64,
+          "wisun_mode": 0,
+          "crc_poly": 7
+        }
+      },
+      "PHY_IEEE802154_WISUN_873MHz_2GFSK_100kbps_2a_EU": {
+        "label": "Wi-SUN FAN, EU-873MHz, 2a (2FSK 100kbps mi=0.5)",
+        "values": {
+          "base_frequency_hz": 870200000,
+          "channel_spacing_hz": 200000,
+          "xtal_frequency_hz": 39000000,
+          "preamble_length": 64,
+          "wisun_mode": 2,
+          "crc_poly": 7
+        }
+      },
+      "PHY_IEEE802154_WISUN_873MHz_2GFSK_150kbps_3_EU": {
+        "label": "Wi-SUN FAN, EU-873MHz, 3 (2FSK 150kbps mi=0.5)",
+        "values": {
+          "base_frequency_hz": 870200000,
+          "channel_spacing_hz": 200000,
+          "xtal_frequency_hz": 39000000,
+          "preamble_length": 96,
+          "wisun_mode": 4,
+          "crc_poly": 7
+        }
+      },
+      "PHY_IEEE802154_WISUN_873MHz_2GFSK_50kbps_1a_EU": {
+        "label": "Wi-SUN FAN, EU-873MHz, 1a (2FSK 50kbps mi=0.5)",
+        "values": {
+          "base_frequency_hz": 870100000,
+          "channel_spacing_hz": 100000,
+          "xtal_frequency_hz": 39000000,
+          "preamble_length": 64,
+          "wisun_mode": 0,
+          "crc_poly": 7
+        }
+      },
+      "PHY_IEEE802154_WISUN_915MHz_2GFSK_100kbps_2a_NA": {
+        "label": "Wi-SUN FAN, NA-915MHz, 2a (2FSK 100kbps mi=0.5)",
+        "values": {
+          "base_frequency_hz": 902200000,
+          "channel_spacing_hz": 200000,
+          "xtal_frequency_hz": 39000000,
+          "preamble_length": 64,
+          "wisun_mode": 2,
+          "crc_poly": 7
+        }
+      },
+      "PHY_IEEE802154_WISUN_915MHz_2GFSK_150kbps_3_NA": {
+        "label": "Wi-SUN FAN, NA-915MHz, 3 (2FSK 150kbps mi=0.5)",
+        "values": {
+          "base_frequency_hz": 902400000,
+          "channel_spacing_hz": 400000,
+          "xtal_frequency_hz": 39000000,
+          "preamble_length": 96,
+          "wisun_mode": 4,
+          "crc_poly": 7
+        }
+      },
+      "PHY_IEEE802154_WISUN_915MHz_2GFSK_200kbps_4a_NA": {
+        "label": "Wi-SUN FAN, NA-915MHz, 4a (2GFSK 200kbps mi=0.5)",
+        "values": {
+          "base_frequency_hz": 902400000,
+          "channel_spacing_hz": 400000,
+          "xtal_frequency_hz": 39000000,
+          "preamble_length": 96,
+          "wisun_mode": 5,
+          "crc_poly": 7
+        }
+      },
+      "PHY_IEEE802154_WISUN_915MHz_2GFSK_300kbps_5_NA": {
+        "label": "Wi-SUN FAN, NA-915MHz, 5 (2GFSK 300kbps mi=0.5)",
+        "values": {
+          "base_frequency_hz": 902600000,
+          "channel_spacing_hz": 600000,
+          "xtal_frequency_hz": 39000000,
+          "preamble_length": 192,
+          "wisun_mode": 7,
+          "crc_poly": 7
+        }
+      },
+      "PHY_IEEE802154_WISUN_915MHz_2GFSK_50kbps_1b_NA": {
+        "label": "Wi-SUN FAN, NA-915MHz, 1b (2FSK 50kbps mi=1.0)",
+        "values": {
+          "base_frequency_hz": 902200000,
+          "channel_spacing_hz": 200000,
+          "xtal_frequency_hz": 39000000,
+          "preamble_length": 64,
+          "wisun_mode": 1,
+          "crc_poly": 7
+        }
+      },
+      "PHY_IEEE802154_WISUN_920MHz_2GFSK_100kbps_2b_JP": {
+        "label": "Wi-SUN FAN, JP-920MHz, 2b (2FSK 100kbps mi=1.0)",
+        "values": {
+          "base_frequency_hz": 920900000,
+          "channel_spacing_hz": 400000,
+          "xtal_frequency_hz": 39000000,
+          "preamble_length": 64,
+          "wisun_mode": 3,
+          "crc_poly": 7
+        }
+      },
+      "PHY_IEEE802154_WISUN_920MHz_2GFSK_100kbps_2b_JP_ECHONET": {
+        "label": "Wi-SUN ECHONET, JP-920MHz, 2b (2FSK 100kbps mi=1.0)",
+        "values": {
+          "base_frequency_hz": 920900000,
+          "channel_spacing_hz": 400000,
+          "xtal_frequency_hz": 39000000,
+          "preamble_length": 120,
+          "wisun_mode": 3,
+          "crc_poly": 3
+        }
+      },
+      "PHY_IEEE802154_WISUN_920MHz_2GFSK_200kbps_4b_JP": {
+        "label": "Wi-SUN FAN, JP-920MHz, 4b (2GFSK 200kbps mi=1.0)",
+        "values": {
+          "base_frequency_hz": 920800000,
+          "channel_spacing_hz": 600000,
+          "xtal_frequency_hz": 39000000,
+          "preamble_length": 96,
+          "wisun_mode": 6,
+          "crc_poly": 7
+        }
+      },
+      "PHY_IEEE802154_WISUN_920MHz_2GFSK_50kbps_1b_JP_ECHONET": {
+        "label": "Wi-SUN ECHONET, JP-920MHz, 1b (2FSK 50kbps mi=1.0)",
+        "values": {
+          "base_frequency_hz": 920600000,
+          "channel_spacing_hz": 200000,
+          "xtal_frequency_hz": 39000000,
+          "preamble_length": 64,
+          "wisun_mode": 1,
+          "crc_poly": 3
+        }
+      }
+    }
+  }
+}

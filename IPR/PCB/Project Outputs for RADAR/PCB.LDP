@@ -1,3 +1,2 @@
-Layer Pairs Export File for PCB: C:\Users\Edward\Desktop\radar\RADAR\PCB.PcbDoc
-LayersSetName=Top_Bot_Plated_Thru_Holes|DrillFile=pcb-plated.txt|DrillLayers=gtl,g1,g2,gbl
-LayersSetName=Top_Bot_NonPlated_Thru_Holes|DrillFile=pcb-nonplated.txt|DrillLayers=gtl,g1,g2,gbl
+Layer Pairs Export File for PCB: C:\Users\Workstation\Desktop\IPR\IPR\PCB\PCB.PcbDoc
+LayersSetName=Top_Bot_Thru_Holes|DrillFile=pcb.txt|DrillLayers=gtl,g1,g2,gbl
