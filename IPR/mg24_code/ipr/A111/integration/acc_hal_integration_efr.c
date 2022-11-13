@@ -62,6 +62,7 @@ static void acc_hal_integration_sensor_transfer(acc_sensor_id_t sensor_id,
 
 	GPIO_PinOutClear(A111_CS_PORT, A111_CS_PIN);
 
+	acc_integration_sleep_us(5);
 	/*
 	 * Because this example is most likely going to be running with
 	 * another EFM32/EFR32 device on the secondary side, it must insert
@@ -78,8 +79,6 @@ static void acc_hal_integration_sensor_transfer(acc_sensor_id_t sensor_id,
 	 * wakes the device from a low-power state, starts a conversion,
 	 * and can return data after some set delay.
 	 */
-	for (int i = 0; i < 25; i++)
-		;
 
 	/*
 	 * Repeatedly perform single byte SPI transfers (transmission and
@@ -87,8 +86,8 @@ static void acc_hal_integration_sensor_transfer(acc_sensor_id_t sensor_id,
 	 * EUSART_STATUS_TXC for transmission complete, so this function ties
 	 * up the CPU until the last bit of the byte being transmitted is sent.
 	 */
-	for (int i = 0; i < buffer_size; i++)
-		buffer[i] = EUSART_Spi_TxRx(EUSART1, buffer[i]);
+	for (size_t i = 0; i < buffer_size; i++)
+	    buffer[i] = EUSART_Spi_TxRx(EUSART1, buffer[i]);
 
 	// De-assert chip select upon transfer completion (drive high)
 	GPIO_PinOutSet(A111_CS_PORT, A111_CS_PIN);
@@ -108,7 +107,7 @@ static void acc_hal_integration_sensor_power_off(acc_sensor_id_t sensor_id) {
 	(void) sensor_id;  // Ignore parameter sensor_id
 
 	GPIO_PinOutClear(A111_EN_PORT, A111_EN_PIN);
-	GPIO_PinOutClear(A111_CS_PORT, A111_CS_PIN);
+	//GPIO_PinOutSet(A111_CS_PORT, A111_CS_PIN);
 
 	// Wait after power off to leave the sensor in a known state
 	// in case the application intends to enable the sensor directly
@@ -125,7 +124,7 @@ static bool acc_hal_integration_wait_for_sensor_interrupt(acc_sensor_id_t sensor
 		// Check again so that IRQ did not occur
 		if (GPIO_PinInGet(A111_INT_PORT, A111_INT_PIN) != 1)
         {
-            __WFE();
+            __WFI();
         }
 
 

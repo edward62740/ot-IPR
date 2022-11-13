@@ -47,7 +47,7 @@
 // <uartdrvFlowControlHw=> nRTS/nCTS hardware handshake
 // <uartdrvFlowControlHwUart=> UART peripheral controls nRTS/nCTS
 // <i> Default: uartdrvFlowControlHw
-#define SL_UARTDRV_USART_VCOM_FLOW_CONTROL_TYPE uartdrvFlowControlHw
+#define SL_UARTDRV_USART_VCOM_FLOW_CONTROL_TYPE uartdrvFlowControlNone
 
 // <o SL_UARTDRV_USART_VCOM_OVERSAMPLING> Oversampling selection
 // <usartOVS16=> 16x oversampling
@@ -79,13 +79,13 @@
 #define SL_UARTDRV_USART_VCOM_PERIPHERAL         USART0
 #define SL_UARTDRV_USART_VCOM_PERIPHERAL_NO      0
 
-// USART0 TX on PA07
+// USART0 TX on PA06
 #define SL_UARTDRV_USART_VCOM_TX_PORT            gpioPortA
-#define SL_UARTDRV_USART_VCOM_TX_PIN             7
+#define SL_UARTDRV_USART_VCOM_TX_PIN             6
 
-// USART0 RX on PA06
+// USART0 RX on PA07
 #define SL_UARTDRV_USART_VCOM_RX_PORT            gpioPortA
-#define SL_UARTDRV_USART_VCOM_RX_PIN             6
+#define SL_UARTDRV_USART_VCOM_RX_PIN             7
 
 // [USART_SL_UARTDRV_USART_VCOM]$
 // <<< sl:end pin_tool >>>

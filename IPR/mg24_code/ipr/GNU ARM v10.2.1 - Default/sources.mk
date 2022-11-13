@@ -38,6 +38,7 @@ gecko_sdk_4.0.2/platform/emdrv/gpiointerrupt/src \
 gecko_sdk_4.0.2/platform/emdrv/nvm3/src \
 gecko_sdk_4.0.2/platform/emdrv/spidrv/src \
 gecko_sdk_4.0.2/platform/emdrv/uartdrv/src \
+gecko_sdk_4.0.2/platform/emdrv/ustimer/src \
 gecko_sdk_4.0.2/platform/emlib/src \
 gecko_sdk_4.0.2/platform/peripheral/src \
 gecko_sdk_4.0.2/platform/radio/rail_lib/plugin/pa-conversions \

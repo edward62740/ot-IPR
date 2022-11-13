@@ -20,6 +20,7 @@
 
 void acc_integration_log(acc_log_level_t level, const char *module, const char *format, ...)
 {
+
 	char    log_buffer[LOG_BUFFER_MAX_SIZE];
 	va_list ap;
 
@@ -45,7 +46,7 @@ void acc_integration_log(acc_log_level_t level, const char *module, const char *
 
 	level_ch = (level <= ACC_LOG_LEVEL_DEBUG) ? "EWIVD"[level] : '?';
 
-	printf(LOG_FORMAT, hours, minutes, seconds, milliseconds, level_ch, module, log_buffer);
+	otCliOutputFormat(LOG_FORMAT, hours, minutes, seconds, milliseconds, level_ch, module, log_buffer);
 
 	fflush(stdout);
 

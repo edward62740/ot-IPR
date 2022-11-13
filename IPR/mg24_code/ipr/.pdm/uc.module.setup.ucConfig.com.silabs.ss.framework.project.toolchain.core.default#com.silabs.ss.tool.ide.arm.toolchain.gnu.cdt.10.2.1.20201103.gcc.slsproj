@@ -14,6 +14,7 @@
     <file name="sl_memory_config.h" generated="true" linked="false"/>
     <file name="dmadrv_config.h" generated="true" linked="false"/>
     <file name="sl_rail_util_pti_config.h" generated="true" linked="false"/>
+    <file name="ustimer_config.h" generated="true" linked="false"/>
     <file name="nvm3_default_config.h" generated="true" linked="false"/>
     <file name="sl_rail_util_rssi_config.h" generated="true" linked="false"/>
     <file name="sl_device_init_emu_config.h" generated="true" linked="false"/>

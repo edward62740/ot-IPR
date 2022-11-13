@@ -51,7 +51,7 @@
 // <o SL_SPIDRV_EUSART_SPI0_CS_CONTROL> SPI master chip select (CS) control scheme.
 // <spidrvCsControlAuto=> CS controlled by the SPI driver
 // <spidrvCsControlApplication=> CS controlled by the application
-#define SL_SPIDRV_EUSART_SPI0_CS_CONTROL        spidrvCsControlApplication
+#define SL_SPIDRV_EUSART_SPI0_CS_CONTROL        spidrvCsControlAuto
 
 // <o SL_SPIDRV_EUSART_SPI0_SLAVE_START_MODE> SPI slave transfer start scheme
 // <spidrvSlaveStartImmediate=> Transfer starts immediately

@@ -233,6 +233,14 @@
             <file name="uartdrv.h" uri="studio:/sdk/platform/emdrv/uartdrv/inc/uartdrv.h"/>
           </folder>
         </folder>
+        <folder name="ustimer">
+          <folder name="src">
+            <file name="ustimer.c" uri="studio:/sdk/platform/emdrv/ustimer/src/ustimer.c"/>
+          </folder>
+          <folder name="inc">
+            <file name="ustimer.h" uri="studio:/sdk/platform/emdrv/ustimer/inc/ustimer.h"/>
+          </folder>
+        </folder>
       </folder>
       <folder name="emlib">
         <folder name="src">
@@ -249,6 +257,7 @@
           <file name="em_rmu.c" uri="studio:/sdk/platform/emlib/src/em_rmu.c"/>
           <file name="em_se.c" uri="studio:/sdk/platform/emlib/src/em_se.c"/>
           <file name="em_system.c" uri="studio:/sdk/platform/emlib/src/em_system.c"/>
+          <file name="em_timer.c" uri="studio:/sdk/platform/emlib/src/em_timer.c"/>
           <file name="em_usart.c" uri="studio:/sdk/platform/emlib/src/em_usart.c"/>
         </folder>
         <folder name="inc">
@@ -273,6 +282,7 @@
           <file name="em_rmu.h" uri="studio:/sdk/platform/emlib/inc/em_rmu.h"/>
           <file name="em_se.h" uri="studio:/sdk/platform/emlib/inc/em_se.h"/>
           <file name="em_system.h" uri="studio:/sdk/platform/emlib/inc/em_system.h"/>
+          <file name="em_timer.h" uri="studio:/sdk/platform/emlib/inc/em_timer.h"/>
           <file name="em_usart.h" uri="studio:/sdk/platform/emlib/inc/em_usart.h"/>
         </folder>
       </folder>
@@ -1380,6 +1390,7 @@
   <includePath uri="studio:/sdk/util/third_party/crypto/sl_component/sl_protocol_crypto/src"/>
   <includePath uri="studio:/sdk/platform/emdrv/spidrv/inc"/>
   <includePath uri="studio:/sdk/platform/emdrv/uartdrv/inc"/>
+  <includePath uri="studio:/sdk/platform/emdrv/ustimer/inc"/>
   <macroDefinition name="EFR32MG24B220F1536IM48"/>
   <macroDefinition name="SL_COMPONENT_CATALOG_PRESENT"/>
   <macroDefinition name="MBEDTLS_CONFIG_FILE" value="&lt;mbedtls_config.h>"/>

@@ -197,6 +197,11 @@
 			<locationURI>STUDIO_SDK_LOC/platform/emlib/inc/em_system.h</locationURI>
 		</link>
 		<link>
+			<name>gecko_sdk_4.0.2/platform/emlib/inc/em_timer.h</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/emlib/inc/em_timer.h</locationURI>
+		</link>
+		<link>
 			<name>gecko_sdk_4.0.2/platform/emlib/inc/em_usart.h</name>
 			<type>1</type>
 			<locationURI>STUDIO_SDK_LOC/platform/emlib/inc/em_usart.h</locationURI>
@@ -270,6 +275,11 @@
 			<name>gecko_sdk_4.0.2/platform/emlib/src/em_system.c</name>
 			<type>1</type>
 			<locationURI>STUDIO_SDK_LOC/platform/emlib/src/em_system.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.0.2/platform/emlib/src/em_timer.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/emlib/src/em_timer.c</locationURI>
 		</link>
 		<link>
 			<name>gecko_sdk_4.0.2/platform/emlib/src/em_usart.c</name>
@@ -400,6 +410,16 @@
 			<name>gecko_sdk_4.0.2/platform/emdrv/uartdrv/src/uartdrv.c</name>
 			<type>1</type>
 			<locationURI>STUDIO_SDK_LOC/platform/emdrv/uartdrv/src/uartdrv.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.0.2/platform/emdrv/ustimer/inc/ustimer.h</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/emdrv/ustimer/inc/ustimer.h</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.0.2/platform/emdrv/ustimer/src/ustimer.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/emdrv/ustimer/src/ustimer.c</locationURI>
 		</link>
 		<link>
 			<name>gecko_sdk_4.0.2/platform/radio/rail_lib/common/rail.h</name>

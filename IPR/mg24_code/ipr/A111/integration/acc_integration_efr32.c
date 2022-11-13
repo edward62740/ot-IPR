@@ -9,23 +9,23 @@
 
 #include "acc_integration.h"
 #include "sl_sleeptimer.h"
-
+#include "ustimer.h"
 
 void acc_integration_sleep_ms(uint32_t time_msec)
 {
-  sl_sleeptimer_delay_millisecond(time_msec);
+  sl_sleeptimer_delay_millisecond((uint16_t)time_msec);
 }
 
 
 void acc_integration_sleep_us(uint32_t time_usec)
 {
-  sl_udelay_wait(time_usec);
+    USTIMER_Delay(time_usec);
 }
 
 
 uint32_t acc_integration_get_time(void)
 {
-	return sl_sleeptimer_get_tick_count();
+	return sl_sleeptimer_tick_to_ms(sl_sleeptimer_get_tick_count());
 }
 
 

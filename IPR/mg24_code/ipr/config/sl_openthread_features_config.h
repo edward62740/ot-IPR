@@ -269,7 +269,7 @@
 #endif
 
 // <e>  Enable Logging
-#define OPENTHREAD_FULL_LOGS_ENABLE                 0
+#define OPENTHREAD_FULL_LOGS_ENABLE                 1
 #if     OPENTHREAD_FULL_LOGS_ENABLE
 
 // <h>  Note: Enabling higher log levels, which include logging packet details, can cause delays which may result in join failures.

@@ -34,6 +34,7 @@ component:
 - {id: EFR32MG24B220F1536IM48}
 - {id: ot_stack_mtd}
 - {id: rail_util_pti}
+- {id: ustimer}
 - {id: ot_cli_source}
 - instance: [vcom]
   id: uartdrv_usart
