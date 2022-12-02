@@ -100,22 +100,6 @@
 // [I2C1]$
 
 // $[EUSART1]
-// EUSART1 CS on PB03
-#define EUSART1_CS_PORT                          gpioPortB
-#define EUSART1_CS_PIN                           3
-
-// EUSART1 RX on PB01
-#define EUSART1_RX_PORT                          gpioPortB
-#define EUSART1_RX_PIN                           1
-
-// EUSART1 SCLK on PB00
-#define EUSART1_SCLK_PORT                        gpioPortB
-#define EUSART1_SCLK_PIN                         0
-
-// EUSART1 TX on PB02
-#define EUSART1_TX_PORT                          gpioPortB
-#define EUSART1_TX_PIN                           2
-
 // [EUSART1]$
 
 // $[KEYSCAN]
@@ -154,6 +138,22 @@
 // [I2C0]$
 
 // $[EUSART0]
+// EUSART0 CS on PB03
+#define EUSART0_CS_PORT                          gpioPortB
+#define EUSART0_CS_PIN                           3
+
+// EUSART0 RX on PB01
+#define EUSART0_RX_PORT                          gpioPortB
+#define EUSART0_RX_PIN                           1
+
+// EUSART0 SCLK on PB00
+#define EUSART0_SCLK_PORT                        gpioPortB
+#define EUSART0_SCLK_PIN                         0
+
+// EUSART0 TX on PB02
+#define EUSART0_TX_PORT                          gpioPortB
+#define EUSART0_TX_PIN                           2
+
 // [EUSART0]$
 
 // $[PTI]
@@ -166,7 +166,4 @@
 // [CUSTOM_PIN_NAME]$
 
 #endif // PIN_CONFIG_H
-
-// $[MSC]
-// [MSC]$
 

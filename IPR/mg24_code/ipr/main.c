@@ -38,119 +38,106 @@
 #include "acc_rss_assembly_test.h"
 #include "acc_version.h"
 #include <stdio.h>
-#include "acc_detector_distance.h"
+#include "acc_detector_presence.h"
 #define DEFAULT_SENSOR_ID 1
 
 static bool run_test(acc_rss_assembly_test_configuration_t configuration);
+#define DEFAULT_START_M             (0.2f)
+#define DEFAULT_LENGTH_M            (1.4f)
+#define DEFAULT_UPDATE_RATE         (1)
+#define DEFAULT_POWER_SAVE_MODE     ACC_POWER_SAVE_MODE_SLEEP
+#define DEFAULT_DETECTION_THRESHOLD (2.0f)
+#define DEFAULT_NBR_REMOVED_PC      (0)
 
-void initEUSART1(void);
+
+static void update_configuration(acc_detector_presence_configuration_t presence_configuration);
+
+
+static void print_result(acc_detector_presence_result_t result);
+
+
+
+void initGPIO(void);
 int main(void) {
     // Initialize Silicon Labs device, system, service(s) and protocol stack(s).
     // Note that if the kernel is present, processing task(s) will be created by
     // this call.
-    sl_system_init();
+     sl_system_init();
+    initGPIO();
 
     // Initialize the application. For example, create periodic timer(s) or
     // task(s) if the kernel is present.`
     USTIMER_Init();
-    initEUSART1();
 
     GPIO_PinOutSet(gpioPortC, 8);
-
-       const acc_hal_t *hal = acc_hal_integration_get_implementation();
-
-
-
+    GPIO_PinOutSet(A111_EN_PORT, A111_EN_PIN);
     otCliOutputFormat("Acconeer software version %s\n", acc_version_get());
 
+        const acc_hal_t *hal = acc_hal_integration_get_implementation();
 
         if (!acc_rss_activate(hal))
         {
-            return EXIT_FAILURE;
+            otCliOutputFormat("Failed to activate RSS\n");
+
         }
 
-        acc_rss_assembly_test_configuration_t configuration = acc_rss_assembly_test_configuration_create();
-        acc_rss_assembly_test_configuration_sensor_set(configuration, DEFAULT_SENSOR_ID);
-
-        // Disable all tests (they are enabled by default)
-        acc_rss_assembly_test_configuration_all_tests_disable(configuration);
-
-        // Enable and run: Read Test
-        acc_rss_assembly_test_configuration_communication_read_test_enable(configuration);
-        if (!run_test(configuration))
+        acc_detector_presence_configuration_t presence_configuration = acc_detector_presence_configuration_create();
+        if (presence_configuration == NULL)
         {
-            otCliOutputFormat("Bring up test: Read Test failed\n");
-            acc_rss_assembly_test_configuration_destroy(&configuration);
+            otCliOutputFormat("Failed to create configuration\n");
             acc_rss_deactivate();
-            return EXIT_FAILURE;
+
         }
 
-        acc_rss_assembly_test_configuration_communication_read_test_disable(configuration);
+        update_configuration(presence_configuration);
 
-        // Enable and run: Write Read Test
-        acc_rss_assembly_test_configuration_communication_write_read_test_enable(configuration);
-        if (!run_test(configuration))
+        acc_detector_presence_handle_t handle = acc_detector_presence_create(presence_configuration);
+        if (handle == NULL)
         {
-            otCliOutputFormat("Bring up test: Write Read Test failed\n");
-            acc_rss_assembly_test_configuration_destroy(&configuration);
+            otCliOutputFormat("Failed to create detector\n");
+            acc_detector_presence_configuration_destroy(&presence_configuration);
             acc_rss_deactivate();
-            return EXIT_FAILURE;
+
         }
 
-        acc_rss_assembly_test_configuration_communication_write_read_test_disable(configuration);
-/*
-        // Enable and run: Interrupt Test
-        acc_rss_assembly_test_configuration_communication_interrupt_test_enable(configuration);
-        if (!run_test(configuration))
+        acc_detector_presence_configuration_destroy(&presence_configuration);
+
+        if (!acc_detector_presence_activate(handle))
         {
-            otCliOutputFormat("Bring up test: Interrupt Test failed\n");
-            acc_rss_assembly_test_configuration_destroy(&configuration);
+            otCliOutputFormat("Failed to activate detector\n");
+            acc_detector_presence_destroy(&handle);
             acc_rss_deactivate();
-            return EXIT_FAILURE;
+
         }
 
-        acc_rss_assembly_test_configuration_communication_interrupt_test_disable(configuration);
-*/
-        // Enable and run: Hibernate Test
-        acc_rss_assembly_test_configuration_communication_hibernate_test_enable(configuration);
-        if (!run_test(configuration))
+        bool                           success    = true;
+        const int                      iterations = 200;
+        acc_detector_presence_result_t result;
+
+       while(1)
         {
-            otCliOutputFormat("Bring up test: Hibernate Test failed\n");
-            acc_rss_assembly_test_configuration_destroy(&configuration);
-            acc_rss_deactivate();
-            return EXIT_FAILURE;
+            success = acc_detector_presence_get_next(handle, &result);
+            if (!success)
+            {
+                otCliOutputFormat("acc_detector_presence_get_next() failed\n");
+                break;
+            }
+
+            print_result(result);
+
+            acc_integration_sleep_ms(250 / DEFAULT_UPDATE_RATE);
         }
 
-        acc_rss_assembly_test_configuration_communication_hibernate_test_disable(configuration);
+        bool deactivated = acc_detector_presence_deactivate(handle);
 
-        // Enable and run: Supply Test
-        acc_rss_assembly_test_configuration_supply_test_enable(configuration);
-        if (!run_test(configuration))
-        {
-            otCliOutputFormat("Bring up test: Supply Test failed\n");
-            acc_rss_assembly_test_configuration_destroy(&configuration);
-            acc_rss_deactivate();
-            return EXIT_FAILURE;
-        }
+        acc_detector_presence_destroy(&handle);
 
-        acc_rss_assembly_test_configuration_supply_test_disable(configuration);
-
-        // Enable and run: Clock Test
-        acc_rss_assembly_test_configuration_clock_test_enable(configuration);
-        if (!run_test(configuration))
-        {
-            otCliOutputFormat("Bring up test: Clock Test failed\n");
-            acc_rss_assembly_test_configuration_destroy(&configuration);
-            acc_rss_deactivate();
-            return EXIT_FAILURE;
-        }
-
-        acc_rss_assembly_test_configuration_clock_test_disable(configuration);
-
-        otCliOutputFormat("Bring up test: All tests passed\n");
-
-        acc_rss_assembly_test_configuration_destroy(&configuration);
         acc_rss_deactivate();
+
+        if (deactivated && success)
+        {
+            otCliOutputFormat("Application finished OK\n");
+        }
 
 
 
@@ -201,75 +188,54 @@ static bool run_test(acc_rss_assembly_test_configuration_t configuration)
     return success;
 }
 
+void initGPIO(void) {
+    CMU_ClockEnable(cmuClock_GPIO, true);
 
 
-void initEUSART1(void) {
-    //CMU_ClockSelectSet(cmuClock_EM01GRPCCLK, cmuSelect_HFRCODPLL);
-	CMU_ClockEnable(cmuClock_EUSART1, true);
-	CMU_ClockEnable(cmuClock_GPIO, true);
-	// SPI advanced configuration (part of the initializer)
-	EUSART_SpiAdvancedInit_TypeDef adv = EUSART_SPI_ADVANCED_INIT_DEFAULT;
+    GPIO_PinModeSet(A111_CS_PORT, A111_CS_PIN, gpioModePushPull, 1);
 
-	adv.msbFirst = true;        // SPI standard MSB first
-
-	// Default asynchronous initializer (main/master mode and 8-bit data)
-	EUSART_SpiInit_TypeDef init = EUSART_SPI_MASTER_INIT_DEFAULT_HF;
-
-	init.bitRate = 1000000;        // 1 MHz shift clock
-	init.advancedSettings = &adv;  // Advanced settings structure
-
-	/*
-	 * Route EUSART1 MOSI, MISO, and SCLK to the specified pins.  CS is
-	 * not controlled by EUSART1 so there is no write to the corresponding
-	 * EUSARTROUTE register to do this.
-	 */
-	  GPIO_PinModeSet(A111_MOSI_PORT, A111_MOSI_PIN, gpioModePushPull, 0);
-
-	  // Configure MISO (RX) pin as an input
-	  GPIO_PinModeSet(A111_MISO_PORT, A111_MISO_PIN, gpioModeInput, 0);
-
-	  // Configure SCLK pin as an output low (CPOL = 0)
-	  GPIO_PinModeSet(A111_SCLK_PORT, A111_SCLK_PIN, gpioModePushPull, 0);
-
-	  GPIO_PinModeSet(gpioPortC, 7, gpioModePushPull, 0);
-	  GPIO_PinModeSet(gpioPortC, 8, gpioModePushPull, 0);
-	  GPIO_PinModeSet(gpioPortC, 9, gpioModePushPull, 0);
-	  GPIO_PinModeSet(A111_INT_PORT, A111_INT_PIN, gpioModePushPull, 0);
-
-	  GPIO_PinModeSet(A111_CS_PORT, A111_CS_PIN, gpioModePushPull, 1);
-	GPIO->EUSARTROUTE[1].TXROUTE = (A111_MOSI_PORT
-			<< _GPIO_EUSART_TXROUTE_PORT_SHIFT)
-			| (A111_MOSI_PIN << _GPIO_EUSART_TXROUTE_PIN_SHIFT);
-	GPIO->EUSARTROUTE[1].RXROUTE = (A111_MISO_PORT
-			<< _GPIO_EUSART_RXROUTE_PORT_SHIFT)
-			| (A111_MISO_PIN << _GPIO_EUSART_RXROUTE_PIN_SHIFT);
-	GPIO->EUSARTROUTE[1].SCLKROUTE = (A111_SCLK_PORT
-			<< _GPIO_EUSART_SCLKROUTE_PORT_SHIFT)
-			| (A111_SCLK_PIN << _GPIO_EUSART_SCLKROUTE_PIN_SHIFT);
-
-	// Enable EUSART interface pins
-	GPIO->EUSARTROUTE[1].ROUTEEN = GPIO_EUSART_ROUTEEN_RXPEN |    // MISO
-			GPIO_EUSART_ROUTEEN_TXPEN |    // MOSI
-			GPIO_EUSART_ROUTEEN_SCLKPEN;
-
-	// Configure and enable EUSART0
-	EUSART_SpiInit(EUSART1, &init);
-	otCliOutputFormat("SPI STATUS: %d", EUSART_StatusGet(EUSART1));
-
-	GPIO_PinModeSet(A111_INT_PORT, A111_INT_PIN, gpioModeInputPullFilter, 0);
-	/*GPIO_ExtIntConfig(A111_INT_PORT,
-	                  A111_INT_PIN,
-	                  A111_INT_PIN,
-	                    true,
-	                    false,
-	                    true);*/
-	GPIO_PinModeSet(A111_EN_PORT, A111_EN_PIN, gpioModePushPull, 0);
-	GPIO_PinOutSet(A111_EN_PORT, A111_EN_PIN);
-
+    GPIO_PinModeSet(A111_INT_PORT, A111_INT_PIN, gpioModeInputPull, 0);
+    GPIO_ExtIntConfig(A111_INT_PORT,
+                      A111_INT_PIN,
+                      A111_INT_PIN,
+                        true,
+                        false,
+                        true);
+    GPIO_PinModeSet(A111_EN_PORT, A111_EN_PIN, gpioModePushPull, 1);
    /* GPIO_ExtIntConfig(A111_EN_PORT,
                       A111_EN_PIN,
                       A111_EN_PIN,
                         true,
                         false,
                         true);*/
+    GPIO_PinModeSet(gpioPortC, 8, gpioModePushPull, 0);
+    GPIO_PinModeSet(gpioPortC, 9, gpioModePushPull, 0);
+    GPIO_PinModeSet(gpioPortC, 7, gpioModePushPull, 0);
+}
+
+void update_configuration(acc_detector_presence_configuration_t presence_configuration)
+{
+    acc_detector_presence_configuration_update_rate_set(presence_configuration, DEFAULT_UPDATE_RATE);
+    acc_detector_presence_configuration_detection_threshold_set(presence_configuration, DEFAULT_DETECTION_THRESHOLD);
+    acc_detector_presence_configuration_start_set(presence_configuration, DEFAULT_START_M);
+    acc_detector_presence_configuration_length_set(presence_configuration, DEFAULT_LENGTH_M);
+    acc_detector_presence_configuration_power_save_mode_set(presence_configuration, DEFAULT_POWER_SAVE_MODE);
+    acc_detector_presence_configuration_nbr_removed_pc_set(presence_configuration, DEFAULT_NBR_REMOVED_PC);
+}
+
+
+void print_result(acc_detector_presence_result_t result)
+{
+    if (result.presence_detected)
+    {
+        otCliOutputFormat("Motion\n");
+        GPIO_PinOutSet(gpioPortC, 9);
+    }
+    else
+    {
+        otCliOutputFormat("No motion\n");
+        GPIO_PinOutClear(gpioPortC, 9);
+    }
+
+    otCliOutputFormat("Presence score: %d, Distance: %d\n", (int)(result.presence_score * 1000.0f), (int)(result.presence_distance * 1000.0f));
 }

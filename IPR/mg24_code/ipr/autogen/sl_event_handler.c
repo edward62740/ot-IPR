@@ -5,6 +5,7 @@
 #include "sl_device_init_dcdc.h"
 #include "sl_hfxo_manager.h"
 #include "sl_device_init_hfxo.h"
+#include "sl_device_init_lfxo.h"
 #include "sl_device_init_clocks.h"
 #include "sl_device_init_emu.h"
 #include "pa_conversions_efr32.h"
@@ -19,6 +20,8 @@
 #include "sl_ot_init.h"
 #include "sl_spidrv_instances.h"
 #include "sl_uartdrv_instances.h"
+#include "psa/crypto.h"
+#include "sli_protocol_crypto.h"
 #include "sl_power_manager.h"
 
 void sl_platform_init(void)
@@ -28,6 +31,7 @@ void sl_platform_init(void)
   sl_device_init_dcdc();
   sl_hfxo_manager_init_hardware();
   sl_device_init_hfxo();
+  sl_device_init_lfxo();
   sl_device_init_clocks();
   sl_device_init_emu();
   nvm3_initDefault();
@@ -47,6 +51,8 @@ void sl_service_init(void)
   sl_hfxo_manager_init();
   sl_mbedtls_init();
   sl_mpu_disable_execute_from_ram();
+  psa_crypto_init();
+  sli_aes_seed_mask();
 }
 
 void sl_stack_init(void)

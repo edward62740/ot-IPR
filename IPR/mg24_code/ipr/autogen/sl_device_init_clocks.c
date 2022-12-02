@@ -40,17 +40,17 @@ sl_status_t sl_device_init_clocks(void)
 #if defined(_CMU_EM01GRPBCLKCTRL_MASK)
   CMU_ClockSelectSet(cmuClock_EM01GRPBCLK, cmuSelect_HFXO);
 #endif
-  CMU_ClockSelectSet(cmuClock_EM23GRPACLK, cmuSelect_LFRCO);
-  CMU_ClockSelectSet(cmuClock_EM4GRPACLK, cmuSelect_LFRCO);
+  CMU_ClockSelectSet(cmuClock_EM23GRPACLK, cmuSelect_LFXO);
+  CMU_ClockSelectSet(cmuClock_EM4GRPACLK, cmuSelect_LFXO);
 #if defined(RTCC_PRESENT)
-  CMU_ClockSelectSet(cmuClock_RTCC, cmuSelect_LFRCO);
+  CMU_ClockSelectSet(cmuClock_RTCC, cmuSelect_LFXO);
 #endif
 #if defined(SYSRTC_PRESENT)
-  CMU_ClockSelectSet(cmuClock_SYSRTC, cmuSelect_LFRCO);
+  CMU_ClockSelectSet(cmuClock_SYSRTC, cmuSelect_LFXO);
 #endif
-  CMU_ClockSelectSet(cmuClock_WDOG0, cmuSelect_LFRCO);
+  CMU_ClockSelectSet(cmuClock_WDOG0, cmuSelect_LFXO);
 #if WDOG_COUNT > 1
-  CMU_ClockSelectSet(cmuClock_WDOG1, cmuSelect_LFRCO);
+  CMU_ClockSelectSet(cmuClock_WDOG1, cmuSelect_LFXO);
 #endif
 
   return SL_STATUS_OK;

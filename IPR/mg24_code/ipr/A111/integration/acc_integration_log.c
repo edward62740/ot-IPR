@@ -20,7 +20,7 @@
 
 void acc_integration_log(acc_log_level_t level, const char *module, const char *format, ...)
 {
-
+/*
 	char    log_buffer[LOG_BUFFER_MAX_SIZE];
 	va_list ap;
 
@@ -50,5 +50,5 @@ void acc_integration_log(acc_log_level_t level, const char *module, const char *
 
 	fflush(stdout);
 
-	va_end(ap);
+	va_end(ap);*/
 }
