@@ -1,4 +1,4 @@
-gecko_sdk_4.1.3/platform/Device/SiliconLabs/EFR32MG24/Source/startup_efr32mg24.o: \
+gecko_sdk_4.1.3/platform/emdrv/Device/SiliconLabs/EFR32MG24/Source/startup_efr32mg24.o: \
  C\:/Users/Workstation/SimplicityStudio/SDKs/gecko_sdk/platform/Device/SiliconLabs/EFR32MG24/Source/startup_efr32mg24.c \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\em_device.h \

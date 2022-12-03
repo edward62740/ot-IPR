@@ -53,7 +53,7 @@ extern void otSysEventSignalPending(void);
 static otUdpSocket         sMtdSocket;
 static bool                sButtonPressed                 = false;
 static bool                sRxOnIdleButtonPressed         = false;
-static bool                sAllowSleep                    = false;
+static bool                sAllowSleep                    = true;
 
 void sleepyInit(void)
 {
@@ -63,7 +63,7 @@ void sleepyInit(void)
     otLinkModeConfig config;
     SuccessOrExit(error = otLinkSetPollPeriod(otGetInstance(), SLEEPY_POLL_PERIOD_MS));
 
-    config.mRxOnWhenIdle = true;
+    config.mRxOnWhenIdle = false;
     config.mDeviceType   = 0;
     config.mNetworkData  = 0;
     SuccessOrExit(error = otThreadSetLinkMode(otGetInstance(), config));
@@ -104,7 +104,7 @@ void setNetworkConfiguration(void)
     aDataset.mComponents.mIsActiveTimestampPresent = true;
 
     /* Set Channel to 15 */
-    aDataset.mChannel                      = 11;
+    aDataset.mChannel                      = 15;
     aDataset.mComponents.mIsChannelPresent = true;
 
     /* Set Pan ID to 2222 */

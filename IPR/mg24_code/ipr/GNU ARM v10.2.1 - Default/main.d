@@ -89,7 +89,8 @@ main.o: ../main.c \
  C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\A111\rss\include/acc_hal_definitions.h \
  C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\A111\rss\include/acc_rss_assembly_test.h \
  C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\A111\rss\include/acc_version.h \
- C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\A111\rss\include/acc_detector_presence.h
+ C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\A111\rss\include/acc_detector_presence.h \
+ c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_burtc.h
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h:
 C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\autogen/sl_component_catalog.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\service\system\inc\sl_system_init.h:
@@ -181,3 +182,4 @@ C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\A111\rss\include/acc_hal_def
 C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\A111\rss\include/acc_rss_assembly_test.h:
 C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\A111\rss\include/acc_version.h:
 C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\A111\rss\include/acc_detector_presence.h:
+c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_burtc.h:
