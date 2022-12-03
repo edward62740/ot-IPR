@@ -164,7 +164,6 @@ int main(void) {
                 otCliOutputFormat("acc_detector_presence_get_next() failed\n");
 
             }
-
             print_result(result);
             stm = false;
        }
