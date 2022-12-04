@@ -45,11 +45,11 @@
 
 static bool run_test(acc_rss_assembly_test_configuration_t configuration);
 #define DEFAULT_START_M             (0.2f)
-#define DEFAULT_LENGTH_M            (1.0f)
+#define DEFAULT_LENGTH_M            (1.8f)
 #define DEFAULT_UPDATE_RATE         (1)
 #define DEFAULT_POWER_SAVE_MODE     ACC_POWER_SAVE_MODE_OFF
 #define DEFAULT_DETECTION_THRESHOLD (2.0f)
-#define DEFAULT_NBR_REMOVED_PC      (0)
+#define DEFAULT_NBR_REMOVED_PC      (1)
 
 
 static void update_configuration(acc_detector_presence_configuration_t presence_configuration);
@@ -76,7 +76,7 @@ void initBURTC(void)
   BURTC_Init(&burtcInit);
 
   BURTC_CounterReset();
-  BURTC_CompareSet(0, 1000);
+  BURTC_CompareSet(0, 1500);
 
   BURTC_IntEnable(BURTC_IEN_COMP);      // compare match
   NVIC_EnableIRQ(BURTC_IRQn);

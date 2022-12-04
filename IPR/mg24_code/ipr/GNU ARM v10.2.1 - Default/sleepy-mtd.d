@@ -135,6 +135,7 @@ sleepy-mtd.o: ../sleepy-mtd.c \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\src\core\config/openthread-core-config-check.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\protocol\openthread\platform-abstraction\efr32\openthread-core-efr32-config-check.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\include\openthread\logging.h \
+ ../app.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\service\power_manager\inc\sl_power_manager.h \
  C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_power_manager_config.h \
  c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_core.h \
@@ -280,6 +281,7 @@ c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthrea
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\src\core\config/openthread-core-config-check.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\protocol\openthread\platform-abstraction\efr32\openthread-core-efr32-config-check.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\util\third_party\openthread\include\openthread\logging.h:
+../app.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\service\power_manager\inc\sl_power_manager.h:
 C\:\Users\Workstation\Desktop\IPR\IPR\mg24_code\ipr\config/sl_power_manager_config.h:
 c\:\users\workstation\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_core.h:

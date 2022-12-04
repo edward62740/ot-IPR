@@ -30,7 +30,7 @@
 #include <common/code_utils.hpp>
 #include <common/logging.hpp>
 
-
+#include "app.h"
 #include "sl_component_catalog.h"
 #ifdef SL_CATALOG_POWER_MANAGER_PRESENT
 #include "sl_power_manager.h"
@@ -44,6 +44,7 @@
 #define MTD_MESSAGE "mtd button"
 #define FTD_MESSAGE "ftd button"
 
+bool tmp = true;
 // Forward declarations
 otInstance *otGetInstance(void);
 void mtdReceiveCallback(void *aContext, otMessage *aMessage, const otMessageInfo *aMessageInfo);
@@ -53,7 +54,7 @@ extern void otSysEventSignalPending(void);
 static otUdpSocket         sMtdSocket;
 static bool                sButtonPressed                 = false;
 static bool                sRxOnIdleButtonPressed         = false;
-static bool                sAllowSleep                    = true;
+static bool                sAllowSleep                    = false;
 
 void sleepyInit(void)
 {
@@ -177,33 +178,8 @@ void applicationTick(void)
     otMessage       *message = NULL;
     const char      *payload = MTD_MESSAGE;
 
-    // Check for BTN0 button press
-    if (sRxOnIdleButtonPressed)
-    {
-        sRxOnIdleButtonPressed = false;
-        sAllowSleep            = !sAllowSleep;
-        config.mRxOnWhenIdle   = !sAllowSleep;
-        config.mDeviceType     = 0;
-        config.mNetworkData    = 0;
-        SuccessOrExit(otThreadSetLinkMode(otGetInstance(), config));
-
-#if (defined(SL_CATALOG_KERNEL_PRESENT) && defined(SL_CATALOG_POWER_MANAGER_PRESENT))
-        if (sAllowSleep)
-        {
-            sl_power_manager_remove_em_requirement(SL_POWER_MANAGER_EM1);
-        }
-        else
-        {
-            sl_power_manager_add_em_requirement(SL_POWER_MANAGER_EM1);
-        }
-#endif
-    }
-
-    // Check for BTN1 button press
-    if (sButtonPressed)
-    {
-        sButtonPressed = false;
-
+if(tmp){
+    tmp = !tmp;
         // Get a message buffer
         VerifyOrExit((message = otUdpNewMessage(otGetInstance(), NULL)) != NULL);
 
@@ -222,8 +198,8 @@ void applicationTick(void)
         // otUdpSend() executing successfully means OpenThread has taken ownership
         // of the message buffer.
         message = NULL;
-    }
 
+}
 exit:
     if (message != NULL)
     {
@@ -247,6 +223,7 @@ void mtdReceiveCallback(void *aContext, otMessage *aMessage, const otMessageInfo
     VerifyOrExit(strncmp((char *)buf, FTD_MESSAGE, sizeof(FTD_MESSAGE)) == 0);
 
     otCliOutputFormat("Message Received: %s\r\n", buf);
+    tmp = true;
 
 exit:
     return;

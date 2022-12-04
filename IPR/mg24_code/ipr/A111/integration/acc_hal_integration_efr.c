@@ -23,7 +23,6 @@
 #include "acc_hal_definitions.h"
 #include "acc_hal_integration.h"
 #include "acc_integration_log.h"
-
 #include "sl_spidrv_instances.h"
 
 /**
@@ -59,7 +58,7 @@ static void acc_hal_integration_sensor_transfer(acc_sensor_id_t sensor_id,
 
 	GPIO_PinOutClear(A111_CS_PORT, A111_CS_PIN);
 
-	__asm__("nop"); // CS set-up time
+	__asm__("nop"); // no-op, CS set-up time
 
 	/* Polling method appears to consume less current over time than interrupt */
 	for(size_t i=0; i<buffer_size; i++)
@@ -75,7 +74,7 @@ static void acc_hal_integration_sensor_power_on(acc_sensor_id_t sensor_id) {
 	GPIO_PinOutSet(A111_EN_PORT, A111_EN_PIN);
 	GPIO_PinOutSet(A111_CS_PORT, A111_CS_PIN);
 
-	// Wait 2 ms to make sure that the sensor crystal have time to stabilize
+	// Wait 3 ms to make sure that the sensor crystal have time to stabilize
 	acc_integration_sleep_ms(3);
 }
 
@@ -84,10 +83,6 @@ static void acc_hal_integration_sensor_power_off(acc_sensor_id_t sensor_id) {
 
 	GPIO_PinOutClear(A111_EN_PORT, A111_EN_PIN);
 	GPIO_PinOutClear(A111_CS_PORT, A111_CS_PIN);
-
-	// Wait after power off to leave the sensor in a known state
-	// in case the application intends to enable the sensor directly
-	//acc_integration_sleep_ms(2);
 }
 
 static bool acc_hal_integration_wait_for_sensor_interrupt(acc_sensor_id_t sensor_id, uint32_t timeout_ms) {
@@ -102,7 +97,7 @@ static bool acc_hal_integration_wait_for_sensor_interrupt(acc_sensor_id_t sensor
         // Check again so that IRQ did not occur
         if (GPIO_PinInGet(A111_INT_PORT, A111_INT_PIN) != 1)
         {
-            __asm__("wfi");
+            __asm__("wfi"); // wait for interrupt
         }
 
         // Enable interrupts again to allow pending interrupt to be handled
