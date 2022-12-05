@@ -26,6 +26,7 @@
 #include <openthread/message.h>
 #include <openthread/thread.h>
 #include <openthread/udp.h>
+#include <openthread/coap.h>
 #include <openthread/platform/logging.h>
 #include <common/code_utils.hpp>
 #include <common/logging.hpp>
@@ -54,7 +55,7 @@ extern void otSysEventSignalPending(void);
 static otUdpSocket         sMtdSocket;
 static bool                sButtonPressed                 = false;
 static bool                sRxOnIdleButtonPressed         = false;
-static bool                sAllowSleep                    = false;
+static bool                sAllowSleep                    = true;
 
 void sleepyInit(void)
 {
@@ -165,7 +166,11 @@ void initUdp(void)
     }
 }
 
+void initCoap(void)
+{
 
+    otCoapStart(otGetInstance(), 5683);
+}
 
 #ifdef SL_CATALOG_KERNEL_PRESENT
 #define applicationTick sl_ot_rtos_application_tick

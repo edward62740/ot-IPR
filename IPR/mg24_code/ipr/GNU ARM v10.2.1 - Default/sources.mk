@@ -29,9 +29,9 @@ SUBDIRS := \
 A111/integration \
 . \
 autogen \
+gecko_sdk_4.1.3/platform/Device/SiliconLabs/EFR32MG24/Source \
 gecko_sdk_4.1.3/platform/common/src \
 gecko_sdk_4.1.3/platform/common/toolchain/src \
-gecko_sdk_4.1.3/platform/emdrv/Device/SiliconLabs/EFR32MG24/Source \
 gecko_sdk_4.1.3/platform/emdrv/dmadrv/src \
 gecko_sdk_4.1.3/platform/emdrv/gpiointerrupt/src \
 gecko_sdk_4.1.3/platform/emdrv/nvm3/src \

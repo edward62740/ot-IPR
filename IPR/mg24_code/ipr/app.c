@@ -99,6 +99,7 @@ void app_init(void)
     sleepyInit();
     setNetworkConfiguration();
     initUdp();
+    initCoap();
     assert(otIp6SetEnabled(sInstance, true) == OT_ERROR_NONE);
     assert(otThreadSetEnabled(sInstance, true) == OT_ERROR_NONE);
 }
