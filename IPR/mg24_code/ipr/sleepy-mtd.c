@@ -166,11 +166,6 @@ void initUdp(void)
     }
 }
 
-void initCoap(void)
-{
-
-    otCoapStart(otGetInstance(), 5683);
-}
 
 #ifdef SL_CATALOG_KERNEL_PRESENT
 #define applicationTick sl_ot_rtos_application_tick

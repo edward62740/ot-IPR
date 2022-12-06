@@ -49,12 +49,13 @@ static bool run_test(acc_rss_assembly_test_configuration_t configuration);
 #define DEFAULT_UPDATE_RATE         (1)
 #define DEFAULT_POWER_SAVE_MODE     ACC_POWER_SAVE_MODE_OFF
 #define DEFAULT_DETECTION_THRESHOLD (2.0f)
-#define DEFAULT_NBR_REMOVED_PC      (1)
+#define DEFAULT_NBR_REMOVED_PC      (0)
 
 
 static void update_configuration(acc_detector_presence_configuration_t presence_configuration);
 acc_detector_presence_handle_t handle = NULL;
 bool stm = false;
+char buf[32];
 static void print_result(acc_detector_presence_result_t result);
 void BURTC_IRQHandler(void)
 {
@@ -166,6 +167,7 @@ int main(void) {
             }
             print_result(result);
             stm = false;
+            if(done) radar_coapSender(buf);
        }
        // GPIO_PinOutToggle(gpioPortC, 7);
 #if defined(SL_CATALOG_POWER_MANAGER_PRESENT)
@@ -244,13 +246,15 @@ void print_result(acc_detector_presence_result_t result)
     if (result.presence_detected)
     {
         otCliOutputFormat("Motion\n");
-       GPIO_PinOutSet(gpioPortC, 9);
+       GPIO_PinOutSet(gpioPortC, 7);
+
     }
     else
     {
         otCliOutputFormat("No motion\n");
-        GPIO_PinOutClear(gpioPortC, 9);
+        GPIO_PinOutClear(gpioPortC, 7);
     }
 
     otCliOutputFormat("Presence score: %d, Distance: %d\n", (int)(result.presence_score * 1000.0f), (int)(result.presence_distance * 1000.0f));
+    sprintf(buf, "P: %d, D: %d", (int)(result.presence_score * 1000.0f), (int)(result.presence_distance * 1000.0f));
 }

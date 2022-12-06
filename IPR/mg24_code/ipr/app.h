@@ -18,7 +18,7 @@
 #ifndef APP_H
 #define APP_H
 
-
+#include "stdbool.h"
 
 #define A111_MOSI_PORT   gpioPortB
 #define A111_MOSI_PIN    2
@@ -32,6 +32,11 @@
 #define A111_EN_PIN      4
 #define A111_INT_PORT    gpioPortA
 #define A111_INT_PIN     5
+
+extern bool done;
+void radar_coapSender(char *buf);
+
+
 
 /**************************************************************************//**
  * Application Init.
