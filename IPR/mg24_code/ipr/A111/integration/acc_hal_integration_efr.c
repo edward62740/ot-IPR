@@ -75,7 +75,7 @@ static void acc_hal_integration_sensor_power_on(acc_sensor_id_t sensor_id) {
 	GPIO_PinOutSet(A111_CS_PORT, A111_CS_PIN);
 
 	// Wait 3 ms to make sure that the sensor crystal have time to stabilize
-	acc_integration_sleep_ms(3);
+	acc_integration_sleep_ms(5);
 }
 
 static void acc_hal_integration_sensor_power_off(acc_sensor_id_t sensor_id) {
@@ -83,6 +83,7 @@ static void acc_hal_integration_sensor_power_off(acc_sensor_id_t sensor_id) {
 
 	GPIO_PinOutClear(A111_EN_PORT, A111_EN_PIN);
 	GPIO_PinOutClear(A111_CS_PORT, A111_CS_PIN);
+	acc_integration_sleep_ms(5);
 }
 
 static bool acc_hal_integration_wait_for_sensor_interrupt(acc_sensor_id_t sensor_id, uint32_t timeout_ms) {

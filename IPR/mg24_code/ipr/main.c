@@ -54,14 +54,66 @@ static bool run_test(acc_rss_assembly_test_configuration_t configuration);
 
 static void update_configuration(acc_detector_presence_configuration_t presence_configuration);
 acc_detector_presence_handle_t handle = NULL;
-bool stm = false;
+acc_detector_presence_result_t result;
 char buf[32];
+struct
+{
+    uint8_t th;
+    uint32_t delay_ms;
+    uint8_t ctr;
+    uint32_t prev;
+    bool active;
+    bool meas;
+} radar_trig;
+bool coap_notify_flag = true;
+uint8_t coap_notify_hyst = 1;
+
 static void print_result(acc_detector_presence_result_t result);
 void BURTC_IRQHandler(void)
 {
     BURTC_IntClear(BURTC_IF_COMP); // compare match
-  //  GPIO_PinOutToggle(gpioPortC, 8);
-    stm = true;
+    if (result.presence_detected && radar_trig.ctr == 5) radar_trig.ctr = 5;
+    else if (result.presence_detected && radar_trig.ctr < 5)
+    {
+        radar_trig.ctr++;
+        coap_notify_hyst &= radar_trig.ctr;
+        if (radar_trig.ctr == radar_trig.th)
+        {
+            coap_notify_flag = true;
+            radar_trig.active = true;
+        }
+        BURTC_CounterReset();
+        uint32_t delay = radar_trig.delay_ms / radar_trig.ctr;
+        BURTC_CompareSet(0, delay > 500 ? delay : 500);
+        otCliOutputFormat("Interval %d\n", delay);
+    }
+    else
+    {
+        if (radar_trig.ctr > 1)
+        {
+            if(radar_trig.ctr == 2) coap_notify_flag = true;
+            radar_trig.ctr--;
+            BURTC_CounterReset();
+            uint32_t delay = radar_trig.delay_ms / radar_trig.ctr;
+            BURTC_CompareSet(0, delay > 500 ? delay : 500);
+            otCliOutputFormat("Interval %d\n", delay);
+        }
+
+        if (radar_trig.ctr == 1)
+        {
+            coap_notify_hyst = 1;
+            radar_trig.active = false;
+        }
+    }
+
+
+    BURTC_IntEnable(BURTC_IEN_COMP);      // compare match
+    BURTC_IntClear (BURTC_IntGet ());
+    NVIC_EnableIRQ(BURTC_IRQn);
+    BURTC_Enable(true);
+
+    radar_trig.meas = true;
+
 }
 
 
@@ -77,7 +129,7 @@ void initBURTC(void)
   BURTC_Init(&burtcInit);
 
   BURTC_CounterReset();
-  BURTC_CompareSet(0, 1500);
+  BURTC_CompareSet(0, radar_trig.delay_ms/radar_trig.ctr);
 
   BURTC_IntEnable(BURTC_IEN_COMP);      // compare match
   NVIC_EnableIRQ(BURTC_IRQn);
@@ -90,63 +142,26 @@ int main(void) {
     // Initialize Silicon Labs device, system, service(s) and protocol stack(s).
     // Note that if the kernel is present, processing task(s) will be created by
     // this call.
-     sl_system_init();
+    sl_system_init();
     initGPIO();
+
+     radar_trig.th = 5;
+    radar_trig.delay_ms = 2500;
+    radar_trig.ctr = 1;
+    radar_trig.prev = sl_sleeptimer_get_tick_count();
+    radar_trig.active = false;
+    radar_trig.meas = false;
     // Clear and enable transmit complete interrupt
 
     // Initialize the application. For example, create periodic timer(s) or
     // task(s) if the kernel is present.`
 
-
     //GPIO_PinOutSet(gpioPortC, 8);
     GPIO_PinOutSet(A111_EN_PORT, A111_EN_PIN);
 
-    otCliOutputFormat("Acconeer software version %s\n", acc_version_get());
-
-        const acc_hal_t *hal = acc_hal_integration_get_implementation();
-
-        if (!acc_rss_activate(hal))
-        {
-            otCliOutputFormat("Failed to activate RSS\n");
-            return EXIT_FAILURE;
-        }
-
-        acc_detector_presence_configuration_t presence_configuration = acc_detector_presence_configuration_create();
-        if (presence_configuration == NULL)
-        {
-            otCliOutputFormat("Failed to create configuration\n");
-            acc_rss_deactivate();
-            return EXIT_FAILURE;
-        }
-
-        update_configuration(presence_configuration);
-
-        handle = acc_detector_presence_create(presence_configuration);
-        if (handle == NULL)
-        {
-            otCliOutputFormat("Failed to create detector\n");
-            acc_detector_presence_configuration_destroy(&presence_configuration);
-            acc_rss_deactivate();
-            return EXIT_FAILURE;
-        }
-
-        acc_detector_presence_configuration_destroy(&presence_configuration);
-
-        if (!acc_detector_presence_activate(handle))
-        {
-            otCliOutputFormat("Failed to activate detector\n");
-            acc_detector_presence_destroy(&handle);
-            acc_rss_deactivate();
-            return EXIT_FAILURE;
-        }
-
-
-        initBURTC();
-        app_init();
-#if defined(SL_CATALOG_KERNEL_PRESENT)
-  // Start the kernel. Task(s) created in app_init() will start running.
-  sl_system_kernel_start();
-#else // SL_CATALOG_KERNEL_PRESENT
+    initBURTC();
+    app_init();
+    initRadar();
     while (1) {
         // Do not remove this call: Silicon Labs components process action routine
         // must be called from the super loop.
@@ -154,11 +169,10 @@ int main(void) {
 
         // Application process.
         app_process_action();
-       if(stm)
-       {
+        if (radar_trig.meas)
+        {
             bool success = true;
 
-            acc_detector_presence_result_t result;
             success = acc_detector_presence_get_next(handle, &result);
             if (!success)
             {
@@ -166,43 +180,72 @@ int main(void) {
 
             }
             print_result(result);
-            stm = false;
-            if(done) radar_coapSender(buf);
-       }
-       // GPIO_PinOutToggle(gpioPortC, 7);
-#if defined(SL_CATALOG_POWER_MANAGER_PRESENT)
+
+            radar_trig.meas = false;
+        }
+        if (done && coap_notify_flag)
+        {
+            coap_notify_flag = false;
+            radar_coapSender(buf);
+        }
+
+        if(radar_trig.active)
+        {
+            GPIO_PinOutSet(gpioPortC, 8);
+            GPIO_PinOutSet(gpioPortC, 9);
+        }
+        else
+        {
+            GPIO_PinOutClear(gpioPortC, 8);
+            GPIO_PinOutClear(gpioPortC, 9);
+        }
+        // GPIO_PinOutToggle(gpioPortC, 7);
         // Let the CPU go to sleep if the system allows it.
         sl_power_manager_sleep();
-#endif
+
     }
-    // Clean-up when exiting the application.
-   // app_exit();
-#endif // SL_CATALOG_KERNEL_PRESENT
+
 }
 
 
-static bool run_test(acc_rss_assembly_test_configuration_t configuration)
+void initRadar(void)
 {
-    acc_rss_assembly_test_result_t test_results[ACC_RSS_ASSEMBLY_TEST_MAX_NUMBER_OF_TESTS];
-    uint16_t                       nr_of_test_results = ACC_RSS_ASSEMBLY_TEST_MAX_NUMBER_OF_TESTS;
+    otCliOutputFormat("Acconeer software version %s\n", acc_version_get());
 
-    bool success = acc_rss_assembly_test(configuration, test_results, &nr_of_test_results);
+    const acc_hal_t *hal = acc_hal_integration_get_implementation();
 
-    if (success)
+    if (!acc_rss_activate(hal))
     {
-        for (uint16_t i = 0; i < nr_of_test_results; i++)
-        {
-            const bool passed = test_results[i].test_passed;
-            otCliOutputFormat("Name: %s, result: %s\n", test_results[i].test_name, passed ? "Pass" : "Fail");
-        }
-    }
-    else
-    {
-        otCliOutputFormat("Bring up test: Failed to complete\n");
-        return success;
+        otCliOutputFormat("Failed to activate RSS\n");
     }
 
-    return success;
+    acc_detector_presence_configuration_t presence_configuration =
+            acc_detector_presence_configuration_create();
+    if (presence_configuration == NULL)
+    {
+        otCliOutputFormat("Failed to create configuration\n");
+        acc_rss_deactivate();
+    }
+
+    update_configuration(presence_configuration);
+
+    handle = acc_detector_presence_create(presence_configuration);
+    if (handle == NULL)
+    {
+        otCliOutputFormat("Failed to create detector\n");
+        acc_detector_presence_configuration_destroy(&presence_configuration);
+        acc_rss_deactivate();
+    }
+
+    acc_detector_presence_configuration_destroy(&presence_configuration);
+
+    if (!acc_detector_presence_activate(handle))
+    {
+        otCliOutputFormat("Failed to activate detector\n");
+        acc_detector_presence_destroy(&handle);
+        acc_rss_deactivate();
+    }
+
 }
 
 void initGPIO(void) {
@@ -219,12 +262,6 @@ void initGPIO(void) {
                         false,
                         true);
     GPIO_PinModeSet(A111_EN_PORT, A111_EN_PIN, gpioModePushPull, 1);
-   /* GPIO_ExtIntConfig(A111_EN_PORT,
-                      A111_EN_PIN,
-                      A111_EN_PIN,
-                        true,
-                        false,
-                        true);*/
     GPIO_PinModeSet(gpioPortC, 8, gpioModePushPull, 0);
     GPIO_PinModeSet(gpioPortC, 9, gpioModePushPull, 0);
     GPIO_PinModeSet(gpioPortC, 7, gpioModePushPull, 0);
@@ -238,6 +275,8 @@ void update_configuration(acc_detector_presence_configuration_t presence_configu
     acc_detector_presence_configuration_length_set(presence_configuration, DEFAULT_LENGTH_M);
     acc_detector_presence_configuration_power_save_mode_set(presence_configuration, DEFAULT_POWER_SAVE_MODE);
     acc_detector_presence_configuration_nbr_removed_pc_set(presence_configuration, DEFAULT_NBR_REMOVED_PC);
+    acc_detector_presence_configuration_service_profile_set(presence_configuration, ACC_SERVICE_PROFILE_5);
+
 }
 
 
@@ -245,13 +284,13 @@ void print_result(acc_detector_presence_result_t result)
 {
     if (result.presence_detected)
     {
-        otCliOutputFormat("Motion\n");
+        otCliOutputFormat("Motion %d \n", radar_trig.ctr);
        GPIO_PinOutSet(gpioPortC, 7);
 
     }
     else
     {
-        otCliOutputFormat("No motion\n");
+        otCliOutputFormat("No motion  %d \n", radar_trig.ctr);
         GPIO_PinOutClear(gpioPortC, 7);
     }
 
