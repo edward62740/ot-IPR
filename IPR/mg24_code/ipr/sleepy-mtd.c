@@ -83,7 +83,7 @@ exit:
  */
 bool efr32AllowSleepCallback(void)
 {
-    return sAllowSleep;
+    return true;
 }
 
 /*

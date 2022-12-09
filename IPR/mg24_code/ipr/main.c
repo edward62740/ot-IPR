@@ -64,26 +64,31 @@ struct
     uint32_t prev;
     bool active;
     bool meas;
+    float dx;
 } radar_trig;
-bool coap_notify_flag = true;
-uint8_t coap_notify_hyst = 1;
+bool coap_notify_act_flag = false;
+bool coap_notify_noact_flag = false;
+bool coap_notify_flag = false;
+bool coap_sent = false;
 
 static void print_result(acc_detector_presence_result_t result);
 void BURTC_IRQHandler(void)
 {
     BURTC_IntClear(BURTC_IF_COMP); // compare match
-    if (result.presence_detected && radar_trig.ctr == 5) radar_trig.ctr = 5;
+    if (result.presence_detected && radar_trig.ctr == 5) {radar_trig.ctr = 5; radar_trig.dx = (radar_trig.dx + 0) / 2.0;}
     else if (result.presence_detected && radar_trig.ctr < 5)
     {
         radar_trig.ctr++;
-        coap_notify_hyst &= radar_trig.ctr;
         if (radar_trig.ctr == radar_trig.th)
         {
-            coap_notify_flag = true;
+            if(!coap_notify_noact_flag)coap_notify_flag = true;
+            coap_notify_act_flag = true;
+            coap_notify_noact_flag = false;
             radar_trig.active = true;
         }
         BURTC_CounterReset();
         uint32_t delay = radar_trig.delay_ms / radar_trig.ctr;
+        radar_trig.dx = (radar_trig.dx + delay) / 2.0;
         BURTC_CompareSet(0, delay > 500 ? delay : 500);
         otCliOutputFormat("Interval %d\n", delay);
     }
@@ -91,22 +96,26 @@ void BURTC_IRQHandler(void)
     {
         if (radar_trig.ctr > 1)
         {
-            if(radar_trig.ctr == 2) coap_notify_flag = true;
+            if(radar_trig.ctr == 2 && radar_trig.dx < 0) {
+                if(!coap_notify_act_flag)coap_notify_flag = true;
+                coap_notify_noact_flag = true;
+                coap_notify_act_flag = false;
+            }
             radar_trig.ctr--;
             BURTC_CounterReset();
             uint32_t delay = radar_trig.delay_ms / radar_trig.ctr;
+            radar_trig.dx = (radar_trig.dx - delay) / 2.0;
             BURTC_CompareSet(0, delay > 500 ? delay : 500);
             otCliOutputFormat("Interval %d\n", delay);
         }
 
         if (radar_trig.ctr == 1)
         {
-            coap_notify_hyst = 1;
+            radar_trig.dx = (radar_trig.dx + 0) / 2.0;
             radar_trig.active = false;
         }
     }
-
-
+    otCliOutputFormat("**** DELTA X: %d ****\n ", (int)radar_trig.dx);
     BURTC_IntEnable(BURTC_IEN_COMP);      // compare match
     BURTC_IntClear (BURTC_IntGet ());
     NVIC_EnableIRQ(BURTC_IRQn);
@@ -151,6 +160,7 @@ int main(void) {
     radar_trig.prev = sl_sleeptimer_get_tick_count();
     radar_trig.active = false;
     radar_trig.meas = false;
+    radar_trig.dx = 1;
     // Clear and enable transmit complete interrupt
 
     // Initialize the application. For example, create periodic timer(s) or
