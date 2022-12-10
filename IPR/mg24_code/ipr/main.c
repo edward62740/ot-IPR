@@ -68,24 +68,21 @@ struct
 } radar_trig;
 bool coap_notify_act_flag = false;
 bool coap_notify_noact_flag = false;
-bool coap_notify_flag = false;
 bool coap_sent = false;
 
 static void print_result(acc_detector_presence_result_t result);
 void BURTC_IRQHandler(void)
 {
     BURTC_IntClear(BURTC_IF_COMP); // compare match
-    if (result.presence_detected && radar_trig.ctr == 5) {radar_trig.ctr = 5; radar_trig.dx = (radar_trig.dx + 0) / 2.0;}
-    else if (result.presence_detected && radar_trig.ctr < 5)
+    if (result.presence_detected && radar_trig.ctr == 10) { radar_trig.dx = (radar_trig.dx + 0) / 2.0;}
+    else if (result.presence_detected && radar_trig.ctr < 10)
     {
-        radar_trig.ctr++;
-        if (radar_trig.ctr == radar_trig.th)
+        if (radar_trig.ctr > 8 && radar_trig.dx > 0)
         {
-            if(!coap_notify_noact_flag)coap_notify_flag = true;
             coap_notify_act_flag = true;
-            coap_notify_noact_flag = false;
             radar_trig.active = true;
         }
+        radar_trig.ctr+=2;
         BURTC_CounterReset();
         uint32_t delay = radar_trig.delay_ms / radar_trig.ctr;
         radar_trig.dx = (radar_trig.dx + delay) / 2.0;
@@ -97,9 +94,7 @@ void BURTC_IRQHandler(void)
         if (radar_trig.ctr > 1)
         {
             if(radar_trig.ctr == 2 && radar_trig.dx < 0) {
-                if(!coap_notify_act_flag)coap_notify_flag = true;
-                coap_notify_noact_flag = true;
-                coap_notify_act_flag = false;
+                if(coap_sent) coap_notify_noact_flag = true;
             }
             radar_trig.ctr--;
             BURTC_CounterReset();
@@ -120,9 +115,7 @@ void BURTC_IRQHandler(void)
     BURTC_IntClear (BURTC_IntGet ());
     NVIC_EnableIRQ(BURTC_IRQn);
     BURTC_Enable(true);
-
     radar_trig.meas = true;
-
 }
 
 
@@ -154,7 +147,7 @@ int main(void) {
     sl_system_init();
     initGPIO();
 
-     radar_trig.th = 5;
+    radar_trig.th = 10;
     radar_trig.delay_ms = 2500;
     radar_trig.ctr = 1;
     radar_trig.prev = sl_sleeptimer_get_tick_count();
@@ -193,10 +186,22 @@ int main(void) {
 
             radar_trig.meas = false;
         }
-        if (done && coap_notify_flag)
+        if (done && ((coap_notify_act_flag && !coap_sent) | coap_notify_noact_flag))
         {
-            coap_notify_flag = false;
-            radar_coapSender(buf);
+            if(coap_notify_noact_flag)
+            {
+                coap_sent = false;
+                coap_notify_act_flag = false;
+                coap_notify_noact_flag = false;
+                radar_coapSender("CLEAR");
+            }
+            else
+            {
+                coap_sent = true;
+                coap_notify_act_flag = false;
+                radar_coapSender(buf);
+            }
+
         }
 
         if(radar_trig.active)
