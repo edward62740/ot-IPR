@@ -91,6 +91,7 @@ bool efr32AllowSleepCallback(void)
  */
 void setNetworkConfiguration(void)
 {
+    otPlatRadioSetTransmitPower(otGetInstance(), 19);
     static char          aNetworkName[] = "OpenThread X-1";
     otError              error;
     otOperationalDataset aDataset;
@@ -137,6 +138,7 @@ void setNetworkConfiguration(void)
         otCliOutputFormat("otDatasetSetActive failed with: %d, %s\r\n", error, otThreadErrorToString(error));
         return;
     }
+
 }
 
 void initUdp(void)

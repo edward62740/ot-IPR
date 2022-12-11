@@ -40,6 +40,7 @@ void initUdp(void);
 void applicationTick(void);
 
 char str_buf[64];
+char resource_name[32];
 char val[2] = {1, 27};
 #define PERMISSIONS_URI "permissions"
 otCoapResource mResource_PERMISSIONS;
@@ -90,6 +91,10 @@ void permissions_coapHandler(void *aContext, otMessage *aMessage, const otMessag
                           otCoapMessageGetTokenLength(aMessage));
     otCoapMessageSetPayloadMarker(responseMessage);
 
+
+    uint16_t offset = otMessageGetOffset(aMessage);
+    uint16_t read = otMessageRead(aMessage, offset, resource_name, sizeof(resource_name)-1);
+    otCliOutputFormat("join message: %s", resource_name);
     if (OT_COAP_CODE_GET == messageCode)
     {
         if (!done)
@@ -135,14 +140,14 @@ void radar_coapSender(char *buf)
     uint16_t payloadLength = 0;
 
     // Default parameters
-    char coapUri[32] = "radar";
+    //char coapUri[32] = "radar";
     otCoapType coapType = OT_COAP_TYPE_CONFIRMABLE;
     otIp6Address coapDestinationIp = brAddr;
     message = otCoapNewMessage(otGetInstance(), NULL);
 
     otCoapMessageInit(message, coapType, OT_COAP_CODE_PUT);
     otCoapMessageGenerateToken(message, OT_COAP_DEFAULT_TOKEN_LENGTH);
-    error = otCoapMessageAppendUriPathOptions(message, coapUri);
+    error = otCoapMessageAppendUriPathOptions(message, resource_name);
 
     payloadLength = strlen(buf);
 

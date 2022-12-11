@@ -77,7 +77,7 @@ void BURTC_IRQHandler(void)
     if (result.presence_detected && radar_trig.ctr == 10) { radar_trig.dx = (radar_trig.dx + 0) / 2.0;}
     else if (result.presence_detected && radar_trig.ctr < 10)
     {
-        if (radar_trig.ctr > 8 && radar_trig.dx > 0)
+        if (radar_trig.ctr >= 8 && radar_trig.dx > 0)
         {
             coap_notify_act_flag = true;
             radar_trig.active = true;
@@ -199,7 +199,7 @@ int main(void) {
             {
                 coap_sent = true;
                 coap_notify_act_flag = false;
-                radar_coapSender(buf);
+                radar_coapSender("TRIG");
             }
 
         }
