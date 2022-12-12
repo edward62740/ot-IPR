@@ -39,6 +39,8 @@ component:
 - {id: ot_cli_source}
 - instance: [vcom]
   id: uartdrv_usart
+- instance: [opt]
+  id: i2cspm
 configuration:
 - {name: SL_BOARD_ENABLE_VCOM, value: '1'}
 - {name: SL_POWER_MANAGER_DEBUG, value: '1'}

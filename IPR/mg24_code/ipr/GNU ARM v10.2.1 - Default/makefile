@@ -36,6 +36,7 @@ RM := rm -rf
 -include gecko_sdk_4.1.3/util/third_party/crypto/mbedtls/library/subdir.mk
 -include gecko_sdk_4.1.3/util/silicon_labs/silabs_core/memory_manager/subdir.mk
 -include gecko_sdk_4.1.3/protocol/openthread/platform-abstraction/efr32/subdir.mk
+-include gecko_sdk_4.1.3/platform/service/udelay/src/subdir.mk
 -include gecko_sdk_4.1.3/platform/service/system/src/subdir.mk
 -include gecko_sdk_4.1.3/platform/service/sleeptimer/src/subdir.mk
 -include gecko_sdk_4.1.3/platform/service/power_manager/src/subdir.mk
@@ -53,6 +54,7 @@ RM := rm -rf
 -include gecko_sdk_4.1.3/platform/emdrv/nvm3/src/subdir.mk
 -include gecko_sdk_4.1.3/platform/emdrv/gpiointerrupt/src/subdir.mk
 -include gecko_sdk_4.1.3/platform/emdrv/dmadrv/src/subdir.mk
+-include gecko_sdk_4.1.3/platform/driver/i2cspm/src/subdir.mk
 -include gecko_sdk_4.1.3/platform/common/toolchain/src/subdir.mk
 -include gecko_sdk_4.1.3/platform/common/src/subdir.mk
 -include gecko_sdk_4.1.3/platform/Device/SiliconLabs/EFR32MG24/Source/subdir.mk

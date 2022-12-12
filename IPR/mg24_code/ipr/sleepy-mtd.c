@@ -1,3 +1,4 @@
+
 /***************************************************************************//**
  * @file
  * @brief MTD application logic.
@@ -14,8 +15,8 @@
  * sections of the MSLA applicable to Source Code.
  *
  ******************************************************************************/
-// Define module name for Power Manager debuging feature.
-#define CURRENT_MODULE_NAME    "OPENTHREAD_SAMPLE_APP"
+// Define module name for Power Manager debugging feature.
+#define CURRENT_MODULE_NAME    "IPR"
 
 #include <string.h>
 #include <assert.h>
@@ -31,36 +32,20 @@
 #include <common/code_utils.hpp>
 #include <common/logging.hpp>
 
-#include "app.h"
+#include <app_main.h>
 #include "sl_component_catalog.h"
 #ifdef SL_CATALOG_POWER_MANAGER_PRESENT
 #include "sl_power_manager.h"
 #endif
 
-// Constants
-#define MULTICAST_ADDR "ff03::1"
-#define MULTICAST_PORT 123
-#define RECV_PORT 234
+
 #define SLEEPY_POLL_PERIOD_MS 2000
-#define MTD_MESSAGE "mtd button"
-#define FTD_MESSAGE "ftd button"
 
-bool tmp = true;
-// Forward declarations
 otInstance *otGetInstance(void);
-void mtdReceiveCallback(void *aContext, otMessage *aMessage, const otMessageInfo *aMessageInfo);
-extern void otSysEventSignalPending(void);
-
-// Variables
-static otUdpSocket         sMtdSocket;
-static bool                sButtonPressed                 = false;
-static bool                sRxOnIdleButtonPressed         = false;
-static bool                sAllowSleep                    = true;
 
 void sleepyInit(void)
 {
     otError error;
-    otCliOutputFormat("sleepy-demo-mtd started\r\n");
 
     otLinkModeConfig config;
     SuccessOrExit(error = otLinkSetPollPeriod(otGetInstance(), SLEEPY_POLL_PERIOD_MS));
@@ -91,7 +76,7 @@ bool efr32AllowSleepCallback(void)
  */
 void setNetworkConfiguration(void)
 {
-    otPlatRadioSetTransmitPower(otGetInstance(), 19);
+    otPlatRadioSetTransmitPower(otGetInstance(), 5);
     static char          aNetworkName[] = "OpenThread X-1";
     otError              error;
     otOperationalDataset aDataset;
@@ -141,92 +126,9 @@ void setNetworkConfiguration(void)
 
 }
 
-void initUdp(void)
-{
-    otError    error;
-    otSockAddr bindAddr;
-
-    // Initialize bindAddr
-    memset(&bindAddr, 0, sizeof(bindAddr));
-    bindAddr.mPort = RECV_PORT;
-
-    // Open the socket
-    error = otUdpOpen(otGetInstance(), &sMtdSocket, mtdReceiveCallback, NULL);
-    if (error != OT_ERROR_NONE)
-    {
-        otCliOutputFormat("MTD failed to open udp socket with: %d, %s\r\n", error, otThreadErrorToString(error));
-        return;
-    }
-
-    // Bind to the socket. Close the socket if bind fails.
-    error = otUdpBind(otGetInstance(), &sMtdSocket, &bindAddr, OT_NETIF_THREAD);
-    if (error != OT_ERROR_NONE)
-    {
-        otCliOutputFormat("MTD failed to bind udp socket with: %d, %s\r\n", error, otThreadErrorToString(error));
-        IgnoreReturnValue(otUdpClose(otGetInstance(), &sMtdSocket));
-        return;
-    }
-}
-
-
-#ifdef SL_CATALOG_KERNEL_PRESENT
-#define applicationTick sl_ot_rtos_application_tick
-#endif
 
 void applicationTick(void)
 {
-    otLinkModeConfig config;
-    otMessageInfo    messageInfo;
-    otMessage       *message = NULL;
-    const char      *payload = MTD_MESSAGE;
-
-if(tmp){
-    tmp = !tmp;
-        // Get a message buffer
-        VerifyOrExit((message = otUdpNewMessage(otGetInstance(), NULL)) != NULL);
-
-        // Setup messageInfo
-        memset(&messageInfo, 0, sizeof(messageInfo));
-        SuccessOrExit(otIp6AddressFromString(MULTICAST_ADDR, &messageInfo.mPeerAddr));
-        messageInfo.mPeerPort = MULTICAST_PORT;
-
-        // Append the MTD_MESSAGE payload to the message buffer
-        SuccessOrExit(otMessageAppend(message, payload, (uint16_t)strlen(payload)));
-
-        // Send the button press message
-        SuccessOrExit(otUdpSend(otGetInstance(), &sMtdSocket, message, &messageInfo));
-
-        // Set message pointer to NULL so it doesn't get free'd by this function.
-        // otUdpSend() executing successfully means OpenThread has taken ownership
-        // of the message buffer.
-        message = NULL;
 
 }
-exit:
-    if (message != NULL)
-    {
-        otMessageFree(message);
-    }
-    return;
-}
 
-void mtdReceiveCallback(void *aContext, otMessage *aMessage, const otMessageInfo *aMessageInfo)
-{
-    OT_UNUSED_VARIABLE(aContext);
-    OT_UNUSED_VARIABLE(aMessageInfo);
-    uint8_t buf[64];
-    int     length;
-
-    // Read the received message's payload
-    length      = otMessageRead(aMessage, otMessageGetOffset(aMessage), buf, sizeof(buf) - 1);
-    buf[length] = '\0';
-
-    // Check that the payload matches FTD_MESSAGE
-    VerifyOrExit(strncmp((char *)buf, FTD_MESSAGE, sizeof(FTD_MESSAGE)) == 0);
-
-    otCliOutputFormat("Message Received: %s\r\n", buf);
-    tmp = true;
-
-exit:
-    return;
-}

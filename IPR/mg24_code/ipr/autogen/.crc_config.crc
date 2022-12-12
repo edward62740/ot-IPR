@@ -15,6 +15,7 @@ sl_device_init_emu_config.h=622680131
 sl_device_init_hfxo_config.h=85896035
 sl_device_init_lfxo_config.h=-1618269352
 sl_hfxo_manager_config.h=415033866
+sl_i2cspm_opt_config.h=-77822838
 sl_memory_config.h=-1006010401
 sl_openthread_features_config.h=-146536515
 sl_openthread_generic_config.h=1600057677

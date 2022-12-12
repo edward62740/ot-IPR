@@ -6,6 +6,9 @@
     <property object="EUSART0" propertyId="ABPeripheral.included" value="true"/>
     <property object="EUSART1" propertyId="ABModule.selectedRequirement" value="eusart%T%SL_SPIDRV_EUSART_INST%T%sl_spidrv_eusart_inst_config.h"/>
     <property object="EUSART1" propertyId="ABPeripheral.included" value="true"/>
+    <property object="I2C0" propertyId="ABModule.selectedRequirement" value="i2c%T%SL_I2CSPM_OPT%T%sl_i2cspm_opt_config.h"/>
+    <property object="I2C0" propertyId="ABPeripheral.included" value="true"/>
+    <property object="I2C1" propertyId="ABPeripheral.included" value="true"/>
     <property object="PB04" propertyId="pin.reserve" value="Reserved"/>
     <property object="PC08" propertyId="ABModule.selectedRequirement" value="gpio%T%SL_SIMPLE_BUTTON_BTN1%T%sl_simple_button_btn1_config.h"/>
     <property object="PORTIO" propertyId="portio.eusart0.enable.cs" value="Enabled"/>
