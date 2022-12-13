@@ -282,7 +282,7 @@
 //      <OPENTHREAD_CONFIG_LOG_OUTPUT_PLATFORM_DEFINED => PLATFORM_DEFINED
 // <i>  Default: OPENTHREAD_CONFIG_LOG_OUTPUT_PLATFORM_DEFINED
 #ifndef OPENTHREAD_CONFIG_LOG_OUTPUT
-#define OPENTHREAD_CONFIG_LOG_OUTPUT OPENTHREAD_CONFIG_LOG_OUTPUT_APP
+#define OPENTHREAD_CONFIG_LOG_OUTPUT OPENTHREAD_CONFIG_LOG_OUTPUT_NONE
 #endif
 
 // <q>  DYNAMIC_LOG_LEVEL
@@ -291,7 +291,7 @@
 #endif
 
 // <e>  Enable Logging
-#define OPENTHREAD_FULL_LOGS_ENABLE                 1
+#define OPENTHREAD_FULL_LOGS_ENABLE                 0
 #if     OPENTHREAD_FULL_LOGS_ENABLE
 
 // <h>  Note: Enabling higher log levels, which include logging packet details, can cause delays which may result in join failures.

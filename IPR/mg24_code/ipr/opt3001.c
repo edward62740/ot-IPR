@@ -24,20 +24,16 @@ uint16_t opt3001_read_reg(uint8_t reg)
     I2C_TransferReturn_TypeDef result;
 
     // Initialize I2C transfer
-    i2cTransfer.addr          = address;
-    i2cTransfer.flags         = I2C_FLAG_READ; // must write target address before reading
+    i2cTransfer.addr          = address << 1;
+    i2cTransfer.flags         = I2C_FLAG_WRITE_READ; // must write target address before reading
     i2cTransfer.buf[0].data   = &reg;
     i2cTransfer.buf[0].len    = 1;
     i2cTransfer.buf[1].data   = data;
     i2cTransfer.buf[1].len    = 2;
 
-
-
     result = I2CSPM_Transfer(I2C0, &i2cTransfer);
 
-
-    otCliOutputFormat("i2c trf: %x, %x:: %x \n", data[0], data[1], ((uint16_t) data[1] << 8) | data[0]);
-   return ((uint16_t) data[1] << 8) | data[0];
+   return ((uint16_t) data[0] << 8) | data[1];
 }
 
 void opt3001_write_reg(uint8_t reg, uint8_t dataL, uint8_t dataH)
@@ -51,7 +47,7 @@ void opt3001_write_reg(uint8_t reg, uint8_t dataL, uint8_t dataH)
     txBuffer[1] = dataL;
     txBuffer[2] = dataH;
     // Initialize I2C transfer
-    i2cTransfer.addr = address;
+    i2cTransfer.addr = address << 1;
     i2cTransfer.flags = I2C_FLAG_WRITE;
     i2cTransfer.buf[0].data = txBuffer;
     i2cTransfer.buf[0].len = 3;

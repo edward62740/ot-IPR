@@ -27,23 +27,30 @@
 
 
 char resource_name[32];
+
 char *ack = "ack";
 char *nack = "nack";
+
 #define PERMISSIONS_URI "permissions"
 otCoapResource mResource_PERMISSIONS;
 otIp6Address brAddr;
 const char mPERMISSIONSUriPath[] = PERMISSIONS_URI;
+
 bool remote_res_fix = false;
 
 void appCoapInit()
 {
     GPIO_PinOutSet(IP_LED_PORT, IP_LED_PIN);
+
     otCoapStart(otGetInstance(),OT_DEFAULT_COAP_PORT);
+
     mResource_PERMISSIONS.mUriPath = mPERMISSIONSUriPath;
     mResource_PERMISSIONS.mContext = otGetInstance();
     mResource_PERMISSIONS.mHandler = &appCoapPermissionsHandler;
+
     strncpy((char *)mPERMISSIONSUriPath, PERMISSIONS_URI, sizeof(PERMISSIONS_URI));
     otCoapAddResource(otGetInstance(),&mResource_PERMISSIONS);
+
     GPIO_PinOutClear(IP_LED_PORT, IP_LED_PIN);
 }
 
@@ -69,13 +76,12 @@ void appCoapPermissionsHandler(void *aContext, otMessage *aMessage, const otMess
 
     uint16_t offset = otMessageGetOffset(aMessage);
     otMessageRead(aMessage, offset, resource_name, sizeof(resource_name)-1);
-    otCliOutputFormat("join message: %s", resource_name);
+    otCliOutputFormat("Unique resource ID: %s\n", resource_name);
 
     if (OT_COAP_CODE_GET == messageCode)
     {
 
         error = otMessageAppend(responseMessage, ack, strlen((const char*) ack));
-
         otEXPECT(OT_ERROR_NONE == error);
         error = otCoapSendResponse((otInstance*) aContext, responseMessage,
                                    aMessageInfo);
@@ -84,7 +90,7 @@ void appCoapPermissionsHandler(void *aContext, otMessage *aMessage, const otMess
     else
     {
         error = otMessageAppend(responseMessage, nack, strlen((const char*) nack));
-
+        otCoapMessageSetCode(responseMessage, OT_COAP_CODE_METHOD_NOT_ALLOWED);
         otEXPECT(OT_ERROR_NONE == error);
         error = otCoapSendResponse((otInstance*) aContext, responseMessage,
                                    aMessageInfo);
@@ -99,7 +105,6 @@ void appCoapPermissionsHandler(void *aContext, otMessage *aMessage, const otMess
     remote_res_fix = true;
     GPIO_PinOutClear(IP_LED_PORT, IP_LED_PIN);
 }
-
 
 
 void appCoapRadarSender(char *buf)
@@ -143,8 +148,10 @@ void appCoapRadarSender(char *buf)
     {
         otMessageFree(message);
     }
+
     if(error != OT_ERROR_NONE) GPIO_PinOutSet(ERR_LED_PORT, ERR_LED_PIN);
     else GPIO_PinOutClear(ERR_LED_PORT, ERR_LED_PIN);
+
     otCliOutputFormat("Sent message: %d\n", error);
     GPIO_PinOutClear(IP_LED_PORT, IP_LED_PIN);
 }

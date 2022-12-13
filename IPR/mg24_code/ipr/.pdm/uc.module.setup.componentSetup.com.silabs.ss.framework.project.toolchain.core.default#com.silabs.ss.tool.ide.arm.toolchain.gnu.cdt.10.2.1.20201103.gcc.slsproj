@@ -253,6 +253,7 @@
           <file name="em_eusart.c" uri="studio:/sdk/platform/emlib/src/em_eusart.c"/>
           <file name="em_gpio.c" uri="studio:/sdk/platform/emlib/src/em_gpio.c"/>
           <file name="em_i2c.c" uri="studio:/sdk/platform/emlib/src/em_i2c.c"/>
+          <file name="em_iadc.c" uri="studio:/sdk/platform/emlib/src/em_iadc.c"/>
           <file name="em_ldma.c" uri="studio:/sdk/platform/emlib/src/em_ldma.c"/>
           <file name="em_msc.c" uri="studio:/sdk/platform/emlib/src/em_msc.c"/>
           <file name="em_prs.c" uri="studio:/sdk/platform/emlib/src/em_prs.c"/>
@@ -278,6 +279,7 @@
           <file name="em_eusart_compat.h" uri="studio:/sdk/platform/emlib/inc/em_eusart_compat.h"/>
           <file name="em_gpio.h" uri="studio:/sdk/platform/emlib/inc/em_gpio.h"/>
           <file name="em_i2c.h" uri="studio:/sdk/platform/emlib/inc/em_i2c.h"/>
+          <file name="em_iadc.h" uri="studio:/sdk/platform/emlib/inc/em_iadc.h"/>
           <file name="em_ldma.h" uri="studio:/sdk/platform/emlib/inc/em_ldma.h"/>
           <file name="em_msc.h" uri="studio:/sdk/platform/emlib/inc/em_msc.h"/>
           <file name="em_msc_compat.h" uri="studio:/sdk/platform/emlib/inc/em_msc_compat.h"/>

@@ -24,9 +24,11 @@
 #include "em_eusart.h"
 #include "em_gpio.h"
 #include "em_burtc.h"
+#include "em_prs.h"
+#include "em_iadc.h"
 #include "sl_power_manager.h"
 #include "sl_system_process_action.h"
-
+#include "sl_i2cspm.h"
 #include "acc_hal_definitions.h"
 #include "acc_hal_integration.h"
 #include "acc_rss.h"
@@ -46,6 +48,8 @@
 #define DEFAULT_NBR_REMOVED_PC      (0)
 #define DEFAULT_SERVICE_PROFILE     (5)
 
+char tx_buffer[255];
+volatile uint32_t vdd_meas;
 
 static void update_configuration(acc_detector_presence_configuration_t presence_configuration);
 acc_detector_presence_handle_t handle = NULL;
@@ -65,6 +69,13 @@ struct
 bool coap_notify_act_flag = false;
 bool coap_notify_noact_flag = false;
 bool coap_sent = false;
+
+void IADC_IRQHandler(void){
+  static volatile IADC_Result_t sample;
+  sample = IADC_pullSingleFifoResult(IADC0);
+  vdd_meas = (sample.data * 1200)/1000;
+  IADC_clearInt(IADC0, IADC_IF_SINGLEDONE);
+}
 
 void BURTC_IRQHandler(void)
 {
@@ -105,7 +116,6 @@ void BURTC_IRQHandler(void)
             radar_trig.active = false;
         }
     }
-    otCliOutputFormat("**** DELTA X: %d ****\n ", (int)radar_trig.dx);
     BURTC_IntEnable(BURTC_IEN_COMP);      // compare match
     BURTC_IntClear (BURTC_IntGet ());
     NVIC_EnableIRQ(BURTC_IRQn);
@@ -191,41 +201,83 @@ void initGPIO(void) {
 }
 
 
+void initVddMonitor(void)
+{
+  IADC_Init_t init = IADC_INIT_DEFAULT;
+  IADC_AllConfigs_t initAllConfigs = IADC_ALLCONFIGS_DEFAULT;
+  IADC_InitSingle_t initSingle = IADC_INITSINGLE_DEFAULT;
+  IADC_SingleInput_t singleInput = IADC_SINGLEINPUT_DEFAULT;
+
+  CMU_ClockEnable (cmuClock_PRS, true);
+  PRS_SourceAsyncSignalSet (0,
+  PRS_ASYNC_CH_CTRL_SOURCESEL_MODEM,
+                            PRS_MODEMH_PRESENT);
+  PRS_ConnectConsumer (0, prsTypeAsync, prsConsumerIADC0_SINGLETRIGGER);
+  CMU_ClockEnable (cmuClock_IADC0, true);
+  initAllConfigs.configs[0].reference = iadcCfgReferenceInt1V2;
+  initAllConfigs.configs[0].vRef = 1200;
+  initAllConfigs.configs[0].osrHighSpeed = iadcCfgOsrHighSpeed2x;
+
+  initAllConfigs.configs[0].adcClkPrescale = IADC_calcAdcClkPrescale (
+      IADC0, 1000000, 0, iadcCfgModeNormal, init.srcClkPrescale);
+  initSingle.triggerSelect = iadcTriggerSelPrs0PosEdge;
+  initSingle.dataValidLevel = iadcFifoCfgDvl4;
+  initSingle.start = true;
+  singleInput.posInput = iadcPosInputAvdd;
+  singleInput.negInput = iadcNegInputGnd;
+  IADC_init (IADC0, &init, &initAllConfigs);
+  IADC_initSingle (IADC0, &initSingle, &singleInput);
+  IADC_clearInt (IADC0, _IADC_IF_MASK);
+  IADC_enableInt (IADC0, IADC_IEN_SINGLEDONE);
+  NVIC_ClearPendingIRQ (IADC_IRQn);
+  NVIC_SetPriority(GPIO_ODD_IRQn, 7);
+  NVIC_EnableIRQ (IADC_IRQn);
+}
+
+/* Application logic to take measurements and send coap packets */
 void radarAppAlgo(void)
 {
     if (radar_trig.meas)
     {
-        //float tmp;
-        //tmp = opt3001_conv(opt3001_read());
-        //otCliOutputFormat("Output sensor: %d\n", (int)tmp);
-        bool success = true;
+
         GPIO_PinOutSet(ACT_LED_PORT, ACT_LED_PIN);
-        success = acc_detector_presence_get_next(handle, &result);
+        acc_detector_presence_get_next(handle, &result);
         GPIO_PinOutClear(ACT_LED_PORT, ACT_LED_PIN);
-        if (!success)
-        {
-            otCliOutputFormat("acc_detector_presence_get_next() failed\n");
-        }
+
         print_result(result, radar_trig.ctr);
         radar_trig.meas = false;
     }
+
+    /* Trigger condition logic in BURTC handler */
     if (remote_res_fix && ((coap_notify_act_flag && !coap_sent) | coap_notify_noact_flag))
     {
+        float opt_buf = opt3001_conv(opt3001_read());
+        memset(tx_buffer, 0, 254);
+        snprintf(tx_buffer, 254, "%d,%lu,%lu,%lu,%lu",
+                 (uint8_t) !coap_notify_noact_flag,
+                 (uint32_t) (result.presence_score * 1000.0f),
+                 (uint32_t) (result.presence_distance * 1000.0f),
+                 (uint32_t) opt_buf,
+                 vdd_meas);
         if (coap_notify_noact_flag)
         {
             coap_sent = false;
             coap_notify_act_flag = false;
             coap_notify_noact_flag = false;
-            appCoapRadarSender("CLEAR");
+            appCoapRadarSender(tx_buffer);
         }
         else
         {
             coap_sent = true;
             coap_notify_act_flag = false;
-            appCoapRadarSender("TRIG");
+            appCoapRadarSender(tx_buffer);
         }
     }
 }
+
+
+
+
 
 int main(void) {
     // Initialize Silicon Labs device, system, service(s) and protocol stack(s).
@@ -233,14 +285,12 @@ int main(void) {
     // this call.
     sl_system_init();
     initGPIO();
+
     opt3001_init();
-    otCliOutputFormat("READ REG: %x", opt3001_read_reg(0));
-    otCliOutputFormat("READ REG: %x", opt3001_read_reg(1));
-    otCliOutputFormat("READ REG: %x", opt3001_read_reg(2));
 
     /* Default radar measurement conditions */
     radar_trig.th = 10;
-    radar_trig.delay_ms = 2500;
+    radar_trig.delay_ms = 3000;
     radar_trig.ctr = 1;
     radar_trig.prev = sl_sleeptimer_get_tick_count();
     radar_trig.active = false;
@@ -250,13 +300,18 @@ int main(void) {
     initBURTC();
     app_init();
     initRadar();
+
+    GPIO_PinOutSet(IP_LED_PORT, IP_LED_PIN);
+    initVddMonitor();
     while (1) {
         // Do not remove this call: Silicon Labs components process action routine
         // must be called from the super loop.
         sl_system_process_action();
 
         app_process_action();
+
         radarAppAlgo();
+
 
         // Let the CPU go to sleep if the system allows it.
         sl_power_manager_sleep();
