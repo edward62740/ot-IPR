@@ -45,7 +45,7 @@ The IPR utilizes CoAP for low-power communication with a remote server. In this 
 |         ACK           | ------------------> |                     | Ack                                            |
 
 It is noteworthy that CoAP has many security issues like MQTT, but they were not taken into account in this application since CoAP communication never leaves mesh-local.<br>
-![Communication](https://github.com/edward62740/ot-IPR/blob/master/Documentation/comms.png "Communication")
+![Communication](https://github.com/edward62740/ot-IPR/blob/master/Documentation/comm.png "Communication")
 
 ## Performance and Future Improvements
 Currently, the sensor has an average power consumption of approx. 230uA @ 1.8v, which can be reduced at the cost of performance (shown below)<br>
