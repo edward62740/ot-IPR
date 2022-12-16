@@ -2,8 +2,8 @@
 project_name: ipr
 label: ipr
 description: |
-  This is a sample application to demonstrate Sleepy End Device behaviour on an MTD using the EFR32's low power EM2 mode.
-category: OpenThread Examples
+  Radar sensor for indoor presence detection
+category: Custom
 filter:
 - name: Device Type
   value: [SoC]

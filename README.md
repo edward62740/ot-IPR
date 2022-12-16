@@ -2,10 +2,11 @@
 
 ## Overview
 This is a presence sensor that uses 60GHz [radar](https://www.acconeer.com/products/) pulses to detect human presence indoors.<br>
-The sensor communicates over the OpenThread protocol, utilizing existing IPv6 infrastructure (without the need for a IoT protocol "translator"). In order to facilitate low-power operation, CoAP is used for the sensor to notify a server of state changes.
+The sensor communicates over the OpenThread protocol, utilizing existing IPv6 infrastructure (without the need for a IoT protocol "translator"). In order to facilitate low-power operation, CoAP is used for the sensor to notify a server of state changes.<br>
+Refer here for the [CoAP Server](https://github.com/edward62740/ot-coap-server).
 
 ## Hardware Design
-The IPR is designed as a custom 6-layer ENIG PCB. The components run off a single 1.8v supply, due to limitations of the radar IO voltage, in order to avoid a dual-supply, level-translator situation. The main controller on the board is of the [EFR32MG24 Series](https://www.silabs.com/wireless/zigbee/efr32mg24-series-2-socs). Due to chip shortages, more than one part in this series was used with little effect on the actual functionality.
+The IPR is designed on a 6-layer, 50ohm PCB. The components run off a single 1.8v supply, due to limitations of the radar IO voltage, in order to avoid a dual-supply, level-translator situation. The main controller on the board is of the [EFR32MG24 Series](https://www.silabs.com/wireless/zigbee/efr32mg24-series-2-socs). Due to chip shortages, more than one part in this series was used with little effect on the actual functionality.
 ![IPR](https://github.com/edward62740/ot-IPR/blob/master/Documentation/ipr.png "IPR")
 
 ## Detection Principles
