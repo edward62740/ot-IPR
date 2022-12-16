@@ -55,6 +55,8 @@ static void update_configuration(acc_detector_presence_configuration_t presence_
 acc_detector_presence_handle_t handle = NULL;
 acc_detector_presence_result_t result;
 
+#define ALIVE_SLEEPTIMER_INTERVAL_MS 30000
+sl_sleeptimer_timer_handle_t alive_timer;
 
 struct
 {
@@ -69,6 +71,12 @@ struct
 bool coap_notify_act_flag = false;
 bool coap_notify_noact_flag = false;
 bool coap_sent = false;
+bool coap_alive = false;
+
+static void alive_cb(sl_sleeptimer_timer_handle_t *handle, void *data)
+{
+    coap_alive = true;
+}
 
 void IADC_IRQHandler(void){
   static volatile IADC_Result_t sample;
@@ -253,12 +261,12 @@ void radarAppAlgo(void)
     {
         float opt_buf = opt3001_conv(opt3001_read());
         memset(tx_buffer, 0, 254);
-        snprintf(tx_buffer, 254, "%d,%lu,%lu,%lu,%lu",
+        snprintf(tx_buffer, 254, "%d,%lu,%lu,%lu,%lu,%d",
                  (uint8_t) !coap_notify_noact_flag,
                  (uint32_t) (result.presence_score * 1000.0f),
                  (uint32_t) (result.presence_distance * 1000.0f),
-                 (uint32_t) opt_buf,
-                 vdd_meas);
+                 (uint32_t) opt_buf, vdd_meas,
+                 otPlatRadioGetRssi(otGetInstance()));
         if (coap_notify_noact_flag)
         {
             coap_sent = false;
@@ -273,10 +281,19 @@ void radarAppAlgo(void)
             appCoapRadarSender(tx_buffer);
         }
     }
+    else if(remote_res_fix && coap_alive) // Specifically ELSE to give alive packet lower priority and to prevent successive tx
+    {
+        coap_alive = false;
+        float opt_buf = opt3001_conv(opt3001_read());
+        memset(tx_buffer, 0, 254);
+        snprintf(tx_buffer, 254, "%d,%lu,%lu,%lu,%lu,%d", (uint8_t) 0,
+                 (uint32_t) (result.presence_score * 1000.0f),
+                 (uint32_t) (result.presence_distance * 1000.0f),
+                 (uint32_t) opt_buf, vdd_meas,
+                 otPlatRadioGetRssi(otGetInstance()));
+        appCoapRadarSender(tx_buffer);
+    }
 }
-
-
-
 
 
 int main(void) {
@@ -303,6 +320,7 @@ int main(void) {
 
     GPIO_PinOutSet(IP_LED_PORT, IP_LED_PIN);
     initVddMonitor();
+    sl_sleeptimer_start_periodic_timer_ms(&alive_timer, ALIVE_SLEEPTIMER_INTERVAL_MS, alive_cb, NULL, 0, 0);
     while (1) {
         // Do not remove this call: Silicon Labs components process action routine
         // must be called from the super loop.
