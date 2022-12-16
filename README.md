@@ -6,7 +6,7 @@ The sensor communicates over the OpenThread protocol, utilizing existing IPv6 in
 Refer here for the [CoAP Server](https://github.com/edward62740/ot-coap-server).
 
 ## Hardware Design
-The IPR is designed on a 6-layer, 50ohm PCB. The components run off a single 1.8v supply, due to limitations of the radar IO voltage, in order to avoid a dual-supply, level-translator situation. The main controller on the board is of the [EFR32MG24 Series](https://www.silabs.com/wireless/zigbee/efr32mg24-series-2-socs). Due to chip shortages, more than one part in this series was used with little effect on the actual functionality.
+The IPR is designed on a 6-layer, 50ohm PCB. The components run off a single 1.8v supply, due to limitations of the radar IO voltage, in order to avoid a dual-supply, level-translator situation. The main controller on the board is of the [EFR32MG24 Series](https://www.silabs.com/wireless/zigbee/efr32mg24-series-2-socs). Due to chip shortages, more than one part in this series was used with little effect on the actual functionality.<br>
 ![IPR](https://github.com/edward62740/ot-IPR/blob/master/Documentation/ipr.png "IPR")
 
 ## Detection Principles
@@ -45,5 +45,13 @@ The IPR utilizes CoAP for low-power communication with a remote server. In this 
 |         ACK           | ------------------> |                     | Ack                                            |
 
 It is noteworthy that CoAP has many security issues like MQTT, but they were not taken into account in this application since CoAP communication never leaves mesh-local.
+
+## Performance and Future Improvements
+Currently, the sensor has an average power consumption of approx. 230uA @ 1.8v, which can be reduced at the cost of performance (shown below)<br>
+![Power Consumption](https://github.com/edward62740/ot-IPR/blob/master/Documentation/pwr.png "Power Consumption")<br>
+This gives the sensor a battery life of approx. 10 months on 2 x LR03 cells.
+
+Future improvements are to replace the sensor with the pin-compatible [A121](https://developer.acconeer.com/download/a121-datasheet-pdf/), which is an improved version of the radar sensor with significantly lower idle vtx/rx currents, and should offset the avg. current by -60uA. Another obvious improvement is to disable the sensor at night.
+
 
 
