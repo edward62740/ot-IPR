@@ -26,9 +26,7 @@ RM := rm -rf
 -include gecko_sdk_4.1.3/util/third_party/openthread/src/core/border_router/subdir.mk
 -include gecko_sdk_4.1.3/util/third_party/openthread/src/core/backbone_router/subdir.mk
 -include gecko_sdk_4.1.3/util/third_party/openthread/src/core/api/subdir.mk
--include gecko_sdk_4.1.3/util/third_party/openthread/src/cli/subdir.mk
 -include gecko_sdk_4.1.3/util/third_party/openthread/examples/platforms/utils/subdir.mk
--include gecko_sdk_4.1.3/util/third_party/openthread/examples/apps/cli/subdir.mk
 -include gecko_sdk_4.1.3/util/third_party/crypto/sl_component/sl_psa_driver/src/subdir.mk
 -include gecko_sdk_4.1.3/util/third_party/crypto/sl_component/sl_protocol_crypto/src/subdir.mk
 -include gecko_sdk_4.1.3/util/third_party/crypto/sl_component/sl_mbedtls_support/src/subdir.mk

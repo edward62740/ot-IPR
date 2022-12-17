@@ -48,6 +48,8 @@
 #define DEFAULT_NBR_REMOVED_PC      (0)
 #define DEFAULT_SERVICE_PROFILE     (5)
 
+
+
 char tx_buffer[255];
 volatile uint32_t vdd_meas;
 
@@ -55,7 +57,7 @@ static void update_configuration(acc_detector_presence_configuration_t presence_
 acc_detector_presence_handle_t handle = NULL;
 acc_detector_presence_result_t result;
 
-#define ALIVE_SLEEPTIMER_INTERVAL_MS 30000
+#define ALIVE_SLEEPTIMER_INTERVAL_MS 60000
 sl_sleeptimer_timer_handle_t alive_timer;
 
 struct
@@ -68,8 +70,10 @@ struct
     bool meas;
     float dx;
 } radar_trig;
+
 bool coap_notify_act_flag = false;
 bool coap_notify_noact_flag = false;
+
 bool coap_sent = false;
 bool coap_alive = false;
 
@@ -286,7 +290,7 @@ void radarAppAlgo(void)
         coap_alive = false;
         float opt_buf = opt3001_conv(opt3001_read());
         memset(tx_buffer, 0, 254);
-        snprintf(tx_buffer, 254, "%d,%lu,%lu,%lu,%lu,%d", (uint8_t) 0,
+        snprintf(tx_buffer, 254, "%d,%lu,%lu,%lu,%lu,%d", -1,
                  (uint32_t) (result.presence_score * 1000.0f),
                  (uint32_t) (result.presence_distance * 1000.0f),
                  (uint32_t) opt_buf, vdd_meas,
@@ -329,16 +333,11 @@ int main(void) {
         app_process_action();
 
         radarAppAlgo();
-
-
         // Let the CPU go to sleep if the system allows it.
         sl_power_manager_sleep();
 
     }
-
 }
-
-
 
 
 void update_configuration(acc_detector_presence_configuration_t presence_configuration)

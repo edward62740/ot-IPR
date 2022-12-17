@@ -669,62 +669,89 @@
           </folder>
         </folder>
         <folder name="openthread">
-          <folder name="examples">
-            <folder name="apps">
-              <folder name="cli">
-                <file name="cli_uart.cpp" uri="studio:/sdk/util/third_party/openthread/examples/apps/cli/cli_uart.cpp"/>
+          <folder name="include">
+            <folder name="openthread">
+              <folder name="platform">
+                <file name="alarm-micro.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/platform/alarm-micro.h"/>
+                <file name="alarm-milli.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/platform/alarm-milli.h"/>
+                <file name="crypto.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/platform/crypto.h"/>
+                <file name="diag.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/platform/diag.h"/>
+                <file name="dso_transport.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/platform/dso_transport.h"/>
+                <file name="entropy.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/platform/entropy.h"/>
+                <file name="flash.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/platform/flash.h"/>
+                <file name="infra_if.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/platform/infra_if.h"/>
+                <file name="memory.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/platform/memory.h"/>
+                <file name="misc.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/platform/misc.h"/>
+                <file name="logging.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/platform/logging.h"/>
+                <file name="otns.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/platform/otns.h"/>
+                <file name="radio.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/platform/radio.h"/>
+                <file name="time.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/platform/time.h"/>
+                <file name="udp.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/platform/udp.h"/>
+                <file name="spi-slave.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/platform/spi-slave.h"/>
+                <file name="settings.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/platform/settings.h"/>
+                <file name="messagepool.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/platform/messagepool.h"/>
+                <file name="toolchain.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/platform/toolchain.h"/>
+                <file name="trel.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/platform/trel.h"/>
+                <file name="debug_uart.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/platform/debug_uart.h"/>
               </folder>
-            </folder>
-            <folder name="platforms">
-              <folder name="utils">
-                <file name="code_utils.h" uri="studio:/sdk/util/third_party/openthread/examples/platforms/utils/code_utils.h"/>
-                <file name="uart.h" uri="studio:/sdk/util/third_party/openthread/examples/platforms/utils/uart.h"/>
-                <file name="debug_uart.c" uri="studio:/sdk/util/third_party/openthread/examples/platforms/utils/debug_uart.c"/>
-                <file name="link_metrics.cpp" uri="studio:/sdk/util/third_party/openthread/examples/platforms/utils/link_metrics.cpp"/>
-                <file name="logging_rtt.c" uri="studio:/sdk/util/third_party/openthread/examples/platforms/utils/logging_rtt.c"/>
-                <file name="mac_frame.cpp" uri="studio:/sdk/util/third_party/openthread/examples/platforms/utils/mac_frame.cpp"/>
-                <file name="settings_ram.c" uri="studio:/sdk/util/third_party/openthread/examples/platforms/utils/settings_ram.c"/>
-                <file name="soft_source_match_table.c" uri="studio:/sdk/util/third_party/openthread/examples/platforms/utils/soft_source_match_table.c"/>
-                <file name="link_metrics.h" uri="studio:/sdk/util/third_party/openthread/examples/platforms/utils/link_metrics.h"/>
-                <file name="logging_rtt.h" uri="studio:/sdk/util/third_party/openthread/examples/platforms/utils/logging_rtt.h"/>
-                <file name="mac_frame.h" uri="studio:/sdk/util/third_party/openthread/examples/platforms/utils/mac_frame.h"/>
-                <file name="soft_source_match_table.h" uri="studio:/sdk/util/third_party/openthread/examples/platforms/utils/soft_source_match_table.h"/>
-                <file name="settings.h" uri="studio:/sdk/util/third_party/openthread/examples/platforms/utils/settings.h"/>
-              </folder>
-              <file name="openthread-system.h" uri="studio:/sdk/util/third_party/openthread/examples/platforms/openthread-system.h"/>
+              <file name="backbone_router.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/backbone_router.h"/>
+              <file name="backbone_router_ftd.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/backbone_router_ftd.h"/>
+              <file name="border_agent.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/border_agent.h"/>
+              <file name="border_router.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/border_router.h"/>
+              <file name="channel_manager.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/channel_manager.h"/>
+              <file name="channel_monitor.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/channel_monitor.h"/>
+              <file name="child_supervision.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/child_supervision.h"/>
+              <file name="cli.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/cli.h"/>
+              <file name="coap_secure.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/coap_secure.h"/>
+              <file name="coap.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/coap.h"/>
+              <file name="commissioner.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/commissioner.h"/>
+              <file name="config.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/config.h"/>
+              <file name="coprocessor_rpc.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/coprocessor_rpc.h"/>
+              <file name="crypto.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/crypto.h"/>
+              <file name="dataset.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/dataset.h"/>
+              <file name="dataset_ftd.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/dataset_ftd.h"/>
+              <file name="dataset_updater.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/dataset_updater.h"/>
+              <file name="diag.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/diag.h"/>
+              <file name="dns.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/dns.h"/>
+              <file name="dns_client.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/dns_client.h"/>
+              <file name="dnssd_server.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/dnssd_server.h"/>
+              <file name="error.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/error.h"/>
+              <file name="heap.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/heap.h"/>
+              <file name="history_tracker.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/history_tracker.h"/>
+              <file name="icmp6.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/icmp6.h"/>
+              <file name="instance.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/instance.h"/>
+              <file name="ip6.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/ip6.h"/>
+              <file name="jam_detection.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/jam_detection.h"/>
+              <file name="joiner.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/joiner.h"/>
+              <file name="link.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/link.h"/>
+              <file name="link_metrics.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/link_metrics.h"/>
+              <file name="link_raw.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/link_raw.h"/>
+              <file name="logging.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/logging.h"/>
+              <file name="message.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/message.h"/>
+              <file name="multi_radio.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/multi_radio.h"/>
+              <file name="ncp.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/ncp.h"/>
+              <file name="netdata.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/netdata.h"/>
+              <file name="netdata_publisher.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/netdata_publisher.h"/>
+              <file name="netdiag.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/netdiag.h"/>
+              <file name="network_time.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/network_time.h"/>
+              <file name="ping_sender.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/ping_sender.h"/>
+              <file name="random_crypto.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/random_crypto.h"/>
+              <file name="random_noncrypto.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/random_noncrypto.h"/>
+              <file name="server.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/server.h"/>
+              <file name="sntp.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/sntp.h"/>
+              <file name="srp_client.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/srp_client.h"/>
+              <file name="srp_client_buffers.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/srp_client_buffers.h"/>
+              <file name="srp_server.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/srp_server.h"/>
+              <file name="tasklet.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/tasklet.h"/>
+              <file name="tcp.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/tcp.h"/>
+              <file name="tcp_ext.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/tcp_ext.h"/>
+              <file name="thread.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/thread.h"/>
+              <file name="thread_ftd.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/thread_ftd.h"/>
+              <file name="trel.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/trel.h"/>
+              <file name="udp.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/udp.h"/>
             </folder>
           </folder>
           <folder name="src">
-            <folder name="cli">
-              <file name="cli.cpp" uri="studio:/sdk/util/third_party/openthread/src/cli/cli.cpp"/>
-              <file name="cli_coap.cpp" uri="studio:/sdk/util/third_party/openthread/src/cli/cli_coap.cpp"/>
-              <file name="cli_coap_secure.cpp" uri="studio:/sdk/util/third_party/openthread/src/cli/cli_coap_secure.cpp"/>
-              <file name="cli_commissioner.cpp" uri="studio:/sdk/util/third_party/openthread/src/cli/cli_commissioner.cpp"/>
-              <file name="cli_dataset.cpp" uri="studio:/sdk/util/third_party/openthread/src/cli/cli_dataset.cpp"/>
-              <file name="cli_history.cpp" uri="studio:/sdk/util/third_party/openthread/src/cli/cli_history.cpp"/>
-              <file name="cli_joiner.cpp" uri="studio:/sdk/util/third_party/openthread/src/cli/cli_joiner.cpp"/>
-              <file name="cli_network_data.cpp" uri="studio:/sdk/util/third_party/openthread/src/cli/cli_network_data.cpp"/>
-              <file name="cli_output.cpp" uri="studio:/sdk/util/third_party/openthread/src/cli/cli_output.cpp"/>
-              <file name="cli_srp_client.cpp" uri="studio:/sdk/util/third_party/openthread/src/cli/cli_srp_client.cpp"/>
-              <file name="cli_srp_server.cpp" uri="studio:/sdk/util/third_party/openthread/src/cli/cli_srp_server.cpp"/>
-              <file name="cli_tcp.cpp" uri="studio:/sdk/util/third_party/openthread/src/cli/cli_tcp.cpp"/>
-              <file name="cli_udp.cpp" uri="studio:/sdk/util/third_party/openthread/src/cli/cli_udp.cpp"/>
-              <file name="cli.hpp" uri="studio:/sdk/util/third_party/openthread/src/cli/cli.hpp"/>
-              <file name="cli_coap.hpp" uri="studio:/sdk/util/third_party/openthread/src/cli/cli_coap.hpp"/>
-              <file name="cli_coap_secure.hpp" uri="studio:/sdk/util/third_party/openthread/src/cli/cli_coap_secure.hpp"/>
-              <file name="cli_commissioner.hpp" uri="studio:/sdk/util/third_party/openthread/src/cli/cli_commissioner.hpp"/>
-              <file name="cli_config.h" uri="studio:/sdk/util/third_party/openthread/src/cli/cli_config.h"/>
-              <file name="cli_dataset.hpp" uri="studio:/sdk/util/third_party/openthread/src/cli/cli_dataset.hpp"/>
-              <file name="cli_history.hpp" uri="studio:/sdk/util/third_party/openthread/src/cli/cli_history.hpp"/>
-              <file name="cli_joiner.hpp" uri="studio:/sdk/util/third_party/openthread/src/cli/cli_joiner.hpp"/>
-              <file name="cli_network_data.hpp" uri="studio:/sdk/util/third_party/openthread/src/cli/cli_network_data.hpp"/>
-              <file name="cli_output.hpp" uri="studio:/sdk/util/third_party/openthread/src/cli/cli_output.hpp"/>
-              <file name="cli_srp_client.hpp" uri="studio:/sdk/util/third_party/openthread/src/cli/cli_srp_client.hpp"/>
-              <file name="cli_srp_server.hpp" uri="studio:/sdk/util/third_party/openthread/src/cli/cli_srp_server.hpp"/>
-              <file name="cli_tcp.hpp" uri="studio:/sdk/util/third_party/openthread/src/cli/cli_tcp.hpp"/>
-              <file name="cli_udp.hpp" uri="studio:/sdk/util/third_party/openthread/src/cli/cli_udp.hpp"/>
-              <file name="x509_cert_key.hpp" uri="studio:/sdk/util/third_party/openthread/src/cli/x509_cert_key.hpp"/>
-            </folder>
             <folder name="core">
               <folder name="backbone_router">
                 <file name="backbone_tmf.hpp" uri="studio:/sdk/util/third_party/openthread/src/core/backbone_router/backbone_tmf.hpp"/>
@@ -1193,88 +1220,6 @@
               <file name="openthread-core-config.h" uri="studio:/sdk/util/third_party/openthread/src/core/openthread-core-config.h"/>
             </folder>
           </folder>
-          <folder name="include">
-            <folder name="openthread">
-              <folder name="platform">
-                <file name="alarm-micro.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/platform/alarm-micro.h"/>
-                <file name="alarm-milli.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/platform/alarm-milli.h"/>
-                <file name="crypto.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/platform/crypto.h"/>
-                <file name="diag.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/platform/diag.h"/>
-                <file name="dso_transport.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/platform/dso_transport.h"/>
-                <file name="entropy.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/platform/entropy.h"/>
-                <file name="flash.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/platform/flash.h"/>
-                <file name="infra_if.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/platform/infra_if.h"/>
-                <file name="memory.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/platform/memory.h"/>
-                <file name="misc.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/platform/misc.h"/>
-                <file name="logging.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/platform/logging.h"/>
-                <file name="otns.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/platform/otns.h"/>
-                <file name="radio.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/platform/radio.h"/>
-                <file name="time.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/platform/time.h"/>
-                <file name="udp.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/platform/udp.h"/>
-                <file name="spi-slave.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/platform/spi-slave.h"/>
-                <file name="settings.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/platform/settings.h"/>
-                <file name="messagepool.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/platform/messagepool.h"/>
-                <file name="toolchain.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/platform/toolchain.h"/>
-                <file name="trel.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/platform/trel.h"/>
-                <file name="debug_uart.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/platform/debug_uart.h"/>
-              </folder>
-              <file name="backbone_router.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/backbone_router.h"/>
-              <file name="backbone_router_ftd.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/backbone_router_ftd.h"/>
-              <file name="border_agent.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/border_agent.h"/>
-              <file name="border_router.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/border_router.h"/>
-              <file name="channel_manager.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/channel_manager.h"/>
-              <file name="channel_monitor.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/channel_monitor.h"/>
-              <file name="child_supervision.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/child_supervision.h"/>
-              <file name="cli.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/cli.h"/>
-              <file name="coap_secure.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/coap_secure.h"/>
-              <file name="coap.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/coap.h"/>
-              <file name="commissioner.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/commissioner.h"/>
-              <file name="config.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/config.h"/>
-              <file name="coprocessor_rpc.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/coprocessor_rpc.h"/>
-              <file name="crypto.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/crypto.h"/>
-              <file name="dataset.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/dataset.h"/>
-              <file name="dataset_ftd.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/dataset_ftd.h"/>
-              <file name="dataset_updater.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/dataset_updater.h"/>
-              <file name="diag.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/diag.h"/>
-              <file name="dns.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/dns.h"/>
-              <file name="dns_client.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/dns_client.h"/>
-              <file name="dnssd_server.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/dnssd_server.h"/>
-              <file name="error.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/error.h"/>
-              <file name="heap.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/heap.h"/>
-              <file name="history_tracker.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/history_tracker.h"/>
-              <file name="icmp6.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/icmp6.h"/>
-              <file name="instance.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/instance.h"/>
-              <file name="ip6.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/ip6.h"/>
-              <file name="jam_detection.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/jam_detection.h"/>
-              <file name="joiner.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/joiner.h"/>
-              <file name="link.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/link.h"/>
-              <file name="link_metrics.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/link_metrics.h"/>
-              <file name="link_raw.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/link_raw.h"/>
-              <file name="logging.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/logging.h"/>
-              <file name="message.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/message.h"/>
-              <file name="multi_radio.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/multi_radio.h"/>
-              <file name="ncp.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/ncp.h"/>
-              <file name="netdata.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/netdata.h"/>
-              <file name="netdata_publisher.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/netdata_publisher.h"/>
-              <file name="netdiag.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/netdiag.h"/>
-              <file name="network_time.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/network_time.h"/>
-              <file name="ping_sender.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/ping_sender.h"/>
-              <file name="random_crypto.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/random_crypto.h"/>
-              <file name="random_noncrypto.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/random_noncrypto.h"/>
-              <file name="server.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/server.h"/>
-              <file name="sntp.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/sntp.h"/>
-              <file name="srp_client.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/srp_client.h"/>
-              <file name="srp_client_buffers.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/srp_client_buffers.h"/>
-              <file name="srp_server.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/srp_server.h"/>
-              <file name="tasklet.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/tasklet.h"/>
-              <file name="tcp.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/tcp.h"/>
-              <file name="tcp_ext.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/tcp_ext.h"/>
-              <file name="thread.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/thread.h"/>
-              <file name="thread_ftd.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/thread_ftd.h"/>
-              <file name="trel.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/trel.h"/>
-              <file name="udp.h" uri="studio:/sdk/util/third_party/openthread/include/openthread/udp.h"/>
-            </folder>
-          </folder>
           <folder name="third_party">
             <folder name="tcplp">
               <folder name="bsdtcp">
@@ -1314,6 +1259,26 @@
                 <file name="lbuf.c" uri="studio:/sdk/util/third_party/openthread/third_party/tcplp/lib/lbuf.c"/>
               </folder>
               <file name="tcplp.h" uri="studio:/sdk/util/third_party/openthread/third_party/tcplp/tcplp.h"/>
+            </folder>
+          </folder>
+          <folder name="examples">
+            <folder name="platforms">
+              <folder name="utils">
+                <file name="code_utils.h" uri="studio:/sdk/util/third_party/openthread/examples/platforms/utils/code_utils.h"/>
+                <file name="uart.h" uri="studio:/sdk/util/third_party/openthread/examples/platforms/utils/uart.h"/>
+                <file name="debug_uart.c" uri="studio:/sdk/util/third_party/openthread/examples/platforms/utils/debug_uart.c"/>
+                <file name="link_metrics.cpp" uri="studio:/sdk/util/third_party/openthread/examples/platforms/utils/link_metrics.cpp"/>
+                <file name="logging_rtt.c" uri="studio:/sdk/util/third_party/openthread/examples/platforms/utils/logging_rtt.c"/>
+                <file name="mac_frame.cpp" uri="studio:/sdk/util/third_party/openthread/examples/platforms/utils/mac_frame.cpp"/>
+                <file name="settings_ram.c" uri="studio:/sdk/util/third_party/openthread/examples/platforms/utils/settings_ram.c"/>
+                <file name="soft_source_match_table.c" uri="studio:/sdk/util/third_party/openthread/examples/platforms/utils/soft_source_match_table.c"/>
+                <file name="link_metrics.h" uri="studio:/sdk/util/third_party/openthread/examples/platforms/utils/link_metrics.h"/>
+                <file name="logging_rtt.h" uri="studio:/sdk/util/third_party/openthread/examples/platforms/utils/logging_rtt.h"/>
+                <file name="mac_frame.h" uri="studio:/sdk/util/third_party/openthread/examples/platforms/utils/mac_frame.h"/>
+                <file name="soft_source_match_table.h" uri="studio:/sdk/util/third_party/openthread/examples/platforms/utils/soft_source_match_table.h"/>
+                <file name="settings.h" uri="studio:/sdk/util/third_party/openthread/examples/platforms/utils/settings.h"/>
+              </folder>
+              <file name="openthread-system.h" uri="studio:/sdk/util/third_party/openthread/examples/platforms/openthread-system.h"/>
             </folder>
           </folder>
         </folder>
@@ -1396,8 +1361,6 @@
   <includePath uri="studio:/sdk/util/third_party/crypto/sl_component/sl_mbedtls_support/inc"/>
   <includePath uri="studio:/sdk/platform/service/mpu/inc"/>
   <includePath uri="studio:/sdk/platform/emdrv/nvm3/inc"/>
-  <includePath uri="studio:/sdk/util/third_party/openthread/src"/>
-  <includePath uri="studio:/sdk/util/third_party/openthread/src/cli"/>
   <includePath uri="studio:/sdk/util/third_party/openthread/include"/>
   <includePath uri="studio:/sdk/util/third_party/openthread/include/openthread"/>
   <includePath uri="studio:/sdk/util/third_party/openthread/src/core"/>

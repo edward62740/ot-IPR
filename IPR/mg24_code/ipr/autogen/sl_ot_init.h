@@ -25,6 +25,5 @@
 void sl_ot_init(void);
 extern void sl_ot_create_instance(void); 
 extern void sl_ot_sleep_init(void); 
-extern void sl_ot_cli_init(void); 
 
 #endif // SL_OT_INIT_H
