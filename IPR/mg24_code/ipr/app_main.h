@@ -66,7 +66,6 @@ void appCoapRadarSender(char *buf);
 void app_init(void);
 
 void app_exit(void);
-
 void app_process_action(void);
 otInstance *otGetInstance(void);
 

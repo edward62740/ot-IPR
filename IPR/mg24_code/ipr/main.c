@@ -26,6 +26,7 @@
 #include "em_burtc.h"
 #include "em_prs.h"
 #include "em_iadc.h"
+#include "em_system.h"
 #include "sl_power_manager.h"
 #include "sl_system_process_action.h"
 #include "sl_i2cspm.h"
@@ -37,18 +38,17 @@
 #include "acc_detector_presence.h"
 #include "app_util.h"
 #include "app_coap.h"
+#include "app_main.h"
 #include "opt3001.h"
 
 /* Radar configuration params */
 #define DEFAULT_START_M             (0.2f)
-#define DEFAULT_LENGTH_M            (1.6f)
+#define DEFAULT_LENGTH_M            (2.0f)
 #define DEFAULT_UPDATE_RATE         (1)
 #define DEFAULT_POWER_SAVE_MODE     ACC_POWER_SAVE_MODE_OFF
 #define DEFAULT_DETECTION_THRESHOLD (2.0f)
 #define DEFAULT_NBR_REMOVED_PC      (0)
 #define DEFAULT_SERVICE_PROFILE     (5)
-
-
 
 char tx_buffer[255];
 volatile uint32_t vdd_meas;
@@ -60,7 +60,7 @@ acc_detector_presence_result_t result;
 #define ALIVE_SLEEPTIMER_INTERVAL_MS 60000
 sl_sleeptimer_timer_handle_t alive_timer;
 
-struct
+volatile struct
 {
     uint8_t th;
     uint32_t delay_ms;
@@ -71,11 +71,12 @@ struct
     float dx;
 } radar_trig;
 
-bool coap_notify_act_flag = false;
-bool coap_notify_noact_flag = false;
+volatile bool coap_notify_act_flag = false;
+volatile bool coap_notify_noact_flag = false;
 
-bool coap_sent = false;
-bool coap_alive = false;
+volatile bool coap_sent = false;
+volatile bool coap_alive = false;
+volatile uint32_t coap_ctr = 0;
 
 static void alive_cb(sl_sleeptimer_timer_handle_t *handle, void *data)
 {
@@ -105,7 +106,6 @@ void BURTC_IRQHandler(void)
         uint32_t delay = radar_trig.delay_ms / radar_trig.ctr;
         radar_trig.dx = (radar_trig.dx + delay) / 2.0;
         BURTC_CompareSet(0, delay > 500 ? delay : 500);
-        otCliOutputFormat("Interval %d\n", delay);
     }
     else
     {
@@ -119,7 +119,6 @@ void BURTC_IRQHandler(void)
             uint32_t delay = radar_trig.delay_ms / radar_trig.ctr;
             radar_trig.dx = (radar_trig.dx - delay) / 2.0;
             BURTC_CompareSet(0, delay > 500 ? delay : 500);
-            otCliOutputFormat("Interval %d\n", delay);
         }
 
         if (radar_trig.ctr == 1)
@@ -157,20 +156,17 @@ void initBURTC(void)
 
 void initRadar(void)
 {
-    otCliOutputFormat("Acconeer software version %s\n", acc_version_get());
 
     const acc_hal_t *hal = acc_hal_integration_get_implementation();
 
     if (!acc_rss_activate(hal))
     {
-        otCliOutputFormat("Failed to activate RSS\n");
     }
 
     acc_detector_presence_configuration_t presence_configuration =
             acc_detector_presence_configuration_create();
     if (presence_configuration == NULL)
     {
-        otCliOutputFormat("Failed to create configuration\n");
         acc_rss_deactivate();
     }
 
@@ -179,7 +175,6 @@ void initRadar(void)
     handle = acc_detector_presence_create(presence_configuration);
     if (handle == NULL)
     {
-        otCliOutputFormat("Failed to create detector\n");
         acc_detector_presence_configuration_destroy(&presence_configuration);
         acc_rss_deactivate();
     }
@@ -188,7 +183,6 @@ void initRadar(void)
 
     if (!acc_detector_presence_activate(handle))
     {
-        otCliOutputFormat("Failed to activate detector\n");
         acc_detector_presence_destroy(&handle);
         acc_rss_deactivate();
     }
@@ -256,8 +250,9 @@ void radarAppAlgo(void)
         acc_detector_presence_get_next(handle, &result);
         GPIO_PinOutClear(ACT_LED_PORT, ACT_LED_PIN);
 
-        print_result(result, radar_trig.ctr);
+        //print_result(result, radar_trig.ctr);
         radar_trig.meas = false;
+        if(!remote_res_fix) GPIO_PinOutToggle(IP_LED_PORT, IP_LED_PIN);
     }
 
     /* Trigger condition logic in BURTC handler */
@@ -265,12 +260,13 @@ void radarAppAlgo(void)
     {
         float opt_buf = opt3001_conv(opt3001_read());
         memset(tx_buffer, 0, 254);
-        snprintf(tx_buffer, 254, "%d,%lu,%lu,%lu,%lu,%d",
+        snprintf(tx_buffer, 254, "%d,%lu,%lu,%lu,%lu,%d,%lu",
                  (uint8_t) !coap_notify_noact_flag,
                  (uint32_t) (result.presence_score * 1000.0f),
                  (uint32_t) (result.presence_distance * 1000.0f),
                  (uint32_t) opt_buf, vdd_meas,
-                 otPlatRadioGetRssi(otGetInstance()));
+                 -50,
+                 ++coap_ctr);
         if (coap_notify_noact_flag)
         {
             coap_sent = false;
@@ -290,11 +286,12 @@ void radarAppAlgo(void)
         coap_alive = false;
         float opt_buf = opt3001_conv(opt3001_read());
         memset(tx_buffer, 0, 254);
-        snprintf(tx_buffer, 254, "%d,%lu,%lu,%lu,%lu,%d", -1,
+        snprintf(tx_buffer, 254, "%d,%lu,%lu,%lu,%lu,%d,%lu", -1,
                  (uint32_t) (result.presence_score * 1000.0f),
                  (uint32_t) (result.presence_distance * 1000.0f),
                  (uint32_t) opt_buf, vdd_meas,
-                 otPlatRadioGetRssi(otGetInstance()));
+                 -50,
+                 ++coap_ctr);
         appCoapRadarSender(tx_buffer);
     }
 }
@@ -335,7 +332,6 @@ int main(void) {
         radarAppAlgo();
         // Let the CPU go to sleep if the system allows it.
         sl_power_manager_sleep();
-
     }
 }
 

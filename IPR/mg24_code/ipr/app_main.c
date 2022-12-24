@@ -36,14 +36,6 @@
 #include "app_main.h"
 
 
-/**
- * This function initializes the CLI app.
- *
- * @param[in]  aInstance  The OpenThread instance structure.
- *
- */
-extern void otAppCliInit(otInstance *aInstance);
-
 static otInstance* sInstance = NULL;
 
 otInstance *otGetInstance(void)
@@ -52,48 +44,18 @@ otInstance *otGetInstance(void)
 }
 
 
-/*
- * Provide, if required an "otPlatLog()" function
- */
-#if OPENTHREAD_CONFIG_LOG_OUTPUT == OPENTHREAD_CONFIG_LOG_OUTPUT_APP
-void otPlatLog(otLogLevel aLogLevel, otLogRegion aLogRegion, const char *aFormat, ...)
-{
-    OT_UNUSED_VARIABLE(aLogLevel);
-    OT_UNUSED_VARIABLE(aLogRegion);
-    OT_UNUSED_VARIABLE(aFormat);
-
-    va_list ap;
-    va_start(ap, aFormat);
-    otCliPlatLogv(aLogLevel, aLogRegion, aFormat, ap);
-    va_end(ap);
-}
-#endif
-
 void sl_ot_create_instance(void)
 {
-#if OPENTHREAD_CONFIG_MULTIPLE_INSTANCE_ENABLE
-    size_t   otInstanceBufferLength = 0;
-    uint8_t *otInstanceBuffer       = NULL;
 
-    // Call to query the buffer size
-    (void)otInstanceInit(NULL, &otInstanceBufferLength);
-
-    // Call to allocate the buffer
-    otInstanceBuffer = (uint8_t *)malloc(otInstanceBufferLength);
-    assert(otInstanceBuffer);
-
-    // Initialize OpenThread with the buffer
-    sInstance = otInstanceInit(otInstanceBuffer, &otInstanceBufferLength);
-#else
     sInstance = otInstanceInitSingle();
-#endif
     assert(sInstance);
 }
 
 void sl_ot_cli_init(void)
 {
-    otAppCliInit(sInstance);
+    //otAppCliInit(sInstance);
 }
+
 
 /**************************************************************************//**
  * Application Init.

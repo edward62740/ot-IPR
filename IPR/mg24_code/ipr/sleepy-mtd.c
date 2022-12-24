@@ -42,6 +42,7 @@
 #define SLEEPY_POLL_PERIOD_MS 2000
 
 otInstance *otGetInstance(void);
+static otUdpSocket sMtdSocket;
 
 void sleepyInit(void)
 {
@@ -58,7 +59,7 @@ void sleepyInit(void)
 exit:
     if (error != OT_ERROR_NONE)
     {
-        otCliOutputFormat("Initialization failed with: %d, %s\r\n", error, otThreadErrorToString(error));
+        //otCliOutputFormat("Initialization failed with: %d, %s\r\n", error, otThreadErrorToString(error));
     }
     return;
 }
@@ -115,20 +116,20 @@ void setNetworkConfiguration(void)
     assert(length <= OT_NETWORK_NAME_MAX_SIZE);
     memcpy(aDataset.mNetworkName.m8, aNetworkName, length);
     aDataset.mComponents.mIsNetworkNamePresent = true;
-
     /* Set the Active Operational Dataset to this dataset */
     error = otDatasetSetActive(otGetInstance(), &aDataset);
+    //otThreadGetParentLastRssi(aInstance, aLastRssi)
+   // otThreadGetDeviceRole(aInstance)
     if (error != OT_ERROR_NONE)
     {
-        otCliOutputFormat("otDatasetSetActive failed with: %d, %s\r\n", error, otThreadErrorToString(error));
+        //otCliOutputFormat("otDatasetSetActive failed with: %d, %s\r\n", error, otThreadErrorToString(error));
         return;
     }
-
 }
 
 
 void applicationTick(void)
 {
-
 }
+
 

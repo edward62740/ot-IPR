@@ -58,7 +58,7 @@ void appCoapInit()
 void appCoapPermissionsHandler(void *aContext, otMessage *aMessage, const otMessageInfo *aMessageInfo)
 {
     GPIO_PinOutSet(IP_LED_PORT, IP_LED_PIN);
-    printIPv6Addr(&aMessageInfo->mPeerAddr);
+    //printIPv6Addr(&aMessageInfo->mPeerAddr);
     brAddr = aMessageInfo->mPeerAddr;
     otError error = OT_ERROR_NONE;
     otMessage *responseMessage;
@@ -76,7 +76,7 @@ void appCoapPermissionsHandler(void *aContext, otMessage *aMessage, const otMess
 
     uint16_t offset = otMessageGetOffset(aMessage);
     otMessageRead(aMessage, offset, resource_name, sizeof(resource_name)-1);
-    otCliOutputFormat("Unique resource ID: %s\n", resource_name);
+    //otCliOutputFormat("Unique resource ID: %s\n", resource_name);
 
     if (OT_COAP_CODE_GET == messageCode)
     {
@@ -123,18 +123,21 @@ void appCoapRadarSender(char *buf)
     otCoapMessageInit(message, coapType, OT_COAP_CODE_PUT);
     otCoapMessageGenerateToken(message, OT_COAP_DEFAULT_TOKEN_LENGTH);
     error = otCoapMessageAppendUriPathOptions(message, resource_name);
+    otEXPECT(OT_ERROR_NONE == error);
 
     payloadLength = strlen(buf);
 
     if (payloadLength > 0)
     {
         error = otCoapMessageSetPayloadMarker(message);
+        otEXPECT(OT_ERROR_NONE == error);
     }
 
     // Embed content into message if given
     if (payloadLength > 0)
     {
         error = otMessageAppend(message, buf, payloadLength);
+        otEXPECT(OT_ERROR_NONE == error);
     }
 
     memset(&messageInfo, 0, sizeof(messageInfo));
@@ -143,7 +146,9 @@ void appCoapRadarSender(char *buf)
     error = otCoapSendRequestWithParameters(otGetInstance(), message,
                                             &messageInfo, NULL, NULL,
                                             NULL);
+    otEXPECT(OT_ERROR_NONE == error);
 
+    exit:
     if ((error != OT_ERROR_NONE) && (message != NULL))
     {
         otMessageFree(message);
@@ -152,6 +157,7 @@ void appCoapRadarSender(char *buf)
     if(error != OT_ERROR_NONE) GPIO_PinOutSet(ERR_LED_PORT, ERR_LED_PIN);
     else GPIO_PinOutClear(ERR_LED_PORT, ERR_LED_PIN);
 
-    otCliOutputFormat("Sent message: %d\n", error);
+    //otCliOutputFormat("Sent message: %d\n", error);
     GPIO_PinOutClear(IP_LED_PORT, IP_LED_PIN);
+
 }

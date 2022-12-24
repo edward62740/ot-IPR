@@ -103,12 +103,12 @@
 // </e>
 // <e>  Child Supervision
 #ifndef OPENTHREAD_CONFIG_CHILD_SUPERVISION_ENABLE
-#define OPENTHREAD_CONFIG_CHILD_SUPERVISION_ENABLE  0
+#define OPENTHREAD_CONFIG_CHILD_SUPERVISION_ENABLE  1
 #endif
 // </e>
 // <e>  Maximum size of the CLI line (in bytes), including null terminator
 #ifndef OPENTHREAD_CONFIG_CLI_MAX_LINE_LENGTH
-#define OPENTHREAD_CONFIG_CLI_MAX_LINE_LENGTH       640
+#define OPENTHREAD_CONFIG_CLI_MAX_LINE_LENGTH       0
 #endif
 // </e>
 // <e>  CLI UART RX Buffer size in bytes (should be atleast maximum size of the CLI line)

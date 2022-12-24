@@ -47,7 +47,7 @@ void printIPv6Addr(const otIp6Address *addr)
             Swap16(addr->mFields.m16[4]), Swap16(addr->mFields.m16[5]),
             Swap16(addr->mFields.m16[6]), Swap16(addr->mFields.m16[7]));
 
-    otCliOutputFormat("%s", str);
+    //otCliOutputFormat("%s", str);
 }
 
 
@@ -55,13 +55,13 @@ void print_result(acc_detector_presence_result_t result, uint8_t ctr)
 {
     if (result.presence_detected)
     {
-        otCliOutputFormat("Motion %d \n", ctr);
+        //otCliOutputFormat("Motion %d \n", ctr);
     }
     else
     {
-        otCliOutputFormat("No motion  %d \n", ctr);
+        //otCliOutputFormat("No motion  %d \n", ctr);
     }
 
-    otCliOutputFormat("Presence score: %d, Distance: %d\n", (int)(result.presence_score * 1000.0f), (int)(result.presence_distance * 1000.0f));
+    //otCliOutputFormat("Presence score: %d, Distance: %d\n", (int)(result.presence_score * 1000.0f), (int)(result.presence_distance * 1000.0f));
 }
 
