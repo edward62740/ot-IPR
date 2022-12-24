@@ -3,11 +3,23 @@
 ## Overview
 This is a presence sensor that uses 60GHz [radar](https://www.acconeer.com/products/) pulses to detect human presence indoors.<br>
 The sensor communicates over the OpenThread protocol, utilizing existing IPv6 infrastructure (without the need for a IoT protocol "translator"). In order to facilitate low-power operation, CoAP is used for the sensor to notify a server of state changes.<br>
-Refer here for the [CoAP Server](https://github.com/edward62740/ot-coap-server).
+Refer here for the [CoAP Server](https://github.com/edward62740/ot-coap-server).<br>
+
 
 ## Hardware Design
 The IPR is designed on a 6-layer, 50ohm PCB. The components run off a single 1.8v supply, due to limitations of the radar IO voltage, in order to avoid a dual-supply, level-translator situation. The main controller on the board is of the [EFR32MG24 Series](https://www.silabs.com/wireless/zigbee/efr32mg24-series-2-socs). Due to chip shortages, more than one part in this series was used with little effect on the actual functionality.<br>
-![IPR](https://github.com/edward62740/ot-IPR/blob/master/Documentation/ipr.png "IPR")
+<p align="center">
+<img src="https://github.com/edward62740/ot-IPR/blob/master/Documentation/ipr.png" width="800" /><br>
+ <br>
+  <em>IPR v2 PCB</em>
+</p><br>
+<p align="center">
+  <img src="https://github.com/edward62740/ot-IPR/blob/master/Documentation/enclosure.png" width="350" />
+  <img src="https://github.com/edward62740/ot-IPR/blob/master/Documentation/IPR%20v2.png" width="350" />
+  <br>
+  <em>3D printed enclosure and CAD drawings</em>
+</p>
+
 
 ## Detection Principles
 Radar was chosen for this project due to its ability to detect micro movements and perform 'filtering' by estimating distance/speed of target. This makes it suitable for certain applications where traditional sensing methods such as PIRs may be insufficient, such as needing to sense presence in specific areas, or in areas of high traffic.<br><br>
@@ -44,7 +56,7 @@ The IPR utilizes CoAP for low-power communication with a remote server. In this 
 |                       | <------------------ |        PUT          | If change of detection state AND periodically  |
 |         ACK           | ------------------> |                     | Ack                                            |
 
-It is noteworthy that CoAP has many security issues like MQTT, but they were not taken into account in this application since CoAP communication never leaves mesh-local.<br>
+It is noteworthy that CoAP has many security issues like MQTT, but they were not taken into account in this application since CoAP communication never leaves mesh-local.<br><br>
 ![Communication](https://github.com/edward62740/ot-IPR/blob/master/Documentation/comm.png "Communication")
 
 ## Performance and Future Improvements
