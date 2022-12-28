@@ -26,7 +26,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: flawfinder_scan
+      - name: flawfinder_scan IPR/mg24_code/ipr/
         uses: david-a-wheeler/flawfinder@8e4a779ad59dbfaee5da586aa9210853b701959c
         with:
           arguments: '--sarif ./'
