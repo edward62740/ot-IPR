@@ -88,7 +88,7 @@
 // </e>
 // <e>  Border Router
 #ifndef OPENTHREAD_CONFIG_BORDER_ROUTER_ENABLE
-#define OPENTHREAD_CONFIG_BORDER_ROUTER_ENABLE      1
+#define OPENTHREAD_CONFIG_BORDER_ROUTER_ENABLE      0
 #endif
 // </e>
 // <e>  Channel Manager
@@ -103,7 +103,7 @@
 // </e>
 // <e>  Child Supervision
 #ifndef OPENTHREAD_CONFIG_CHILD_SUPERVISION_ENABLE
-#define OPENTHREAD_CONFIG_CHILD_SUPERVISION_ENABLE  1
+#define OPENTHREAD_CONFIG_CHILD_SUPERVISION_ENABLE  0
 #endif
 // </e>
 // <e>  Maximum size of the CLI line (in bytes), including null terminator
@@ -143,7 +143,7 @@
 // </e>
 // <e>  DHCP6 Server
 #ifndef OPENTHREAD_CONFIG_DHCP6_SERVER_ENABLE
-#define OPENTHREAD_CONFIG_DHCP6_SERVER_ENABLE       1
+#define OPENTHREAD_CONFIG_DHCP6_SERVER_ENABLE       0
 #endif
 // </e>
 // <e>  Diagnostic

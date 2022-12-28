@@ -111,7 +111,7 @@ void setNetworkConfiguration(void)
     memcpy(aDataset.mNetworkKey.m8, key, sizeof(aDataset.mNetworkKey));
     aDataset.mComponents.mIsNetworkKeyPresent = true;
 
-    /* Set Network Name to SleepyEFR32 */
+    /* Set Network Name */
     size_t length = strlen(aNetworkName);
     assert(length <= OT_NETWORK_NAME_MAX_SIZE);
     memcpy(aDataset.mNetworkName.m8, aNetworkName, length);

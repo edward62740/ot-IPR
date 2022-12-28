@@ -51,6 +51,7 @@ void appCoapInit()
     strncpy((char *)mPERMISSIONSUriPath, PERMISSIONS_URI, sizeof(PERMISSIONS_URI));
     otCoapAddResource(otGetInstance(),&mResource_PERMISSIONS);
 
+
     GPIO_PinOutClear(IP_LED_PORT, IP_LED_PIN);
 }
 
@@ -107,7 +108,7 @@ void appCoapPermissionsHandler(void *aContext, otMessage *aMessage, const otMess
 }
 
 
-void appCoapRadarSender(char *buf)
+void appCoapRadarSender(char *buf, bool require_ack)
 {
     GPIO_PinOutSet(IP_LED_PORT, IP_LED_PIN);
     otError error = OT_ERROR_NONE;
@@ -116,7 +117,7 @@ void appCoapRadarSender(char *buf)
     uint16_t payloadLength = 0;
 
     // Default parameters
-    otCoapType coapType = OT_COAP_TYPE_CONFIRMABLE;
+    otCoapType coapType = require_ack ? OT_COAP_TYPE_CONFIRMABLE: OT_COAP_TYPE_NON_CONFIRMABLE;
     otIp6Address coapDestinationIp = brAddr;
     message = otCoapNewMessage(otGetInstance(), NULL);
 

@@ -41,7 +41,48 @@ Documentation on RSS can be found [here](https://docs.acconeer.com/en/latest/exp
 
 For the application layer, the main constraints are a compromise between power consumption and sensor performance/responsiveness.
 Hence, the application will adjust the sampling rate of the sensor based on the presence or absence of a target.<br>
-More specifically, the sensor will sample at a rate of approx. 0.33 frames/s (radio gets priority since this is not time-critical), and based on the results of this detection, the frame rate can be increased up to 2Hz. Note that each frame contains 16 consecutive sweeps of the detection range. The application also introduces a hystersis-like behavior to the detection state.
+More specifically, the sensor will sample at a rate of approx. 0.33 frames/s (radio gets priority since this is not time-critical), and based on the results of this detection, the frame rate can be increased up to 2Hz. Note that each frame contains 32 consecutive sweeps of the detection range. The application also introduces a hystersis-like behavior to the detection state. The table below shows the parameters used during testing.
+
+<table style="width: 145px;">
+<tbody>
+<tr style="height: 23px;">
+<td style="width: 105.891px; height: 23px;"><strong>&nbsp;Parameter</strong></td>
+<td style="width: 19.1094px; height: 23px;"><strong>Value&nbsp;</strong></td>
+</tr>
+<tr style="height: 23px;">
+<td style="width: 105.891px; height: 23px;">&nbsp;Start/End</td>
+<td style="width: 19.1094px; height: 23px;">&nbsp;0.2/1.4m</td>
+</tr>
+<tr style="height: 23.5px;">
+<td style="width: 105.891px; height: 23.5px;">&nbsp;Rx Gain</td>
+<td style="width: 19.1094px; height: 23.5px;">0.5&nbsp;</td>
+</tr>
+<tr style="height: 23px;">
+<td style="width: 105.891px; height: 23px;">&nbsp;HWAAS</td>
+<td style="width: 19.1094px; height: 23px;">32&nbsp;</td>
+</tr>
+<tr style="height: 23px;">
+<td style="width: 105.891px; height: 23px;">&nbsp;Framerate</td>
+<td style="width: 19.1094px; height: 23px;">Variable&nbsp;</td>
+</tr>
+<tr style="height: 23px;">
+<td style="width: 105.891px; height: 23px;">&nbsp;Power Mode</td>
+<td style="width: 19.1094px; height: 23px;">&nbsp;Off</td>
+</tr>
+<tr style="height: 23px;">
+<td style="width: 105.891px; height: 23px;">&nbsp;Detection Thresh</td>
+<td style="width: 19.1094px; height: 23px;">2000&nbsp;</td>
+</tr>
+<tr style="height: 23px;">
+<td style="width: 105.891px; height: 23px;">&nbsp;PCA Noise Reduction</td>
+<td style="width: 19.1094px; height: 23px;">Off</td>
+</tr>
+<tr style="height: 23px;">
+<td style="width: 105.891px; height: 23px;">&nbsp;Service Profile</td>
+<td style="width: 19.1094px; height: 23px;">4&nbsp;</td>
+</tr>
+</tbody>
+</table>
 <br><br>
 Only the data from the detection algo is sent over CoAP (i.e state changes) together with some other stuff (ambient brightness, battery levels etc.).
 

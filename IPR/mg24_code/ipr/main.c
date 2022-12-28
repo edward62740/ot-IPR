@@ -35,6 +35,7 @@
 #include "acc_rss.h"
 #include "acc_version.h"
 #include <stdio.h>
+#include <string.h>
 #include "acc_detector_presence.h"
 #include "app_util.h"
 #include "app_coap.h"
@@ -43,12 +44,12 @@
 
 /* Radar configuration params */
 #define DEFAULT_START_M             (0.2f)
-#define DEFAULT_LENGTH_M            (2.0f)
+#define DEFAULT_LENGTH_M            (1.4f)
 #define DEFAULT_UPDATE_RATE         (1)
 #define DEFAULT_POWER_SAVE_MODE     ACC_POWER_SAVE_MODE_OFF
 #define DEFAULT_DETECTION_THRESHOLD (2.0f)
 #define DEFAULT_NBR_REMOVED_PC      (0)
-#define DEFAULT_SERVICE_PROFILE     (5)
+#define DEFAULT_SERVICE_PROFILE     (4)
 
 char tx_buffer[255];
 volatile uint32_t vdd_meas;
@@ -60,27 +61,29 @@ acc_detector_presence_result_t result;
 #define ALIVE_SLEEPTIMER_INTERVAL_MS 60000
 sl_sleeptimer_timer_handle_t alive_timer;
 
+#define RADAR_APP_DEFAULT_TH               10
+#define RADAR_APP_DEFAULT_FRAME_SPACING_MS 3000
+
 volatile struct
 {
-    uint8_t th;
-    uint32_t delay_ms;
-    uint8_t ctr;
-    uint32_t prev;
-    bool active;
-    bool meas;
+    uint8_t threshold;
+    uint32_t frameSpacingMs;
+    uint8_t detectConf;
+    uint32_t prev; //unused
+    bool hystTrigFlag;
+    bool clearToMeasure;
     float dx;
-} radar_trig;
+} radarAppVars;
 
-volatile bool coap_notify_act_flag = false;
-volatile bool coap_notify_noact_flag = false;
-
-volatile bool coap_sent = false;
-volatile bool coap_alive = false;
-volatile uint32_t coap_ctr = 0;
+volatile bool radarCoapSendActive = false;
+volatile bool radarCoapSendInactive = false;
+volatile bool radarCoapRequireInactivation = false;
+volatile bool appCoapSendAlive = false;
+volatile uint32_t appCoapSendTxCtr = 0;
 
 static void alive_cb(sl_sleeptimer_timer_handle_t *handle, void *data)
 {
-    coap_alive = true;
+    appCoapSendAlive = true;
 }
 
 void IADC_IRQHandler(void){
@@ -93,45 +96,45 @@ void IADC_IRQHandler(void){
 void BURTC_IRQHandler(void)
 {
     BURTC_IntClear(BURTC_IF_COMP); // compare match
-    if (result.presence_detected && radar_trig.ctr == 10) { radar_trig.dx = (radar_trig.dx + 0) / 2.0;}
-    else if (result.presence_detected && radar_trig.ctr < 10)
+    if (result.presence_detected && radarAppVars.detectConf == 10) { radarAppVars.dx = (radarAppVars.dx + 0) / 2.0;}
+    else if (result.presence_detected && radarAppVars.detectConf < 10)
     {
-        if (radar_trig.ctr >= 8 && radar_trig.dx > 0)
+        if (radarAppVars.detectConf >= 8 && radarAppVars.dx > 0)
         {
-            coap_notify_act_flag = true;
-            radar_trig.active = true;
+            radarCoapSendActive = true;
+            radarAppVars.hystTrigFlag = true;
         }
-        radar_trig.ctr+=2;
+        radarAppVars.detectConf+=2;
         BURTC_CounterReset();
-        uint32_t delay = radar_trig.delay_ms / radar_trig.ctr;
-        radar_trig.dx = (radar_trig.dx + delay) / 2.0;
+        uint32_t delay = radarAppVars.frameSpacingMs / radarAppVars.detectConf;
+        radarAppVars.dx = (radarAppVars.dx + delay) / 2.0;
         BURTC_CompareSet(0, delay > 500 ? delay : 500);
     }
     else
     {
-        if (radar_trig.ctr > 1)
+        if (radarAppVars.detectConf > 1)
         {
-            if(radar_trig.ctr == 2 && radar_trig.dx < 0) {
-                if(coap_sent) coap_notify_noact_flag = true;
+            if(radarAppVars.detectConf == 2 && radarAppVars.dx < 0) {
+                if(radarCoapRequireInactivation) radarCoapSendInactive = true;
             }
-            radar_trig.ctr--;
+            radarAppVars.detectConf--;
             BURTC_CounterReset();
-            uint32_t delay = radar_trig.delay_ms / radar_trig.ctr;
-            radar_trig.dx = (radar_trig.dx - delay) / 2.0;
+            uint32_t delay = radarAppVars.frameSpacingMs / radarAppVars.detectConf;
+            radarAppVars.dx = (radarAppVars.dx - delay) / 2.0;
             BURTC_CompareSet(0, delay > 500 ? delay : 500);
         }
 
-        if (radar_trig.ctr == 1)
+        if (radarAppVars.detectConf == 1)
         {
-            radar_trig.dx = (radar_trig.dx + 0) / 2.0;
-            radar_trig.active = false;
+            radarAppVars.dx = (radarAppVars.dx + 0) / 2.0;
+            radarAppVars.hystTrigFlag = false;
         }
     }
     BURTC_IntEnable(BURTC_IEN_COMP);      // compare match
     BURTC_IntClear (BURTC_IntGet ());
     NVIC_EnableIRQ(BURTC_IRQn);
     BURTC_Enable(true);
-    radar_trig.meas = true;
+    radarAppVars.clearToMeasure = true;
 }
 
 
@@ -147,7 +150,7 @@ void initBURTC(void)
   BURTC_Init(&burtcInit);
 
   BURTC_CounterReset();
-  BURTC_CompareSet(0, radar_trig.delay_ms/radar_trig.ctr);
+  BURTC_CompareSet(0, radarAppVars.frameSpacingMs/radarAppVars.detectConf);
 
   BURTC_IntEnable(BURTC_IEN_COMP);      // compare match
   NVIC_EnableIRQ(BURTC_IRQn);
@@ -243,7 +246,7 @@ void initVddMonitor(void)
 /* Application logic to take measurements and send coap packets */
 void radarAppAlgo(void)
 {
-    if (radar_trig.meas)
+    if (radarAppVars.clearToMeasure)
     {
 
         GPIO_PinOutSet(ACT_LED_PORT, ACT_LED_PIN);
@@ -251,48 +254,52 @@ void radarAppAlgo(void)
         GPIO_PinOutClear(ACT_LED_PORT, ACT_LED_PIN);
 
         //print_result(result, radar_trig.ctr);
-        radar_trig.meas = false;
+        radarAppVars.clearToMeasure = false;
         if(!remote_res_fix) GPIO_PinOutToggle(IP_LED_PORT, IP_LED_PIN);
     }
 
     /* Trigger condition logic in BURTC handler */
-    if (remote_res_fix && ((coap_notify_act_flag && !coap_sent) | coap_notify_noact_flag))
+    if (remote_res_fix && ((radarCoapSendActive && !radarCoapRequireInactivation) || radarCoapSendInactive))
     {
         float opt_buf = opt3001_conv(opt3001_read());
         memset(tx_buffer, 0, 254);
+        int8_t rssi;
+        otThreadGetParentLastRssi(otGetInstance(), &rssi);
         snprintf(tx_buffer, 254, "%d,%lu,%lu,%lu,%lu,%d,%lu",
-                 (uint8_t) !coap_notify_noact_flag,
+                 (uint8_t) !radarCoapSendInactive,
                  (uint32_t) (result.presence_score * 1000.0f),
                  (uint32_t) (result.presence_distance * 1000.0f),
                  (uint32_t) opt_buf, vdd_meas,
-                 -50,
-                 ++coap_ctr);
-        if (coap_notify_noact_flag)
+                 rssi,
+                 ++appCoapSendTxCtr);
+        if (radarCoapSendInactive)
         {
-            coap_sent = false;
-            coap_notify_act_flag = false;
-            coap_notify_noact_flag = false;
-            appCoapRadarSender(tx_buffer);
+            radarCoapRequireInactivation = false;
+            radarCoapSendActive = false;
+            radarCoapSendInactive = false;
+            appCoapRadarSender(tx_buffer, true);
         }
         else
         {
-            coap_sent = true;
-            coap_notify_act_flag = false;
-            appCoapRadarSender(tx_buffer);
+            radarCoapRequireInactivation = true;
+            radarCoapSendActive = false;
+            appCoapRadarSender(tx_buffer, true);
         }
     }
-    else if(remote_res_fix && coap_alive) // Specifically ELSE to give alive packet lower priority and to prevent successive tx
+    else if(remote_res_fix && appCoapSendAlive) // Specifically ELSE to give alive packet lower priority and to prevent successive tx
     {
-        coap_alive = false;
+        appCoapSendAlive = false;
         float opt_buf = opt3001_conv(opt3001_read());
         memset(tx_buffer, 0, 254);
+        int8_t rssi;
+        otThreadGetParentLastRssi(otGetInstance(), &rssi);
         snprintf(tx_buffer, 254, "%d,%lu,%lu,%lu,%lu,%d,%lu", -1,
                  (uint32_t) (result.presence_score * 1000.0f),
                  (uint32_t) (result.presence_distance * 1000.0f),
                  (uint32_t) opt_buf, vdd_meas,
-                 -50,
-                 ++coap_ctr);
-        appCoapRadarSender(tx_buffer);
+                 rssi,
+                 ++appCoapSendTxCtr);
+        appCoapRadarSender(tx_buffer, false);
     }
 }
 
@@ -307,13 +314,13 @@ int main(void) {
     opt3001_init();
 
     /* Default radar measurement conditions */
-    radar_trig.th = 10;
-    radar_trig.delay_ms = 3000;
-    radar_trig.ctr = 1;
-    radar_trig.prev = sl_sleeptimer_get_tick_count();
-    radar_trig.active = false;
-    radar_trig.meas = false;
-    radar_trig.dx = 1;
+    radarAppVars.threshold = RADAR_APP_DEFAULT_TH;
+    radarAppVars.frameSpacingMs = RADAR_APP_DEFAULT_FRAME_SPACING_MS;
+    radarAppVars.detectConf = 1;
+    radarAppVars.prev = sl_sleeptimer_get_tick_count();
+    radarAppVars.hystTrigFlag = false;
+    radarAppVars.clearToMeasure = false;
+    radarAppVars.dx = 1;
 
     initBURTC();
     app_init();
@@ -345,4 +352,5 @@ void update_configuration(acc_detector_presence_configuration_t presence_configu
     acc_detector_presence_configuration_power_save_mode_set(presence_configuration, DEFAULT_POWER_SAVE_MODE);
     acc_detector_presence_configuration_nbr_removed_pc_set(presence_configuration, DEFAULT_NBR_REMOVED_PC);
     acc_detector_presence_configuration_service_profile_set(presence_configuration, DEFAULT_SERVICE_PROFILE);
+    acc_detector_presence_configuration_hw_accelerated_average_samples_set(presence_configuration,32);
 }

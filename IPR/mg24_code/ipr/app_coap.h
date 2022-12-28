@@ -12,6 +12,6 @@ extern bool remote_res_fix;
 
 void appCoapInit();
 void appCoapPermissionsHandler(void *aContext, otMessage *aMessage, const otMessageInfo *aMessageInfo);
-void appCoapRadarSender(char *buf);
+void appCoapRadarSender(char *buf, bool require_ack);
 
 #endif /* APP_COAP_H_ */

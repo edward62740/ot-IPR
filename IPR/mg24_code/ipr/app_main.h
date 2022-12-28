@@ -59,9 +59,6 @@
 
 
 
-void appCoapRadarSender(char *buf);
-
-
 
 void app_init(void);
 
