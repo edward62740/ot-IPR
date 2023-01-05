@@ -255,11 +255,11 @@ void radarAppAlgo(void)
 
         //print_result(result, radar_trig.ctr);
         radarAppVars.clearToMeasure = false;
-        if(!remote_res_fix) GPIO_PinOutToggle(IP_LED_PORT, IP_LED_PIN);
+        if(!appCoapConnectionEstablished) GPIO_PinOutToggle(IP_LED_PORT, IP_LED_PIN);
     }
 
     /* Trigger condition logic in BURTC handler */
-    if (remote_res_fix && ((radarCoapSendActive && !radarCoapRequireInactivation) || radarCoapSendInactive))
+    if (appCoapConnectionEstablished && ((radarCoapSendActive && !radarCoapRequireInactivation) || radarCoapSendInactive))
     {
         float opt_buf = opt3001_conv(opt3001_read());
         memset(tx_buffer, 0, 254);
@@ -286,7 +286,7 @@ void radarAppAlgo(void)
             appCoapRadarSender(tx_buffer, true);
         }
     }
-    else if(remote_res_fix && appCoapSendAlive) // Specifically ELSE to give alive packet lower priority and to prevent successive tx
+    else if(appCoapConnectionEstablished && appCoapSendAlive) // Specifically ELSE to give alive packet lower priority and to prevent successive tx
     {
         appCoapSendAlive = false;
         float opt_buf = opt3001_conv(opt3001_read());

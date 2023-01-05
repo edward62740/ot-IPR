@@ -7,7 +7,7 @@ Refer here for the [CoAP Server](https://github.com/edward62740/ot-coap-server).
 
 
 ## Hardware Design
-The IPR is designed on a 6-layer, 50ohm PCB. The components run off a single 1.8v supply, due to limitations of the radar IO voltage, in order to avoid a dual-supply, level-translator situation. The main controller on the board is of the [EFR32MG24 Series](https://www.silabs.com/wireless/zigbee/efr32mg24-series-2-socs). Due to chip shortages, more than one part in this series was used with little effect on the actual functionality.<br>
+The IPR is designed on a 6-layer, impedance controlled PCB. The components run off a single 1.8v supply, due to limitations of the radar IO voltage, in order to avoid a dual-supply, level-translator situation. The main controller on the board is of the [EFR32MG24 Series](https://www.silabs.com/wireless/zigbee/efr32mg24-series-2-socs). Due to chip shortages, more than one part in this series was used with little effect on the actual functionality.<br>
 <p align="center">
 <img src="https://github.com/edward62740/ot-IPR/blob/master/Documentation/ipr.png" width="800" /><br>
  <br>

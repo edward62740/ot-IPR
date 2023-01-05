@@ -36,7 +36,8 @@ otCoapResource mResource_PERMISSIONS;
 otIp6Address brAddr;
 const char mPERMISSIONSUriPath[] = PERMISSIONS_URI;
 
-bool remote_res_fix = false;
+bool appCoapConnectionEstablished = false;
+uint32_t appCoapFailCtr = 0;
 
 void appCoapInit()
 {
@@ -103,13 +104,14 @@ void appCoapPermissionsHandler(void *aContext, otMessage *aMessage, const otMess
     {
         otMessageFree(responseMessage);
     }
-    remote_res_fix = true;
+    appCoapConnectionEstablished = true;
     GPIO_PinOutClear(IP_LED_PORT, IP_LED_PIN);
 }
 
 
 void appCoapRadarSender(char *buf, bool require_ack)
 {
+    appCoapCheckConnection();
     GPIO_PinOutSet(IP_LED_PORT, IP_LED_PIN);
     otError error = OT_ERROR_NONE;
     otMessage *message = NULL;
@@ -152,13 +154,31 @@ void appCoapRadarSender(char *buf, bool require_ack)
     exit:
     if ((error != OT_ERROR_NONE) && (message != NULL))
     {
+        appCoapFailCtr = 0;
         otMessageFree(message);
     }
 
-    if(error != OT_ERROR_NONE) GPIO_PinOutSet(ERR_LED_PORT, ERR_LED_PIN);
+    if(error != OT_ERROR_NONE) {
+        appCoapFailCtr++;
+        GPIO_PinOutSet(ERR_LED_PORT, ERR_LED_PIN);
+    }
     else GPIO_PinOutClear(ERR_LED_PORT, ERR_LED_PIN);
 
     //otCliOutputFormat("Sent message: %d\n", error);
     GPIO_PinOutClear(IP_LED_PORT, IP_LED_PIN);
 
+}
+
+void appCoapCheckConnection(void)
+{
+    if(!appCoapConnectionEstablished) return;
+
+    if(otThreadGetDeviceRole(otGetInstance()) != OT_DEVICE_ROLE_CHILD || appCoapFailCtr > 30)
+    {
+        otThreadBecomeDetached(otGetInstance());
+        sleepyInit();
+        setNetworkConfiguration();
+        GPIO_PinOutToggle(IP_LED_PORT, IP_LED_PIN);
+        appCoapFailCtr = 0;
+    }
 }

@@ -1,0 +1,42 @@
+# Silicon Labs Project Configuration Tools: slcp, v0, Component selection file.
+project_name: ot-rcp
+label: ot-rcp
+description: |
+  This is a simple OpenThread RCP application. This is equivalent to the ot-rcp application in the OpenThread GitHub repo.
+category: OpenThread Examples
+filter:
+- name: Device Type
+  value: [RCP]
+- name: Project Difficulty
+  value: [Advanced]
+- name: Wireless Technology
+  value: [Thread]
+package: OpenThread
+quality: production
+readme:
+- {path: README-OT-RCP.md}
+source:
+- {path: main.c}
+- {path: app.c}
+tag: [prebuilt_demo]
+include:
+- path: ''
+  file_list:
+  - {path: app.h}
+  - {path: reset_util.h}
+sdk: {id: gecko_sdk, version: 4.1.3}
+toolchain_settings: []
+component:
+- {id: ot_reference_device}
+- {id: rail_util_pti}
+- {id: EFR32MG21A020F768IM32}
+- instance: [vcom]
+  id: uartdrv_usart
+- {id: ot_stack_rcp}
+configuration:
+- {name: SL_BOARD_ENABLE_VCOM, value: '1'}
+- {name: OPENTHREAD_CONFIG_HEAP_EXTERNAL_ENABLE, value: '0'}
+ui_hints:
+  highlight:
+  - {path: ./README-OT-RCP.md, focus: true}
+
