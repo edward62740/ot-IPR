@@ -173,11 +173,15 @@ void appCoapCheckConnection(void)
 {
     if(!appCoapConnectionEstablished) return;
 
-    if(otThreadGetDeviceRole(otGetInstance()) != OT_DEVICE_ROLE_CHILD || appCoapFailCtr > 30)
+    if(otThreadGetDeviceRole(otGetInstance()) != OT_DEVICE_ROLE_CHILD || appCoapFailCtr > 10)
     {
         otThreadBecomeDetached(otGetInstance());
+        //otInstanceErasePersistentInfo();
         sleepyInit();
         setNetworkConfiguration();
+        otIp6SetEnabled(otGetInstance(), true);
+        otThreadSetEnabled(otGetInstance(), true);
+        appCoapInit();
         GPIO_PinOutToggle(IP_LED_PORT, IP_LED_PIN);
         appCoapFailCtr = 0;
     }

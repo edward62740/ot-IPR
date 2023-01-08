@@ -183,7 +183,7 @@
 // </e>
 // <e>  Joiner
 #ifndef OPENTHREAD_CONFIG_JOINER_ENABLE
-#define OPENTHREAD_CONFIG_JOINER_ENABLE             1
+#define OPENTHREAD_CONFIG_JOINER_ENABLE             0
 #endif
 // </e>
 // <e>  Legacy Network
@@ -233,7 +233,7 @@
 // </e>
 // <e>  Reference Device for Thread Test Harness
 #ifndef OPENTHREAD_CONFIG_REFERENCE_DEVICE_ENABLE
-#define OPENTHREAD_CONFIG_REFERENCE_DEVICE_ENABLE   1
+#define OPENTHREAD_CONFIG_REFERENCE_DEVICE_ENABLE   0
 #endif
 // </e>
 // <e>  Service Entries in Thread Network Data

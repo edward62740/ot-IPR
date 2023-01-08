@@ -26,6 +26,7 @@
 #include "em_burtc.h"
 #include "em_prs.h"
 #include "em_iadc.h"
+#include "em_ldma.h"
 #include "em_system.h"
 #include "sl_power_manager.h"
 #include "sl_system_process_action.h"
@@ -43,13 +44,13 @@
 #include "opt3001.h"
 
 /* Radar configuration params */
-#define DEFAULT_START_M             (0.2f)
-#define DEFAULT_LENGTH_M            (1.4f)
-#define DEFAULT_UPDATE_RATE         (1)
+#define DEFAULT_START_M             0.2f
+#define DEFAULT_LENGTH_M            1.4f
+#define DEFAULT_UPDATE_RATE         1
 #define DEFAULT_POWER_SAVE_MODE     ACC_POWER_SAVE_MODE_OFF
-#define DEFAULT_DETECTION_THRESHOLD (2.0f)
-#define DEFAULT_NBR_REMOVED_PC      (0)
-#define DEFAULT_SERVICE_PROFILE     (4)
+#define DEFAULT_DETECTION_THRESHOLD 2.0f
+#define DEFAULT_NBR_REMOVED_PC      0
+#define DEFAULT_SERVICE_PROFILE     4
 
 char tx_buffer[255];
 volatile uint32_t vdd_meas;
@@ -61,8 +62,14 @@ acc_detector_presence_result_t result;
 #define ALIVE_SLEEPTIMER_INTERVAL_MS 60000
 sl_sleeptimer_timer_handle_t alive_timer;
 
-#define RADAR_APP_DEFAULT_TH               10
-#define RADAR_APP_DEFAULT_FRAME_SPACING_MS 3000
+#define RADAR_APP_DEFAULT_MAX_TH               10
+#define RADAR_APP_DEFAULT_MIN_TH               1
+#define RADAR_APP_DEFAULT_POS_TH               8
+#define RADAR_APP_DEFAULT_NEG_TH               2
+#define RADAR_APP_DEFAULT_FRAME_SPACING_MS     3000
+#define RADAR_APP_DEFAULT_MIN_FRAME_SPACING_MS 500
+#define RADAR_APP_DEFAULT_TH_POS_RATE          2
+#define RADAR_APP_DEFAULT_TH_NEG_RATE          1
 
 volatile struct
 {
@@ -96,37 +103,37 @@ void IADC_IRQHandler(void){
 void BURTC_IRQHandler(void)
 {
     BURTC_IntClear(BURTC_IF_COMP); // compare match
-    if (result.presence_detected && radarAppVars.detectConf == 10) { radarAppVars.dx = (radarAppVars.dx + 0) / 2.0;}
-    else if (result.presence_detected && radarAppVars.detectConf < 10)
+    if (result.presence_detected && radarAppVars.detectConf == RADAR_APP_DEFAULT_MAX_TH) { radarAppVars.dx = radarAppVars.dx / 2.0;}
+    else if (result.presence_detected && radarAppVars.detectConf < RADAR_APP_DEFAULT_MAX_TH)
     {
-        if (radarAppVars.detectConf >= 8 && radarAppVars.dx > 0)
+        if (radarAppVars.detectConf >= RADAR_APP_DEFAULT_POS_TH && radarAppVars.dx > 0)
         {
             radarCoapSendActive = true;
             radarAppVars.hystTrigFlag = true;
         }
-        radarAppVars.detectConf+=2;
+        radarAppVars.detectConf+=RADAR_APP_DEFAULT_TH_POS_RATE;
         BURTC_CounterReset();
         uint32_t delay = radarAppVars.frameSpacingMs / radarAppVars.detectConf;
         radarAppVars.dx = (radarAppVars.dx + delay) / 2.0;
-        BURTC_CompareSet(0, delay > 500 ? delay : 500);
+        BURTC_CompareSet(0, delay > RADAR_APP_DEFAULT_MIN_FRAME_SPACING_MS ? delay : RADAR_APP_DEFAULT_MIN_FRAME_SPACING_MS);
     }
     else
     {
-        if (radarAppVars.detectConf > 1)
+        if (radarAppVars.detectConf > RADAR_APP_DEFAULT_MIN_TH)
         {
-            if(radarAppVars.detectConf == 2 && radarAppVars.dx < 0) {
+            if(radarAppVars.detectConf == RADAR_APP_DEFAULT_NEG_TH && radarAppVars.dx < 0) {
                 if(radarCoapRequireInactivation) radarCoapSendInactive = true;
             }
-            radarAppVars.detectConf--;
+            radarAppVars.detectConf-=RADAR_APP_DEFAULT_TH_NEG_RATE;
             BURTC_CounterReset();
             uint32_t delay = radarAppVars.frameSpacingMs / radarAppVars.detectConf;
             radarAppVars.dx = (radarAppVars.dx - delay) / 2.0;
-            BURTC_CompareSet(0, delay > 500 ? delay : 500);
+            BURTC_CompareSet(0, delay > RADAR_APP_DEFAULT_MIN_FRAME_SPACING_MS ? delay : RADAR_APP_DEFAULT_MIN_FRAME_SPACING_MS);
         }
 
-        if (radarAppVars.detectConf == 1)
+        if (radarAppVars.detectConf == RADAR_APP_DEFAULT_MIN_TH)
         {
-            radarAppVars.dx = (radarAppVars.dx + 0) / 2.0;
+            radarAppVars.dx = radarAppVars.dx / 2.0;
             radarAppVars.hystTrigFlag = false;
         }
     }
@@ -303,6 +310,13 @@ void radarAppAlgo(void)
     }
 }
 
+void initLDMA(void)
+{
+  // First, initialize the LDMA unit itself
+  LDMA_Init_t ldmaInit = LDMA_INIT_DEFAULT;
+  LDMA_Init(&ldmaInit);
+}
+
 
 int main(void) {
     // Initialize Silicon Labs device, system, service(s) and protocol stack(s).
@@ -310,11 +324,11 @@ int main(void) {
     // this call.
     sl_system_init();
     initGPIO();
-
+    initLDMA();
     opt3001_init();
 
     /* Default radar measurement conditions */
-    radarAppVars.threshold = RADAR_APP_DEFAULT_TH;
+    radarAppVars.threshold = RADAR_APP_DEFAULT_MAX_TH;
     radarAppVars.frameSpacingMs = RADAR_APP_DEFAULT_FRAME_SPACING_MS;
     radarAppVars.detectConf = 1;
     radarAppVars.prev = sl_sleeptimer_get_tick_count();

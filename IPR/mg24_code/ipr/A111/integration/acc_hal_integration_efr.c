@@ -34,10 +34,24 @@
  * @brief Size of SPI transfer buffer
  */
 #ifndef A111_SPI_MAX_TRANSFER_SIZE
-#define A111_SPI_MAX_TRANSFER_SIZE 65535
+#define A111_SPI_MAX_TRANSFER_SIZE 2048 // Maximum LDMA transfer
 #endif
 
 #define ACC_BOARD_REF_FREQ 26000000
+
+// LDMA channels for receive and transmit servicing
+#define RX_LDMA_CHANNEL 0
+#define TX_LDMA_CHANNEL 1
+
+// LDMA descriptor and transfer configuration structures for TX channel
+LDMA_Descriptor_t ldmaTXDescriptor;
+LDMA_TransferCfg_t ldmaTXConfig;
+
+// LDMA descriptor and transfer configuration structures for RX channel
+LDMA_Descriptor_t ldmaRXDescriptor;
+LDMA_TransferCfg_t ldmaRXConfig;
+
+volatile bool _await_ldma_spi;
 
 static inline void disable_interrupts(void) {
 	__disable_irq();
@@ -48,25 +62,64 @@ static inline void enable_interrupts(void) {
 	__ISB();
 }
 
+void LDMA_IRQHandler()
+{
+  uint32_t flags = LDMA_IntGet();
+
+  // Clear the transmit channel's done flag if set
+  if (flags & (1 << TX_LDMA_CHANNEL))
+    LDMA_IntClear(1 << TX_LDMA_CHANNEL);
+
+  /*
+   * Clear the receive channel's done flag if set and change receive
+   * state to done.
+   */
+  if (flags & (1 << RX_LDMA_CHANNEL))
+  {
+    LDMA_IntClear(1 << RX_LDMA_CHANNEL);
+    _await_ldma_spi = true;
+  }
+
+  // Stop in case there was an error
+  if (flags & LDMA_IF_ERROR)
+    __BKPT(0);
+}
+
 //----------------------------------------
 // Implementation of RSS HAL handlers
 //----------------------------------------
 
 static void acc_hal_integration_sensor_transfer(acc_sensor_id_t sensor_id,
-		uint8_t *buffer, size_t buffer_size) {
-	(void) sensor_id;  // Ignore parameter sensor_id
+        uint8_t *buffer, size_t buffer_size) {
+    (void) sensor_id;  // Ignore parameter sensor_id
 
-	GPIO_PinOutClear(A111_CS_PORT, A111_CS_PIN);
+    GPIO_PinOutClear(A111_CS_PORT, A111_CS_PIN);
 
-	__asm__("nop"); // no-op, CS set-up time
+    _await_ldma_spi = false;
 
-	/* Polling method appears to consume less current over time than interrupt */
-	for(size_t i=0; i<buffer_size; i++)
-	    buffer[i] = EUSART_Spi_TxRx(EUSART0, buffer[i]);
+    // Source is outbuf, destination is EUSART1_TXDATA, and length if BUFLEN
+    ldmaTXDescriptor = (LDMA_Descriptor_t)LDMA_DESCRIPTOR_SINGLE_M2P_BYTE(buffer, &(EUSART1->TXDATA), buffer_size);
 
-	// De-assert chip select upon transfer completion (drive high)
-	GPIO_PinOutSet(A111_CS_PORT, A111_CS_PIN);
+    // Transfer a byte on free space in the EUSART FIFO
+    ldmaTXConfig = (LDMA_TransferCfg_t)LDMA_TRANSFER_CFG_PERIPHERAL(ldmaPeripheralSignal_EUSART1_TXFL);
+
+    // Source is EUSART1_RXDATA, destination is inbuf, and length if BUFLEN
+    ldmaRXDescriptor = (LDMA_Descriptor_t)LDMA_DESCRIPTOR_SINGLE_P2M_BYTE(&(EUSART1->RXDATA), buffer, buffer_size);
+
+    // Transfer a byte on receive FIFO level event
+    ldmaRXConfig = (LDMA_TransferCfg_t)LDMA_TRANSFER_CFG_PERIPHERAL(ldmaPeripheralSignal_EUSART1_RXFL);
+
+    LDMA_StartTransfer(RX_LDMA_CHANNEL, &ldmaRXConfig, &ldmaRXDescriptor);
+    LDMA_StartTransfer(TX_LDMA_CHANNEL, &ldmaTXConfig, &ldmaTXDescriptor);
+
+    // Wait in EM1 until all data is received
+    while (!_await_ldma_spi)
+      EMU_EnterEM1();
+
+    // De-assert chip select upon transfer completion (drive high)
+    GPIO_PinOutSet(A111_CS_PORT, A111_CS_PIN);
 }
+
 
 static void acc_hal_integration_sensor_power_on(acc_sensor_id_t sensor_id) {
 	(void) sensor_id;  // Ignore parameter sensor_id
@@ -82,7 +135,7 @@ static void acc_hal_integration_sensor_power_off(acc_sensor_id_t sensor_id) {
 
 	GPIO_PinOutClear(A111_EN_PORT, A111_EN_PIN);
 	GPIO_PinOutClear(A111_CS_PORT, A111_CS_PIN);
-	acc_integration_sleep_ms(5);
+	//acc_integration_sleep_ms(5);
 }
 
 static bool acc_hal_integration_wait_for_sensor_interrupt(acc_sensor_id_t sensor_id, uint32_t timeout_ms) {

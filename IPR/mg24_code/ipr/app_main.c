@@ -61,6 +61,7 @@ void sl_ot_cli_init(void)
 void setNetworkConfiguration(void)
 {
     otPlatRadioSetTransmitPower(otGetInstance(), 5);
+
     static char          aNetworkName[] = "OpenThread X-1";
     otError              error;
     otOperationalDataset aDataset;

@@ -1,24 +1,19 @@
 <?xml version="1.0" encoding="ASCII"?>
-<device:XMLDevice xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:device="http://www.silabs.com/ss/hwconfig/document/device.ecore" name="pin_tool.EFR32MG24B220F1536IM48" partId="mcu.arm.efr32.mg24.efr32mg24b220f1536im48" contextId="com.silabs.sdk.stack.super:4.1.3._1224998501">
+<device:XMLDevice xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:device="http://www.silabs.com/ss/hwconfig/document/device.ecore" name="pin_tool.EFR32MG24B220F1536IM48" partId="mcu.arm.efr32.mg24.efr32mg24b220f1536im48" contextId="com.silabs.sdk.stack.super:4.1.3._1231347513">
   <mode name="DefaultMode">
     <property object="DefaultMode" propertyId="mode.diagramLocation" value="100, 100"/>
-    <property object="EUSART0" propertyId="ABModule.selectedRequirement" value="eusart%T%SL_SPIDRV_EUSART_RADAR%T%sl_spidrv_eusart_radar_config.h"/>
     <property object="EUSART0" propertyId="ABPeripheral.included" value="true"/>
-    <property object="EUSART1" propertyId="ABModule.selectedRequirement" value="eusart%T%SL_SPIDRV_EUSART_INST%T%sl_spidrv_eusart_inst_config.h"/>
+    <property object="EUSART1" propertyId="ABModule.selectedRequirement" value="eusart%T%SL_SPIDRV_EUSART_RADAR%T%sl_spidrv_eusart_radar_config.h"/>
     <property object="EUSART1" propertyId="ABPeripheral.included" value="true"/>
     <property object="I2C0" propertyId="ABModule.selectedRequirement" value="i2c%T%SL_I2CSPM_OPT%T%sl_i2cspm_opt_config.h"/>
     <property object="I2C0" propertyId="ABPeripheral.included" value="true"/>
     <property object="I2C1" propertyId="ABPeripheral.included" value="true"/>
     <property object="PB04" propertyId="pin.reserve" value="Reserved"/>
     <property object="PC08" propertyId="ABModule.selectedRequirement" value="gpio%T%SL_SIMPLE_BUTTON_BTN1%T%sl_simple_button_btn1_config.h"/>
-    <property object="PORTIO" propertyId="portio.eusart0.enable.cs" value="Enabled"/>
-    <property object="PORTIO" propertyId="portio.eusart0.enable.rx" value="Enabled"/>
-    <property object="PORTIO" propertyId="portio.eusart0.enable.sclk" value="Enabled"/>
-    <property object="PORTIO" propertyId="portio.eusart0.enable.tx" value="Enabled"/>
-    <property object="PORTIO" propertyId="portio.eusart0.location.cs" value="19"/>
-    <property object="PORTIO" propertyId="portio.eusart0.location.rx" value="17"/>
-    <property object="PORTIO" propertyId="portio.eusart0.location.sclk" value="16"/>
-    <property object="PORTIO" propertyId="portio.eusart0.location.tx" value="18"/>
+    <property object="PORTIO" propertyId="portio.eusart1.enable.cs" value="Enabled"/>
+    <property object="PORTIO" propertyId="portio.eusart1.enable.rx" value="Enabled"/>
+    <property object="PORTIO" propertyId="portio.eusart1.enable.sclk" value="Enabled"/>
+    <property object="PORTIO" propertyId="portio.eusart1.enable.tx" value="Enabled"/>
     <property object="PORTIO" propertyId="portio.eusart1.location.cs" value="19"/>
     <property object="PORTIO" propertyId="portio.eusart1.location.rx" value="17"/>
     <property object="PORTIO" propertyId="portio.eusart1.location.sclk" value="16"/>
