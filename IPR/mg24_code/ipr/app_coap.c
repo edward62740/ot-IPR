@@ -166,7 +166,6 @@ void appCoapRadarSender(char *buf, bool require_ack)
 
     //otCliOutputFormat("Sent message: %d\n", error);
     GPIO_PinOutClear(IP_LED_PORT, IP_LED_PIN);
-
 }
 
 void appCoapCheckConnection(void)

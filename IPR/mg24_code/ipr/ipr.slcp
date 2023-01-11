@@ -24,7 +24,7 @@ include:
 - path: ''
   file_list:
   - {path: app.h}
-sdk: {id: gecko_sdk, version: 4.1.3}
+sdk: {id: gecko_sdk, version: 4.2.0}
 toolchain_settings: []
 component:
 - {id: power_manager}

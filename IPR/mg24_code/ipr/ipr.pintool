@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<device:XMLDevice xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:device="http://www.silabs.com/ss/hwconfig/document/device.ecore" name="pin_tool.EFR32MG24B220F1536IM48" partId="mcu.arm.efr32.mg24.efr32mg24b220f1536im48" contextId="com.silabs.sdk.stack.super:4.1.3._1231347513">
+<device:XMLDevice xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:device="http://www.silabs.com/ss/hwconfig/document/device.ecore" name="pin_tool.EFR32MG24B220F1536IM48" partId="mcu.arm.efr32.mg24.efr32mg24b220f1536im48" contextId="com.silabs.sdk.stack.super:4.2.0._1231347510">
   <mode name="DefaultMode">
     <property object="DefaultMode" propertyId="mode.diagramLocation" value="100, 100"/>
     <property object="EUSART0" propertyId="ABPeripheral.included" value="true"/>

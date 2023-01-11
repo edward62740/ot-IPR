@@ -88,7 +88,7 @@
 // </e>
 // <e>  Border Router
 #ifndef OPENTHREAD_CONFIG_BORDER_ROUTER_ENABLE
-#define OPENTHREAD_CONFIG_BORDER_ROUTER_ENABLE      0
+#define OPENTHREAD_CONFIG_BORDER_ROUTER_ENABLE      1
 #endif
 // </e>
 // <e>  Channel Manager
@@ -108,7 +108,7 @@
 // </e>
 // <e>  Maximum size of the CLI line (in bytes), including null terminator
 #ifndef OPENTHREAD_CONFIG_CLI_MAX_LINE_LENGTH
-#define OPENTHREAD_CONFIG_CLI_MAX_LINE_LENGTH       0
+#define OPENTHREAD_CONFIG_CLI_MAX_LINE_LENGTH       640
 #endif
 // </e>
 // <e>  CLI UART RX Buffer size in bytes (should be atleast maximum size of the CLI line)
@@ -143,7 +143,7 @@
 // </e>
 // <e>  DHCP6 Server
 #ifndef OPENTHREAD_CONFIG_DHCP6_SERVER_ENABLE
-#define OPENTHREAD_CONFIG_DHCP6_SERVER_ENABLE       0
+#define OPENTHREAD_CONFIG_DHCP6_SERVER_ENABLE       1
 #endif
 // </e>
 // <e>  Diagnostic
@@ -183,7 +183,7 @@
 // </e>
 // <e>  Joiner
 #ifndef OPENTHREAD_CONFIG_JOINER_ENABLE
-#define OPENTHREAD_CONFIG_JOINER_ENABLE             0
+#define OPENTHREAD_CONFIG_JOINER_ENABLE             1
 #endif
 // </e>
 // <e>  Legacy Network
@@ -233,7 +233,7 @@
 // </e>
 // <e>  Reference Device for Thread Test Harness
 #ifndef OPENTHREAD_CONFIG_REFERENCE_DEVICE_ENABLE
-#define OPENTHREAD_CONFIG_REFERENCE_DEVICE_ENABLE   0
+#define OPENTHREAD_CONFIG_REFERENCE_DEVICE_ENABLE   1
 #endif
 // </e>
 // <e>  Service Entries in Thread Network Data

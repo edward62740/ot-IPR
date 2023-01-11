@@ -31,11 +31,16 @@
 #define MBEDTLS_ECJPAKE_C
 #define MBEDTLS_KEY_EXCHANGE_ECJPAKE_ENABLED
 #define MBEDTLS_BIGNUM_C
+#define MBEDTLS_OID_C
 #define MBEDTLS_PEM_PARSE_C
 #define MBEDTLS_PEM_WRITE_C
 #define MBEDTLS_PK_C
 #define MBEDTLS_PK_PARSE_C
 #define MBEDTLS_PK_WRITE_C
+#define MBEDTLS_PLATFORM_C
+#define MBEDTLS_PLATFORM_MEMORY
+#define MBEDTLS_PLATFORM_CALLOC_MACRO sl_calloc
+#define MBEDTLS_PLATFORM_FREE_MACRO   sl_free
 #define MBEDTLS_ENTROPY_C
 #define MBEDTLS_ENTROPY_FORCE_SHA256
 #define MBEDTLS_ENTROPY_MAX_SOURCES  2
@@ -55,7 +60,6 @@
 #define MBEDTLS_X509_CRL_PARSE_C
 #define MBEDTLS_X509_CSR_PARSE_C
 #define MBEDTLS_X509_CSR_WRITE_C
-#define MBEDTLS_OID_C
 #define MBEDTLS_USE_PSA_CRYPTO
 #define MBEDTLS_PSA_CRYPTO_C
 #define MBEDTLS_PSA_CRYPTO_CONFIG
@@ -63,45 +67,29 @@
 #define MBEDTLS_PSA_CRYPTO_STORAGE_C
 
 
+#if defined(SL_TRUSTZONE_NONSECURE)
+
+#endif // #if defined(SL_TRUSTZONE_NONSECURE)
+
+#if defined(SL_TRUSTZONE_SECURE)
+
+#endif // #if defined(SL_TRUSTZONE_SECURE)
+
 #include "config-device-acceleration.h"
 
-#if defined(SL_SE_ASSUME_FW_AT_LEAST_1_2_10) || defined(SL_SE_ASSUME_FW_AT_LEAST_2_1_7)
-    #undef MBEDTLS_ECP_DP_CURVE25519_ENABLED
-    #if !(defined(MBEDTLS_ECP_DP_SECP192R1_ENABLED) \
-          || defined(MBEDTLS_ECP_DP_SECP224R1_ENABLED) \
-          || defined(MBEDTLS_ECP_DP_SECP256R1_ENABLED) \
-          || defined(MBEDTLS_ECP_DP_SECP384R1_ENABLED) \
-          || defined(MBEDTLS_ECP_DP_SECP521R1_ENABLED))
-        #undef MBEDTLS_ECDH_C
-        #undef MBEDTLS_ECP_C
-        #undef MBEDTLS_BIGNUM_C
-    #endif /* !MBEDTLS_ECP_DP_SECPxR1_ENABLED */
-#endif /* SL_SE_ASSUME_FW_AT_LEAST_x */
+// By default MBEDTLS_PLATFORM_CALLOC_MACRO and MBEDTLS_PLATFORM_FREE_MACRO are
+// defined in mbedtls_platform_dynamic_memory_allocation_config_default.slcc.
+// Alternative implementations can configure MBEDTLS_PLATFORM_CALLOC_MACRO and
+// MBEDTLS_PLATFORM_FREE_MACRO to use other platform specific implementations.
+// Alternatively some use cases may select runtime initialisation in the
+// application by explicitly calling mbedtls_platform_set_calloc_free() by
+// selecting mbedtls_platform_dynamic_memory_allocation_config_init_runtime.
 
-#if !defined(TEST_SUITE_MEMORY_BUFFER_ALLOC)
-#if !defined(MBEDTLS_PLATFORM_FREE_MACRO) && !defined(MBEDTLS_PLATFORM_CALLOC_MACRO)
-#if defined(CONFIG_MBEDTLS_USE_FREERTOS_PVCALLOC)
-    /* In FreeRTOS, use pvCalloc (and vPortFree) for dynamic memory allocation.
-       E.g. Amazon FreeRTOS implements pvCalloc for dynamic memory allocation. */
-    #include <stddef.h>
-
-    extern void * pvCalloc( size_t xNumElements,
-                            size_t xSize ) ;
-    extern void vPortFree( void *pv );
-    #define MBEDTLS_PLATFORM_CALLOC_MACRO pvCalloc
-    #define MBEDTLS_PLATFORM_FREE_MACRO   vPortFree
-#else
-    /* No memory allocator override, supply the default for SL platforms */
-    #include "sl_malloc.h"
-
-    #define MBEDTLS_PLATFORM_FREE_MACRO    sl_free
-    #define MBEDTLS_PLATFORM_CALLOC_MACRO  sl_calloc
+#if defined(MBEDTLS_PLATFORM_CALLOC_MACRO) && defined(MBEDTLS_PLATFORM_FREE_MACRO)
+#include <stddef.h>  // size_t
+extern void *MBEDTLS_PLATFORM_CALLOC_MACRO( size_t n, size_t size );
+extern void MBEDTLS_PLATFORM_FREE_MACRO( void *ptr );
 #endif
-#endif /* No specific memory allocator override */
-#endif /* Not under test */
-
-#define MBEDTLS_PLATFORM_MEMORY
-#define MBEDTLS_PLATFORM_C
 
 
 

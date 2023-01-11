@@ -1,5 +1,5 @@
 #CRC Codes for initially generated config files -- do not modify!
-SEGGER_RTT_Conf.h=1088810083
+SEGGER_RTT_Conf.h=-421909511
 common_cfg.h=1943625275
 cpu_cfg.h=-1735116855
 dmadrv_config.h=1207334949
@@ -16,9 +16,10 @@ sl_device_init_hfxo_config.h=85896035
 sl_device_init_lfxo_config.h=-1618269352
 sl_hfxo_manager_config.h=415033866
 sl_i2cspm_opt_config.h=-77822838
+sl_mbedtls_config.h=-765968679
 sl_memory_config.h=-1006010401
 sl_openthread_features_config.h=-146536515
-sl_openthread_generic_config.h=1600057677
+sl_openthread_generic_config.h=-860248756
 sl_openthread_reference_device_config.h=-151648020
 sl_openthread_rtos_config.h=281687302
 sl_power_manager_config.h=-1030002716

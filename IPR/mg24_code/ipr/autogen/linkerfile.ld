@@ -47,7 +47,7 @@ SECTIONS
     __Vectors_Size = __Vectors_End - __Vectors;
 
     linker_code_begin = .;
-    *(.text*)
+    *(SORT_BY_ALIGNMENT(.text*))
     linker_code_end = .;
 
     KEEP(*(.init))
@@ -138,7 +138,7 @@ SECTIONS
     . = ALIGN(4);
     __data_start__ = .;
     *(vtable)
-    *(.data*)
+    *(SORT_BY_ALIGNMENT(.data*))
     . = ALIGN (4);
 
     PROVIDE(__ram_func_section_start = .);
@@ -176,7 +176,7 @@ SECTIONS
     . = ALIGN(4);
     __bss_start__ = .;
     *(SEGGER_RTT)
-    *(.bss*)
+    *(SORT_BY_ALIGNMENT(.bss*))
     *(COMMON)
     . = ALIGN(4);
     __bss_end__ = .;
@@ -194,6 +194,7 @@ SECTIONS
   } > RAM
 
   __heap_size = __HeapLimit - __HeapBase;
+  __ram_end__ = 0x20000000 + 0x40000;
   __main_flash_end__ = 0x8000000 + 0x17e000;
 
    /* This is where we handle flash storage blocks. We use dummy sections for finding the configured
