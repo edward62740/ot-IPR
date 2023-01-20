@@ -100,7 +100,7 @@ The IPR utilizes CoAP for low-power communication with a remote server. In this 
 |                       | <------------------ |        PUT          | If change of detection state AND periodically  |
 |         ACK           | ------------------> |                     | Ack                                            |
 
-It is noteworthy that CoAP has many security issues like MQTT, but they were not taken into account in this application since CoAP communication never leaves mesh-local.<br><br>
+It is noteworthy that CoAP has many security issues like MQTT, but they were not of particular concern in this application since CoAP communication never leaves mesh-local.<br><br>
 ![Communication](https://github.com/edward62740/ot-IPR/blob/master/Documentation/comm.png "Communication")
 
 ## Performance and Future Improvements
@@ -109,3 +109,6 @@ Currently, the sensor has an average power consumption of approx. 140-160uA @ 1.
 This gives the sensor a battery life of >1 year on 2 x LR03 cells.
 
 Future improvements are to replace the sensor with the pin-compatible [A121](https://developer.acconeer.com/download/a121-datasheet-pdf/), which is an improved version of the radar sensor with significantly lower idle vtx/rx currents, and should offset the avg. current by -60uA. Another obvious improvement is to disable the sensor at night.
+<br>
+The CoAP server allows for data collected to be visualized as shown below: <br>
+![Visualization](https://github.com/edward62740/ot-IPR/blob/master/Documentation/grafana.png "Visualization")<br>

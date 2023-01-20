@@ -53,6 +53,15 @@
 #define DEFAULT_SERVICE_PROFILE     4
 
 char tx_buffer[255];
+static union {
+    uint64_t _64b;
+    struct {
+        uint32_t l;
+        uint32_t h;
+    } _32b;
+} eui;
+const uint8_t device_type = 0;
+
 volatile uint32_t vdd_meas;
 
 static void update_configuration(acc_detector_presence_configuration_t presence_configuration);
@@ -272,25 +281,36 @@ void radarAppAlgo(void)
         memset(tx_buffer, 0, 254);
         int8_t rssi;
         otThreadGetParentLastRssi(otGetInstance(), &rssi);
-        snprintf(tx_buffer, 254, "%d,%lu,%lu,%lu,%lu,%d,%lu",
-                 (uint8_t) !radarCoapSendInactive,
+
+        /** CoAP Payload String (max <90 chars) **
+         * device_type (uint8_t): internal use number for indicating sensor type
+         * eui64 (uint32_t): unique id MSB
+         * eui64 (uint32_t): unique id LSB
+         * !radarCoapSendInactive (uint8_t): radar algo state
+         * result.presence_score (uint32_t): radar presence score
+         * result.presence_distance (uint32_t): radar presence distance
+         * opt_buf (uint32_t): light levels in lux
+         * vdd_meas (uint32_t): supply voltage in mV
+         * rssi (int8_t): last rssi from parent
+         * appCoapSendTxCtr (uint32_t): total CoAP transmissions
+         */
+        snprintf(tx_buffer, 254, "%d,%lx%lx,%d,%lu,%lu,%lu,%lu,%d,%lu",
+                 device_type, eui._32b.h, eui._32b.l, (uint8_t) !radarCoapSendInactive,
                  (uint32_t) (result.presence_score * 1000.0f),
                  (uint32_t) (result.presence_distance * 1000.0f),
-                 (uint32_t) opt_buf, vdd_meas,
-                 rssi,
-                 ++appCoapSendTxCtr);
+                 (uint32_t) opt_buf, vdd_meas, rssi, ++appCoapSendTxCtr);
         if (radarCoapSendInactive)
         {
             radarCoapRequireInactivation = false;
             radarCoapSendActive = false;
             radarCoapSendInactive = false;
-            appCoapRadarSender(tx_buffer, true);
+            appCoapRadarSender(tx_buffer, true); // send with ack request
         }
         else
         {
             radarCoapRequireInactivation = true;
             radarCoapSendActive = false;
-            appCoapRadarSender(tx_buffer, true);
+            appCoapRadarSender(tx_buffer, true); // send with ack request
         }
     }
     else if(appCoapConnectionEstablished && appCoapSendAlive) // Specifically ELSE to give alive packet lower priority and to prevent successive tx
@@ -300,13 +320,25 @@ void radarAppAlgo(void)
         memset(tx_buffer, 0, 254);
         int8_t rssi;
         otThreadGetParentLastRssi(otGetInstance(), &rssi);
-        snprintf(tx_buffer, 254, "%d,%lu,%lu,%lu,%lu,%d,%lu", -1,
+
+        /** CoAP Payload String (max <90 chars) **
+         * device_type (uint8_t): internal use number for indicating sensor type
+         * eui64 (uint32_t): unique id MSB
+         * eui64 (uint32_t): unique id LSB
+         * -1 indicates "don't care" state
+         * result.presence_score (uint32_t): radar presence score
+         * result.presence_distance (uint32_t): radar presence distance
+         * opt_buf (uint32_t): light levels in lux
+         * vdd_meas (uint32_t): supply voltage in mV
+         * rssi (int8_t): last rssi from parent
+         * appCoapSendTxCtr (uint32_t): total CoAP transmissions
+         */
+        snprintf(tx_buffer, 254, "%d,%lx%lx,%d,%lu,%lu,%lu,%lu,%d,%lu",
+                 device_type, eui._32b.h, eui._32b.l, -1,
                  (uint32_t) (result.presence_score * 1000.0f),
                  (uint32_t) (result.presence_distance * 1000.0f),
-                 (uint32_t) opt_buf, vdd_meas,
-                 rssi,
-                 ++appCoapSendTxCtr);
-        appCoapRadarSender(tx_buffer, false);
+                 (uint32_t) opt_buf, vdd_meas, rssi, ++appCoapSendTxCtr);
+        appCoapRadarSender(tx_buffer, false); // send without ack request
     }
 }
 
@@ -339,7 +371,7 @@ int main(void) {
     initBURTC();
     app_init();
     initRadar();
-
+    eui._64b = SYSTEM_GetUnique();
     GPIO_PinOutSet(IP_LED_PORT, IP_LED_PIN);
     initVddMonitor();
     sl_sleeptimer_start_periodic_timer_ms(&alive_timer, ALIVE_SLEEPTIMER_INTERVAL_MS, alive_cb, NULL, 0, 0);

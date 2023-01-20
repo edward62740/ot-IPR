@@ -1,7 +1,0 @@
-Removed Member From Class: ClassName=digital Member=U
-Add Component: Footprint Not Found BGA50N50P10X10_520X550X89N
-Change Class Name : Old Net Name=digital New Net Name=mcu
-Added Class: Name=radar
-Change Room Name: Old Name=digital New Name=radar
-Change Room Scope: Old Scope=InComponentClass('digital') New Scope=InComponentClass('radar')
-Added Room: Name=mcu

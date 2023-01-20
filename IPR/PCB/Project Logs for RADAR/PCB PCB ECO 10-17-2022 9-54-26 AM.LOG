@@ -1,7 +1,0 @@
-Removed Member From Class: ClassName=mcu Member=C18
-Removed Member From Class: ClassName=radar Member=C25
-Add Component: Footprint Not Found CAP 0402_1005
-Add Pin To Net: Unknown Pin: Pin C17-1
-Add Pin To Net: Unknown Pin: Pin C17-2
-Add Class Member: Failed to add class member : Component C17 0.1 µF
-Added Member To Class: ClassName=mcu Member=Component R4 10 kOhms
