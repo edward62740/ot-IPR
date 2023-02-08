@@ -60,7 +60,7 @@ void setNetworkConfiguration(void)
 {
     otPlatRadioSetTransmitPower(otGetInstance(), 5);
 
-    static char          aNetworkName[] = "";
+    static char          aNetworkName[] = "OpenThread X-1";
     otError              error;
     otOperationalDataset aDataset;
 
@@ -83,7 +83,7 @@ void setNetworkConfiguration(void)
     aDataset.mComponents.mIsPanIdPresent = true;
 
     /* Set Extended Pan ID to  */
-    uint8_t extPanId[OT_EXT_PAN_ID_SIZE] = {};
+    uint8_t extPanId[OT_EXT_PAN_ID_SIZE] = {4};
     memcpy(aDataset.mExtendedPanId.m8, extPanId, sizeof(aDataset.mExtendedPanId));
     aDataset.mComponents.mIsExtendedPanIdPresent = true;
 
@@ -134,9 +134,8 @@ void appSrpInit(void)
     otError error = OT_ERROR_NONE;
 
     char *hostName;
-    char *HOST_NAME = "ot-IPR";
+    char *HOST_NAME = "";
     uint16_t size;
-
     hostName = otSrpClientBuffersGetHostNameString(sInstance, &size);
     error |= otSrpClientSetHostName(sInstance, HOST_NAME);
     memcpy(hostName, HOST_NAME, sizeof(HOST_NAME) + 1);
@@ -154,8 +153,9 @@ void appSrpInit(void)
 
     entry = otSrpClientBuffersAllocateService(sInstance);
 
-    entry->mService.mPort = ;
-    char *INST_NAME = "";
+    entry->mService.mPort = 33434;
+    char INST_NAME[32];
+    snprintf(INST_NAME, 32, "%d", selfAddr.mFields.m16[7]);
     char *SERV_NAME = "";
     string = otSrpClientBuffersGetServiceEntryInstanceNameString(entry, &size);
     memcpy(string, INST_NAME, size);
