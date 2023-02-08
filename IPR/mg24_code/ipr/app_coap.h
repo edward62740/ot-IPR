@@ -8,6 +8,8 @@
 #ifndef APP_COAP_H_
 #define APP_COAP_H_
 
+extern otIp6Address selfAddr;
+extern otIp6Address brAddr;
 extern bool appCoapConnectionEstablished;
 
 void appCoapInit();

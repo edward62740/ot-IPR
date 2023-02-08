@@ -71,14 +71,17 @@ acc_detector_presence_result_t result;
 #define ALIVE_SLEEPTIMER_INTERVAL_MS 60000
 sl_sleeptimer_timer_handle_t alive_timer;
 
-#define RADAR_APP_DEFAULT_MAX_TH               10
-#define RADAR_APP_DEFAULT_MIN_TH               1
-#define RADAR_APP_DEFAULT_POS_TH               8
-#define RADAR_APP_DEFAULT_NEG_TH               2
+// thresholds are defined as (x units) * 10
+#define RADAR_APP_DEFAULT_MAX_TH               100
+#define RADAR_APP_DEFAULT_MIN_TH               10
+#define RADAR_APP_DEFAULT_POS_TH               80
+#define RADAR_APP_DEFAULT_NEG_TH               20
+#define RADAR_APP_DEFAULT_TH_POS_RATE          20
+#define RADAR_APP_DEFAULT_TH_NEG_RATE          5
+
 #define RADAR_APP_DEFAULT_FRAME_SPACING_MS     3000
 #define RADAR_APP_DEFAULT_MIN_FRAME_SPACING_MS 500
-#define RADAR_APP_DEFAULT_TH_POS_RATE          2
-#define RADAR_APP_DEFAULT_TH_NEG_RATE          1
+
 
 volatile struct
 {
@@ -112,7 +115,10 @@ void IADC_IRQHandler(void){
 void BURTC_IRQHandler(void)
 {
     BURTC_IntClear(BURTC_IF_COMP); // compare match
-    if (result.presence_detected && radarAppVars.detectConf == RADAR_APP_DEFAULT_MAX_TH) { radarAppVars.dx = radarAppVars.dx / 2.0;}
+    if (result.presence_detected && radarAppVars.detectConf >= RADAR_APP_DEFAULT_MAX_TH) {
+        radarAppVars.dx = radarAppVars.dx / 2.0;
+        radarAppVars.detectConf = RADAR_APP_DEFAULT_MAX_TH;
+    }
     else if (result.presence_detected && radarAppVars.detectConf < RADAR_APP_DEFAULT_MAX_TH)
     {
         if (radarAppVars.detectConf >= RADAR_APP_DEFAULT_POS_TH && radarAppVars.dx > 0)
@@ -122,7 +128,7 @@ void BURTC_IRQHandler(void)
         }
         radarAppVars.detectConf+=RADAR_APP_DEFAULT_TH_POS_RATE;
         BURTC_CounterReset();
-        uint32_t delay = radarAppVars.frameSpacingMs / radarAppVars.detectConf;
+        uint32_t delay = radarAppVars.frameSpacingMs / (radarAppVars.detectConf / 10);
         radarAppVars.dx = (radarAppVars.dx + delay) / 2.0;
         BURTC_CompareSet(0, delay > RADAR_APP_DEFAULT_MIN_FRAME_SPACING_MS ? delay : RADAR_APP_DEFAULT_MIN_FRAME_SPACING_MS);
     }
@@ -135,15 +141,16 @@ void BURTC_IRQHandler(void)
             }
             radarAppVars.detectConf-=RADAR_APP_DEFAULT_TH_NEG_RATE;
             BURTC_CounterReset();
-            uint32_t delay = radarAppVars.frameSpacingMs / radarAppVars.detectConf;
+            uint32_t delay = radarAppVars.frameSpacingMs / (radarAppVars.detectConf / 10);
             radarAppVars.dx = (radarAppVars.dx - delay) / 2.0;
             BURTC_CompareSet(0, delay > RADAR_APP_DEFAULT_MIN_FRAME_SPACING_MS ? delay : RADAR_APP_DEFAULT_MIN_FRAME_SPACING_MS);
         }
 
-        if (radarAppVars.detectConf == RADAR_APP_DEFAULT_MIN_TH)
+        if (radarAppVars.detectConf <= RADAR_APP_DEFAULT_MIN_TH)
         {
             radarAppVars.dx = radarAppVars.dx / 2.0;
             radarAppVars.hystTrigFlag = false;
+            radarAppVars.detectConf = RADAR_APP_DEFAULT_MIN_TH;
         }
     }
     BURTC_IntEnable(BURTC_IEN_COMP);      // compare match
@@ -381,8 +388,9 @@ int main(void) {
         sl_system_process_action();
 
         app_process_action();
-
+        if (appCoapConnectionEstablished) appSrpInit();
         radarAppAlgo();
+        if(!otSrpClientIsRunning(otGetInstance()))GPIO_PinOutSet(IP_LED_PORT, IP_LED_PIN);
         // Let the CPU go to sleep if the system allows it.
         sl_power_manager_sleep();
     }

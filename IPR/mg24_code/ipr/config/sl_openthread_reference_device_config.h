@@ -64,7 +64,7 @@
 #endif
 // <q>  Number of SRP Client Buffers (Thread 1.3)
 #ifndef OPENTHREAD_CONFIG_SRP_CLIENT_BUFFERS_MAX_SERVICES
-#define OPENTHREAD_CONFIG_SRP_CLIENT_BUFFERS_MAX_SERVICES 10
+#define OPENTHREAD_CONFIG_SRP_CLIENT_BUFFERS_MAX_SERVICES 1
 #endif
 // <q>  Service Registration Protocol (SRP) Server (Thread 1.3)
 #ifndef OPENTHREAD_CONFIG_SRP_SERVER_ENABLE

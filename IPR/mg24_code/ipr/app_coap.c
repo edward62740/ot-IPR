@@ -34,6 +34,8 @@ char *nack = "nack";
 #define PERMISSIONS_URI "permissions"
 otCoapResource mResource_PERMISSIONS;
 otIp6Address brAddr;
+otIp6Address selfAddr;
+
 const char mPERMISSIONSUriPath[] = PERMISSIONS_URI;
 
 bool appCoapConnectionEstablished = false;
@@ -62,6 +64,7 @@ void appCoapPermissionsHandler(void *aContext, otMessage *aMessage, const otMess
     GPIO_PinOutSet(IP_LED_PORT, IP_LED_PIN);
     //printIPv6Addr(&aMessageInfo->mPeerAddr);
     brAddr = aMessageInfo->mPeerAddr;
+    selfAddr = aMessageInfo->mSockAddr;
     otError error = OT_ERROR_NONE;
     otMessage *responseMessage;
     otCoapCode responseCode = OT_COAP_CODE_CHANGED;

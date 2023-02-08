@@ -67,5 +67,5 @@ void app_process_action(void);
 otInstance *otGetInstance(void);
 void setNetworkConfiguration(void);
 void sleepyInit(void);
-
+void appSrpInit(void);
 #endif

@@ -23,6 +23,8 @@
 #include <openthread/diag.h>
 #include <openthread/tasklet.h>
 #include <openthread/thread.h>
+#include <openthread/srp_client.h>
+#include <openthread/srp_client_buffers.h>
 
 #include "openthread-system.h"
 #include "app_coap.h"
@@ -39,7 +41,7 @@
 static otInstance* sInstance = NULL;
 #define SLEEPY_POLL_PERIOD_MS 2000
 
-
+static bool srpDone = false;
 otInstance *otGetInstance(void)
 {
     return sInstance;
@@ -53,16 +55,12 @@ void sl_ot_create_instance(void)
     assert(sInstance);
 }
 
-void sl_ot_cli_init(void)
-{
-    //otAppCliInit(sInstance);
-}
 
 void setNetworkConfiguration(void)
 {
     otPlatRadioSetTransmitPower(otGetInstance(), 5);
 
-    static char          aNetworkName[] = "OpenThread X-1";
+    static char          aNetworkName[] = "";
     otError              error;
     otOperationalDataset aDataset;
 
@@ -77,21 +75,20 @@ void setNetworkConfiguration(void)
     aDataset.mComponents.mIsActiveTimestampPresent = true;
 
     /* Set Channel to 15 */
-    aDataset.mChannel                      = 15;
+    aDataset.mChannel                      = ;
     aDataset.mComponents.mIsChannelPresent = true;
 
     /* Set Pan ID to 2222 */
-    aDataset.mPanId                      = (otPanId)0xDEAD;
+    aDataset.mPanId                      = (otPanId);
     aDataset.mComponents.mIsPanIdPresent = true;
 
-    /* Set Extended Pan ID to C0DE1AB5C0DE1AB5 */
-    uint8_t extPanId[OT_EXT_PAN_ID_SIZE] = {0xC0, 0xDE, 0x1A, 0xB5, 0xC0, 0xDE, 0x1A, 0xB5};
+    /* Set Extended Pan ID to  */
+    uint8_t extPanId[OT_EXT_PAN_ID_SIZE] = {};
     memcpy(aDataset.mExtendedPanId.m8, extPanId, sizeof(aDataset.mExtendedPanId));
     aDataset.mComponents.mIsExtendedPanIdPresent = true;
 
-    /* Set network key to 1234C0DE1AB51234C0DE1AB51234C0DE */
-    uint8_t key[OT_NETWORK_KEY_SIZE] = {0x12, 0x34, 0xC0, 0xDE, 0x1A, 0xB5, 0x12, 0x34,
-                                        0xC0, 0xDE, 0x1A, 0xB5, 0x12, 0x34, 0xC0, 0xDE};
+    /* Set network key to  */
+    uint8_t key[OT_NETWORK_KEY_SIZE] = {};
     memcpy(aDataset.mNetworkKey.m8, key, sizeof(aDataset.mNetworkKey));
     aDataset.mComponents.mIsNetworkKeyPresent = true;
 
@@ -129,6 +126,51 @@ void sleepyInit(void)
 
 }
 
+void appSrpInit(void)
+{
+    if(srpDone) return;
+    srpDone = true;
+
+    otError error = OT_ERROR_NONE;
+
+    char *hostName;
+    char *HOST_NAME = "ot-IPR";
+    uint16_t size;
+
+    hostName = otSrpClientBuffersGetHostNameString(sInstance, &size);
+    error |= otSrpClientSetHostName(sInstance, HOST_NAME);
+    memcpy(hostName, HOST_NAME, sizeof(HOST_NAME) + 1);
+
+
+    uint8_t arrayLength;
+    otIp6Address *hostAddressArray;
+
+    hostAddressArray = otSrpClientBuffersGetHostAddressesArray(sInstance, &arrayLength);
+    error |= otSrpClientSetHostAddresses(sInstance, &selfAddr, 1);
+    memcpy(hostAddressArray, &selfAddr, 1 * sizeof(otIp6Address));
+
+    otSrpClientBuffersServiceEntry *entry = NULL;
+    char *string;
+
+    entry = otSrpClientBuffersAllocateService(sInstance);
+
+    entry->mService.mPort = ;
+    char *INST_NAME = "";
+    char *SERV_NAME = "";
+    string = otSrpClientBuffersGetServiceEntryInstanceNameString(entry, &size);
+    memcpy(string, INST_NAME, size);
+
+
+    string = otSrpClientBuffersGetServiceEntryServiceNameString(entry, &size);
+    memcpy(string, SERV_NAME, size);
+
+    error |= otSrpClientAddService(sInstance, &entry->mService);
+
+    entry = NULL;
+
+    otSrpClientEnableAutoStartMode(sInstance, /* aCallback */ NULL, /* aContext */ NULL);
+    if(error != OT_ERROR_NONE) GPIO_PinOutSet(ERR_LED_PORT, ERR_LED_PIN);
+}
 
 /**************************************************************************//**
  * Application Init.
@@ -141,7 +183,6 @@ void app_init(void)
     assert(otIp6SetEnabled(sInstance, true) == OT_ERROR_NONE);
     assert(otThreadSetEnabled(sInstance, true) == OT_ERROR_NONE);
     appCoapInit();
-
 }
 
 /**************************************************************************//**
