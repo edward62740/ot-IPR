@@ -1,19 +1,10 @@
-/***************************************************************************//**
- * @file
- * @brief main() function.
- *******************************************************************************
- * # License
- * <b>Copyright 2020 Silicon Laboratories Inc. www.silabs.com</b>
- *******************************************************************************
+/*
+ *  main.c
  *
- * The licensor of this software is Silicon Laboratories Inc. Your use of this
- * software is governed by the terms of Silicon Labs Master Software License
- * Agreement (MSLA) available at
- * www.silabs.com/about-us/legal/master-software-license-agreement. This
- * software is distributed to you in Source Code format and is governed by the
- * sections of the MSLA applicable to Source Code.
- *
- ******************************************************************************/
+ *  Created on: Dec 12, 2022
+ *      Author: edward62740
+ */
+
 #include <app_main.h>
 #include "sl_component_catalog.h"
 #include "sl_system_init.h"
@@ -45,15 +36,15 @@
 
 /* Radar configuration params */
 #define DEFAULT_START_M             0.2f
-#define DEFAULT_LENGTH_M            1.4f
+#define DEFAULT_LENGTH_M            1.55f
 #define DEFAULT_UPDATE_RATE         1
 #define DEFAULT_POWER_SAVE_MODE     ACC_POWER_SAVE_MODE_OFF
-#define DEFAULT_DETECTION_THRESHOLD 2.0f
-#define DEFAULT_NBR_REMOVED_PC      0
+#define DEFAULT_DETECTION_THRESHOLD 2.000f
+#define DEFAULT_NBR_REMOVED_PC      1
 #define DEFAULT_SERVICE_PROFILE     4
 
 char tx_buffer[255];
-static union {
+union {
     uint64_t _64b;
     struct {
         uint32_t l;
@@ -80,7 +71,7 @@ sl_sleeptimer_timer_handle_t alive_timer;
 #define RADAR_APP_DEFAULT_TH_NEG_RATE          5
 
 #define RADAR_APP_DEFAULT_FRAME_SPACING_MS     3000
-#define RADAR_APP_DEFAULT_MIN_FRAME_SPACING_MS 500
+#define RADAR_APP_DEFAULT_MIN_FRAME_SPACING_MS 750
 
 
 volatile struct
@@ -388,9 +379,9 @@ int main(void) {
         sl_system_process_action();
 
         app_process_action();
-        if (appCoapConnectionEstablished) appSrpInit();
+        //if (appCoapConnectionEstablished) appSrpInit();
         radarAppAlgo();
-        if(!otSrpClientIsRunning(otGetInstance()))GPIO_PinOutSet(IP_LED_PORT, IP_LED_PIN);
+
         // Let the CPU go to sleep if the system allows it.
         sl_power_manager_sleep();
     }
@@ -406,5 +397,5 @@ void update_configuration(acc_detector_presence_configuration_t presence_configu
     acc_detector_presence_configuration_power_save_mode_set(presence_configuration, DEFAULT_POWER_SAVE_MODE);
     acc_detector_presence_configuration_nbr_removed_pc_set(presence_configuration, DEFAULT_NBR_REMOVED_PC);
     acc_detector_presence_configuration_service_profile_set(presence_configuration, DEFAULT_SERVICE_PROFILE);
-    acc_detector_presence_configuration_hw_accelerated_average_samples_set(presence_configuration,32);
+    acc_detector_presence_configuration_hw_accelerated_average_samples_set(presence_configuration, 63);
 }

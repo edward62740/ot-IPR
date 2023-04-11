@@ -1,19 +1,9 @@
-/***************************************************************************//**
- * @file
- * @brief Core application logic.
- *******************************************************************************
- * # License
- * <b>Copyright 2021 Silicon Laboratories Inc. www.silabs.com</b>
- *******************************************************************************
+/*
+ * app_main.c
  *
- * The licensor of this software is Silicon Laboratories Inc. Your use of this
- * software is governed by the terms of Silicon Labs Master Software License
- * Agreement (MSLA) available at
- * www.silabs.com/about-us/legal/master-software-license-agreement. This
- * software is distributed to you in Source Code format and is governed by the
- * sections of the MSLA applicable to Source Code.
- *
- ******************************************************************************/
+ *  Created on: Dec 12, 2022
+ *      Author: edward62740
+ */
 
 #include <assert.h>
 #include <openthread-core-config.h>
@@ -32,16 +22,18 @@
 
 #include <openthread/coap.h>
 #include "utils/code_utils.h"
-
+#include "em_system.h"
 #include "stdio.h"
 #include "string.h"
 #include "app_main.h"
 
-
 static otInstance* sInstance = NULL;
-#define SLEEPY_POLL_PERIOD_MS 2000
+#define SLEEPY_POLL_PERIOD_MS 5000
 
 static bool srpDone = false;
+
+
+
 otInstance *otGetInstance(void)
 {
     return sInstance;
@@ -58,9 +50,9 @@ void sl_ot_create_instance(void)
 
 void setNetworkConfiguration(void)
 {
-    otPlatRadioSetTransmitPower(otGetInstance(), 5);
+    otPlatRadioSetTransmitPower(otGetInstance(), 10);
 
-    static char          aNetworkName[] = "OpenThread X-1";
+    static char          aNetworkName[] = "";
     otError              error;
     otOperationalDataset aDataset;
 
@@ -83,7 +75,7 @@ void setNetworkConfiguration(void)
     aDataset.mComponents.mIsPanIdPresent = true;
 
     /* Set Extended Pan ID to  */
-    uint8_t extPanId[OT_EXT_PAN_ID_SIZE] = {4};
+    uint8_t extPanId[OT_EXT_PAN_ID_SIZE] = {};
     memcpy(aDataset.mExtendedPanId.m8, extPanId, sizeof(aDataset.mExtendedPanId));
     aDataset.mComponents.mIsExtendedPanIdPresent = true;
 
@@ -134,19 +126,15 @@ void appSrpInit(void)
     otError error = OT_ERROR_NONE;
 
     char *hostName;
-    char *HOST_NAME = "";
+    char *HOST_NAME = "OT-IPR-0";
     uint16_t size;
     hostName = otSrpClientBuffersGetHostNameString(sInstance, &size);
     error |= otSrpClientSetHostName(sInstance, HOST_NAME);
     memcpy(hostName, HOST_NAME, sizeof(HOST_NAME) + 1);
 
 
-    uint8_t arrayLength;
-    otIp6Address *hostAddressArray;
+    otSrpClientEnableAutoHostAddress(sInstance);
 
-    hostAddressArray = otSrpClientBuffersGetHostAddressesArray(sInstance, &arrayLength);
-    error |= otSrpClientSetHostAddresses(sInstance, &selfAddr, 1);
-    memcpy(hostAddressArray, &selfAddr, 1 * sizeof(otIp6Address));
 
     otSrpClientBuffersServiceEntry *entry = NULL;
     char *string;
@@ -155,8 +143,8 @@ void appSrpInit(void)
 
     entry->mService.mPort = 33434;
     char INST_NAME[32];
-    snprintf(INST_NAME, 32, "%d", selfAddr.mFields.m16[7]);
-    char *SERV_NAME = "";
+    snprintf(INST_NAME, 32, "ipv6bc%d", (uint8_t)(SYSTEM_GetUnique() & 0xFF));
+    char *SERV_NAME = "_ot._udp";
     string = otSrpClientBuffersGetServiceEntryInstanceNameString(entry, &size);
     memcpy(string, INST_NAME, size);
 
@@ -183,6 +171,7 @@ void app_init(void)
     assert(otIp6SetEnabled(sInstance, true) == OT_ERROR_NONE);
     assert(otThreadSetEnabled(sInstance, true) == OT_ERROR_NONE);
     appCoapInit();
+    appSrpInit();
 }
 
 /**************************************************************************//**

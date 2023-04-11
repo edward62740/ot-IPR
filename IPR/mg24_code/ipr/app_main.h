@@ -1,19 +1,10 @@
-/***************************************************************************//**
- * @file
- * @brief Application interface provided to main().
- *******************************************************************************
- * # License
- * <b>Copyright 2020 Silicon Laboratories Inc. www.silabs.com</b>
- *******************************************************************************
+/*
+ * app_main.h
  *
- * The licensor of this software is Silicon Laboratories Inc. Your use of this
- * software is governed by the terms of Silicon Labs Master Software License
- * Agreement (MSLA) available at
- * www.silabs.com/about-us/legal/master-software-license-agreement. This
- * software is distributed to you in Source Code format and is governed by the
- * sections of the MSLA applicable to Source Code.
- *
- ******************************************************************************/
+ *  Created on: Dec 12, 2022
+ *      Author: edward62740
+ */
+
 
 #ifndef APP_H
 #define APP_H

@@ -43,7 +43,7 @@ For the application layer, the main constraints are a compromise between power c
 Hence, the application will adjust the sampling rate of the sensor based on the presence or absence of a target.<br>
 More specifically, the sensor will sample at a rate of approx. 0.33 frames/s (radio gets priority since this is not time-critical), and based on the results of this detection, the frame rate can be increased up to 2Hz. Note that each frame contains 32 consecutive sweeps of the detection range. The application also introduces a hystersis-like behavior to the detection state. The table below shows the parameters used during testing.
 <br>
-Hence, the maximum time required to switch to a "detected" state is $$\sum_{\substack{k=1, \\ k \\ odd}}^{TH_{+}} \frac{IFD}{k}$$  each value is clipped by RADAR_APP_DEFAULT_MIN_FRAME_SPACING_MS as a lower bound. Using the configuration below, this value is 5100ms. In practice, the state often switches within 3s, as the first frame is not necessarily sampled 3000ms after presence begins.<br>
+Hence, the maximum time required to switch to a "detected" state is $$\sum\limits_{\substack{k=1 \ k \text{ odd}}}^{\text{TH}{+}} \max\left(\frac{\text{IFD}}{k}, FSP_{MIN}\right), \ \text{TH}_{+} \in [2,63] \cap \mathbb{Z}$$  each value is clipped by the minimum frame spacing (FSP<sub>MIN</sub>) as a lower bound. Using the configuration below, this value is 5100ms. In practice, the state often switches within 3s, as the first frame is not necessarily sampled 3000ms after presence begins.<br>
 Through limited testing, this configuration yielded a false positive (i.e spurious detections without any apparent presence) rate of $4.96 \times 10^{-6}$, which is sufficient for the purposes of this project. It is yet to be determined what the false negative rate is, but the number is also trivial.
 
 <table style="width: 145px;">
@@ -62,7 +62,7 @@ Through limited testing, this configuration yielded a false positive (i.e spurio
 </tr>
 <tr style="height: 23px;">
 <td style="width: 105.891px; height: 23px;">&nbsp;HWAAS</td>
-<td style="width: 19.1094px; height: 23px;">32&nbsp;</td>
+<td style="width: 19.1094px; height: 23px;">63&nbsp;</td>
 </tr>
 <tr style="height: 23px;">
 <td style="width: 105.891px; height: 23px;">&nbsp;Power Mode</td>
@@ -74,7 +74,7 @@ Through limited testing, this configuration yielded a false positive (i.e spurio
 </tr>
 <tr style="height: 23px;">
 <td style="width: 105.891px; height: 23px;">&nbsp;PCA Noise Reduction</td>
-<td style="width: 19.1094px; height: 23px;">Off</td>
+<td style="width: 19.1094px; height: 23px;">1</td>
 </tr>
 <tr style="height: 23px;">
 <td style="width: 105.891px; height: 23px;">&nbsp;Service Profile</td>
