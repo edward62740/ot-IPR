@@ -41,9 +41,9 @@ Documentation on RSS can be found [here](https://docs.acconeer.com/en/latest/exp
 
 For the application layer, the main constraints are a compromise between power consumption and sensor performance/responsiveness.
 Hence, the application will adjust the sampling rate of the sensor based on the presence or absence of a target.<br>
-More specifically, the sensor will sample at a rate of approx. 0.33 frames/s (radio gets priority since this is not time-critical), and based on the results of this detection, the frame rate can be increased up to 2Hz. Note that each frame contains 32 consecutive sweeps of the detection range. The application also introduces a hystersis-like behavior to the detection state. The table below shows the parameters used during testing.
+More specifically, the sensor will sample at a rate of approx. 0.33 frames/s (radio gets priority since this is not time-critical), and based on the results of this detection, the frame rate can be increased up to 2Hz. Note that each frame contains 63 consecutive sweeps of the detection range. The application also introduces a hystersis-like behavior to the detection state. The table below shows the parameters used during testing.
 <br>
-Hence, the maximum time required to switch to a "detected" state is $$\sum\limits_{\substack{k=1 \ k \text{ odd}}}^{\text{TH}{+}} \max\left(\frac{\text{IFD}}{k}, FSP_{MIN}\right), \ \text{TH}_{+} \in [2,63] \cap \mathbb{Z}$$  each value is clipped by the minimum frame spacing (FSP<sub>MIN</sub>) as a lower bound. Using the configuration below, this value is 5100ms. In practice, the state often switches within 3s, as the first frame is not necessarily sampled 3000ms after presence begins.<br>
+Hence, the maximum time (excluding radio subsystem yields) required to switch to a "detected" state is $$\sum_{\substack{k=1 \ k \text{ odd}}}^{\left\lfloor \frac{\text{TH}{+}}{10} \right\rfloor} \max\left(\frac{\text{IFD}}{k}, FSP_{\min}\right), \quad \text{TH}_{+} \in [20,630] \cap \mathbb{Z}$$  each value is clipped by the minimum frame spacing (FSP<sub>MIN</sub>) as a lower bound. Using the configuration below, this value is 5100ms. In practice, the state often switches within 3s, as the first frame is not necessarily sampled 3000ms after presence begins.<br>
 Through limited testing, this configuration yielded a false positive (i.e spurious detections without any apparent presence) rate of $4.96 \times 10^{-6}$, which is sufficient for the purposes of this project. It is yet to be determined what the false negative rate is, but the number is also trivial.
 
 <table style="width: 145px;">
@@ -53,36 +53,48 @@ Through limited testing, this configuration yielded a false positive (i.e spurio
 <td style="width: 19.1094px; height: 23px;"><strong>Value&nbsp;</strong></td>
 </tr>
 <tr style="height: 23px;">
-<td style="width: 105.891px; height: 23px;">&nbsp;Start/End</td>
-<td style="width: 19.1094px; height: 23px;">0.2/1.4m</td>
+<td style="width: 105.891px; height: 23px;">Start/End Distance</td>
+<td style="width: 19.1094px; height: 23px;">0.2/1.75m</td>
+</tr>
+<tr style="height: 23px;">
+<td style="width: 105.891px; height: 23px;">Threshold (TH+/TH-/THMAX)</td>
+<td style="width: 19.1094px; height: 23px;">80/20/100</td>
+</tr>
+<tr style="height: 23px;">
+<td style="width: 105.891px; height: 23px;">dTH/dt(+/-)</td>
+<td style="width: 19.1094px; height: 23px;">20/5</td>
 </tr>
 <tr style="height: 23.5px;">
-<td style="width: 105.891px; height: 23.5px;">&nbsp;Rx Gain</td>
+<td style="width: 105.891px; height: 23.5px;">Rx Gain</td>
 <td style="width: 19.1094px; height: 23.5px;">0.5&nbsp;</td>
 </tr>
 <tr style="height: 23px;">
-<td style="width: 105.891px; height: 23px;">&nbsp;HWAAS</td>
+<td style="width: 105.891px; height: 23px;">HWAAS</td>
 <td style="width: 19.1094px; height: 23px;">63&nbsp;</td>
 </tr>
 <tr style="height: 23px;">
-<td style="width: 105.891px; height: 23px;">&nbsp;Power Mode</td>
-<td style="width: 19.1094px; height: 23px;">&nbsp;Off</td>
+<td style="width: 105.891px; height: 23px;">Power Mode</td>
+<td style="width: 19.1094px; height: 23px;">Off</td>
 </tr>
 <tr style="height: 23px;">
-<td style="width: 105.891px; height: 23px;">&nbsp;Detection Threshold</td>
+<td style="width: 105.891px; height: 23px;">Detection Threshold</td>
 <td style="width: 19.1094px; height: 23px;">2000&nbsp;</td>
 </tr>
 <tr style="height: 23px;">
-<td style="width: 105.891px; height: 23px;">&nbsp;PCA Noise Reduction</td>
+<td style="width: 105.891px; height: 23px;">PCA Noise Reduction</td>
 <td style="width: 19.1094px; height: 23px;">1</td>
 </tr>
 <tr style="height: 23px;">
-<td style="width: 105.891px; height: 23px;">&nbsp;Service Profile</td>
+<td style="width: 105.891px; height: 23px;">Service Profile</td>
 <td style="width: 19.1094px; height: 23px;">4&nbsp;</td>
 </tr>
 <tr style="height: 23px;">
-<td style="width: 105.891px; height: 23px;">&nbsp;Inter-frame Delay (IFD)</td>
+<td style="width: 105.891px; height: 23px;">Inter-frame Delay (IFD)</td>
 <td style="width: 19.1094px; height: 23px;">3000ms&nbsp;</td>
+</tr>
+<tr style="height: 23px;">
+<td style="width: 105.891px; height: 23px;">Minimum Frame Spacing (FSP<sub>MIN</sub>)</td>
+<td style="width: 19.1094px; height: 23px;">750ms&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -93,6 +105,7 @@ Only the data from the detection algo is sent over CoAP (i.e state changes) toge
 The IPR utilizes CoAP for low-power communication with a remote server. In this project, the server runs on the same hardware as the border router.
 | Server (OTBR)         |                      | Client (IPR)       | Message                                        |
 | ----------------------|:-------------------:|:-------------------:|:----------------------------------------------:|
+|                       | <------------------ |        DNS-SD       | Register SLAAC IPv6 with SRP server            |
 |         GET           | ------------------> |                     | Informs client of the server IP and uri        |
 |                       | <------------------ |        ACK          | Ack (must be received or will not proceed)     |
 |           .           |         .           |          .          |                       .                        |
