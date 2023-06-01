@@ -43,7 +43,7 @@ For the application layer, the main constraints are a compromise between power c
 Hence, the application will adjust the sampling rate of the sensor based on the presence or absence of a target.<br>
 More specifically, the sensor will sample at a rate of approx. 0.33 frames/s (radio gets priority since this is not time-critical), and based on the results of this detection, the frame rate can be increased up to 2Hz. Note that each frame contains 63 consecutive sweeps of the detection range. The application also introduces a hystersis-like behavior to the detection state. The table below shows the parameters used during testing.
 <br>
-Hence, the maximum time (excluding radio subsystem yields) required to switch to a "detected" state is $$\sum_{\substack{k=1 \ k \text{ odd}}}^{\left\lfloor \frac{\text{TH}{+}}{10} \right\rfloor} \max\left(\frac{IFD_{\max}}{k}, IFD_{\min}\right), \quad \text{TH}_{+} \in [20,630] \cap \mathbb{Z}$$  each value is clipped by the minimum frame spacing (FSP<sub>MIN</sub>) as a lower bound. Using the configuration below, this value is 5100ms. In practice, the state often switches within 3s, as the first frame is not necessarily sampled 3000ms after presence begins.<br>
+Hence, the maximum time (excluding radio subsystem yields) required to switch to a "detected" state is $$\sum_{\substack{k=1 \ k \text{ odd}}}^{\left\lfloor \frac{\text{TH}{+}}{10} \right\rfloor} \max\left(\frac{IFD_{\max}}{k}, IFD_{\min}\right), \quad \text{TH}_{+} \in \mathbb{N}$$  each value is clipped by the minimum frame spacing (IFD<sub>MIN</sub>) as a lower bound. Using the configuration below, this value is 5100ms. In practice, the state often switches within 3s, as the first frame is not necessarily sampled 3000ms after presence begins.<br>
 Through limited testing, this configuration yielded a false positive (i.e spurious detections without any apparent presence) rate of $4.96 \times 10^{-6}$, which is sufficient for the purposes of this project. It is yet to be determined what the false negative rate is, but the number is also trivial.
 
 <table style="width: 145px;">
@@ -127,3 +127,10 @@ Future improvements are to replace the sensor with the pin-compatible [A121](htt
 <br>
 The CoAP server allows for data collected to be visualized as shown below: <br>
 ![Visualization](https://github.com/edward62740/ot-IPR/blob/master/Documentation/grafana.png "Visualization")<br>
+
+
+## Field Testing and Deployment
+Overall, the DUT (3 nos.) remained stable during the field test, for the duration of approx. 4 months. This included power cycling of the border router, sporadic disconnections from the Internet, restarts of the SRP server etc. <br> 
+The radar performance met expectations, with the exception of a single event (during the entire duration of the test) consisting of erroneous triggers lasting for approx. 5 minutes, for one DUT. Due to the nature of the event, it may have been caused by some form of interference or an unexpected strong reflector (i.e metal). Users should be aware of the possibilities of this occurence with radar. <br>
+
+
