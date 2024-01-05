@@ -7,7 +7,7 @@ Refer here for the [CoAP Server](https://github.com/edward62740/ot-coap-server).
 
 
 ## Hardware Design
-The IPR is designed on a 6-layer, impedance controlled PCB. The components run off a single 1.8v supply, due to limitations of the radar IO voltage, in order to avoid a dual-supply, level-translator situation. The main controller on the board is of the [EFR32MG24 Series](https://www.silabs.com/wireless/zigbee/efr32mg24-series-2-socs). Due to chip shortages, more than one part in this series was used with little effect on the actual functionality.<br>
+The IPR is designed on a 6-layer POFV, impedance controlled PCB. The components run off a single 1.8v supply, due to limitations of the radar IO voltage, in order to avoid level-translators. The main controller on the board is of the [EFR32MG24 Series](https://www.silabs.com/wireless/zigbee/efr32mg24-series-2-socs). Due to chip shortages, more than one part in this series was used with little effect on the actual functionality.<br>
 <p align="center">
 <img src="https://github.com/edward62740/ot-IPR/blob/master/Documentation/ipr.png" width="800" /><br>
  <br>
@@ -22,7 +22,7 @@ The IPR is designed on a 6-layer, impedance controlled PCB. The components run o
 
 
 ## Detection Principles
-Radar was chosen for this project due to its ability to detect micro movements and perform 'filtering' by estimating distance/speed of target. This makes it suitable for certain applications where traditional sensing methods such as PIRs may be insufficient, such as needing to sense presence in specific areas, or in areas of high traffic.<br><br>
+Radar was chosen for this project due to its ability to detect micro movements and perform 'filtering' by estimating distance/speed of target. This makes it suitable for certain applications where traditional sensing methods such as PIRs may be insufficient, such as needing to sense presence in specific areas, or in areas of high traffic. It also helps to overcome limitations of PIRs in detecting human presence without significant motion, which would be an issue in certain areas, i.e. a study area. <br><br>
 For example, consider an open space with multiple lighting zones, such as a public library or a large living/dining room. The constant motion of people walking by will need to be filtered to only activate when someone sits down or stays in a particular zone. This automatically rules out the PIR (which would be far superior in terms of power usage). <br><br>
 Thus, radar appears to be an obvious choice, as well as some other solutions such as [VL53L5X](https://www.st.com/resource/en/datasheet/vl53l5cx.pdf) and [CH201](https://invensense.wpenginepowered.com/wp-content/uploads/2022/04/DS-000379-CH201-v1.2.pdf), which appear to consume similar amounts of power for this application.<br>
 The obvious downside of radar over other similar technologies such as ToF, IR, etc. is that it is computationally expensive, as described below.<br><br>
@@ -130,7 +130,9 @@ The CoAP server allows for data collected to be visualized as shown below: <br>
 
 
 ## Field Testing and Deployment
-Overall, the DUT (3 nos.) remained stable during the field test, for the duration of approx. 4 months. This included power cycling of the border router, sporadic disconnections from the Internet, restarts of the SRP server etc. <br> 
+Overall, the DUT (3 nos.) remained stable during the field test, for the duration of > 1 year. This included power cycling of the border router, sporadic disconnections from the Internet, restarts of the SRP server etc. <br> 
 The radar performance met expectations, with the exception of a single event (during the entire duration of the test) consisting of erroneous triggers lasting for approx. 5 minutes, for one DUT. Due to the nature of the event, it may have been caused by some form of interference or an unexpected strong reflector (i.e metal). Users should be aware of the possibilities of this occurence with radar. <br>
+
+The battery life calculations were corroborated by the measured battery life, which averaged no less than 1 yr (m = 1.1y, std = 0.06y). All tested units ran 24/7.
 
 
